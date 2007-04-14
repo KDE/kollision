@@ -24,12 +24,14 @@ Q_OBJECT
     QTimer m_timer;
     QTime m_time;
     QTime m_global_time;
+    QTime m_event_time;
     
     Renderer* m_renderer;
     
     QList<Ball*> m_balls;
     QList<Ball*> m_fading;
     Ball* m_man;
+    QPointF m_last_man_pos;
     bool m_death;
     
     QPointF randomPoint() const;

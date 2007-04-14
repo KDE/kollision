@@ -50,8 +50,8 @@ void MainArea::start()
     addBall("red_ball");
     addBall("red_ball");
     
-    m_time.start();
-    m_global_time.start();
+    m_time.restart();
+    m_global_time.restart();
     m_timer.start(0);
 }
 
@@ -119,7 +119,7 @@ void MainArea::tick()
                 w, collision)) {
             m_death = true;
             
-            m_man->setVelocity(QPointF(0, 0));
+//             m_man->setVelocity(QPointF(0, 0));
             m_balls.push_back(m_man);
             m_man = 0;
             
@@ -178,7 +178,10 @@ void MainArea::tick()
         }
     }
     
-    foreach (Ball* ball, m_balls) {
+    for (QList<Ball*>::iterator it = m_balls.begin();
+         it != m_balls.end(); ) {
+        Ball* ball = *it;
+        
         if (m_death) {
             // add fall
             ball->setVelocity(ball->velocity() + 
@@ -187,12 +190,13 @@ void MainArea::tick()
         QPointF pos = ball->position();
         pos += ball->velocity() * m_time.elapsed();
         
-        if (pos.y() >= 2.0 * height()) {
+        if (pos.y() >= height() + 10) {
             delete ball;
-            m_balls.removeAll(ball);
+            it = m_balls.erase(it);
         }
         else {
             ball->setPosition(pos);
+            ++it;
         }
     }
     
@@ -202,9 +206,12 @@ void MainArea::tick()
         addBall("red_ball");
     }
     
-    if (m_death && m_balls.isEmpty()) {
+    if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
         KMessageBox::information(this, i18n("Game over"));
         m_timer.stop();
+        
+        m_death = false;
+        start();
     }
     
     m_time.restart();
@@ -213,14 +220,33 @@ void MainArea::tick()
 void MainArea::mouseMoveEvent(QMouseEvent* e)
 {
     if (!m_death) {
+        bool new_man = false;
         if (!m_man) {
             m_man = new Ball(this, m_renderer, "blue_ball");
             m_man->show();
+            new_man = true;
             kDebug() << "ball created" << endl;
+            
+            m_event_time.restart();
         }
     
         m_man->setPosition(e->pos() - QPoint(m_renderer->size().width(),
                                         m_renderer->size().height()) / 2);
+        
+        if (new_man) {
+            m_man->setVelocity(QPointF(0, 0));
+            m_last_man_pos = m_man->position();
+        }
+        else {
+            int delta_t = m_event_time.elapsed();
+            if (delta_t > 5) {
+                m_man->setVelocity((m_man->position() - m_last_man_pos) / delta_t);   
+                m_last_man_pos = m_man->position();             
+                m_event_time.restart();
+            }
+
+        }
+        
     }
 
 }
