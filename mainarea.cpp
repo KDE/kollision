@@ -244,8 +244,14 @@ void MainArea::mouseMoveEvent(QMouseEvent* e)
             
             m_event_time.restart();
         }
-    
-        m_man->setPosition(e->pos());
+        
+        QPoint pos = e->pos();
+        if (pos.x() <= radius()) pos.setX(radius());
+        if (pos.x() >= width() - radius()) pos.setX(width() - radius());
+        if (pos.y() <= radius()) pos.setY(radius());
+        if (pos.y() >= height() - radius()) pos.setY(height() - radius());
+        
+        m_man->setPosition(pos);
         
         if (new_man) {
             m_man->setVelocity(QPointF(0, 0));
