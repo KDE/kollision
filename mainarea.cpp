@@ -43,6 +43,16 @@ MainArea::MainArea(QWidget* parent)
     setMouseTracking(true);
 }
 
+void MainArea::resizeEvent(QResizeEvent* e)
+{
+    QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
+    grad.setColorAt(0, QColor(240, 240, 240));
+    grad.setColorAt(1, QColor(180, 180, 180));
+    QPalette pal = palette();
+    pal.setBrush(QPalette::Window, grad);
+    setPalette(pal);
+}
+
 double MainArea::radius() const
 {
     return m_renderer->size().width() / 2.0;

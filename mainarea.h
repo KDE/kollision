@@ -43,6 +43,7 @@ Q_OBJECT
                 double diam, struct Collision& collision);
 protected:
     virtual void mouseMoveEvent(QMouseEvent* event);
+    virtual void resizeEvent(QResizeEvent* event);
 public:
     MainArea(QWidget* parent = 0);
     
