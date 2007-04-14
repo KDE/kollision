@@ -75,8 +75,21 @@ QPointF MainArea::randomDirection(double val) const
 
 Ball* MainArea::addBall(const QString& id)
 {
+    QPoint pos;
+    for (bool done = false; !done; ) {
+        Collision tmp;
+        
+        done = true;
+        pos = randomPoint().toPoint();
+        foreach (Ball* ball, m_fading) {
+            if (collide(pos, ball->position(), ball->radius() * 2.0, tmp)) {
+                done = false;
+                break;
+            }
+        }
+    }
+
     Ball* ball = new Ball(this, m_renderer, id);
-    QPoint pos = randomPoint().toPoint();
     kDebug() << "ball at " << pos << endl;
     kDebug() << "size = " << size() << endl;
     ball->setPosition(pos);
@@ -123,7 +136,7 @@ void MainArea::tick()
                 radius() * 2, collision)) {
             m_death = true;
             
-//             m_man->setVelocity(QPointF(0, 0));
+            m_man->setVelocity(QPointF(0, 0));
             m_balls.push_back(m_man);
             m_man = 0;
             
