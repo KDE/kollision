@@ -43,6 +43,11 @@ MainArea::MainArea(QWidget* parent)
     setMouseTracking(true);
 }
 
+double MainArea::radius() const
+{
+    return m_renderer->size().width() / 2.0;
+}
+
 void MainArea::start()
 {
     addBall("red_ball");
@@ -57,8 +62,8 @@ void MainArea::start()
 
 QPointF MainArea::randomPoint() const
 {
-    double x = (double)rand() * (width() - m_renderer->size().width()) / RAND_MAX;
-    double y = (double)rand() * (height() - m_renderer->size().height()) / RAND_MAX;
+    double x = (double)rand() * (width() - radius() * 2) / RAND_MAX + radius();
+    double y = (double)rand() * (height() - radius() * 2) / RAND_MAX + radius();
     return QPointF(x, y);
 }
 
@@ -94,7 +99,6 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
 void MainArea::tick()
 {
     int w = m_renderer->size().width();
-    int h = m_renderer->size().height();
     Collision collision;
     
     
@@ -114,9 +118,9 @@ void MainArea::tick()
     // handle deadly collisions
     foreach (Ball* ball, m_balls) {
         if (m_man && collide(
-                ball->position() + QPoint(w, h) / 2.0,
-                m_man->position() + QPoint(w, h) / 2.0, 
-                w, collision)) {
+                ball->position(),
+                m_man->position(), 
+                radius() * 2, collision)) {
             m_death = true;
             
 //             m_man->setVelocity(QPointF(0, 0));
@@ -130,21 +134,19 @@ void MainArea::tick()
     foreach (Ball* ball, m_balls) {
         QPointF pos = ball->position();
         QPointF vel = ball->velocity();
-        QPointF center = pos + QPoint(w, h) / 2.0;
-
-        
+       
         // handle collisions with borders
-        if (pos.x() <= 0) {
+        if (pos.x() <= radius()) {
             vel.setX(fabs(vel.x()));
         }
-        if (pos.x() >= width() - w) {
+        if (pos.x() >= width() - radius()) {
             vel.setX(-fabs(vel.x()));
         }
-        if (pos.y() <= 0) {
+        if (pos.y() <= radius()) {
             vel.setY(fabs(vel.y()));
         }
         if (!m_death) {
-            if (pos.y() >= height() - h) {
+            if (pos.y() >= height() - radius()) {
                 vel.setY(-fabs(vel.y()));        
             }
         }
@@ -156,8 +158,8 @@ void MainArea::tick()
             if (other == ball) {
                 continue;
             }
-            QPointF other_center = other->position() + QPoint(w, h) / 2.0;
-            if (collide(center, other_center, w, collision)) {
+            QPointF other_pos = other->position();
+            if (collide(pos, other_pos, w, collision)) {
                 QPointF other_vel = other->velocity();
                 
                 // compute the parallel component of the
@@ -230,8 +232,7 @@ void MainArea::mouseMoveEvent(QMouseEvent* e)
             m_event_time.restart();
         }
     
-        m_man->setPosition(e->pos() - QPoint(m_renderer->size().width(),
-                                        m_renderer->size().height()) / 2);
+        m_man->setPosition(e->pos());
         
         if (new_man) {
             m_man->setVelocity(QPointF(0, 0));

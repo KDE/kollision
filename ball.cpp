@@ -13,6 +13,7 @@
 Ball::Ball(KGameCanvasAbstract* parent, Renderer* renderer, const QString& id)
 : KGameCanvasPixmap(parent)
 , m_id(id)
+, m_radius(renderer->size().width() / 2.0)
 {
     update(renderer);
 }
@@ -22,4 +23,8 @@ void Ball::update(Renderer* renderer)
     setPixmap(renderer->render(m_id));
 }
 
+void Ball::setPosition(const QPointF& p) { 
+    m_position = p; 
+    moveTo((p - QPointF(radius(), radius())).toPoint());
+}
 

@@ -21,6 +21,7 @@ class Ball : public KGameCanvasPixmap
     QPointF m_position;
     QPointF m_velocity;
     double m_opacityF;
+    double m_radius;
 public:
     Ball(KGameCanvasAbstract* parent, Renderer* renderer, const QString& id);
     
@@ -29,10 +30,12 @@ public:
     void setVelocity(const QPointF& vel) { m_velocity = vel; }
     
     const QPointF& position() const { return m_position; }
-    void setPosition(const QPointF& p) { m_position = p; moveTo(p.toPoint()); }
+    void setPosition(const QPointF& p);
     
     double opacityF() const { return m_opacityF; }
     void setOpacityF(double val) { m_opacityF = val; setOpacity((int)(val * 255)); }
+    
+    double radius() const { return m_radius; }
 };
 
 #endif // BALL_H

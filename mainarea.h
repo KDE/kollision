@@ -34,6 +34,7 @@ Q_OBJECT
     QPointF m_last_man_pos;
     bool m_death;
     
+    double radius() const;    
     QPointF randomPoint() const;
     QPointF randomDirection(double val) const;
     
