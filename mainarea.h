@@ -23,10 +23,12 @@ class MainArea : public KGameCanvasWidget
 Q_OBJECT
     QTimer m_timer;
     QTime m_time;
+    QTime m_global_time;
     
     Renderer* m_renderer;
     
     QList<Ball*> m_balls;
+    QList<Ball*> m_fading;
     Ball* m_man;
     bool m_death;
     

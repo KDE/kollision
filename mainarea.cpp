@@ -51,6 +51,7 @@ void MainArea::start()
     addBall("red_ball");
     
     m_time.start();
+    m_global_time.start();
     m_timer.start(0);
 }
 
@@ -75,9 +76,9 @@ Ball* MainArea::addBall(const QString& id)
     kDebug() << "size = " << size() << endl;
     ball->setPosition(pos);
     ball->setVelocity(randomDirection((double)rand() / RAND_MAX));
-    
+    ball->setOpacityF(0.0);
     ball->show();
-    m_balls.push_back(ball);
+    m_fading.push_back(ball);
     
     return ball;
 }
@@ -96,6 +97,21 @@ void MainArea::tick()
     int h = m_renderer->size().height();
     Collision collision;
     
+    
+    // handle fade in
+    for (QList<Ball*>::iterator it = m_fading.begin();
+        it != m_fading.end(); ) {
+        (*it)->setOpacityF((*it)->opacityF() + m_time.elapsed() * 0.0005);
+        if ((*it)->opacityF() >= 1.0) {
+            m_balls.push_back(*it);
+            it = m_fading.erase(it);
+        }
+        else {
+            ++it;
+        }
+    }
+    
+    // handle deadly collisions
     foreach (Ball* ball, m_balls) {
         if (m_man && collide(
                 ball->position() + QPoint(w, h) / 2.0,
@@ -178,6 +194,12 @@ void MainArea::tick()
         else {
             ball->setPosition(pos);
         }
+    }
+    
+    if (m_global_time.elapsed() >= 20 * 1000) {
+        m_global_time.restart();
+        
+        addBall("red_ball");
     }
     
     if (m_death && m_balls.isEmpty()) {
