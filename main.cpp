@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
                          "0.1", I18N_NOOP("KDE collision game"), KAboutData::License_GPL,
                          "(c) 2007 Paolo Capriotti", 0, "", "p.capriotti@gmail.com");
     aboutData.addAuthor("Paolo Capriotti", 0, "p.capriotti@gmail.com");
-    about.addCredit("Matteo Guarnieri", I18N_NOOP("Original idea"), 0, 0);
+    aboutData.addCredit("Matteo Guarnieri", I18N_NOOP("Original idea"), 0, 0);
 
     KCmdLineArgs::init(argc, argv, &aboutData);
     KCmdLineArgs::addCmdLineOptions(options);
