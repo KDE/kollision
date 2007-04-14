@@ -93,7 +93,7 @@ Ball* MainArea::addBall(const QString& id)
     kDebug() << "ball at " << pos << endl;
     kDebug() << "size = " << size() << endl;
     ball->setPosition(pos);
-    ball->setVelocity(randomDirection((double)rand() / RAND_MAX));
+    ball->setVelocity(randomDirection(0.5));
     ball->setOpacityF(0.0);
     ball->show();
     m_fading.push_back(ball);
