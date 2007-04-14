@@ -38,28 +38,20 @@ MainArea::MainArea(QWidget* parent)
     
     srand(time(0));
     
-    addBall("red_ball");
-    addBall("red_ball");
-    addBall("red_ball");
-    addBall("red_ball");
-    
-    /*
-    
-    red->setPosition(QPointF(40.0, 40.0));
-    red->setVelocity(QPointF(3.0, 0.1));
-    
-    blue->setPosition(QPointF(150.0, 40.0));
-    blue->setVelocity(QPointF(-1.0, 0));*/
-    /*
-    Ball* ball = new Ball(this, m_renderer, "red_ball");
-    ball->moveTo(30, 30);
-    ball->show();*/
-    
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
-    m_time.start();
-    m_timer.start(0);
     
     setMouseTracking(true);
+}
+
+void MainArea::start()
+{
+    addBall("red_ball");
+    addBall("red_ball");
+    addBall("red_ball");
+    addBall("red_ball");
+    
+    m_time.start();
+    m_timer.start(0);
 }
 
 QPointF MainArea::randomPoint() const
@@ -105,13 +97,25 @@ void MainArea::tick()
     Collision collision;
     
     foreach (Ball* ball, m_balls) {
+        if (m_man && collide(
+                ball->position() + QPoint(w, h) / 2.0,
+                m_man->position() + QPoint(w, h) / 2.0, 
+                w, collision)) {
+            m_death = true;
+            
+            m_man->setVelocity(QPointF(0, 0));
+            m_balls.push_back(m_man);
+            m_man = 0;
+            
+            break;
+        }
+    }
+    
+    foreach (Ball* ball, m_balls) {
         QPointF pos = ball->position();
         QPointF vel = ball->velocity();
         QPointF center = pos + QPoint(w, h) / 2.0;
 
-        if (m_man && collide(center, m_man->position() + QPoint(w, h) / 2.0, w, collision)) {
-            m_death = true;
-        }
         
         // handle collisions with borders
         if (pos.x() <= 0) {
@@ -162,7 +166,7 @@ void MainArea::tick()
         if (m_death) {
             // add fall
             ball->setVelocity(ball->velocity() + 
-                QPointF(0, 0.002) * m_time.elapsed());
+                QPointF(0, 0.001) * m_time.elapsed());
         }
         QPointF pos = ball->position();
         pos += ball->velocity() * m_time.elapsed();
@@ -176,18 +180,23 @@ void MainArea::tick()
         }
     }
     
+    if (m_death && m_balls.isEmpty()) {
+        KMessageBox::information(this, i18n("Game over"));
+        m_timer.stop();
+    }
+    
     m_time.restart();
 }
 
 void MainArea::mouseMoveEvent(QMouseEvent* e)
 {
-    if (!m_man) {
-        m_man = new Ball(this, m_renderer, "blue_ball");
-        m_man->show();
-        kDebug() << "ball created" << endl;
-    }
-    
     if (!m_death) {
+        if (!m_man) {
+            m_man = new Ball(this, m_renderer, "blue_ball");
+            m_man->show();
+            kDebug() << "ball created" << endl;
+        }
+    
         m_man->setPosition(e->pos() - QPoint(m_renderer->size().width(),
                                         m_renderer->size().height()) / 2);
     }

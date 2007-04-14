@@ -35,8 +35,9 @@ int main(int argc, char *argv[])
     KApplication app;
 
     MainArea* area = new MainArea;
-    area->resize(500, 500);
+    area->resize(200, 200);
     area->show();
+    area->start();
     
     return app.exec();
 }

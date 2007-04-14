@@ -41,6 +41,8 @@ protected:
 public:
     MainArea(QWidget* parent = 0);
     
+    void start();
+    
 public slots:
     void tick();
 };
