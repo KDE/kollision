@@ -169,7 +169,9 @@ void MainArea::tick()
         }
     }
     
-    foreach (Ball* ball, m_balls) {
+    for (int i = 0; i < m_balls.size(); i++) {
+        Ball* ball = m_balls[i];
+        
         QPointF pos = ball->position();
         QPointF vel = ball->velocity();
        
@@ -192,10 +194,9 @@ void MainArea::tick()
         ball->setVelocity(vel);
         
         // handle collisions with other balls
-        foreach (Ball* other, m_balls) {
-            if (other == ball) {
-                continue;
-            }
+        for (int j = i + 1; j < m_balls.size(); j++) {
+            Ball* other = m_balls[j];
+            
             QPointF other_pos = other->position();
             if (collide(pos, other_pos, w, collision)) {
                 QPointF other_vel = other->velocity();
