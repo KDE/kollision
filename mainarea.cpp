@@ -248,9 +248,9 @@ void MainArea::tick()
     }
     
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
+        m_timer.stop();
         KMessageBox::information(this, 
             i18n("Game over. Time = %1", m_game_time.restart()));
-        m_timer.stop();
         
         m_death = false;
         start();
