@@ -24,9 +24,11 @@ Q_OBJECT
     QTimer m_timer;
     QTime m_time;
     QTime m_global_time;
+    QTime m_game_time;
     QTime m_event_time;
     
     Renderer* m_renderer;
+    KGameCanvasPixmap* m_background;
     
     QList<Ball*> m_balls;
     QList<Ball*> m_fading;

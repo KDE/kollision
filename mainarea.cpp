@@ -33,6 +33,9 @@ MainArea::MainArea(QWidget* parent)
 , m_man(0)
 , m_death(false)
 {
+    m_background = new KGameCanvasPixmap(this);
+    m_background->show();
+
     m_renderer = new Renderer;
     m_renderer->resize(QSize(28, 28));
     
@@ -45,12 +48,16 @@ MainArea::MainArea(QWidget* parent)
 
 void MainArea::resizeEvent(QResizeEvent* e)
 {
-    QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
-    grad.setColorAt(0, QColor(240, 240, 240));
-    grad.setColorAt(1, QColor(180, 180, 180));
-    QPalette pal = palette();
-    pal.setBrush(QPalette::Window, grad);
-    setPalette(pal);
+    QImage tmp(size(), QImage::Format_ARGB32_Premultiplied);
+    {
+        // draw gradient
+        QPainter p(&tmp);
+        QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
+        grad.setColorAt(0, QColor(240, 240, 240));
+        grad.setColorAt(1, QColor(180, 180, 180));
+        p.fillRect(QRect(QPoint(0, 0), size()), grad);
+    }
+    m_background->setPixmap(QPixmap::fromImage(tmp));
 }
 
 double MainArea::radius() const
@@ -67,6 +74,7 @@ void MainArea::start()
     
     m_time.restart();
     m_global_time.restart();
+    m_game_time.restart();
     m_timer.start(0);
 }
 
@@ -150,6 +158,13 @@ void MainArea::tick()
             m_balls.push_back(m_man);
             m_man = 0;
             
+            foreach (Ball* fball, m_fading) {
+                fball->setOpacityF(1.0);
+                fball->setVelocity(QPointF(0.0, 0.0));
+                m_balls.push_back(fball);
+            }
+            m_fading.clear();
+            
             break;
         }
     }
@@ -225,14 +240,15 @@ void MainArea::tick()
         }
     }
     
-    if (m_global_time.elapsed() >= 20 * 1000) {
+    if (!m_death && m_global_time.elapsed() >= 20 * 1000) {
         m_global_time.restart();
         
         addBall("red_ball");
     }
     
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
-        KMessageBox::information(this, i18n("Game over"));
+        KMessageBox::information(this, 
+            i18n("Game over. Time = %1", m_game_time.restart()));
         m_timer.stop();
         
         m_death = false;
