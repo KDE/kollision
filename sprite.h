@@ -44,7 +44,7 @@ public:
     virtual double opacityF() const { return m_opacityF; }
     virtual void setOpacityF(double val) {
         m_opacityF = val;
-        Item::setOpacity(255 * m_opacityF);
+        Item::setOpacity((int) (255 * m_opacityF));
     }
     virtual const QPointF& position() const { return m_position; }
     virtual void setPosition(const QPointF& pos) {

@@ -302,10 +302,10 @@ void MainArea::mouseMoveEvent(QMouseEvent* e)
         }
         
         QPoint pos = e->pos();
-        if (pos.x() <= radius()) pos.setX(radius());
-        if (pos.x() >= width() - radius()) pos.setX(width() - radius());
-        if (pos.y() <= radius()) pos.setY(radius());
-        if (pos.y() >= height() - radius()) pos.setY(height() - radius());
+        if (pos.x() <= radius()) pos.setX((int) radius());
+        if (pos.x() >= width() - radius()) pos.setX(width() - (int)radius());
+        if (pos.y() <= radius()) pos.setY((int) radius());
+        if (pos.y() >= height() - radius()) pos.setY(height() - (int) radius());
         
         m_man->setPosition(pos);
         
