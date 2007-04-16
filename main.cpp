@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
     MainArea* area = new MainArea;
     area->resize(500, 500);
     area->show();
-    area->start();
     
     return app.exec();
 }

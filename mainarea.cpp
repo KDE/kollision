@@ -282,7 +282,6 @@ void MainArea::tick()
             i18n("Game over. Time = %1", m_game_time.restart()));
         
         m_death = false;
-        start();
     }
     
     m_time.restart();
@@ -299,6 +298,7 @@ void MainArea::mouseMoveEvent(QMouseEvent* e)
             kDebug() << "ball created" << endl;
             
             m_event_time.restart();
+            start();
         }
         
         QPoint pos = e->pos();
