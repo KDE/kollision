@@ -32,6 +32,7 @@ public:
 template <typename Item>
 class SpriteMixin : public Item, public Sprite
 {
+protected:
     double m_opacityF;
     QPointF m_position;
     QPointF m_velocity;

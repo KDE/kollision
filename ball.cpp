@@ -11,7 +11,7 @@
 #include "renderer.h"
 
 Ball::Ball(KGameCanvasAbstract* parent, Renderer* renderer, const QString& id)
-: KGameCanvasPixmap(parent)
+: SpriteMixin<KGameCanvasPixmap>(parent)
 , m_id(id)
 , m_radius(renderer->size().width() / 2.0)
 {
