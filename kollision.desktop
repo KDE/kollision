@@ -4,6 +4,6 @@ Name=kollision
 Exec=kollision
 Icon=kollision
 Type=Application
-Comment=
+Comment=A simple ball dodging game
 Terminal=false
 Categories=Game;
