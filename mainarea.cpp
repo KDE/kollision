@@ -10,6 +10,7 @@
 #include "mainarea.h"
 #include "renderer.h"
 #include "ball.h"
+#include "message.h"
 
 #include <kdebug.h>
 #include <klocalizedstring.h>
@@ -43,10 +44,35 @@ MainArea::MainArea(QWidget* parent)
     
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
     
+    m_msg_font = font();
+    m_msg_font.setPointSize(15);
+    
     setMouseTracking(true);
 }
 
-void MainArea::resizeEvent(QResizeEvent* e)
+void MainArea::writeMessage(const QString& text)
+{
+    Message* message = new Message(this, text, m_msg_font);
+    message->setPosition(QPointF(width(), height()) / 2.0);
+    message->show();
+    message->setOpacityF(0.0);
+    
+    AnimationGroup* move = new AnimationGroup;
+    move->add(new FadeAnimation(message, 1.0, 0.0, 1500));
+    move->add(new MovementAnimation(message, 
+            message->position(),
+            QPointF(0, -0.1),
+            1500));
+    AnimationSequence* sequence = new AnimationSequence;
+    sequence->add(new PauseAnimation(200));
+    sequence->add(new FadeAnimation(message, 0.0, 1.0, 1000));
+    sequence->add(new PauseAnimation(500));
+    sequence->add(move);
+    
+    m_animator.add(sequence);
+}
+
+void MainArea::resizeEvent(QResizeEvent*)
 {
     QImage tmp(size(), QImage::Format_ARGB32_Premultiplied);
     {
@@ -76,6 +102,8 @@ void MainArea::start()
     m_global_time.restart();
     m_game_time.restart();
     m_timer.start(0);
+    
+    writeMessage(i18n("4 balls"));
 }
 
 QPointF MainArea::randomPoint() const
@@ -245,6 +273,7 @@ void MainArea::tick()
         m_global_time.restart();
         
         addBall("red_ball");
+        writeMessage(i18n("%1 balls", m_balls.size() + 1));
     }
     
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {

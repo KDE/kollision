@@ -14,9 +14,11 @@
 #include <QTime>
 #include <QList>
 #include <kgamecanvas.h>
+#include "animator.h"
 
 class Renderer;
 class Ball;
+class Message;
 
 class MainArea : public KGameCanvasWidget
 {
@@ -29,6 +31,8 @@ Q_OBJECT
     
     Renderer* m_renderer;
     KGameCanvasPixmap* m_background;
+    Animator m_animator;
+    QFont m_msg_font;
     
     QList<Ball*> m_balls;
     QList<Ball*> m_fading;
@@ -43,6 +47,7 @@ Q_OBJECT
     Ball* addBall(const QString& id);
     bool collide(const QPointF& a, const QPointF& b, 
                 double diam, struct Collision& collision);
+    void writeMessage(const QString& text);
 protected:
     virtual void mouseMoveEvent(QMouseEvent* event);
     virtual void resizeEvent(QResizeEvent* event);

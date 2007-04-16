@@ -8,10 +8,13 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 add_subdirectory(pictures)
 
 set(kollision_SRCS
-		ball.cpp
-		main.cpp
-		mainarea.cpp
-		renderer.cpp
+    animation.cpp
+    animator.cpp
+    ball.cpp
+    main.cpp
+    mainarea.cpp
+    message.cpp      
+    renderer.cpp     
 )
 
 kde4_automoc(${kollision_SRCS})
