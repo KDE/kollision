@@ -17,3 +17,4 @@ kde4_add_executable(kollision ${kollision_SRCS})
 target_link_libraries(kollision ${KDE4_KDEUI_LIBS} kdegames)
 
 install(TARGETS kollision DESTINATION ${BIN_INSTALL_DIR})
+install(FILES kollision.desktop DESTINATION ${XDG_APPS_DIR})
