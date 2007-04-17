@@ -194,9 +194,7 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
 
 void MainArea::tick()
 {
-    int w = m_renderer->size().width();
     Collision collision;
-    
     
     // handle fade in
     for (QList<Ball*>::iterator it = m_fading.begin();
@@ -234,36 +232,52 @@ void MainArea::tick()
         }
     }
     
+    // integrate
+    foreach (Ball* ball, m_balls) {
+        // position
+        ball->setPosition(ball->position() +
+            ball->velocity() * m_time.elapsed());
+            
+        // velocity
+        if (m_death) {
+            ball->setVelocity(ball->velocity() +
+                QPointF(0, 0.001) * m_time.elapsed());
+        }
+    }
+    
     for (int i = 0; i < m_balls.size(); i++) {
         Ball* ball = m_balls[i];
         
-        QPointF pos = ball->position();
         QPointF vel = ball->velocity();
+        QPointF pos = ball->position();
        
         // handle collisions with borders
         if (pos.x() <= radius()) {
             vel.setX(fabs(vel.x()));
+            pos.setX(2 * radius() - pos.x());
         }
         if (pos.x() >= m_size - radius()) {
             vel.setX(-fabs(vel.x()));
+            pos.setX(2 * (m_size - radius()) - pos.x());
         }
         if (pos.y() <= radius()) {
             vel.setY(fabs(vel.y()));
+            pos.setY(2 * radius() - pos.y());
         }
         if (!m_death) {
             if (pos.y() >= m_size - radius()) {
-                vel.setY(-fabs(vel.y()));        
+                vel.setY(-fabs(vel.y()));
+                pos.setY(2 * (m_size - radius()) - pos.y());
             }
         }
-        
-        ball->setVelocity(vel);
-        
-        // handle collisions with other balls
+
+        // handle collisions with next balls
         for (int j = i + 1; j < m_balls.size(); j++) {
             Ball* other = m_balls[j];
             
             QPointF other_pos = other->position();
-            if (collide(pos, other_pos, w, collision)) {
+            
+            if (collide(pos, other_pos, radius() * 2, collision)) {
                 QPointF other_vel = other->velocity();
                 
                 // compute the parallel component of the
@@ -272,36 +286,39 @@ void MainArea::tick()
                              + vel.y() * collision.line.y();
                 double w_par = other_vel.x() * collision.line.x()
                              + other_vel.y() * collision.line.y();
+                             
+                // swap those components
+                QPointF drift = collision.line * (w_par - v_par) /
+                                    collision.square_distance;
+                vel += drift;
+                other->setVelocity(other_vel - drift);
                 
-                // switch those two parallel components
-                if (w_par - v_par <= 0) {
-                    QPointF drift = collision.line * (w_par - v_par) /
-                                     collision.square_distance;
-                    ball->setVelocity(ball->velocity() + drift);
-                    other->setVelocity(other->velocity() - drift);
-                }
+                // adjust positions, reflecting along the collision
+                // line as much as the amount of compenetration
+                QPointF adj = collision.line * 
+                    (2.0 * radius() / 
+                    sqrt(collision.square_distance) 
+                        - 1);
+                pos -= adj;
+                other->setPosition(other_pos + adj);
             }
+            
         }
+        
+        ball->setPosition(pos);
+        ball->setVelocity(vel);
     }
     
     for (QList<Ball*>::iterator it = m_balls.begin();
          it != m_balls.end(); ) {
         Ball* ball = *it;
-        
-        if (m_death) {
-            // add fall
-            ball->setVelocity(ball->velocity() + 
-                QPointF(0, 0.001) * m_time.elapsed());
-        }
         QPointF pos = ball->position();
-        pos += ball->velocity() * m_time.elapsed();
         
         if (m_death && pos.y() >= height() + radius() + 10) {
             delete ball;
             it = m_balls.erase(it);
         }
         else {
-            ball->setPosition(pos);
             ++it;
         }
     }
