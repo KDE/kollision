@@ -140,8 +140,6 @@ Ball* MainArea::addBall(const QString& id)
     }
 
     Ball* ball = new Ball(this, m_renderer, id);
-    kDebug() << "ball at " << pos << endl;
-    kDebug() << "size = " << size() << endl;
     ball->setPosition(pos);
     ball->setVelocity(randomDirection(0.38));
     ball->setOpacityF(0.0);
@@ -263,7 +261,7 @@ void MainArea::tick()
         QPointF pos = ball->position();
         pos += ball->velocity() * m_time.elapsed();
         
-        if (m_death && pos.y() >= height() + 10) {
+        if (m_death && pos.y() >= height() + radius() + 10) {
             delete ball;
             it = m_balls.erase(it);
         }
@@ -299,7 +297,6 @@ void MainArea::mouseMoveEvent(QMouseEvent* e)
             m_man = new Ball(this, m_renderer, "blue_ball");
             m_man->show();
             new_man = true;
-            kDebug() << "ball created" << endl;
             
             m_event_time.restart();
             start();

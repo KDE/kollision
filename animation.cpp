@@ -166,7 +166,7 @@ bool AnimationSequence::step(int t)
     m_last = t;
     while (!m_animations.isEmpty()) {
         if (m_animations.head()->step(t)) {
-            m_animations.dequeue();
+            delete m_animations.dequeue();
             if (!m_animations.isEmpty()) {
                 m_animations.head()->start(t);
             }
