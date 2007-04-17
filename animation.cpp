@@ -30,7 +30,7 @@ bool PauseAnimation::step(int t)
     return t - m_start >= m_time;
 }
 
-FadeAnimation::FadeAnimation(Sprite* sprite, double from, double to, int time)
+FadeAnimation::FadeAnimation(const SpritePtr& sprite, double from, double to, int time)
 : m_sprite(sprite)
 , m_from(from)
 , m_to(to)
@@ -62,7 +62,7 @@ void FadeAnimation::stop()
 }
 
 
-MovementAnimation::MovementAnimation(Sprite* sprite, const QPointF& from, 
+MovementAnimation::MovementAnimation(const SpritePtr& sprite, const QPointF& from, 
                                      const QPointF& velocity, int time)
 : m_sprite(sprite)
 , m_from(from)

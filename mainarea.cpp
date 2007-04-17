@@ -36,11 +36,11 @@ MainArea::MainArea(QWidget* parent)
 {
     m_background = new KGameCanvasPixmap(this);
     m_background->show();
-
-    m_renderer = new Renderer;
-    m_renderer->resize(QSize(28, 28));
     
     srand(time(0));
+    
+    m_renderer = new Renderer;
+    m_renderer->resize(QSize(28, 28));
     
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
     
@@ -48,32 +48,11 @@ MainArea::MainArea(QWidget* parent)
     m_msg_font.setPointSize(15);
     
     setMouseTracking(true);
-}
-
-void MainArea::writeMessage(const QString& text)
-{
-    Message* message = new Message(this, text, m_msg_font);
-    message->setPosition(QPointF(width(), height()) / 2.0);
-    message->show();
-    message->setOpacityF(0.0);
+    m_size = 500;
+    setMinimumSize(QSize(m_size, m_size));
+    setMaximumSize(QSize(m_size, m_size));
     
-    AnimationGroup* move = new AnimationGroup;
-    move->add(new FadeAnimation(message, 1.0, 0.0, 1500));
-    move->add(new MovementAnimation(message, 
-            message->position(),
-            QPointF(0, -0.1),
-            1500));
-    AnimationSequence* sequence = new AnimationSequence;
-    sequence->add(new PauseAnimation(200));
-    sequence->add(new FadeAnimation(message, 0.0, 1.0, 1000));
-    sequence->add(new PauseAnimation(500));
-    sequence->add(move);
     
-    m_animator.add(sequence);
-}
-
-void MainArea::resizeEvent(QResizeEvent*)
-{
     QImage tmp(size(), QImage::Format_ARGB32_Premultiplied);
     {
         // draw gradient
@@ -85,6 +64,31 @@ void MainArea::resizeEvent(QResizeEvent*)
     }
     m_background->setPixmap(QPixmap::fromImage(tmp));
 }
+
+void MainArea::writeMessage(const QString& text)
+{
+    Message* message = new Message(this, text, m_msg_font);
+    message->setPosition(QPointF(m_size, m_size) / 2.0);
+    message->show();
+    message->setOpacityF(0.0);
+    
+    SpritePtr sprite(message);
+    
+    AnimationGroup* move = new AnimationGroup;
+    move->add(new FadeAnimation(sprite, 1.0, 0.0, 1500));
+    move->add(new MovementAnimation(sprite, 
+            sprite->position(),
+            QPointF(0, -0.1),
+            1500));
+    AnimationSequence* sequence = new AnimationSequence;
+    sequence->add(new PauseAnimation(200));
+    sequence->add(new FadeAnimation(sprite, 0.0, 1.0, 1000));
+    sequence->add(new PauseAnimation(500));
+    sequence->add(move);
+    
+    m_animator.add(sequence);
+}
+
 
 double MainArea::radius() const
 {
@@ -108,8 +112,8 @@ void MainArea::start()
 
 QPointF MainArea::randomPoint() const
 {
-    double x = (double)rand() * (width() - radius() * 2) / RAND_MAX + radius();
-    double y = (double)rand() * (height() - radius() * 2) / RAND_MAX + radius();
+    double x = (double)rand() * (m_size - radius() * 2) / RAND_MAX + radius();
+    double y = (double)rand() * (m_size - radius() * 2) / RAND_MAX + radius();
     return QPointF(x, y);
 }
 
@@ -207,14 +211,14 @@ void MainArea::tick()
         if (pos.x() <= radius()) {
             vel.setX(fabs(vel.x()));
         }
-        if (pos.x() >= width() - radius()) {
+        if (pos.x() >= m_size - radius()) {
             vel.setX(-fabs(vel.x()));
         }
         if (pos.y() <= radius()) {
             vel.setY(fabs(vel.y()));
         }
         if (!m_death) {
-            if (pos.y() >= height() - radius()) {
+            if (pos.y() >= m_size - radius()) {
                 vel.setY(-fabs(vel.y()));        
             }
         }
@@ -303,9 +307,9 @@ void MainArea::mouseMoveEvent(QMouseEvent* e)
         
         QPoint pos = e->pos();
         if (pos.x() <= radius()) pos.setX((int) radius());
-        if (pos.x() >= width() - radius()) pos.setX(width() - (int)radius());
+        if (pos.x() >= m_size - radius()) pos.setX(m_size - (int)radius());
         if (pos.y() <= radius()) pos.setY((int) radius());
-        if (pos.y() >= height() - radius()) pos.setY(height() - (int) radius());
+        if (pos.y() >= m_size - radius()) pos.setY(m_size - (int) radius());
         
         m_man->setPosition(pos);
         

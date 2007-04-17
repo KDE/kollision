@@ -11,10 +11,11 @@
 #define SPRITE_H
 
 #include <QPointF>
+#include "spritefwd.h"
 
 class KGameCanvasAbstract;
 
-class Sprite
+class Sprite : public KShared
 {
 public:
     virtual ~Sprite() { }

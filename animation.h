@@ -13,8 +13,7 @@
 #include <QPointF>
 #include <QList>
 #include <QQueue>
-
-class Sprite;
+#include "spritefwd.h"
 
 class Animation
 {
@@ -27,7 +26,8 @@ public:
 };
 
 class PauseAnimation : public Animation
-{    int m_time;
+{    
+    int m_time;
     int m_start;
 public:
     PauseAnimation(int time);
@@ -39,13 +39,13 @@ public:
 
 class FadeAnimation : public Animation
 {
-    Sprite* m_sprite;
+    SpritePtr m_sprite;
     double m_from;
     double m_to;
     int m_time;
     int m_start;
 public:
-    FadeAnimation(Sprite* sprite, double from, double to, int time);
+    FadeAnimation(const SpritePtr& sprite, double from, double to, int time);
     
     virtual void start(int t);
     virtual bool step(int t);
@@ -54,13 +54,14 @@ public:
 
 class MovementAnimation : public Animation
 {
-    Sprite* m_sprite;
+    SpritePtr m_sprite;
     QPointF m_from;
     QPointF m_velocity;
     int m_time;
     int m_last;
 public:
-    MovementAnimation(Sprite* sprite, const QPointF& from, const QPointF& velocity, int time);
+    MovementAnimation(const SpritePtr& sprite, const QPointF& from, 
+                      const QPointF& velocity, int time);
     
     virtual void start(int t);
     virtual bool step(int t);

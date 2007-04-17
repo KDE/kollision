@@ -29,6 +29,7 @@ Q_OBJECT
     QTime m_game_time;
     QTime m_event_time;
     
+    int m_size;
     Renderer* m_renderer;
     KGameCanvasPixmap* m_background;
     Animator m_animator;
@@ -50,7 +51,6 @@ Q_OBJECT
     void writeMessage(const QString& text);
 protected:
     virtual void mouseMoveEvent(QMouseEvent* event);
-    virtual void resizeEvent(QResizeEvent* event);
 public:
     MainArea(QWidget* parent = 0);
     
