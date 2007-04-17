@@ -13,20 +13,25 @@
 #include <QPointF>
 #include <QList>
 #include <QQueue>
+#include <QObject>
 #include "spritefwd.h"
 
-class Animation
+class Animation : public QObject
 {
+Q_OBJECT
 public:
     virtual ~Animation();
     
     virtual void start(int t) = 0;
     virtual bool step(int t) = 0;
     virtual void stop() = 0;
+signals:
+    void over();
 };
 
 class PauseAnimation : public Animation
-{    
+{
+Q_OBJECT
     int m_time;
     int m_start;
 public:
@@ -39,6 +44,7 @@ public:
 
 class FadeAnimation : public Animation
 {
+Q_OBJECT
     SpritePtr m_sprite;
     double m_from;
     double m_to;
@@ -54,6 +60,7 @@ public:
 
 class MovementAnimation : public Animation
 {
+Q_OBJECT
     SpritePtr m_sprite;
     QPointF m_from;
     QPointF m_velocity;
@@ -70,6 +77,7 @@ public:
 
 class AnimationGroup : public Animation
 {
+Q_OBJECT
     typedef QList<Animation*> List;
     List m_animations;
     int m_last;
@@ -85,6 +93,7 @@ public:
 
 class AnimationSequence : public Animation
 {
+Q_OBJECT
     QQueue<Animation*> m_animations;
     int m_last;
 public:

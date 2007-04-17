@@ -10,8 +10,7 @@
 #include "animator.h"
 #include <kdebug.h>
 
-Animator::Animator(QObject* parent)
-: QObject(parent)
+Animator::Animator()
 {
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
 }

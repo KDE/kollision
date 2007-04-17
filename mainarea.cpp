@@ -65,7 +65,7 @@ MainArea::MainArea(QWidget* parent)
     m_background->setPixmap(QPixmap::fromImage(tmp));
 }
 
-void MainArea::writeMessage(const QString& text)
+Animation* MainArea::writeMessage(const QString& text)
 {
     Message* message = new Message(this, text, m_msg_font);
     message->setPosition(QPointF(m_size, m_size) / 2.0);
@@ -87,6 +87,39 @@ void MainArea::writeMessage(const QString& text)
     sequence->add(move);
     
     m_animator.add(sequence);
+    
+    return sequence;
+}
+
+Animation* MainArea::writeText(const QStringList& lines)
+{
+    const int step = 45;
+    QPointF pos(m_size / 2.0, (m_size - step * lines.size()) / 2.0);
+    
+    AnimationGroup* in = new AnimationGroup;
+    AnimationGroup* out = new AnimationGroup;
+    for (int i = 0; i < lines.size(); i++) {
+        Message* message = new Message(this, lines[i], m_msg_font);
+        message->setPosition(pos);
+        message->show();
+        message->setOpacityF(0.0);
+        
+        SpritePtr sprite(message);
+        
+        in->add(new FadeAnimation(sprite, 0.0, 1.0, 1000));
+        out->add(new FadeAnimation(sprite, 1.0, 0.0, 1000));
+        
+        pos.ry() += step;
+    }
+    
+    AnimationSequence* sequence = new AnimationSequence;
+    sequence->add(in);
+    sequence->add(new PauseAnimation(3000));
+    sequence->add(out);
+    
+    m_animator.add(sequence);
+    
+    return sequence;
 }
 
 
@@ -280,14 +313,21 @@ void MainArea::tick()
     
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
         m_timer.stop();
-        KMessageBox::information(this, 
-            i18n("Game over. Time = %1", m_game_time.restart()));
-        
-        m_death = false;
+        QStringList text;
+        text << i18n("GAME OVER")
+             << i18n("You survived for %1 seconds", m_game_time.restart() / 1000);
+        Animation* a = writeText(text);
+        connect(a, SIGNAL(over()), this, SLOT(reset()));
     }
     
     m_time.restart();
 }
+
+void MainArea::reset()
+{
+    m_death = false;
+}
+
 
 void MainArea::mouseMoveEvent(QMouseEvent* e)
 {

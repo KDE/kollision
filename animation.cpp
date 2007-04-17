@@ -13,6 +13,7 @@
 
 Animation::~Animation()
 {
+    emit over();
 }
 
 PauseAnimation::PauseAnimation(int time)
@@ -185,4 +186,6 @@ void AnimationSequence::stop()
         delete m_animations.dequeue();
     }
 }
+
+#include "animation.moc"
 

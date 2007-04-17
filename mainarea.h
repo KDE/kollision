@@ -19,6 +19,7 @@
 class Renderer;
 class Ball;
 class Message;
+class Animation;
 
 class MainArea : public KGameCanvasWidget
 {
@@ -48,7 +49,9 @@ Q_OBJECT
     Ball* addBall(const QString& id);
     bool collide(const QPointF& a, const QPointF& b, 
                 double diam, struct Collision& collision);
-    void writeMessage(const QString& text);
+                
+    Animation* writeMessage(const QString& text);
+    Animation* writeText(const QStringList& lines);
 protected:
     virtual void mouseMoveEvent(QMouseEvent* event);
 public:
@@ -58,6 +61,8 @@ public:
     
 public slots:
     void tick();
+private slots:
+    void reset();
 };
 
 #endif // MAINAREA_H

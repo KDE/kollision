@@ -14,13 +14,13 @@
 #include <QTimer>
 #include <QTime>
 
-class Animator : public QObject, public AnimationGroup
+class Animator : public AnimationGroup
 {
 Q_OBJECT
     QTimer m_timer;
     QTime m_time;
 public:
-    Animator(QObject* parent = 0);
+    Animator();
     
     void startTimer();
     void stopTimer();
