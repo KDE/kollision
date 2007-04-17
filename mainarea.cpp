@@ -63,6 +63,8 @@ MainArea::MainArea(QWidget* parent)
         p.fillRect(QRect(QPoint(0, 0), size()), grad);
     }
     m_background->setPixmap(QPixmap::fromImage(tmp));
+    
+    setCursor(Qt::BlankCursor);
 }
 
 Animation* MainArea::writeMessage(const QString& text)
