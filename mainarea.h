@@ -25,9 +25,12 @@ class MainArea : public KGameCanvasWidget
 {
 Q_OBJECT
     QTimer m_timer;
-    QTime m_time;
+        
     QTime m_global_time;
-    QTime m_game_time;
+    
+    int m_last_time;
+    QTime m_time;
+    
     QTime m_event_time;
     
     int m_size;

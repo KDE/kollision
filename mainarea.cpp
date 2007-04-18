@@ -139,7 +139,7 @@ void MainArea::start()
     
     m_time.restart();
     m_global_time.restart();
-    m_game_time.restart();
+    m_last_time = 0;
     m_timer.start(0);
     
     writeMessage(i18n("4 balls"));
@@ -194,12 +194,15 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
 
 void MainArea::tick()
 {
+    int t = m_time.elapsed() - m_last_time;
+    m_last_time = m_time.elapsed();
+    
     Collision collision;
     
     // handle fade in
     for (QList<Ball*>::iterator it = m_fading.begin();
         it != m_fading.end(); ) {
-        (*it)->setOpacityF((*it)->opacityF() + m_time.elapsed() * 0.0005);
+        (*it)->setOpacityF((*it)->opacityF() + t * 0.0005);
         if ((*it)->opacityF() >= 1.0) {
             m_balls.push_back(*it);
             it = m_fading.erase(it);
@@ -236,12 +239,12 @@ void MainArea::tick()
     foreach (Ball* ball, m_balls) {
         // position
         ball->setPosition(ball->position() +
-            ball->velocity() * m_time.elapsed());
+            ball->velocity() * t);
             
         // velocity
         if (m_death) {
             ball->setVelocity(ball->velocity() +
-                QPointF(0, 0.001) * m_time.elapsed());
+                QPointF(0, 0.001) * t);
         }
     }
     
@@ -334,12 +337,10 @@ void MainArea::tick()
         m_timer.stop();
         QStringList text;
         text << i18n("GAME OVER")
-             << i18n("You survived for %1 seconds", m_game_time.restart() / 1000);
+             << i18n("You survived for %1 seconds", m_time.restart() / 1000);
         Animation* a = writeText(text);
         connect(a, SIGNAL(over()), this, SLOT(reset()));
     }
-    
-    m_time.restart();
 }
 
 void MainArea::reset()
