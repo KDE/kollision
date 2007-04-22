@@ -63,8 +63,6 @@ MainArea::MainArea(QWidget* parent)
         p.fillRect(QRect(QPoint(0, 0), size()), grad);
     }
     m_background->setPixmap(QPixmap::fromImage(tmp));
-    
-    setCursor(Qt::BlankCursor);
 }
 
 Animation* MainArea::writeMessage(const QString& text)
@@ -176,7 +174,7 @@ Ball* MainArea::addBall(const QString& id)
 
     Ball* ball = new Ball(this, m_renderer, id);
     ball->setPosition(pos);
-    ball->setVelocity(randomDirection(0.38));
+    ball->setVelocity(randomDirection(0.3));
     ball->setOpacityF(0.0);
     ball->show();
     m_fading.push_back(ball);
@@ -223,6 +221,7 @@ void MainArea::tick()
             m_man->setVelocity(QPointF(0, 0));
             m_balls.push_back(m_man);
             m_man = 0;
+            setCursor(QCursor());            
             
             foreach (Ball* fball, m_fading) {
                 fball->setOpacityF(1.0);
@@ -360,6 +359,7 @@ void MainArea::mouseMoveEvent(QMouseEvent* e)
             
             m_event_time.restart();
             start();
+            setCursor(Qt::BlankCursor);
         }
         
         QPoint pos = e->pos();
