@@ -11,6 +11,7 @@
 #include "renderer.h"
 #include "ball.h"
 #include "message.h"
+#include "button.h"
 
 #include <kdebug.h>
 #include <klocalizedstring.h>

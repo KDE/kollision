@@ -5,6 +5,7 @@ set(kollision_SRCS
     animation.cpp
     animator.cpp
     ball.cpp
+    button.cpp
     main.cpp
     mainarea.cpp
     message.cpp      

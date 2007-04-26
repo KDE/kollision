@@ -75,6 +75,23 @@ public:
     virtual void stop();
 };
 
+class AdjustAnimation : public Animation
+{
+Q_OBJECT
+    SpritePtr m_sprite;
+    QPointF m_from;
+    QPointF m_velocity;
+    int m_time;
+    int m_start;
+public:
+    AdjustAnimation(const SpritePtr& sprite, const QPointF& from, 
+                    const QPointF& velocity, int time);
+    
+    virtual void start(int t);
+    virtual bool step(int t);
+    virtual void stop();
+};
+
 class AnimationGroup : public Animation
 {
 Q_OBJECT
