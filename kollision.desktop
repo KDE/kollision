@@ -6,6 +6,7 @@ Exec=kollision
 Icon=kollision
 Type=Application
 Comment=A simple ball dodging game
+Comment[de]=Ein einfaches Spiel bei dem man Bällen ausweichen muss
 Comment[it]= Un semplice gioco in cui schivare palle
 Comment[pt]=Um jogo simples de lançamento de bolas
 Comment[pt_BR]=Um jogo simples de lançamento de bolas
