@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=kollision
 Name[sv]=Kollision
+Name[xx]=xxkollisionxx
 Exec=kollision
 Icon=kollision
 Type=Application
@@ -14,5 +15,6 @@ Comment[nl]=Een eenvoudig balspel
 Comment[pt]=Um jogo simples de lançamento de bolas
 Comment[pt_BR]=Um jogo simples de lançamento de bolas
 Comment[sv]=Ett enkelt spel där man ska undvika bollar
+Comment[xx]=xxA simple ball dodging gamexx
 Terminal=false
 Categories=Game;
