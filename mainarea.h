@@ -27,12 +27,10 @@ class MainArea : public KGameCanvasWidget
 {
 Q_OBJECT
     QTimer m_timer;
-        
     QTime m_global_time;
-    
     int m_last_time;
+    int m_last_game_time;
     QTime m_time;
-    
     QTime m_event_time;
     
     int m_size;
@@ -78,10 +76,10 @@ public:
     
 public slots:
     void tick();
-private slots:
-    void reset();
 signals:
     void starting();
+    void changeBallNumber(int);
+    void changeGameTime(int);
 };
 
 #endif // MAINAREA_H

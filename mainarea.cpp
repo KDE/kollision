@@ -166,10 +166,12 @@ void MainArea::start()
     m_time.restart();
     m_global_time.restart();
     m_last_time = 0;
+    m_last_game_time = 0;
     m_timer.start(0);
     
     writeMessage(i18n("4 balls"));
     
+    emit changeGameTime(0);
     emit starting();
 }
 
@@ -209,6 +211,9 @@ Ball* MainArea::addBall(const QString& id)
     ball->show();
     m_fading.push_back(ball);
     
+    // update statusbar
+    emit changeBallNumber(m_balls.size() + m_fading.size());
+    
     return ball;
 }
 
@@ -231,6 +236,12 @@ void MainArea::tick()
 {
     int t = m_time.elapsed() - m_last_time;
     m_last_time = m_time.elapsed();
+
+    // compute game time && update statusbar
+    if (m_time.elapsed() / 1000 > m_last_game_time) {
+        m_last_game_time = m_time.elapsed() / 1000;
+        emit changeGameTime(m_last_game_time);
+    }
     
     Collision collision;
     
@@ -376,18 +387,13 @@ void MainArea::tick()
         m_timer.stop();
         QStringList text;
         text << i18n("GAME OVER")
-             << i18n("You survived for %1 seconds", m_time.restart() / 1000)
+             << i18np("You survived for %1 second", "You survived for %1 seconds", m_time.restart() / 1000)
              << i18n("Click to restart");
         Animation* a = writeText(text);
         connect(this, SIGNAL(starting()), a, SLOT(stop()));
     }
 }
 
-void MainArea::reset()
-{
-    m_death = false;
-    m_game_over = false;
-}
 
 void MainArea::setManPosition(const QPoint& p)
 {

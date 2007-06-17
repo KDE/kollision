@@ -12,15 +12,21 @@
 
 #include <kxmlguiwindow.h>
 
+class QLabel;
+
 class MainWindow : public KXmlGuiWindow
 {
 Q_OBJECT
+    QLabel* m_balls_label;
+    QLabel* m_time_label;
 public:
     MainWindow();
 protected:
     void setupActions();
 protected slots:
     void optionsPreferences();
+    void setGameTime(int time);
+    void setBallNumber(int number);
 };
 
 

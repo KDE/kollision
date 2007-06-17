@@ -10,18 +10,36 @@
 #include "mainwindow.h"
 
 #include <QLayout>
+#include <QLabel>
+
 #include <kdebug.h>
+#include <klocalizedstring.h>
+#include <kstatusbar.h>
 #include "mainarea.h"
 
 MainWindow::MainWindow()
 {
-    setCentralWidget(new MainArea(this));
+    MainArea* main = new MainArea(this);
+    setCentralWidget(main);
 
     setupActions();
     
     QLayout* l = layout();
     Q_ASSERT(l);
     l->setSizeConstraint(QLayout::SetFixedSize);
+
+    // setup status bar
+    KStatusBar* bar = statusBar();
+    Q_ASSERT(bar);
+    m_time_label = new QLabel("");
+    bar->addPermanentWidget(m_time_label);
+    
+    m_balls_label = new QLabel("");
+    bar->addWidget(m_balls_label);
+//     bar->setItemAlignment(STATUSBAR_BALLS, Qt::AlignLeft);
+    
+    connect(main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
+    connect(main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
 }
 
 void MainWindow::setupActions()
@@ -39,6 +57,8 @@ void MainWindow::setupActions()
     // Settings
 //     KStandardAction::preferences(this, SLOT(optionsPreferences()), actionCollection());
 
+
+
     setupGUI();
 }
 
@@ -47,6 +67,16 @@ void MainWindow::optionsPreferences()
     kDebug() << "preferences" << endl;
 }
 
+void MainWindow::setBallNumber(int number)
+{
+    m_balls_label->setText(i18n("Balls: %1", number));
+}
+
+void MainWindow::setGameTime(int time)
+{
+    m_time_label->setText(
+        time == 0 ? "" : i18np("Time: %1 second", "Time: %1 seconds", time));
+}
 
 #include "mainwindow.moc"
 
