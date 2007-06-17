@@ -1,3 +1,4 @@
+project(kollision)
 
 add_subdirectory(pictures)
 
