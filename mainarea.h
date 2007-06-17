@@ -20,6 +20,8 @@ class Renderer;
 class Ball;
 class Message;
 class Animation;
+namespace Phonon { class AudioPlayer; }
+struct Collision;
 
 class MainArea : public KGameCanvasWidget
 {
@@ -42,21 +44,33 @@ Q_OBJECT
     QList<Ball*> m_balls;
     QList<Ball*> m_fading;
     Ball* m_man;
-    QPointF m_last_man_pos;
+    
+    /// the blue ball is dead
     bool m_death;
     
-    double radius() const;    
+    /// the falling animation is over, we're waiting for a new game to start
+    bool m_game_over;
+    
+    QList<KSharedPtr<Message> > m_welcome_msg;
+    
+    Phonon::AudioPlayer* m_player;
+    
+    double radius() const;
     QPointF randomPoint() const;
     QPointF randomDirection(double val) const;
     
     Ball* addBall(const QString& id);
     bool collide(const QPointF& a, const QPointF& b, 
-                double diam, struct Collision& collision);
+                double diam, Collision& collision);
                 
     Animation* writeMessage(const QString& text);
     Animation* writeText(const QStringList& lines);
+    void displayMessages(const QList<KSharedPtr<Message> >& msgs);
+    void onCollision();
+    void setManPosition(const QPoint& p);
 protected:
     virtual void mouseMoveEvent(QMouseEvent* event);
+    virtual void mousePressEvent(QMouseEvent* event);
 public:
     MainArea(QWidget* parent = 0);
     
@@ -66,6 +80,8 @@ public slots:
     void tick();
 private slots:
     void reset();
+signals:
+    void starting();
 };
 
 #endif // MAINAREA_H

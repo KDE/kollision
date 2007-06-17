@@ -12,7 +12,7 @@
 #include <KLocale>
 #include <KCmdLineArgs>
 
-#include "mainarea.h"
+#include "mainwindow.h"
 
 static KCmdLineOptions options[] =
     {
@@ -35,9 +35,8 @@ int main(int argc, char *argv[])
     KCmdLineArgs::parsedArgs();
     KApplication app;
 
-    MainArea* area = new MainArea;
-    area->resize(500, 500);
-    area->show();
+    MainWindow* window = new MainWindow;
+    window->show();
     
     return app.exec();
 }

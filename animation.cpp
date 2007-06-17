@@ -39,6 +39,7 @@ FadeAnimation::FadeAnimation(const SpritePtr& sprite, double from, double to, in
 , m_from(from)
 , m_to(to)
 , m_time(time)
+, m_stopped(false)
 {
 }
 
@@ -50,19 +51,20 @@ void FadeAnimation::start(int t)
 
 bool FadeAnimation::step(int t)
 {
-//     kDebug() << "from = " << m_from << endl;
-//     kDebug() << "to = " << m_to << endl;
-//     kDebug() << "delta = " << t - m_start << endl;
-//     kDebug() << "time = " << m_time << endl;
-    double val = m_from + (m_to - m_from) * (t - m_start) / m_time;
-//     kDebug() << "val = " << val << endl;
-    m_sprite->setOpacityF(val);
-    return t - m_start >= m_time;
+    if (m_stopped) {
+        return true;
+    }
+    else {
+        double val = m_from + (m_to - m_from) * (t - m_start) / m_time;
+        m_sprite->setOpacityF(val);
+        return t - m_start >= m_time;
+    }
 }
 
 void FadeAnimation::stop()
 {
     m_sprite->setOpacityF(m_to);
+    m_stopped = true;
 }
 
 

@@ -5,11 +5,11 @@ set(kollision_SRCS
     animation.cpp
     animator.cpp
     ball.cpp
-    button.cpp
     main.cpp
     mainarea.cpp
+    mainwindow.cpp
     message.cpp      
-    renderer.cpp     
+    renderer.cpp
 )
 
 kde4_automoc(${kollision_SRCS})

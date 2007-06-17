@@ -11,11 +11,14 @@
 #include "renderer.h"
 #include "ball.h"
 #include "message.h"
-#include "button.h"
 
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 #include <kdebug.h>
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
+#include <kstandarddirs.h>
+#include <phonon/audioplayer.h>
 #include <QMouseEvent>
 
 // for rand
@@ -34,6 +37,7 @@ MainArea::MainArea(QWidget* parent)
 : KGameCanvasWidget(parent)
 , m_man(0)
 , m_death(false)
+, m_game_over(false)
 {
     m_background = new KGameCanvasPixmap(this);
     m_background->show();
@@ -50,8 +54,7 @@ MainArea::MainArea(QWidget* parent)
     
     setMouseTracking(true);
     m_size = 500;
-    setMinimumSize(QSize(m_size, m_size));
-    setMaximumSize(QSize(m_size, m_size));
+    setFixedSize(QSize(m_size, m_size));
     
     
     QImage tmp(size(), QImage::Format_ARGB32_Premultiplied);
@@ -64,6 +67,22 @@ MainArea::MainArea(QWidget* parent)
         p.fillRect(QRect(QPoint(0, 0), size()), grad);
     }
     m_background->setPixmap(QPixmap::fromImage(tmp));
+    
+    m_welcome_msg.append(
+        KSharedPtr<Message>(new Message(this, i18n("Welcome to Kollision"), m_msg_font)));
+    m_welcome_msg.append(
+        KSharedPtr<Message>(new Message(this, i18n("Click to start a game"), m_msg_font)));
+    displayMessages(m_welcome_msg);
+    
+    // setup audio player
+    KConfigGroup config(KGlobal::config(), "");
+    if (config.readEntry("sounds", false)) {
+        m_player = new Phonon::AudioPlayer(Phonon::GameCategory);
+        m_player->load(KStandardDirs::locate("appdata", "sounds/") + "/collision.wav");
+    }
+    else {
+        m_player = 0;
+    }
 }
 
 Animation* MainArea::writeMessage(const QString& text)
@@ -94,35 +113,38 @@ Animation* MainArea::writeMessage(const QString& text)
 
 Animation* MainArea::writeText(const QStringList& lines)
 {
-    const int step = 45;
-    QPointF pos(m_size / 2.0, (m_size - step * lines.size()) / 2.0);
-    
-    AnimationGroup* in = new AnimationGroup;
-    AnimationGroup* out = new AnimationGroup;
-    for (int i = 0; i < lines.size(); i++) {
-        Message* message = new Message(this, lines[i], m_msg_font);
-        message->setPosition(pos);
-        message->show();
+    m_welcome_msg.clear();
+    foreach (QString text, lines) {
+        m_welcome_msg.append(
+            KSharedPtr<Message>(new Message(this, text, m_msg_font)));
+    }
+    displayMessages(m_welcome_msg);
+        
+    AnimationGroup* anim = new AnimationGroup;
+    foreach (KSharedPtr<Message> message, m_welcome_msg) {
         message->setOpacityF(0.0);
-        
-        SpritePtr sprite(message);
-        
-        in->add(new FadeAnimation(sprite, 0.0, 1.0, 1000));
-        out->add(new FadeAnimation(sprite, 1.0, 0.0, 1000));
+        anim->add(new FadeAnimation(
+            SpritePtr::staticCast(message), 0.0, 1.0, 1000));
+    }
+    
+    m_animator.add(anim);
+    
+    return anim;
+}
+
+void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
+{
+    const int step = 45;
+    QPointF pos(m_size / 2.0, (m_size - step * messages.size()) / 2.0);
+    
+    for (int i = 0; i < messages.size(); i++) {
+        KSharedPtr<Message> msg = messages[i];
+        msg->setPosition(pos);
+        msg->show();
         
         pos.ry() += step;
     }
-    
-    AnimationSequence* sequence = new AnimationSequence;
-    sequence->add(in);
-    sequence->add(new PauseAnimation(3000));
-    sequence->add(out);
-    
-    m_animator.add(sequence);
-    
-    return sequence;
 }
-
 
 double MainArea::radius() const
 {
@@ -131,6 +153,11 @@ double MainArea::radius() const
 
 void MainArea::start()
 {
+    m_death = false;
+    m_game_over = false;
+
+    m_welcome_msg.clear();
+
     addBall("red_ball");
     addBall("red_ball");
     addBall("red_ball");
@@ -142,6 +169,8 @@ void MainArea::start()
     m_timer.start(0);
     
     writeMessage(i18n("4 balls"));
+    
+    emit starting();
 }
 
 QPointF MainArea::randomPoint() const
@@ -191,6 +220,13 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
     return collision.square_distance <= diam * diam;
 }
 
+void MainArea::onCollision()
+{
+    if (m_player) {
+        m_player->play();
+    }
+}
+
 void MainArea::tick()
 {
     int t = m_time.elapsed() - m_last_time;
@@ -217,6 +253,7 @@ void MainArea::tick()
                 ball->position(),
                 m_man->position(), 
                 radius() * 2, collision)) {
+            onCollision();
             m_death = true;
             
             m_man->setVelocity(QPointF(0, 0));
@@ -281,6 +318,7 @@ void MainArea::tick()
             QPointF other_pos = other->position();
             
             if (collide(pos, other_pos, radius() * 2, collision)) {
+                onCollision();
                 QPointF other_vel = other->velocity();
                 
                 // compute the parallel component of the
@@ -334,59 +372,57 @@ void MainArea::tick()
     }
     
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
+        m_game_over = true;
         m_timer.stop();
         QStringList text;
         text << i18n("GAME OVER")
-             << i18n("You survived for %1 seconds", m_time.restart() / 1000);
+             << i18n("You survived for %1 seconds", m_time.restart() / 1000)
+             << i18n("Click to restart");
         Animation* a = writeText(text);
-        connect(a, SIGNAL(over()), this, SLOT(reset()));
+        connect(this, SIGNAL(starting()), a, SLOT(stop()));
     }
 }
 
 void MainArea::reset()
 {
     m_death = false;
+    m_game_over = false;
 }
 
-
-void MainArea::mouseMoveEvent(QMouseEvent* e)
+void MainArea::setManPosition(const QPoint& p)
 {
-    if (!m_death) {
-        bool new_man = false;
+    Q_ASSERT(m_man);
+    
+    QPoint pos = p;
+    
+    if (pos.x() <= radius()) pos.setX((int) radius());
+    if (pos.x() >= m_size - radius()) pos.setX(m_size - (int)radius());
+    if (pos.y() <= radius()) pos.setY((int) radius());
+    if (pos.y() >= m_size - radius()) pos.setY(m_size - (int) radius());
+    
+    m_man->setPosition(pos);
+}
+
+void MainArea::mousePressEvent(QMouseEvent* e)
+{
+    if (!m_death || m_game_over) {
         if (!m_man) {
             m_man = new Ball(this, m_renderer, "blue_ball");
+            setManPosition(e->pos());            
             m_man->show();
-            new_man = true;
             
             m_event_time.restart();
             start();
             setCursor(Qt::BlankCursor);
         }
-        
-        QPoint pos = e->pos();
-        if (pos.x() <= radius()) pos.setX((int) radius());
-        if (pos.x() >= m_size - radius()) pos.setX(m_size - (int)radius());
-        if (pos.y() <= radius()) pos.setY((int) radius());
-        if (pos.y() >= m_size - radius()) pos.setY(m_size - (int) radius());
-        
-        m_man->setPosition(pos);
-        
-        if (new_man) {
-            m_man->setVelocity(QPointF(0, 0));
-            m_last_man_pos = m_man->position();
-        }
-        else {
-            int delta_t = m_event_time.elapsed();
-            if (delta_t > 5) {
-                m_man->setVelocity((m_man->position() - m_last_man_pos) / delta_t);   
-                m_last_man_pos = m_man->position();             
-                m_event_time.restart();
-            }
-
-        }
-        
     }
+}
 
+void MainArea::mouseMoveEvent(QMouseEvent* e)
+{
+    if (!m_death && m_man) {
+        setManPosition(e->pos());
+    }
 }
 
 

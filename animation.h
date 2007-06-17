@@ -24,6 +24,7 @@ public:
     
     virtual void start(int t) = 0;
     virtual bool step(int t) = 0;
+public slots:
     virtual void stop() = 0;
 signals:
     void over();
@@ -50,6 +51,8 @@ Q_OBJECT
     double m_to;
     int m_time;
     int m_start;
+    
+    bool m_stopped;
 public:
     FadeAnimation(const SpritePtr& sprite, double from, double to, int time);
     
