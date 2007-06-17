@@ -1,0 +1,4 @@
+File=kollision.kcfg
+ClassName=KollisionConfig
+Singleton=true
+Mutators=true

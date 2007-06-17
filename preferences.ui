@@ -1,0 +1,57 @@
+<ui version="4.0" >
+ <class>Preferences</class>
+ <widget class="QWidget" name="Preferences" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>155</width>
+    <height>70</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QCheckBox" name="kcfg_EnableSounds" >
+     <property name="text" >
+      <string>Enable sounds</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label_2" >
+       <property name="text" >
+        <string>Difficulty</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="kcfg_GameDifficulty" >
+       <item>
+        <property name="text" >
+         <string>Easy</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Medium</string>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Hard</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

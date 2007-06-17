@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<gui name="kollision" version="1">
+	<MenuBar>
+		<Menu name="game"><text>&amp;Game</text>
+			<Action name="game_abort" append="new_merge" />
+		</Menu>
+	</MenuBar>
+    
+    
+    <State name="playing">
+        <enable>
+            <Action name="game_abort"/>
+        </enable>
+    </State>
+</gui>

@@ -33,6 +33,9 @@ Q_OBJECT
     QTime m_time;
     QTime m_event_time;
     
+    /// time interval between two balls being added
+    int m_ball_timeout;
+    
     int m_size;
     Renderer* m_renderer;
     KGameCanvasPixmap* m_background;
@@ -76,10 +79,13 @@ public:
     
 public slots:
     void tick();
+    void enableSounds();
+    void abort();
 signals:
     void starting();
     void changeBallNumber(int);
     void changeGameTime(int);
+    void playing(bool);
 };
 
 #endif // MAINAREA_H

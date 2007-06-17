@@ -11,9 +11,8 @@
 #include "renderer.h"
 #include "ball.h"
 #include "message.h"
+#include "kollisionconfig.h"
 
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
 #include <kdebug.h>
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
@@ -75,12 +74,20 @@ MainArea::MainArea(QWidget* parent)
     displayMessages(m_welcome_msg);
     
     // setup audio player
-    KConfigGroup config(KGlobal::config(), "");
-    if (config.readEntry("sounds", false)) {
-        m_player = new Phonon::AudioPlayer(Phonon::GameCategory);
-        m_player->load(KStandardDirs::locate("appdata", "sounds/") + "/collision.wav");
+    m_player = 0;
+    enableSounds();
+}
+
+void MainArea::enableSounds()
+{
+    if (KollisionConfig::enableSounds()) {
+        if (!m_player) {
+            m_player = new Phonon::AudioPlayer(Phonon::GameCategory);
+            m_player->load(KStandardDirs::locate("appdata", "sounds/") + "/collision.wav");            
+        }
     }
     else {
+        delete m_player;
         m_player = 0;
     }
 }
@@ -156,6 +163,19 @@ void MainArea::start()
     m_death = false;
     m_game_over = false;
 
+    switch (KollisionConfig::gameDifficulty()) {
+    case 0:
+        m_ball_timeout = 30;
+        break;
+    case 1:
+        m_ball_timeout = 25;
+        break;
+    case 2:
+    default:
+        m_ball_timeout = 20;
+        break;
+    }
+
     m_welcome_msg.clear();
 
     addBall("red_ball");
@@ -173,6 +193,7 @@ void MainArea::start()
     
     emit changeGameTime(0);
     emit starting();
+    emit playing(true);
 }
 
 QPointF MainArea::randomPoint() const
@@ -206,7 +227,24 @@ Ball* MainArea::addBall(const QString& id)
 
     Ball* ball = new Ball(this, m_renderer, id);
     ball->setPosition(pos);
-    ball->setVelocity(randomDirection(0.3));
+    
+    // speed depends of game difficulty
+    double speed;
+    switch (KollisionConfig::gameDifficulty())
+    {
+    case 0:
+        speed = 0.2;
+        break;
+    case 1:
+        speed = 0.28;
+        break;
+    case 2:
+    default:
+        speed = 0.4;
+        break;
+    }
+    ball->setVelocity(randomDirection(speed));
+    
     ball->setOpacityF(0.0);
     ball->show();
     m_fading.push_back(ball);
@@ -229,6 +267,26 @@ void MainArea::onCollision()
 {
     if (m_player) {
         m_player->play();
+    }
+}
+
+void MainArea::abort()
+{
+    if (m_man) {
+        m_death = true;
+        emit playing(false);
+        
+        m_man->setVelocity(QPointF(0, 0));
+        m_balls.push_back(m_man);
+        m_man = 0;
+        setCursor(QCursor());            
+        
+        foreach (Ball* fball, m_fading) {
+            fball->setOpacityF(1.0);
+            fball->setVelocity(QPointF(0.0, 0.0));
+            m_balls.push_back(fball);
+        }
+        m_fading.clear();
     }
 }
 
@@ -265,20 +323,7 @@ void MainArea::tick()
                 m_man->position(), 
                 radius() * 2, collision)) {
             onCollision();
-            m_death = true;
-            
-            m_man->setVelocity(QPointF(0, 0));
-            m_balls.push_back(m_man);
-            m_man = 0;
-            setCursor(QCursor());            
-            
-            foreach (Ball* fball, m_fading) {
-                fball->setOpacityF(1.0);
-                fball->setVelocity(QPointF(0.0, 0.0));
-                m_balls.push_back(fball);
-            }
-            m_fading.clear();
-            
+            abort();            
             break;
         }
     }
@@ -375,7 +420,7 @@ void MainArea::tick()
         }
     }
     
-    if (!m_death && m_global_time.elapsed() >= 20 * 1000) {
+    if (!m_death && m_global_time.elapsed() >= m_ball_timeout * 1000) {
         m_global_time.restart();
         
         addBall("red_ball");

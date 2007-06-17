@@ -14,8 +14,13 @@
 
 #include <kdebug.h>
 #include <klocalizedstring.h>
+#include <kstandardgameaction.h>
+#include <kstandardaction.h>
+#include <kactioncollection.h>
+#include <kconfigdialog.h>
 #include <kstatusbar.h>
 #include "mainarea.h"
+#include "kollisionconfig.h"
 
 MainWindow::MainWindow()
 {
@@ -40,31 +45,46 @@ MainWindow::MainWindow()
     
     connect(main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
     connect(main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
+    
+    setPlayingState(false);
+    connect(main, SIGNAL(playing(bool)), this, SLOT(setPlayingState(bool)));
 }
 
 void MainWindow::setupActions()
 {
     // Game
-//     KStandardGameAction::gameNew(m_main, SLOT(newGame()), actionCollection());
+    QAction* abort = actionCollection()->addAction("game_abort");
+    abort->setText(i18n("Abort game"));
+    connect(abort, SIGNAL(triggered()), centralWidget(), SLOT(abort()));
 //     KStandardGameAction::demo(m_main, SLOT(newSimulation()), actionCollection());
 //     KStandardGameAction::restart(m_main, SLOT(restart()), actionCollection());
 //     
 //     KStandardGameAction::highscores(m_main, SLOT(highscores()), actionCollection());
-//     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-
-    // Move
-
-    // Settings
-//     KStandardAction::preferences(this, SLOT(optionsPreferences()), actionCollection());
-
-
+    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+    
+    KStandardAction::preferences(this, SLOT(optionsPreferences()), actionCollection());
 
     setupGUI();
 }
 
+void MainWindow::setPlayingState(bool playing) {
+    stateChanged("playing", playing ? KXMLGUIClient::StateNoReverse: KXMLGUIClient::StateReverse);
+}
+
 void MainWindow::optionsPreferences()
 {
-    kDebug() << "preferences" << endl;
+    if (KConfigDialog::showDialog("preferences")) {
+        return;
+    }
+    
+    KConfigDialog* dialog = new KConfigDialog(this, "preferences", KollisionConfig::self());
+    QWidget* mainPage = new QWidget(dialog);
+    m_pref_ui.setupUi(mainPage);
+    dialog->addPage(mainPage, i18n("Main page"), "main_page");
+    connect(dialog, SIGNAL(settingsChanged(const QString&)),
+            centralWidget(), SLOT(enableSounds()));
+
+    dialog->show();
 }
 
 void MainWindow::setBallNumber(int number)

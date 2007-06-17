@@ -11,6 +11,7 @@
 #define MAINWINDOW_H
 
 #include <kxmlguiwindow.h>
+#include "ui_preferences.h"
 
 class QLabel;
 
@@ -19,6 +20,7 @@ class MainWindow : public KXmlGuiWindow
 Q_OBJECT
     QLabel* m_balls_label;
     QLabel* m_time_label;
+    Ui_Preferences m_pref_ui;
 public:
     MainWindow();
 protected:
@@ -27,6 +29,7 @@ protected slots:
     void optionsPreferences();
     void setGameTime(int time);
     void setBallNumber(int number);
+    void setPlayingState(bool);
 };
 
 
