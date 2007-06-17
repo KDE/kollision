@@ -83,9 +83,9 @@ public slots:
     void abort();
 signals:
     void starting();
+    void gameOver(int);
     void changeBallNumber(int);
     void changeGameTime(int);
-    void playing(bool);
 };
 
 #endif // MAINAREA_H

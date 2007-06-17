@@ -193,7 +193,6 @@ void MainArea::start()
     
     emit changeGameTime(0);
     emit starting();
-    emit playing(true);
 }
 
 QPointF MainArea::randomPoint() const
@@ -274,7 +273,6 @@ void MainArea::abort()
 {
     if (m_man) {
         m_death = true;
-        emit playing(false);
         
         m_man->setVelocity(QPointF(0, 0));
         m_balls.push_back(m_man);
@@ -430,10 +428,12 @@ void MainArea::tick()
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
         m_game_over = true;
         m_timer.stop();
+        int time = m_time.restart() / 1000;
         QStringList text;
         text << i18n("GAME OVER")
-             << i18np("You survived for %1 second", "You survived for %1 seconds", m_time.restart() / 1000)
+             << i18np("You survived for %1 second", "You survived for %1 seconds", time)
              << i18n("Click to restart");
+        emit gameOver(time);
         Animation* a = writeText(text);
         connect(this, SIGNAL(starting()), a, SLOT(stop()));
     }

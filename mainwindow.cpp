@@ -18,9 +18,12 @@
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <kconfigdialog.h>
+#include <kscoredialog.h>
 #include <kstatusbar.h>
 #include "mainarea.h"
 #include "kollisionconfig.h"
+
+QString difficulty(int value);
 
 MainWindow::MainWindow()
 {
@@ -46,8 +49,9 @@ MainWindow::MainWindow()
     connect(main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
     connect(main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
     
-    setPlayingState(false);
-    connect(main, SIGNAL(playing(bool)), this, SLOT(setPlayingState(bool)));
+    stateChanged("playing", KXMLGUIClient::StateReverse);
+    connect(main, SIGNAL(starting()), this, SLOT(newGame()));
+    connect(main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
 }
 
 void MainWindow::setupActions()
@@ -59,7 +63,7 @@ void MainWindow::setupActions()
 //     KStandardGameAction::demo(m_main, SLOT(newSimulation()), actionCollection());
 //     KStandardGameAction::restart(m_main, SLOT(restart()), actionCollection());
 //     
-//     KStandardGameAction::highscores(m_main, SLOT(highscores()), actionCollection());
+    KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
     
     KStandardAction::preferences(this, SLOT(optionsPreferences()), actionCollection());
@@ -67,8 +71,33 @@ void MainWindow::setupActions()
     setupGUI();
 }
 
-void MainWindow::setPlayingState(bool playing) {
-    stateChanged("playing", playing ? KXMLGUIClient::StateNoReverse: KXMLGUIClient::StateReverse);
+void MainWindow::newGame()
+{
+    stateChanged("playing");
+}
+
+void MainWindow::gameOver(int time)
+{
+    stateChanged("playing", KXMLGUIClient::StateReverse);
+    
+    KScoreDialog ksdialog(KScoreDialog::Name, this);
+    ksdialog.setConfigGroup(difficulty(KollisionConfig::gameDifficulty()));
+    KScoreDialog::FieldInfo scoreInfo;
+    kDebug() << "time = " << time << endl;
+    scoreInfo[KScoreDialog::Score].setNum(time);
+    if (ksdialog.addScore(scoreInfo, KScoreDialog::AskName)) {
+        ksdialog.exec();
+    }
+    else {
+        kDebug() << "ksdialog returned false" << endl;
+    }
+}
+
+void MainWindow::highscores()
+{
+    KScoreDialog ksdialog(KScoreDialog::Name | KScoreDialog::Time, this);
+    ksdialog.setConfigGroup(difficulty(KollisionConfig::gameDifficulty()));
+    ksdialog.exec();
 }
 
 void MainWindow::optionsPreferences()
@@ -96,6 +125,22 @@ void MainWindow::setGameTime(int time)
 {
     m_time_label->setText(
         time == 0 ? "" : i18np("Time: %1 second", "Time: %1 seconds", time));
+}
+
+QString difficulty(int value)
+{
+    switch (value) {
+    case 0:
+        return i18n("Easy");
+        break;
+    case 1:
+        return i18n("Medium");
+        break;
+    case 2:
+    default:
+        return i18n("Hard");
+        break;
+    };
 }
 
 #include "mainwindow.moc"

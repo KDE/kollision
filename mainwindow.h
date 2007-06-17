@@ -29,7 +29,10 @@ protected slots:
     void optionsPreferences();
     void setGameTime(int time);
     void setBallNumber(int number);
-    void setPlayingState(bool);
+    
+    void newGame();
+    void gameOver(int);
+    void highscores();
 };
 
 
