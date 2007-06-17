@@ -98,42 +98,6 @@ void MovementAnimation::stop()
 }
 
 
-AdjustAnimation::AdjustAnimation(const SpritePtr& sprite, const QPointF& from, 
-                                 const QPointF& velocity, int time)
-: m_sprite(sprite)
-, m_from(from)
-, m_time(time)
-{
-    m_velocity = velocity / (2 * M_PI);
-}
-
-void AdjustAnimation::start(int t)
-{
-    m_start = t;
-    m_sprite->setPosition(m_from);
-}
-
-bool AdjustAnimation::step(int t)
-{
-    if (t >= m_time + m_start) {
-        stop();
-        return true;
-    }
-    else {
-        QPointF pos = m_velocity * (m_start + m_time - t) *
-            sin(2 * M_PI * (t - m_start) / m_time);
-        m_sprite->setPosition(pos + m_from);
-        return false;
-    }
-}
-
-void AdjustAnimation::stop()
-{
-    m_sprite->setPosition(m_from);
-}
-
-
-
 AnimationGroup::AnimationGroup()
 : m_last(-1)
 {
