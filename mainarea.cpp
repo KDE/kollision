@@ -187,7 +187,9 @@ void MainArea::start()
     m_global_time.restart();
     m_last_time = 0;
     m_last_game_time = 0;
-    m_timer.start(0);
+    
+    int timeout = (100 - KollisionConfig::smoothness()) / 5;
+    m_timer.start(timeout);
     
     writeMessage(i18n("4 balls"));
     

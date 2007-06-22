@@ -2,20 +2,28 @@
 <!DOCTYPE kcfg SYSTEM 
     "http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
 <kcfg>
-  <kcfgfile name="kollisionrc"/>
-  <include>kglobalsettings.h</include>
-  <group name="sounds">
-    <entry name="EnableSounds" type="Bool">
-      <label>Wheter sound effects should be played.</label>
-      <default>false</default>
-    </entry>
-  </group>
-  <group name="game">
-    <entry name="GameDifficulty" type="Int">
-      <label>Difficulty of the game.</label>
-      <default>1</default>
-      <min>0</min>
-      <max>2</max>
-    </entry>
-  </group>
+    <kcfgfile name="kollisionrc"/>
+        <include>kglobalsettings.h</include>
+        <group name="sounds">
+        <entry name="EnableSounds" type="Bool">
+            <label>Wheter sound effects should be played.</label>
+            <default>false</default>
+        </entry>
+    </group>
+    <group name="game">
+        <entry name="GameDifficulty" type="Int">
+            <label>Difficulty of the game.</label>
+            <default>1</default>
+            <min>0</min>
+            <max>2</max>
+        </entry>
+    </group>
+    <group name="animation">
+        <entry name="Smoothness" type="Int">
+            <label>Animation smoothness.</label>
+            <default>100</default>
+            <min>0</min>
+            <max>100</max>
+        </entry>
+    </group>
 </kcfg>

@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>155</width>
-    <height>70</height>
+    <width>177</width>
+    <height>116</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -16,7 +16,7 @@
    <item>
     <widget class="QCheckBox" name="kcfg_EnableSounds" >
      <property name="text" >
-      <string>Enable sounds</string>
+      <string>Enable &amp;sounds</string>
      </property>
     </widget>
    </item>
@@ -25,7 +25,10 @@
      <item>
       <widget class="QLabel" name="label_2" >
        <property name="text" >
-        <string>Difficulty</string>
+        <string>&amp;Difficulty:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_GameDifficulty</cstring>
        </property>
       </widget>
      </item>
@@ -46,6 +49,27 @@
          <string>Hard</string>
         </property>
        </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>&amp;Animation smoothness:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>kcfg_Smoothness</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="kcfg_Smoothness" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
       </widget>
      </item>
     </layout>
