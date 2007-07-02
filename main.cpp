@@ -14,23 +14,20 @@
 
 #include "mainwindow.h"
 
-static KCmdLineOptions options[] =
-    {
-        { "s", 0, 0 },
-        { "set-arbitrary-names", I18N_NOOP( "Fill in the fildes to speed up testing. Just for development purpose." ), 0 },
-        KCmdLineLastOption
-    };
-
 
 int main(int argc, char *argv[])
 {
-    KAboutData aboutData("kollision", I18N_NOOP("Kollision"),
-                         "0.1", I18N_NOOP("KDE collision game"), KAboutData::License_GPL,
-                         "(c) 2007 Paolo Capriotti", 0, "", "p.capriotti@gmail.com");
-    aboutData.addAuthor("Paolo Capriotti", 0, "p.capriotti@gmail.com");
-    aboutData.addCredit("Matteo Guarnieri", I18N_NOOP("Original idea"), 0, 0);
+    KAboutData aboutData("kollision", 0, ki18n("Kollision"),
+                         "0.1", ki18n("KDE collision game"), KAboutData::License_GPL,
+                         ki18n("(c) 2007 Paolo Capriotti"), KLocalizedString(), "", "p.capriotti@gmail.com");
+    aboutData.addAuthor(ki18n("Paolo Capriotti"), KLocalizedString(), "p.capriotti@gmail.com");
+    aboutData.addCredit(ki18n("Matteo Guarnieri"), ki18n("Original idea"));
 
     KCmdLineArgs::init(argc, argv, &aboutData);
+
+    KCmdLineOptions options;
+    options.add("s");
+    options.add("set-arbitrary-names", ki18n( "Fill in the fildes to speed up testing. Just for development purpose." ));
     KCmdLineArgs::addCmdLineOptions(options);
     KCmdLineArgs::parsedArgs();
     KApplication app;
