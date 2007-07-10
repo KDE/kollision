@@ -12,7 +12,6 @@ set(kollision_SRCS
     message.cpp      
     renderer.cpp
 )
-kde4_automoc(${kollision_SRCS})
 kde4_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 kde4_add_ui_files(kollision_SRCS preferences.ui)
 kde4_add_executable(kollision ${kollision_SRCS})
