@@ -1,6 +1,6 @@
 /*
   Copyright (c) 2007 Paolo Capriotti <p.capriotti@gmail.com>
-            
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
@@ -10,23 +10,25 @@
 #ifndef BALL_H
 #define BALL_H
 
-#include <kgamecanvas.h>
+#include <QGraphicsPixmapItem>
 #include <QPointF>
-#include "sprite.h"
 
 class Renderer;
 
-class Ball : public SpriteMixin<KGameCanvasPixmap>
+class Ball : public QGraphicsPixmapItem
 {
-    QString m_id;
-    double m_radius;
+    QPointF m_velocity;
+    qreal m_opacity;
 public:
-    Ball(KGameCanvasAbstract* parent, Renderer* renderer, const QString& id);
-    
-    void update(Renderer* renderer);
-    virtual void setPosition(const QPointF& p);
-    
-    double radius() const { return m_radius; }
+    Ball();
+
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0);
+
+    void setOpacity( qreal opacity ) { m_opacity = opacity; update(); }
+    qreal opacity() const { return m_opacity; }
+
+    void setVelocity(const QPointF& vel) { m_velocity = vel; }
+    QPointF velocity() const { return m_velocity; }
 };
 
 #endif // BALL_H

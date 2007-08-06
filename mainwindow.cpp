@@ -1,6 +1,6 @@
 /*
   Copyright (c) 2007 Paolo Capriotti <p.capriotti@gmail.com>
-            
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
@@ -11,6 +11,7 @@
 
 #include <QLayout>
 #include <QLabel>
+#include <QGraphicsView>
 
 #include <kdebug.h>
 #include <klocalizedstring.h>
@@ -27,11 +28,18 @@ QString difficulty(int value);
 
 MainWindow::MainWindow()
 {
-    MainArea* main = new MainArea(this);
-    setCentralWidget(main);
+    MainArea* main = new MainArea();
+    QGraphicsView* view = new QGraphicsView(main, this);
+    view->setOptimizationFlags( QGraphicsView::DontClipPainter |
+                                QGraphicsView::DontSavePainterState |
+                                QGraphicsView::DontAdjustForAntialiasing );
+//    view->setViewportUpdateMode( QGraphicsView::FullViewportUpdate );
+    view->setCacheMode( QGraphicsView::CacheBackground );
+
+    setCentralWidget(view);
 
     setupActions();
-    
+
     QLayout* l = layout();
     Q_ASSERT(l);
     l->setSizeConstraint(QLayout::SetFixedSize);
@@ -41,14 +49,14 @@ MainWindow::MainWindow()
     Q_ASSERT(bar);
     m_time_label = new QLabel("");
     bar->addPermanentWidget(m_time_label);
-    
+
     m_balls_label = new QLabel("");
     bar->addWidget(m_balls_label);
 //     bar->setItemAlignment(STATUSBAR_BALLS, Qt::AlignLeft);
-    
+
     connect(main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
     connect(main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
-    
+
     stateChanged("playing", KXMLGUIClient::StateReverse);
     connect(main, SIGNAL(starting()), this, SLOT(newGame()));
     connect(main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
@@ -62,10 +70,10 @@ void MainWindow::setupActions()
     connect(abort, SIGNAL(triggered()), centralWidget(), SLOT(abort()));
 //     KStandardGameAction::demo(m_main, SLOT(newSimulation()), actionCollection());
 //     KStandardGameAction::restart(m_main, SLOT(restart()), actionCollection());
-//     
+//
     KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
-    
+
     KStandardAction::preferences(this, SLOT(optionsPreferences()), actionCollection());
 
     setupGUI();
@@ -79,7 +87,7 @@ void MainWindow::newGame()
 void MainWindow::gameOver(int time)
 {
     stateChanged("playing", KXMLGUIClient::StateReverse);
-    
+
     KScoreDialog ksdialog(KScoreDialog::Name, this);
     ksdialog.setConfigGroup(difficulty(KollisionConfig::gameDifficulty()));
     KScoreDialog::FieldInfo scoreInfo;
@@ -105,7 +113,7 @@ void MainWindow::optionsPreferences()
     if (KConfigDialog::showDialog("preferences")) {
         return;
     }
-    
+
     KConfigDialog* dialog = new KConfigDialog(this, "preferences", KollisionConfig::self());
     QWidget* mainPage = new QWidget(dialog);
     m_pref_ui.setupUi(mainPage);

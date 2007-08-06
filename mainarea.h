@@ -1,6 +1,6 @@
 /*
   Copyright (c) 2007 Paolo Capriotti <p.capriotti@gmail.com>
-            
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
@@ -13,17 +13,20 @@
 #include <QTimer>
 #include <QTime>
 #include <QList>
-#include <kgamecanvas.h>
+#include <QGraphicsScene>
 #include "animator.h"
 
 class Renderer;
 class Ball;
 class Message;
 class Animation;
+class QGraphicsSceneMouseEvent;
+class QGraphicsTextItem;
+
 namespace Phonon { class AudioPlayer; }
 struct Collision;
 
-class MainArea : public KGameCanvasWidget
+class MainArea : public QGraphicsScene
 {
 Q_OBJECT
     QTimer m_timer;
@@ -32,51 +35,53 @@ Q_OBJECT
     int m_last_game_time;
     QTime m_time;
     QTime m_event_time;
-    
+
     /// time interval between two balls being added
     int m_ball_timeout;
-    
+
     int m_size;
     Renderer* m_renderer;
-    KGameCanvasPixmap* m_background;
+    QPixmap m_background;
     Animator m_animator;
-    QFont m_msg_font;
-    
+
     QList<Ball*> m_balls;
     QList<Ball*> m_fading;
     Ball* m_man;
-    
+
     /// the blue ball is dead
     bool m_death;
-    
+
     /// the falling animation is over, we're waiting for a new game to start
     bool m_game_over;
-    
-    QList<KSharedPtr<Message> > m_welcome_msg;
-    
+
+    QGraphicsTextItem* m_welcome_msg;
+
     Phonon::AudioPlayer* m_player;
-    
+
     double radius() const;
     QPointF randomPoint() const;
     QPointF randomDirection(double val) const;
-    
+
     Ball* addBall(const QString& id);
-    bool collide(const QPointF& a, const QPointF& b, 
+    bool collide(const QPointF& a, const QPointF& b,
                 double diam, Collision& collision);
-                
+
+    /* TODO msg
     Animation* writeMessage(const QString& text);
     Animation* writeText(const QStringList& lines);
     void displayMessages(const QList<KSharedPtr<Message> >& msgs);
+    */
     void onCollision();
-    void setManPosition(const QPoint& p);
+    void setManPosition(const QPointF& p);
+    void drawBackground(QPainter*, const QRectF&);
 protected:
-    virtual void mouseMoveEvent(QMouseEvent* event);
-    virtual void mousePressEvent(QMouseEvent* event);
+    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
 public:
-    MainArea(QWidget* parent = 0);
-    
+    MainArea();
+
     void start();
-    
+
 public slots:
     void tick();
     void enableSounds();
