@@ -17,7 +17,7 @@
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
-#include <phonon/audioplayer.h>
+#include <phonon/mediaobject.h>
 #include <QMouseEvent>
 
 // for rand
@@ -82,8 +82,7 @@ void MainArea::enableSounds()
 {
     if (KollisionConfig::enableSounds()) {
         if (!m_player) {
-            m_player = new Phonon::AudioPlayer(Phonon::GameCategory);
-            m_player->load(KStandardDirs::locate("appdata", "sounds/") + "/collision.wav");            
+            m_player = Phonon::createPlayer(Phonon::GameCategory, KStandardDirs::locate("appdata", "sounds/") + "/collision.wav");
         }
     }
     else {

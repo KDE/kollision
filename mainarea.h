@@ -20,7 +20,7 @@ class Renderer;
 class Ball;
 class Message;
 class Animation;
-namespace Phonon { class AudioPlayer; }
+namespace Phonon { class MediaObject; }
 struct Collision;
 
 class MainArea : public KGameCanvasWidget
@@ -54,7 +54,7 @@ Q_OBJECT
     
     QList<KSharedPtr<Message> > m_welcome_msg;
     
-    Phonon::AudioPlayer* m_player;
+    Phonon::MediaObject* m_player;
     
     double radius() const;
     QPointF randomPoint() const;
