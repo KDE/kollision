@@ -13,6 +13,7 @@
 #include <QLabel>
 
 #include <kdebug.h>
+#include <kaction.h>
 #include <klocalizedstring.h>
 #include <kstandardgameaction.h>
 #include <kstandardaction.h>
@@ -57,7 +58,7 @@ MainWindow::MainWindow()
 void MainWindow::setupActions()
 {
     // Game
-    QAction* abort = actionCollection()->addAction("game_abort");
+    KAction* abort = actionCollection()->addAction("game_abort");
     abort->setText(i18n("Abort game"));
     connect(abort, SIGNAL(triggered()), centralWidget(), SLOT(abort()));
 //     KStandardGameAction::demo(m_main, SLOT(newSimulation()), actionCollection());
