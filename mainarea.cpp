@@ -17,7 +17,7 @@
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
-#include <phonon/audioplayer.h>
+#include <Phonon/MediaObject>
 #include <QGraphicsSceneMouseEvent>
 
 // for rand
@@ -69,21 +69,22 @@ MainArea::MainArea()
     m_background = QPixmap::fromImage(tmp);
 
     // setup audio player
-    m_player = 0;
-//    enableSounds();
+    m_media = 0;
 }
 
 void MainArea::enableSounds()
 {
     if (KollisionConfig::enableSounds()) {
-        if (!m_player) {
-            m_player = new Phonon::AudioPlayer(Phonon::GameCategory);
-            m_player->load(KStandardDirs::locate("appdata", "sounds/") + "/collision.wav");
+        if (!m_media) {
+            m_media = Phonon::createPlayer(Phonon::GameCategory);
+            m_media->setCurrentSource(
+              KStandardDirs::locate(
+                "appdata", "sounds/collision.wav"));
         }
     }
     else {
-        delete m_player;
-        m_player = 0;
+        delete m_media;
+        m_media = 0;
     }
 }
 /* TODO msg
@@ -257,8 +258,8 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
 
 void MainArea::onCollision()
 {
-    if (m_player) {
-        m_player->play();
+    if (m_media) {
+        m_media->play();
     }
 }
 

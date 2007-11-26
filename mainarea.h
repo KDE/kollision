@@ -23,7 +23,7 @@ class Animation;
 class QGraphicsSceneMouseEvent;
 class QGraphicsTextItem;
 
-namespace Phonon { class AudioPlayer; }
+namespace Phonon { class MediaObject; }
 struct Collision;
 
 class MainArea : public QGraphicsScene
@@ -56,7 +56,7 @@ Q_OBJECT
 
     QGraphicsTextItem* m_welcome_msg;
 
-    Phonon::AudioPlayer* m_player;
+    Phonon::MediaObject* m_media;
 
     double radius() const;
     QPointF randomPoint() const;
