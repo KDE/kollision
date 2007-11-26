@@ -10,7 +10,7 @@
 #ifndef SPRITEFWD_H
 #define SPRITEFWD_H
 
-#include <ksharedptr.h>
+#include <KSharedPtr>
 
 class Sprite;
 

@@ -15,10 +15,10 @@
 #include <QList>
 #include <QGraphicsScene>
 #include "animator.h"
+#include "message.h"
 
 class Renderer;
 class Ball;
-class Message;
 class Animation;
 class QGraphicsSceneMouseEvent;
 class QGraphicsTextItem;
@@ -43,6 +43,7 @@ Q_OBJECT
     Renderer* m_renderer;
     QPixmap m_background;
     Animator m_animator;
+    QFont m_msg_font;
 
     QList<Ball*> m_balls;
     QList<Ball*> m_fading;
@@ -54,7 +55,7 @@ Q_OBJECT
     /// the falling animation is over, we're waiting for a new game to start
     bool m_game_over;
 
-    QGraphicsTextItem* m_welcome_msg;
+    QList<MessagePtr> m_welcome_msg;
 
     Phonon::MediaObject* m_media;
 
@@ -66,11 +67,9 @@ Q_OBJECT
     bool collide(const QPointF& a, const QPointF& b,
                 double diam, Collision& collision);
 
-    /* TODO msg
     Animation* writeMessage(const QString& text);
     Animation* writeText(const QStringList& lines);
     void displayMessages(const QList<KSharedPtr<Message> >& msgs);
-    */
     void onCollision();
     void setManPosition(const QPointF& p);
     void drawBackground(QPainter*, const QRectF&);

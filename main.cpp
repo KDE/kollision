@@ -21,15 +21,13 @@ int main(int argc, char *argv[])
                          "0.1", ki18n("KDE collision game"), KAboutData::License_GPL,
                          ki18n("(c) 2007 Paolo Capriotti"), KLocalizedString(), "", "p.capriotti@gmail.com");
     aboutData.addAuthor(ki18n("Paolo Capriotti"), KLocalizedString(), "p.capriotti@gmail.com");
+    aboutData.addAuthor(ki18n("Dmitry Suzdalev"), KLocalizedString(), "dimsuz@gmail.com");
     aboutData.addCredit(ki18n("Matteo Guarnieri"), ki18n("Original idea"));
 
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KCmdLineOptions options;
-    options.add("s");
-    options.add("set-arbitrary-names", ki18n( "Fill in the fildes to speed up testing. Just for development purpose." ));
     KCmdLineArgs::addCmdLineOptions(options);
-    KCmdLineArgs::parsedArgs();
     KApplication app;
 
     MainWindow* window = new MainWindow;

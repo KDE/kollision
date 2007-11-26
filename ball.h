@@ -12,23 +12,31 @@
 
 #include <QGraphicsPixmapItem>
 #include <QPointF>
+#include "sprite.h"
 
 class Renderer;
 
-class Ball : public QGraphicsPixmapItem
+class Ball : public QGraphicsPixmapItem, public Sprite
 {
-    QPointF m_velocity;
     qreal m_opacity;
+    QPointF m_velocity;
 public:
-    Ball();
+    Ball(Renderer* renderer, const QString& id);
 
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0);
+    virtual void paint(QPainter *painter, 
+                       const QStyleOptionGraphicsItem* option, 
+                       QWidget* widget = 0);
 
-    void setOpacity( qreal opacity ) { m_opacity = opacity; update(); }
-    qreal opacity() const { return m_opacity; }
+    virtual void setOpacityF(qreal opacity);
+    virtual qreal opacityF() const;
 
-    void setVelocity(const QPointF& vel) { m_velocity = vel; }
-    QPointF velocity() const { return m_velocity; }
+    virtual void setVelocity(const QPointF& vel);
+    virtual QPointF velocity() const;
+    
+    virtual void setPosition(const QPointF& pos);
+    virtual QPointF position() const;
+    
+    qreal radius() const;
 };
 
 #endif // BALL_H
