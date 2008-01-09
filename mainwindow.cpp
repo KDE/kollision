@@ -58,6 +58,7 @@ MainWindow::MainWindow()
 
     connect(main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
     connect(main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
+    connect(main, SIGNAL(showCursor(bool)), this, SLOT(showCursor(bool)));
 
     stateChanged("playing", KXMLGUIClient::StateReverse);
     connect(main, SIGNAL(starting()), this, SLOT(newGame()));
@@ -135,6 +136,15 @@ void MainWindow::setGameTime(int time)
 {
     m_time_label->setText(
         time == 0 ? "" : i18np("Time: %1 second", "Time: %1 seconds", time));
+}
+
+void MainWindow::showCursor(bool visible) {
+    if (visible) {
+        setCursor(QCursor());
+    }
+    else {
+        setCursor(Qt::BlankCursor);
+    }
 }
 
 QString difficulty(int value)

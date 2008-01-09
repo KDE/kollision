@@ -280,7 +280,7 @@ void MainArea::abort()
         m_man->setVelocity(QPointF(0, 0));
         m_balls.push_back(m_man);
         m_man = 0;
-//         setCursor(QCursor()); // TODO set cursor
+        emit showCursor(true);
         
         foreach (Ball* fball, m_fading) {
             fball->setOpacityF(1.0);
@@ -467,7 +467,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
             
             m_event_time.restart();
             start();
-//             setCursor(Qt::BlankCursor); FIXME set cursor
+            emit showCursor(false);
         }
     }
 }

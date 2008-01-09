@@ -33,6 +33,7 @@ protected slots:
     void newGame();
     void gameOver(int);
     void highscores();
+    void showCursor(bool);
 };
 
 
