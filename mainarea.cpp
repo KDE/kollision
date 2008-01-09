@@ -462,7 +462,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
     if (!m_death || m_game_over) {
         if (!m_man) {
             m_man = new Ball(m_renderer, "blue_ball");
-            setManPosition(e->pos());            
+            setManPosition(e->scenePos());            
             addItem(m_man);
             
             m_event_time.restart();
