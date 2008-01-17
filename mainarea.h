@@ -14,6 +14,7 @@
 #include <QTime>
 #include <QList>
 #include <QGraphicsScene>
+#include "audioplayer.h"
 #include "animator.h"
 #include "message.h"
 
@@ -23,7 +24,6 @@ class Animation;
 class QGraphicsSceneMouseEvent;
 class QGraphicsTextItem;
 
-namespace Phonon { class MediaObject; }
 struct Collision;
 
 class MainArea : public QGraphicsScene
@@ -57,7 +57,7 @@ Q_OBJECT
 
     QList<MessagePtr> m_welcome_msg;
 
-    Phonon::MediaObject* m_media;
+    AudioPlayer m_player;
 
     double radius() const;
     QPointF randomPoint() const;
@@ -70,7 +70,8 @@ Q_OBJECT
     Animation* writeMessage(const QString& text);
     Animation* writeText(const QStringList& lines);
     void displayMessages(const QList<KSharedPtr<Message> >& msgs);
-    void onCollision();
+    void playSound(int sound);
+    void onDeath();
     void setManPosition(const QPointF& p);
     void drawBackground(QPainter*, const QRectF&);
 protected:

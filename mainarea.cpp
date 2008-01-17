@@ -73,23 +73,12 @@ MainArea::MainArea()
     displayMessages(m_welcome_msg);
     
     // setup audio player
-    m_media = 0;
     enableSounds();
 }
 
 void MainArea::enableSounds()
 {
-    if (KollisionConfig::enableSounds()) {
-        if (!m_media) {
-            m_media = Phonon::createPlayer(Phonon::GameCategory);
-            m_media->setCurrentSource(
-                KStandardDirs::locate("appdata", "sounds/collision.wav"));
-        }
-    }
-    else {
-        delete m_media;
-        m_media = 0;
-    }
+    m_player.setActive(KollisionConfig::enableSounds());
 }
 
 Animation* MainArea::writeMessage(const QString& text)
@@ -195,6 +184,7 @@ void MainArea::start()
     
     emit changeGameTime(0);
     emit starting();
+    m_player.play(AudioPlayer::START);
 }
 
 QPointF MainArea::randomPoint() const
@@ -265,13 +255,6 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
     return collision.square_distance <= diam * diam;
 }
 
-void MainArea::onCollision()
-{
-    if (m_media) {
-        m_media->play();
-    }
-}
-
 void MainArea::abort()
 {
     if (m_man) {
@@ -323,7 +306,7 @@ void MainArea::tick()
                 ball->position(),
                 m_man->position(), 
                 radius() * 2, collision)) {
-            onCollision();
+            m_player.play(AudioPlayer::YOU_LOSE);
             abort();            
             break;
         }
@@ -349,23 +332,31 @@ void MainArea::tick()
         QPointF pos = ball->position();
        
         // handle collisions with borders
+        bool hit_wall = false;
         if (pos.x() <= radius()) {
             vel.setX(fabs(vel.x()));
             pos.setX(2 * radius() - pos.x());
+            hit_wall = true;
         }
         if (pos.x() >= m_size - radius()) {
             vel.setX(-fabs(vel.x()));
             pos.setX(2 * (m_size - radius()) - pos.x());
+            hit_wall = true;
         }
         if (pos.y() <= radius()) {
             vel.setY(fabs(vel.y()));
             pos.setY(2 * radius() - pos.y());
+            hit_wall = true;
         }
         if (!m_death) {
             if (pos.y() >= m_size - radius()) {
                 vel.setY(-fabs(vel.y()));
                 pos.setY(2 * (m_size - radius()) - pos.y());
+                hit_wall = true;
             }
+        }
+        if (hit_wall) {
+            m_player.play(AudioPlayer::HIT_WALL);
         }
 
         // handle collisions with next balls
@@ -375,7 +366,7 @@ void MainArea::tick()
             QPointF other_pos = other->position();
             
             if (collide(pos, other_pos, radius() * 2, collision)) {
-                onCollision();
+//                 onCollision();
                 QPointF other_vel = other->velocity();
                 
                 // compute the parallel component of the
@@ -413,6 +404,7 @@ void MainArea::tick()
         QPointF pos = ball->position();
         
         if (m_death && pos.y() >= height() + radius() + 10) {
+            m_player.play(AudioPlayer::BALL_LEAVING);
             delete ball;
             it = m_balls.erase(it);
         }
