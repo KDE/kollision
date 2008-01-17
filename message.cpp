@@ -8,14 +8,63 @@
 */
 
 #include "message.h"
+#include <QFontMetrics>
+#include <QPainter>
 
-Message::Message(KGameCanvasAbstract* parent, const QString& text, const QFont& font)
-: SpriteMixin<KGameCanvasText>(parent)
+Message::Message(const QString& text, const QFont& font)
+: QGraphicsTextItem(text)
+, m_opacity(1.0)
+, m_velocity(0.0, 0.0)
 {
     setFont(font);
-    setText(text);
-    setPositioning(KGameCanvasText::HCenter, 
-                   KGameCanvasText::VCenter);
+    setDefaultTextColor(Qt::black);
+    setAcceptsHoverEvents(false);
+    
+    // translate so that the origin is the center of the
+    // bounding rect
+    QFontMetrics metrics(font);
+    QSize offset = metrics.boundingRect(text).size();
+    translate(-offset.width() / 2, -offset.height() / 2);
 }
 
+void Message::paint(QPainter *painter, 
+                    const QStyleOptionGraphicsItem* option, 
+                    QWidget* widget)
+{
+    qreal oldOpacity = painter->opacity();
+    painter->setOpacity(m_opacity);
+    QGraphicsTextItem::paint(painter, option, widget);
+    painter->setOpacity(oldOpacity);
+}
+
+void Message::setOpacityF(qreal opacity)
+{
+    m_opacity = opacity;
+    update();
+}
+
+qreal Message::opacityF() const
+{
+    return m_opacity;
+}
+
+void Message::setVelocity(const QPointF& vel)
+{
+    m_velocity = vel;
+}
+
+QPointF Message::velocity() const
+{
+    return m_velocity;
+}
+
+void Message::setPosition(const QPointF& pos)
+{
+    QGraphicsTextItem::setPos(pos);
+}
+
+QPointF Message::position() const
+{
+    return QGraphicsTextItem::pos();
+}
 

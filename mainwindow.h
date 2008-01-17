@@ -14,6 +14,7 @@
 #include "ui_preferences.h"
 
 class QLabel;
+class MainArea;
 
 class MainWindow : public KXmlGuiWindow
 {
@@ -21,6 +22,7 @@ Q_OBJECT
     QLabel* m_balls_label;
     QLabel* m_time_label;
     Ui_Preferences m_pref_ui;
+    MainArea* m_main;
 public:
     MainWindow();
 protected:
@@ -33,6 +35,7 @@ protected slots:
     void newGame();
     void gameOver(int);
     void highscores();
+    void showCursor(bool);
 };
 
 

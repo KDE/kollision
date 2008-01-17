@@ -8,17 +8,21 @@
 */
 
 #include "mainarea.h"
+
+#include <QApplication>
+#include <QGraphicsSceneMouseEvent>
+#include <QMouseEvent>
+#include <QPainter>
+
+#include <KDebug>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KStandardDirs>
+#include <Phonon/MediaObject>
+
 #include "renderer.h"
 #include "ball.h"
-#include "message.h"
 #include "kollisionconfig.h"
-
-#include <kdebug.h>
-#include <klocalizedstring.h>
-#include <kmessagebox.h>
-#include <kstandarddirs.h>
-#include <phonon/mediaobject.h>
-#include <QMouseEvent>
 
 // for rand
 #include <math.h>
@@ -32,14 +36,14 @@ struct Collision
     QPointF line;
 };
 
-MainArea::MainArea(QWidget* parent)
-: KGameCanvasWidget(parent)
-, m_man(0)
+MainArea::MainArea()
+: m_man(0)
 , m_death(false)
 , m_game_over(false)
 {
-    m_background = new KGameCanvasPixmap(this);
-    m_background->show();
+    m_size = 500;
+    QRect rect(0, 0, m_size, m_size);
+    setSceneRect(rect);
     
     srand(time(0));
     
@@ -48,54 +52,40 @@ MainArea::MainArea(QWidget* parent)
     
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
     
-    m_msg_font = font();
+    m_msg_font = QApplication::font();
     m_msg_font.setPointSize(15);
     
-    setMouseTracking(true);
-    m_size = 500;
-    setFixedSize(QSize(m_size, m_size));
-    
-    
-    QImage tmp(size(), QImage::Format_ARGB32_Premultiplied);
+    QImage tmp(rect.size(), QImage::Format_ARGB32_Premultiplied);
     {
         // draw gradient
         QPainter p(&tmp);
         QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
         grad.setColorAt(0, QColor(240, 240, 240));
         grad.setColorAt(1, QColor(180, 180, 180));
-        p.fillRect(QRect(QPoint(0, 0), size()), grad);
+        p.fillRect(rect, grad);
     }
-    m_background->setPixmap(QPixmap::fromImage(tmp));
+    m_background = QPixmap::fromImage(tmp);
     
-    m_welcome_msg.append(
-        KSharedPtr<Message>(new Message(this, i18n("Welcome to Kollision"), m_msg_font)));
-    m_welcome_msg.append(
-        KSharedPtr<Message>(new Message(this, i18n("Click to start a game"), m_msg_font)));
+    m_welcome_msg.append(MessagePtr(
+        new Message(i18n("Welcome to Kollision"), m_msg_font)));
+    m_welcome_msg.append(MessagePtr(
+        new Message(i18n("Click to start a game"), m_msg_font)));
     displayMessages(m_welcome_msg);
     
     // setup audio player
-    m_player = 0;
     enableSounds();
 }
 
 void MainArea::enableSounds()
 {
-    if (KollisionConfig::enableSounds()) {
-        if (!m_player) {
-            m_player = Phonon::createPlayer(Phonon::GameCategory, KStandardDirs::locate("appdata", "sounds/") + "/collision.wav");
-        }
-    }
-    else {
-        delete m_player;
-        m_player = 0;
-    }
+    m_player.setActive(KollisionConfig::enableSounds());
 }
 
 Animation* MainArea::writeMessage(const QString& text)
 {
-    Message* message = new Message(this, text, m_msg_font);
+    Message* message = new Message(text, m_msg_font);
     message->setPosition(QPointF(m_size, m_size) / 2.0);
-    message->show();
+    addItem(message);
     message->setOpacityF(0.0);
     
     SpritePtr sprite(message);
@@ -122,7 +112,7 @@ Animation* MainArea::writeText(const QStringList& lines)
     m_welcome_msg.clear();
     foreach (QString text, lines) {
         m_welcome_msg.append(
-            KSharedPtr<Message>(new Message(this, text, m_msg_font)));
+            KSharedPtr<Message>(new Message(text, m_msg_font)));
     }
     displayMessages(m_welcome_msg);
         
@@ -146,7 +136,7 @@ void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
     for (int i = 0; i < messages.size(); i++) {
         KSharedPtr<Message> msg = messages[i];
         msg->setPosition(pos);
-        msg->show();
+        addItem(msg.data());
         
         pos.ry() += step;
     }
@@ -194,6 +184,7 @@ void MainArea::start()
     
     emit changeGameTime(0);
     emit starting();
+    m_player.play(AudioPlayer::START);
 }
 
 QPointF MainArea::randomPoint() const
@@ -225,8 +216,9 @@ Ball* MainArea::addBall(const QString& id)
         }
     }
 
-    Ball* ball = new Ball(this, m_renderer, id);
+    Ball* ball = new Ball(m_renderer, id);
     ball->setPosition(pos);
+    addItem(ball);
     
     // speed depends of game difficulty
     double speed;
@@ -263,13 +255,6 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
     return collision.square_distance <= diam * diam;
 }
 
-void MainArea::onCollision()
-{
-    if (m_player) {
-        m_player->play();
-    }
-}
-
 void MainArea::abort()
 {
     if (m_man) {
@@ -278,7 +263,7 @@ void MainArea::abort()
         m_man->setVelocity(QPointF(0, 0));
         m_balls.push_back(m_man);
         m_man = 0;
-        setCursor(QCursor());            
+        emit showCursor(true);
         
         foreach (Ball* fball, m_fading) {
             fball->setOpacityF(1.0);
@@ -321,7 +306,7 @@ void MainArea::tick()
                 ball->position(),
                 m_man->position(), 
                 radius() * 2, collision)) {
-            onCollision();
+            m_player.play(AudioPlayer::YOU_LOSE);
             abort();            
             break;
         }
@@ -347,23 +332,31 @@ void MainArea::tick()
         QPointF pos = ball->position();
        
         // handle collisions with borders
+        bool hit_wall = false;
         if (pos.x() <= radius()) {
             vel.setX(fabs(vel.x()));
             pos.setX(2 * radius() - pos.x());
+            hit_wall = true;
         }
         if (pos.x() >= m_size - radius()) {
             vel.setX(-fabs(vel.x()));
             pos.setX(2 * (m_size - radius()) - pos.x());
+            hit_wall = true;
         }
         if (pos.y() <= radius()) {
             vel.setY(fabs(vel.y()));
             pos.setY(2 * radius() - pos.y());
+            hit_wall = true;
         }
         if (!m_death) {
             if (pos.y() >= m_size - radius()) {
                 vel.setY(-fabs(vel.y()));
                 pos.setY(2 * (m_size - radius()) - pos.y());
+                hit_wall = true;
             }
+        }
+        if (hit_wall) {
+            m_player.play(AudioPlayer::HIT_WALL);
         }
 
         // handle collisions with next balls
@@ -373,7 +366,7 @@ void MainArea::tick()
             QPointF other_pos = other->position();
             
             if (collide(pos, other_pos, radius() * 2, collision)) {
-                onCollision();
+//                 onCollision();
                 QPointF other_vel = other->velocity();
                 
                 // compute the parallel component of the
@@ -411,6 +404,7 @@ void MainArea::tick()
         QPointF pos = ball->position();
         
         if (m_death && pos.y() >= height() + radius() + 10) {
+            m_player.play(AudioPlayer::BALL_LEAVING);
             delete ball;
             it = m_balls.erase(it);
         }
@@ -441,11 +435,11 @@ void MainArea::tick()
 }
 
 
-void MainArea::setManPosition(const QPoint& p)
+void MainArea::setManPosition(const QPointF& p)
 {
     Q_ASSERT(m_man);
     
-    QPoint pos = p;
+    QPointF pos = p;
     
     if (pos.x() <= radius()) pos.setX((int) radius());
     if (pos.x() >= m_size - radius()) pos.setX(m_size - (int)radius());
@@ -455,29 +449,30 @@ void MainArea::setManPosition(const QPoint& p)
     m_man->setPosition(pos);
 }
 
-void MainArea::mousePressEvent(QMouseEvent* e)
+void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
 {
     if (!m_death || m_game_over) {
         if (!m_man) {
-            m_man = new Ball(this, m_renderer, "blue_ball");
-            setManPosition(e->pos());            
-            m_man->show();
+            m_man = new Ball(m_renderer, "blue_ball");
+            setManPosition(e->scenePos());            
+            addItem(m_man);
             
             m_event_time.restart();
             start();
-            setCursor(Qt::BlankCursor);
+            emit showCursor(false);
         }
     }
 }
 
-void MainArea::mouseMoveEvent(QMouseEvent* e)
+void MainArea::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
 {
     if (!m_death && m_man) {
-        setManPosition(e->pos());
+        setManPosition(e->scenePos());
     }
 }
 
-
-#include "mainarea.moc"
-
+void MainArea::drawBackground(QPainter* painter, const QRectF& rect)
+{
+    painter->drawPixmap(rect, m_background, rect);
+}
 

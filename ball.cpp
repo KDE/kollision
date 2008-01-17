@@ -1,6 +1,6 @@
 /*
   Copyright (c) 2007 Paolo Capriotti <p.capriotti@gmail.com>
-            
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
@@ -8,23 +8,61 @@
 */
 
 #include "ball.h"
+#include <QPainter>
 #include "renderer.h"
 
-Ball::Ball(KGameCanvasAbstract* parent, Renderer* renderer, const QString& id)
-: SpriteMixin<KGameCanvasPixmap>(parent)
-, m_id(id)
-, m_radius(renderer->size().width() / 2.0)
+Ball::Ball(Renderer* renderer, const QString& id)
+: m_opacity(1.0)
+, m_velocity(0.0, 0.0)
 {
-    update(renderer);
+    setPixmap(renderer->render(id));
+    setShapeMode(BoundingRectShape);
+    QSize size = pixmap().size();
+    translate(-size.width() / 2, -size.height() / 2);
 }
 
-void Ball::update(Renderer* renderer)
+void Ball::paint(QPainter *painter, 
+                 const QStyleOptionGraphicsItem* option,
+                 QWidget* widget)
 {
-    setPixmap(renderer->render(m_id));
+    qreal oldOpacity = painter->opacity();
+    painter->setOpacity(m_opacity);
+    QGraphicsPixmapItem::paint(painter, option, widget);
+    painter->setOpacity(oldOpacity);
 }
 
-void Ball::setPosition(const QPointF& p) { 
-    m_position = p; 
-    moveTo((p - QPointF(radius(), radius())).toPoint());
+void Ball::setOpacityF(qreal opacity)
+{ 
+    m_opacity = opacity; 
+    update();
 }
 
+qreal Ball::opacityF() const
+{
+    return m_opacity;
+}
+
+void Ball::setVelocity(const QPointF& vel)
+{ 
+    m_velocity = vel;
+}
+
+QPointF Ball::velocity() const
+{
+    return m_velocity;
+}
+
+void Ball::setPosition(const QPointF& pos)
+{ 
+    QGraphicsPixmapItem::setPos(pos);
+}
+
+QPointF Ball::position() const
+{
+    return QGraphicsPixmapItem::pos();
+}
+
+qreal Ball::radius() const
+{
+    return pixmap().size().width() / 2.0;
+}
