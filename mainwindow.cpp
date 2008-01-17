@@ -30,8 +30,8 @@ QString difficulty(int value);
 
 MainWindow::MainWindow()
 {
-    MainArea* main = new MainArea();
-    QGraphicsView* view = new QGraphicsView(main, this);
+    m_main = new MainArea();
+    QGraphicsView* view = new QGraphicsView(m_main, this);
     view->setOptimizationFlags( QGraphicsView::DontClipPainter |
                                 QGraphicsView::DontSavePainterState |
                                 QGraphicsView::DontAdjustForAntialiasing );
@@ -56,13 +56,13 @@ MainWindow::MainWindow()
     bar->addWidget(m_balls_label);
 //     bar->setItemAlignment(STATUSBAR_BALLS, Qt::AlignLeft);
 
-    connect(main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
-    connect(main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
-    connect(main, SIGNAL(showCursor(bool)), this, SLOT(showCursor(bool)));
+    connect(m_main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
+    connect(m_main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
+    connect(m_main, SIGNAL(showCursor(bool)), this, SLOT(showCursor(bool)));
 
     stateChanged("playing", KXMLGUIClient::StateReverse);
-    connect(main, SIGNAL(starting()), this, SLOT(newGame()));
-    connect(main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
+    connect(m_main, SIGNAL(starting()), this, SLOT(newGame()));
+    connect(m_main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
 }
 
 void MainWindow::setupActions()
@@ -70,7 +70,7 @@ void MainWindow::setupActions()
     // Game
     KAction* abort = actionCollection()->addAction("game_abort");
     abort->setText(i18n("Abort game"));
-    connect(abort, SIGNAL(triggered()), centralWidget(), SLOT(abort()));
+    connect(abort, SIGNAL(triggered()), m_main, SLOT(abort()));
 //     KStandardGameAction::demo(m_main, SLOT(newSimulation()), actionCollection());
 //     KStandardGameAction::restart(m_main, SLOT(restart()), actionCollection());
 //
@@ -122,7 +122,7 @@ void MainWindow::optionsPreferences()
     m_pref_ui.setupUi(mainPage);
     dialog->addPage(mainPage, i18n("Main page"), "main_page");
     connect(dialog, SIGNAL(settingsChanged(const QString&)),
-            centralWidget(), SLOT(enableSounds()));
+            m_main, SLOT(enableSounds()));
 
     dialog->show();
 }
