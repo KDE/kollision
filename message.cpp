@@ -18,6 +18,7 @@ Message::Message(const QString& text, const QFont& font)
 {
     setFont(font);
     setDefaultTextColor(Qt::black);
+    setAcceptsHoverEvents(false);
     
     // translate so that the origin is the center of the
     // bounding rect
