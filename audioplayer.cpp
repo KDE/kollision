@@ -41,9 +41,11 @@ void AudioPlayer::setActive(bool active)
 
 void AudioPlayer::play(Sound sound)
 {
-    QString path = m_sounds.value(sound);
-    if (!path.isEmpty()) {
-        m_media->setCurrentSource(path);
-        m_media->play();
+    if (m_media) {
+        QString path = m_sounds.value(sound);
+        if (!path.isEmpty()) {
+            m_media->setCurrentSource(path);
+            m_media->play();
+        }
     }
 }
