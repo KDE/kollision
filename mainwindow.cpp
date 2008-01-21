@@ -154,11 +154,11 @@ QString difficulty(int value)
         return i18nc("Difficulty level", "Easy");
         break;
     case 1:
-        return i18n("Difficulty level", "Medium");
+        return i18nc("Difficulty level", "Medium");
         break;
     case 2:
     default:
-        return i18n("Difficulty level", "Hard");
+        return i18nc("Difficulty level", "Hard");
         break;
     };
 }
