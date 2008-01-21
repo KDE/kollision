@@ -136,6 +136,7 @@ void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
     for (int i = 0; i < messages.size(); i++) {
         KSharedPtr<Message> msg = messages[i];
         msg->setPosition(pos);
+        msg->setZValue(10.0);
         addItem(msg.data());
         
         pos.ry() += step;
@@ -454,6 +455,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
     if (!m_death || m_game_over) {
         if (!m_man) {
             m_man = new Ball(m_renderer, "blue_ball");
+            m_man->setZValue(1.0);
             setManPosition(e->scenePos());            
             addItem(m_man);
             

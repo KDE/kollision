@@ -19,6 +19,7 @@ Ball::Ball(Renderer* renderer, const QString& id)
     setShapeMode(BoundingRectShape);
     QSize size = pixmap().size();
     translate(-size.width() / 2, -size.height() / 2);
+    setAcceptsHoverEvents(false);
 }
 
 void Ball::paint(QPainter *painter, 
