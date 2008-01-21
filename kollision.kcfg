@@ -6,7 +6,7 @@
         <include>kglobalsettings.h</include>
         <group name="sounds">
         <entry name="EnableSounds" type="Bool">
-            <label>Wheter sound effects should be played.</label>
+            <label>Whether sound effects should be played.</label>
             <default>false</default>
         </entry>
     </group>

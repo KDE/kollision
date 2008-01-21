@@ -33,17 +33,17 @@
       <widget class="QComboBox" name="kcfg_GameDifficulty" >
        <item>
         <property name="text" >
-         <string>Easy</string>
+         <string comment="Difficulty level">Easy</string>
         </property>
        </item>
        <item>
         <property name="text" >
-         <string>Medium</string>
+         <string comment="Difficulty level">Medium</string>
         </property>
        </item>
        <item>
         <property name="text" >
-         <string>Hard</string>
+         <string comment="Difficulty level">Hard</string>
         </property>
        </item>
       </widget>
