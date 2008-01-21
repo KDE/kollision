@@ -151,14 +151,14 @@ QString difficulty(int value)
 {
     switch (value) {
     case 0:
-        return i18n("Easy");
+        return i18nc("Difficulty level", "Easy");
         break;
     case 1:
-        return i18n("Medium");
+        return i18n("Difficulty level", "Medium");
         break;
     case 2:
     default:
-        return i18n("Hard");
+        return i18n("Difficulty level", "Hard");
         break;
     };
 }
