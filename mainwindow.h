@@ -10,7 +10,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <kxmlguiwindow.h>
+#include <KGameDifficulty>
+#include <KXmlGuiWindow>
 #include "ui_preferences.h"
 
 class QLabel;
@@ -34,7 +35,8 @@ protected slots:
     void newGame();
     void gameOver(int);
     void highscores();
-    void showCursor(bool);
+    void changeState(bool);
+    void difficultyChanged(KGameDifficulty::standardLevel level);
 };
 
 

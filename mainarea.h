@@ -92,7 +92,7 @@ signals:
     void gameOver(int);
     void changeBallNumber(int);
     void changeGameTime(int);
-    void showCursor(bool);
+    void changeState(bool);
 };
 
 #endif // MAINAREA_H

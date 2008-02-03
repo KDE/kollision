@@ -17,7 +17,6 @@
 #include <KActionCollection>
 #include <KConfigDialog>
 #include <KDebug>
-#include <KGameDifficulty>
 #include <KLocalizedString>
 #include <KScoreDialog>
 #include <KStandardAction>
@@ -27,8 +26,6 @@
 
 #include "mainarea.h"
 #include "kollisionconfig.h"
-
-QString difficulty(int value);
 
 MainWindow::MainWindow()
 {
@@ -60,13 +57,13 @@ MainWindow::MainWindow()
 
     connect(m_main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
     connect(m_main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
-    connect(m_main, SIGNAL(showCursor(bool)), this, SLOT(showCursor(bool)));
+    connect(m_main, SIGNAL(changeState(bool)), this, SLOT(changeState(bool)));
 
     stateChanged("playing", KXMLGUIClient::StateReverse);
     connect(m_main, SIGNAL(starting()), this, SLOT(newGame()));
     connect(m_main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
     
-    KGameDifficulty::init(this, m_main, SLOT(difficultyChanged(KGameDifficulty::standardLevel)));
+    KGameDifficulty::init(this, this, SLOT(difficultyChanged(KGameDifficulty::standardLevel)));
     KGameDifficulty::setRestartOnChange(KGameDifficulty::RestartOnChange);
     KGameDifficulty::addStandardLevel(KGameDifficulty::Easy);
     KGameDifficulty::addStandardLevel(KGameDifficulty::Medium);
@@ -86,6 +83,7 @@ void MainWindow::setupActions()
 
     KAction* action;
     action = new KToggleAction(i18n("&Play Sounds"), this);
+    action->setChecked(KollisionConfig::enableSounds());
     actionCollection()->addAction("options_sounds", action);
     connect(action, SIGNAL(triggered(bool)), m_main, SLOT(enableSounds(bool)));
 
@@ -102,7 +100,7 @@ void MainWindow::gameOver(int time)
     stateChanged("playing", KXMLGUIClient::StateReverse);
 
     KScoreDialog ksdialog(KScoreDialog::Name, this);
-    ksdialog.setConfigGroup(difficulty(KollisionConfig::gameDifficulty()));
+    ksdialog.setConfigGroup(KGameDifficulty::levelString());
     KScoreDialog::FieldInfo scoreInfo;
     kDebug() << "time = " << time << endl;
     scoreInfo[KScoreDialog::Score].setNum(time);
@@ -117,7 +115,7 @@ void MainWindow::gameOver(int time)
 void MainWindow::highscores()
 {
     KScoreDialog ksdialog(KScoreDialog::Name | KScoreDialog::Time, this);
-    ksdialog.setConfigGroup(difficulty(KollisionConfig::gameDifficulty()));
+    ksdialog.setConfigGroup(KGameDifficulty::levelString());
     ksdialog.exec();
 }
 
@@ -132,29 +130,22 @@ void MainWindow::setGameTime(int time)
         time == 0 ? "" : i18np("Time: %1 second", "Time: %1 seconds", time));
 }
 
-void MainWindow::showCursor(bool visible) {
-    if (visible) {
-        centralWidget()->setCursor(QCursor());
-    }
-    else {
+void MainWindow::changeState(bool running) {
+    if (running) {
         centralWidget()->setCursor(Qt::BlankCursor);
     }
+    else {
+        centralWidget()->setCursor(QCursor());
+    }
+    
+    KGameDifficulty::setRunning(running);
 }
 
-QString difficulty(int value)
+void MainWindow::difficultyChanged(KGameDifficulty::standardLevel level)
 {
-    switch (value) {
-    case KGameDifficulty::Easy:
-        return i18nc("Difficulty level", "Easy");
-        break;
-    case KGameDifficulty::Medium:
-        return i18nc("Difficulty level", "Medium");
-        break;
-    case KGameDifficulty::Hard:
-    default:
-        return i18nc("Difficulty level", "Hard");
-        break;
-    };
+    m_main->abort();
+    KollisionConfig::setGameDifficulty((int) level);
+    KollisionConfig::self()->writeConfig();
 }
 
 #include "mainwindow.moc"

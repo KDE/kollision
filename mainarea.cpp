@@ -15,6 +15,7 @@
 #include <QPainter>
 
 #include <KDebug>
+#include <KGameDifficulty>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KStandardDirs>
@@ -80,6 +81,7 @@ void MainArea::enableSounds(bool enable)
 {
     KollisionConfig::setEnableSounds(enable);
     updateSounds();
+    KollisionConfig::self()->writeConfig();
 }
 
 void MainArea::updateSounds()
@@ -159,14 +161,16 @@ void MainArea::start()
     m_death = false;
     m_game_over = false;
 
+    kDebug() << "difficulty:" << KollisionConfig::gameDifficulty();
+
     switch (KollisionConfig::gameDifficulty()) {
-    case 0:
+    case KGameDifficulty::Easy:
         m_ball_timeout = 30;
         break;
-    case 1:
+    case KGameDifficulty::Medium:
         m_ball_timeout = 25;
         break;
-    case 2:
+    case KGameDifficulty::Hard:
     default:
         m_ball_timeout = 20;
         break;
@@ -230,13 +234,13 @@ Ball* MainArea::addBall(const QString& id)
     double speed;
     switch (KollisionConfig::gameDifficulty())
     {
-    case 0:
+    case KGameDifficulty::Easy:
         speed = 0.2;
         break;
-    case 1:
+    case KGameDifficulty::Medium:
         speed = 0.28;
         break;
-    case 2:
+    case KGameDifficulty::Hard:
     default:
         speed = 0.4;
         break;
@@ -269,7 +273,7 @@ void MainArea::abort()
         m_man->setVelocity(QPointF(0, 0));
         m_balls.push_back(m_man);
         m_man = 0;
-        emit showCursor(true);
+        emit changeState(false);
         
         foreach (Ball* fball, m_fading) {
             fball->setOpacityF(1.0);
@@ -466,7 +470,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
             
             m_event_time.restart();
             start();
-            emit showCursor(false);
+            emit changeState(true);
         }
     }
 }
