@@ -1,0 +1,263 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "<application>Kollision</application>">
+  <!ENTITY kappversion "0.1">
+  <!ENTITY docversion "0.1">
+  <!ENTITY docupdate "2008-01-20">
+  <!ENTITY package "kdegames">
+  <!ENTITY % English "INCLUDE" >
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book lang="&language;">
+<bookinfo>
+        <title>&kappname; Handbook</title>
+<authorgroup>
+        <author>
+                <firstname>Paolo</firstname>
+                <surname>Capriotti</surname>
+                <affiliation>
+                        <address><email>p.capriotti@gmail.com</email></address>
+                </affiliation>
+        </author>
+</authorgroup>
+ 
+<date>&docupdate;</date>
+<releaseinfo>&docversion;</releaseinfo> 
+<abstract>
+        <para>This documentation describes the game of &kappname; version &kappversion;</para>
+</abstract>
+ 
+<keywordset>
+        <keyword>KDE</keyword>
+        <keyword>kdegames</keyword>
+        <keyword>game</keyword>
+        <keyword>Kollision</keyword>
+        <keyword>arcade</keyword>
+        <keyword>one player</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"><title>Introduction</title>
+        <note><title>Gametype:</title><para>Arcade</para></note>
+        <note><title>Number of possible players:</title><para>One</para></note>
+        <para>
+	  A simple ball dodging game
+        </para>
+</chapter>
+ 
+<chapter id="howto"><title>How to play</title>
+        <note><title>Objective:</title><para>Let the blue ball move in the field without touching the red balls.</para></note>
+        <para>
+Click on the empty field to start a game: a blue ball immediately replaces your mouse cursor, and a number of red balls start to fade into the field.
+        </para>
+        <para>
+When the red balls finish materializing, they move at a random speed in a random direction, and you have to prompty dodge them moving the blue ball inside the field with your mouse.  After some time, other red balls will appear, fading in as before and then starting to move. Be prepared to avoid them, too.
+        </para>
+        <para>
+You can choose the game difficulty level on the right of the status bar. The higher the difficulty level, the faster red balls move, and the more balls will appear on the play field.
+        </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title>
+        <para>Game Rules, Strategies and Tips</para>
+        <sect1><title>Game Rules</title>
+        <itemizedlist>
+            <listitem><para>Red balls move on the game field at constant speed, bouncing aginst one another and the four walls.</para></listitem>
+            <listitem><para>The blue ball can be freely moved inside the field with the mouse.</para></listitem>
+            <listitem><para>The blue ball cannot escape the field. If the cursor is moved out, the ball stays on the edge, until the cursor returns.</para></listitem>
+            <listitem><para>The score is directly proportional to the time the game has lasted.</para></listitem>
+            <listitem><para>Pausing the game subtracts a (cumulative) 5 seconds penalty from the total time.</para></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1><title>Strategies and Tips</title>
+        <itemizedlist>
+            <listitem><para>Move the blue ball gently and slowly. Swinging across the field will make collisions with other balls more likely.</para></listitem>
+            <listitem><para>Moving the cursor out of the field can be used as an elegant trick to come out of a screwed situation. Use it wisely.</para></listitem>
+            <listitem><para>Do not pause the game unless absolutely necessary.</para></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"><title>Interface Overview</title>
+<sect1 id="game-menu">
+<title>The <guimenu>Game</guimenu> Menu</title>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Game</guimenu>
+<guimenuitem>Abort</guimenuitem></menuchoice></term>
+<listitem><para>Abort a game and return to the welcome screen.</para></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice><shortcut>
+<keycap>P</keycap></shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Pause</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para><action>Pauses or resumes the game.</action></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Show Highscores</guimenuitem></menuchoice></term>
+<listitem><para>This will show the best scores for the current level.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+</shortcut>
+<guimenu>Game</guimenu>
+<guimenuitem>Quit</guimenuitem></menuchoice></term>
+<listitem><para>Selecting this item will end your current game, and exit &kappname;.</para></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="settings-menu">
+<title>The <guimenu>Settings</guimenu> Menu</title>
+<variablelist>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Play Sounds</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+<action>Toggle whether sound effects should be played.</action> The default is off.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Show/Hide
+Statusbar</guimenuitem></menuchoice></term>
+<listitem><para>Toggle the display of the status bar at the bottom of the main window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem></menuchoice></term>
+<listitem><para>Displays the &kde; standard dialog to customize the toolbars.</para></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help">
+<title>The <guimenuitem>Help</guimenuitem> Menu</title>
+&help.menu.documentation;
+</sect1>
+</chapter>
+ 
+ 
+<chapter id="faq"><title>Frequently asked questions</title>
+<qandaset>
+<qandaentry>
+<question><para>Who made this game?</para></question>
+ <answer><para>The kdegames team. You can find their website here.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Where can I get cheatcodes? </para></question>
+ <answer><para>You can't get cheatcodes for KDE games.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I start a new game? </para></question>
+ <answer><para>Just click on the play field.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>How do I pause the game? </para></question>
+ <answer><para>To pause &kappname; use the <menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice> option on the menubar, or press 'P'.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I want to change the way this game looks. Can I? </para></question>
+ <answer><para>No.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have made a mistake. Can I undo? </para></question>
+ <answer><para>If you make a mistake, you lose the game. Don't feel bad, though, just start a new game.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Can I use keyboard? </para></question>
+ <answer><para>No. &kappname; can only be played with a mouse.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I can't figure out what to do here! Are there hints? </para></question>
+ <answer><para>&kappname; does not have a <quote>Hint</quote> feature.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
+  <answer><para>You cannot save games in &kappname;.</para></answer>
+</qandaentry>
+<qandaentry>
+ <question><para>Where are the highscores?</para></question>
+ <answer><para>To see the highscores, select <menuchoice><guimenu>Game</guimenu><guimenuitem>Show High Scores</guimenuitem></menuchoice> in the menubar.</para></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"><title>Credits and License</title>
+<para>
+&kappname;
+</para>
+<para>
+Copyright 2007-2008 Paolo Capriotti <email>p.capriotti@gmail.com</email>
+</para>
+<para>
+Copyright 2007-2008 Dmitri Suzdalev <email>dimsuz@gmail.com</email>
+</para>
+<para>
+Documentation copyright 2008 Paolo Capriotti <email>p.capriotti@gmail.com</email>
+</para>
+
+&underFDL;
+&underGPL;
+ 
+</chapter>
+ 
+ 
+<appendix id="installation">
+<title>Installation</title>
+ 
+&install.intro.documentation;
+ 
+ 
+<sect1 id="Compilation">
+<title>Compilation and Installation</title>
+ 
+&install.compile.documentation;
+ 
+</sect1>
+</appendix>
+ 
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
