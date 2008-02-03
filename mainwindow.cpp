@@ -140,10 +140,10 @@ void MainWindow::setGameTime(int time)
 
 void MainWindow::showCursor(bool visible) {
     if (visible) {
-        setCursor(QCursor());
+        centralWidget()->setCursor(QCursor());
     }
     else {
-        setCursor(Qt::BlankCursor);
+        centralWidget()->setCursor(Qt::BlankCursor);
     }
 }
 
