@@ -14,14 +14,16 @@
 #include <QGraphicsView>
 
 #include <KAction>
-#include <KDebug>
-#include <KLocalizedString>
-#include <KStandardGameAction>
-#include <KStandardAction>
 #include <KActionCollection>
 #include <KConfigDialog>
+#include <KDebug>
+#include <KGameDifficulty>
+#include <KLocalizedString>
 #include <KScoreDialog>
+#include <KStandardAction>
+#include <KStandardGameAction>
 #include <KStatusBar>
+#include <KToggleAction>
 
 #include "mainarea.h"
 #include "kollisionconfig.h"
@@ -63,6 +65,13 @@ MainWindow::MainWindow()
     stateChanged("playing", KXMLGUIClient::StateReverse);
     connect(m_main, SIGNAL(starting()), this, SLOT(newGame()));
     connect(m_main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
+    
+    KGameDifficulty::init(this, m_main, SLOT(difficultyChanged(KGameDifficulty::standardLevel)));
+    KGameDifficulty::setRestartOnChange(KGameDifficulty::RestartOnChange);
+    KGameDifficulty::addStandardLevel(KGameDifficulty::Easy);
+    KGameDifficulty::addStandardLevel(KGameDifficulty::Medium);
+    KGameDifficulty::addStandardLevel(KGameDifficulty::Hard);
+    KGameDifficulty::setLevel(KGameDifficulty::standardLevel(KollisionConfig::gameDifficulty()));
 }
 
 void MainWindow::setupActions()
@@ -71,13 +80,14 @@ void MainWindow::setupActions()
     KAction* abort = actionCollection()->addAction("game_abort");
     abort->setText(i18n("Abort game"));
     connect(abort, SIGNAL(triggered()), m_main, SLOT(abort()));
-//     KStandardGameAction::demo(m_main, SLOT(newSimulation()), actionCollection());
-//     KStandardGameAction::restart(m_main, SLOT(restart()), actionCollection());
 //
     KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
-    KStandardAction::preferences(this, SLOT(optionsPreferences()), actionCollection());
+    KAction* action;
+    action = new KToggleAction(i18n("&Play Sounds"), this);
+    actionCollection()->addAction("options_sounds", action);
+    connect(action, SIGNAL(triggered(bool)), m_main, SLOT(enableSounds(bool)));
 
     setupGUI();
 }
@@ -111,22 +121,6 @@ void MainWindow::highscores()
     ksdialog.exec();
 }
 
-void MainWindow::optionsPreferences()
-{
-    if (KConfigDialog::showDialog("preferences")) {
-        return;
-    }
-
-    KConfigDialog* dialog = new KConfigDialog(this, "preferences", KollisionConfig::self());
-    QWidget* mainPage = new QWidget(dialog);
-    m_pref_ui.setupUi(mainPage);
-    dialog->addPage(mainPage, i18n("Main page"), "main_page");
-    connect(dialog, SIGNAL(settingsChanged(const QString&)),
-            m_main, SLOT(enableSounds()));
-
-    dialog->show();
-}
-
 void MainWindow::setBallNumber(int number)
 {
     m_balls_label->setText(i18n("Balls: %1", number));
@@ -150,13 +144,13 @@ void MainWindow::showCursor(bool visible) {
 QString difficulty(int value)
 {
     switch (value) {
-    case 0:
+    case KGameDifficulty::Easy:
         return i18nc("Difficulty level", "Easy");
         break;
-    case 1:
+    case KGameDifficulty::Medium:
         return i18nc("Difficulty level", "Medium");
         break;
-    case 2:
+    case KGameDifficulty::Hard:
     default:
         return i18nc("Difficulty level", "Hard");
         break;

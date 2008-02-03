@@ -28,7 +28,6 @@ public:
 protected:
     void setupActions();
 protected slots:
-    void optionsPreferences();
     void setGameTime(int time);
     void setBallNumber(int number);
     

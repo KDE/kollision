@@ -5,6 +5,9 @@
 		<Menu name="game"><text>&amp;Game</text>
 			<Action name="game_abort" append="new_merge" />
 		</Menu>
+                <Menu name="settings">
+                        <Action name="options_sounds" />
+                </Menu>
 	</MenuBar>
     
     

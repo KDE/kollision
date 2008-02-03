@@ -74,6 +74,7 @@ Q_OBJECT
     void onDeath();
     void setManPosition(const QPointF& p);
     void drawBackground(QPainter*, const QRectF&);
+    void updateSounds();
 protected:
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
@@ -84,7 +85,7 @@ public:
 
 public slots:
     void tick();
-    void enableSounds();
+    void enableSounds(bool enable);
     void abort();
 signals:
     void starting();

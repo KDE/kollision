@@ -13,17 +13,7 @@
     <group name="game">
         <entry name="GameDifficulty" type="Int">
             <label>Difficulty of the game.</label>
-            <default>1</default>
-            <min>0</min>
-            <max>2</max>
-        </entry>
-    </group>
-    <group name="animation">
-        <entry name="Smoothness" type="Int">
-            <label>Animation smoothness.</label>
-            <default>100</default>
-            <min>0</min>
-            <max>100</max>
+            <default>50</default>
         </entry>
     </group>
 </kcfg>

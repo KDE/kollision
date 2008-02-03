@@ -73,10 +73,16 @@ MainArea::MainArea()
     displayMessages(m_welcome_msg);
     
     // setup audio player
-    enableSounds();
+    updateSounds();
 }
 
-void MainArea::enableSounds()
+void MainArea::enableSounds(bool enable)
+{
+    KollisionConfig::setEnableSounds(enable);
+    updateSounds();
+}
+
+void MainArea::updateSounds()
 {
     m_player.setActive(KollisionConfig::enableSounds());
 }
@@ -177,9 +183,8 @@ void MainArea::start()
     m_global_time.restart();
     m_last_time = 0;
     m_last_game_time = 0;
-    
-    int timeout = (100 - KollisionConfig::smoothness()) / 5;
-    m_timer.start(timeout);
+
+    m_timer.start(0);
     
     writeMessage(i18n("4 balls"));
     
