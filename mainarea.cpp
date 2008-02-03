@@ -188,7 +188,7 @@ void MainArea::togglePause()
         m_timer.stop();
         writeText(QStringList() << 
             i18n("Game paused") << 
-            i18n("Click or press P to resume"));
+            i18n("Click or press P to resume"), false);
 
         m_penalty += 5000;
         m_last_game_time -= 5;
