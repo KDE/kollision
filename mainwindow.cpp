@@ -58,6 +58,7 @@ MainWindow::MainWindow()
     connect(m_main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
     connect(m_main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
     connect(m_main, SIGNAL(changeState(bool)), this, SLOT(changeState(bool)));
+    connect(m_main, SIGNAL(pause(bool)), this, SLOT(pause(bool)));
 
     stateChanged("playing", KXMLGUIClient::StateReverse);
     connect(m_main, SIGNAL(starting()), this, SLOT(newGame()));
@@ -77,7 +78,8 @@ void MainWindow::setupActions()
     KAction* abort = actionCollection()->addAction("game_abort");
     abort->setText(i18n("Abort game"));
     connect(abort, SIGNAL(triggered()), m_main, SLOT(abort()));
-//
+
+    KStandardGameAction::pause(m_main, SLOT(togglePause()), actionCollection());
     KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
@@ -102,13 +104,9 @@ void MainWindow::gameOver(int time)
     KScoreDialog ksdialog(KScoreDialog::Name, this);
     ksdialog.setConfigGroup(KGameDifficulty::levelString());
     KScoreDialog::FieldInfo scoreInfo;
-    kDebug() << "time = " << time << endl;
     scoreInfo[KScoreDialog::Score].setNum(time);
     if (ksdialog.addScore(scoreInfo, KScoreDialog::AskName)) {
         ksdialog.exec();
-    }
-    else {
-        kDebug() << "ksdialog returned false" << endl;
     }
 }
 
@@ -131,13 +129,7 @@ void MainWindow::setGameTime(int time)
 }
 
 void MainWindow::changeState(bool running) {
-    if (running) {
-        centralWidget()->setCursor(Qt::BlankCursor);
-    }
-    else {
-        centralWidget()->setCursor(QCursor());
-    }
-    
+    showCursor(!running);
     KGameDifficulty::setRunning(running);
 }
 
@@ -146,6 +138,21 @@ void MainWindow::difficultyChanged(KGameDifficulty::standardLevel level)
     m_main->abort();
     KollisionConfig::setGameDifficulty((int) level);
     KollisionConfig::self()->writeConfig();
+}
+
+void MainWindow::pause(bool p)
+{
+    showCursor(p);
+}
+
+void MainWindow::showCursor(bool show)
+{
+    if (show) {
+        centralWidget()->setCursor(QCursor());
+    }
+    else {
+        centralWidget()->setCursor(Qt::BlankCursor);
+    }
 }
 
 #include "mainwindow.moc"

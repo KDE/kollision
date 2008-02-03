@@ -41,6 +41,9 @@ MainArea::MainArea()
 : m_man(0)
 , m_death(false)
 , m_game_over(false)
+, m_paused(false)
+, m_pause_time(0)
+, m_penalty(0)
 {
     m_size = 500;
     QRect rect(0, 0, m_size, m_size);
@@ -72,6 +75,14 @@ MainArea::MainArea()
     m_welcome_msg.append(MessagePtr(
         new Message(i18n("Click to start a game"), m_msg_font)));
     displayMessages(m_welcome_msg);
+    
+    m_pause_msg.append(MessagePtr(
+        new Message(i18n("Game paused"), m_msg_font)));
+    m_pause_msg.append(MessagePtr(
+        new Message(i18n("Click or press P to resume"), m_msg_font)));
+    foreach (MessagePtr msg, m_pause_msg) {
+        msg->hide();
+    }
     
     // setup audio player
     updateSounds();
@@ -115,7 +126,7 @@ Animation* MainArea::writeMessage(const QString& text)
     return sequence;
 }
 
-Animation* MainArea::writeText(const QStringList& lines)
+Animation* MainArea::writeText(const QStringList& lines, bool fade)
 {
     m_welcome_msg.clear();
     foreach (QString text, lines) {
@@ -124,16 +135,21 @@ Animation* MainArea::writeText(const QStringList& lines)
     }
     displayMessages(m_welcome_msg);
         
-    AnimationGroup* anim = new AnimationGroup;
-    foreach (KSharedPtr<Message> message, m_welcome_msg) {
-        message->setOpacityF(0.0);
-        anim->add(new FadeAnimation(
-            SpritePtr::staticCast(message), 0.0, 1.0, 1000));
+    if (fade) {
+        AnimationGroup* anim = new AnimationGroup;
+        foreach (KSharedPtr<Message> message, m_welcome_msg) {
+            message->setOpacityF(0.0);
+            anim->add(new FadeAnimation(
+                SpritePtr::staticCast(message), 0.0, 1.0, 1000));
+        }
+        
+        m_animator.add(anim);
+    
+        return anim;
     }
-    
-    m_animator.add(anim);
-    
-    return anim;
+    else {
+        return 0;
+    }
 }
 
 void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
@@ -145,6 +161,7 @@ void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
         KSharedPtr<Message> msg = messages[i];
         msg->setPosition(pos);
         msg->setZValue(10.0);
+        msg->show();
         addItem(msg.data());
         
         pos.ry() += step;
@@ -154,6 +171,39 @@ void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
 double MainArea::radius() const
 {
     return m_renderer->size().width() / 2.0;
+}
+
+void MainArea::togglePause()
+{
+    if (m_paused) {
+        m_paused = false;
+        m_timer.start(0);
+        m_welcome_msg.clear();
+    
+        m_pause_time += m_time.elapsed() - m_last_time;
+        m_last_time = m_time.elapsed();
+    }
+    else {
+        m_paused = true;
+        m_timer.stop();
+        writeText(QStringList() << 
+            i18n("Game paused") << 
+            i18n("Click or press P to resume"));
+
+        m_penalty += 5000;
+        m_last_game_time -= 5;
+        emit changeGameTime(m_last_game_time);
+    }
+    
+    m_man->setVisible(!m_paused);
+    foreach (Ball* ball, m_balls) {
+        ball->setVisible(!m_paused);
+    }
+    foreach (Ball* ball, m_fading) {
+        ball->setVisible(!m_paused);
+    }
+    
+    emit pause(m_paused);
 }
 
 void MainArea::start()
@@ -182,9 +232,10 @@ void MainArea::start()
     addBall("red_ball");
     addBall("red_ball");
     addBall("red_ball");
-    
+
+    m_pause_time = 0;
+    m_penalty = 0;
     m_time.restart();
-    m_global_time.restart();
     m_last_time = 0;
     m_last_game_time = 0;
 
@@ -290,8 +341,8 @@ void MainArea::tick()
     m_last_time = m_time.elapsed();
 
     // compute game time && update statusbar
-    if (m_time.elapsed() / 1000 > m_last_game_time) {
-        m_last_game_time = m_time.elapsed() / 1000;
+    if ((m_time.elapsed() - m_pause_time - m_penalty) / 1000 > m_last_game_time) {
+        m_last_game_time = (m_time.elapsed() - m_pause_time - m_penalty) / 1000;
         emit changeGameTime(m_last_game_time);
     }
     
@@ -423,9 +474,8 @@ void MainArea::tick()
         }
     }
     
-    if (!m_death && m_global_time.elapsed() >= m_ball_timeout * 1000) {
-        m_global_time.restart();
-        
+    if (!m_death && m_time.elapsed() - m_pause_time >= m_ball_timeout * 1000 * 
+                                                       (m_balls.size() + m_fading.size() - 3)) {
         addBall("red_ball");
         writeMessage(i18n("%1 balls", m_balls.size() + 1));
     }
@@ -433,7 +483,7 @@ void MainArea::tick()
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
         m_game_over = true;
         m_timer.stop();
-        int time = m_time.restart() / 1000;
+        int time = (m_time.restart() - m_pause_time - m_penalty) / 1000;
         QStringList text;
         text << i18n("GAME OVER")
              << i18np("You survived for %1 second", "You survived for %1 seconds", time)
@@ -462,13 +512,16 @@ void MainArea::setManPosition(const QPointF& p)
 void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
 {
     if (!m_death || m_game_over) {
-        if (!m_man) {
+        if (m_paused) {
+            togglePause();
+            setManPosition(e->scenePos());
+        }
+        else if (!m_man) {
             m_man = new Ball(m_renderer, "blue_ball");
             m_man->setZValue(1.0);
-            setManPosition(e->scenePos());            
+            setManPosition(e->scenePos());
             addItem(m_man);
             
-            m_event_time.restart();
             start();
             emit changeState(true);
         }
@@ -477,7 +530,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
 
 void MainArea::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
 {
-    if (!m_death && m_man) {
+    if (!m_death && m_man && !m_paused) {
         setManPosition(e->scenePos());
     }
 }

@@ -30,11 +30,9 @@ class MainArea : public QGraphicsScene
 {
 Q_OBJECT
     QTimer m_timer;
-    QTime m_global_time;
     int m_last_time;
     int m_last_game_time;
     QTime m_time;
-    QTime m_event_time;
 
     /// time interval between two balls being added
     int m_ball_timeout;
@@ -55,7 +53,12 @@ Q_OBJECT
     /// the falling animation is over, we're waiting for a new game to start
     bool m_game_over;
     
+    bool m_paused;
+    int m_pause_time;
+    int m_penalty;
+    
     QList<MessagePtr> m_welcome_msg;
+    QList<MessagePtr> m_pause_msg;
 
     AudioPlayer m_player;
 
@@ -68,7 +71,7 @@ Q_OBJECT
                 double diam, Collision& collision);
 
     Animation* writeMessage(const QString& text);
-    Animation* writeText(const QStringList& lines);
+    Animation* writeText(const QStringList& lines, bool fade = true);
     void displayMessages(const QList<KSharedPtr<Message> >& msgs);
     void playSound(int sound);
     void onDeath();
@@ -82,17 +85,18 @@ public:
     MainArea();
 
     void start();
-
 public slots:
     void tick();
     void enableSounds(bool enable);
     void abort();
+    void togglePause();
 signals:
     void starting();
     void gameOver(int);
     void changeBallNumber(int);
     void changeGameTime(int);
     void changeState(bool);
+    void pause(bool);
 };
 
 #endif // MAINAREA_H

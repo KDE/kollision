@@ -24,6 +24,8 @@ Q_OBJECT
     QLabel* m_time_label;
     Ui_Preferences m_pref_ui;
     MainArea* m_main;
+    
+    void showCursor(bool show);
 public:
     MainWindow();
 protected:
@@ -37,6 +39,7 @@ protected slots:
     void highscores();
     void changeState(bool);
     void difficultyChanged(KGameDifficulty::standardLevel level);
+    void pause(bool);
 };
 
 
