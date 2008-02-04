@@ -13,7 +13,8 @@
     
     <State name="playing">
         <enable>
-            <Action name="game_abort"/>
+            <Action name="game_abort" />
+            <Action name="game_pause" />
         </enable>
     </State>
 </gui>

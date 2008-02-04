@@ -175,6 +175,8 @@ double MainArea::radius() const
 
 void MainArea::togglePause()
 {
+    if (!m_man) return;
+    
     if (m_paused) {
         m_paused = false;
         m_timer.start(0);
@@ -319,6 +321,9 @@ bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collisio
 void MainArea::abort()
 {
     if (m_man) {
+        if (m_paused) {
+            togglePause();
+        }
         m_death = true;
         
         m_man->setVelocity(QPointF(0, 0));
