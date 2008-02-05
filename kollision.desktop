@@ -5,6 +5,5 @@ Exec=kollision
 Icon=kollision
 Type=Application
 Comment=A simple ball dodging game
-Comment[ga]=Cluiche simplí ina bhfuil ort liathróidí a sheachaint
 Terminal=false
 Categories=Game;
