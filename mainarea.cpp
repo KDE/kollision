@@ -70,19 +70,7 @@ MainArea::MainArea()
     }
     m_background = QPixmap::fromImage(tmp);
     
-    m_welcome_msg.append(MessagePtr(
-        new Message(i18n("Welcome to Kollision"), m_msg_font)));
-    m_welcome_msg.append(MessagePtr(
-        new Message(i18n("Click to start a game"), m_msg_font)));
-    displayMessages(m_welcome_msg);
-    
-    m_pause_msg.append(MessagePtr(
-        new Message(i18n("Game paused"), m_msg_font)));
-    m_pause_msg.append(MessagePtr(
-        new Message(i18n("Click or press P to resume"), m_msg_font)));
-    foreach (MessagePtr msg, m_pause_msg) {
-        msg->hide();
-    }
+    writeText(i18n("Welcome to Kollision\nClick to start a game"), false);
     
     // setup audio player
     updateSounds();
@@ -126,12 +114,12 @@ Animation* MainArea::writeMessage(const QString& text)
     return sequence;
 }
 
-Animation* MainArea::writeText(const QStringList& lines, bool fade)
+Animation* MainArea::writeText(const QString& text, bool fade)
 {
     m_welcome_msg.clear();
-    foreach (QString text, lines) {
+    foreach (QString line, text.split("\n")) {
         m_welcome_msg.append(
-            KSharedPtr<Message>(new Message(text, m_msg_font)));
+            KSharedPtr<Message>(new Message(line, m_msg_font)));
     }
     displayMessages(m_welcome_msg);
         
@@ -188,10 +176,8 @@ void MainArea::togglePause()
     else {
         m_paused = true;
         m_timer.stop();
-        writeText(QStringList() << 
-            i18n("Game paused") << 
-            i18n("Click or press P to resume"), false);
-
+        writeText(i18n("Game paused\nClick or press P to resume"), false);
+        
         m_penalty += 5000;
         m_last_game_time -= 5;
         emit changeGameTime(m_last_game_time);
@@ -489,10 +475,13 @@ void MainArea::tick()
         m_game_over = true;
         m_timer.stop();
         int time = (m_time.restart() - m_pause_time - m_penalty) / 1000;
-        QStringList text;
-        text << i18n("GAME OVER")
-             << i18np("You survived for %1 second", "You survived for %1 seconds", time)
-             << i18n("Click to restart");
+        QString text = i18np(
+            "GAME OVER\n"
+            "You survived for %1 second\n"
+            "Click to restart",
+            "GAME OVER\n"
+            "You survived for %1 seconds\n"
+            "Click to restart", time);
         emit gameOver(time);
         Animation* a = writeText(text);
         connect(this, SIGNAL(starting()), a, SLOT(stop()));

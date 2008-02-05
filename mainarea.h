@@ -71,7 +71,7 @@ Q_OBJECT
                 double diam, Collision& collision);
 
     Animation* writeMessage(const QString& text);
-    Animation* writeText(const QStringList& lines, bool fade = true);
+    Animation* writeText(const QString& lines, bool fade = true);
     void displayMessages(const QList<KSharedPtr<Message> >& msgs);
     void playSound(int sound);
     void onDeath();
