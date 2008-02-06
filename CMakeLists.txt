@@ -16,6 +16,7 @@ set(kollision_SRCS
 )
 kde4_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 kde4_add_ui_files(kollision_SRCS preferences.ui)
+kde4_add_app_icon(kollision_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../pictures/hi*-app-kollision.png")
 kde4_add_executable(kollision ${kollision_SRCS})
 
 target_link_libraries(kollision ${KDE4_KDEUI_LIBS} kdegames ${KDE4_PHONON_LIBS})
