@@ -27,7 +27,8 @@ QPixmap Renderer::render(const QString& id)
         
         QPainter p(&tmp);
         m_renderer->render(&p, id, QRectF(QPointF(0, 0), m_size));
-        
+        p.end();
+
         m_cache[id] = QPixmap::fromImage(tmp);
     }
     
