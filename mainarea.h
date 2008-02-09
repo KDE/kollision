@@ -22,7 +22,6 @@ class Renderer;
 class Ball;
 class Animation;
 class QGraphicsSceneMouseEvent;
-class QGraphicsTextItem;
 
 struct Collision;
 

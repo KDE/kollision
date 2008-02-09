@@ -13,7 +13,6 @@
 #include <QPointF>
 #include "spritefwd.h"
 
-class KGameCanvasAbstract;
 
 class Sprite : public KShared
 {
