@@ -11,14 +11,11 @@
 
 #include <QApplication>
 #include <QGraphicsSceneMouseEvent>
-#include <QMouseEvent>
 #include <QPainter>
 
 #include <KDebug>
 #include <KGameDifficulty>
 #include <KLocalizedString>
-#include <KMessageBox>
-#include <KStandardDirs>
 #include <Phonon/MediaObject>
 
 #include "renderer.h"

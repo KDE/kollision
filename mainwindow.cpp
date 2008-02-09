@@ -15,11 +15,8 @@
 
 #include <KAction>
 #include <KActionCollection>
-#include <KConfigDialog>
 #include <KDebug>
-#include <KLocalizedString>
 #include <KScoreDialog>
-#include <KStandardAction>
 #include <KStandardGameAction>
 #include <KStatusBar>
 #include <KToggleAction>
@@ -156,4 +153,3 @@ void MainWindow::showCursor(bool show)
 }
 
 #include "mainwindow.moc"
-
