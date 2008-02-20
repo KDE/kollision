@@ -1,9 +1,16 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=kollision
+Name[tr]=Kollision
 Exec=kollision
 Icon=kollision
 Type=Application
 Comment=A simple ball dodging game
+Comment[es]=Un simple juego de 'quemados'
+Comment[ga]=Cluiche simplí ina bhfuil ort liathróidí a sheachaint
+Comment[pt]=Um jogo de defesa de bolas
+Comment[pt_BR]=Um jogo de defesa de bolas
+Comment[tr]=Basit bir top atlatma oyunu
+Comment[uk]=Проста гра з кульками
 Terminal=false
 Categories=Game;
