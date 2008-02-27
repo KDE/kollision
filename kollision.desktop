@@ -11,4 +11,4 @@ Comment[pt]=Um jogo simples de desvio de bolas
 Comment[pt_BR]=Um jogo simples de desvio de bolas
 Comment[zh_TW]=簡單的閃躲球遊戲
 Terminal=false
-Categories=Game;
+Categories=Qt;KDE;Game;ArcadeGame;
