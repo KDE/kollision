@@ -164,7 +164,7 @@ void MainArea::togglePause()
     
     if (m_paused) {
         m_paused = false;
-        m_timer.start(0);
+        m_timer.start(20);
         m_welcome_msg.clear();
     
         m_pause_time += m_time.elapsed() - m_last_time;
@@ -224,7 +224,7 @@ void MainArea::start()
     m_last_time = 0;
     m_last_game_time = 0;
 
-    m_timer.start(0);
+    m_timer.start(20);
     
     writeMessage(i18n("4 balls"));
     
