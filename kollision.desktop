@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=kollision
 Name[x-test]=xxkollisionxx
+Name[zh_CN]=Kollision
 Exec=kollision
 Icon=kollision
 Type=Application
@@ -15,6 +16,7 @@ Comment[pt_BR]=Um jogo simples de desvio de bolas
 Comment[sv]=Ett enkelt spel för att undvika bollar
 Comment[uk]=Проста гра з кулькою
 Comment[x-test]=xxA simple ball dodging gamexx
+Comment[zh_CN]=一个简单的躲避球游戏
 Comment[zh_TW]=簡單的閃躲球遊戲
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
