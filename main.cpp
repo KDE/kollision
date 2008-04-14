@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
     KCmdLineOptions options;
     KCmdLineArgs::addCmdLineOptions(options);
     KApplication app;
+    KGlobal::locale()->insertCatalog("libkdegames");
 
     MainWindow* window = new MainWindow;
     window->show();
