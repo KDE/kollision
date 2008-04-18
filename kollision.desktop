@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=kollision
+Name[fa]=برخوردک
 Name[x-test]=xxkollisionxx
 Name[zh_CN]=Kollision
 Exec=kollision
@@ -9,6 +10,7 @@ Type=Application
 Comment=A simple ball dodging game
 Comment[el]=Ένα απλό παιχνίδι ελιγμών με μπάλες
 Comment[es]=Un juego para esquivar una bola
+Comment[fa]=بازی ساده جا‌خالی دادن
 Comment[fi]=Yksinkertainen väistelypeli
 Comment[ga]=Cluiche simplí ina bhfuil ort liathróidí a sheachaint
 Comment[ja]=ボールをよけるシンプルなゲーム
