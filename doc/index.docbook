@@ -11,7 +11,7 @@
  
 <book lang="&language;">
 <bookinfo>
-        <title>&kappname; Handbook</title>
+        <title>""&kappname;"" Handbook</title>
 <authorgroup>
         <author>
                 <firstname>Paolo</firstname>
@@ -20,12 +20,13 @@
                         <address><email>p.capriotti@gmail.com</email></address>
                 </affiliation>
         </author>
+<!--TRANS:ROLES_OF_TRANSLATORS-->
 </authorgroup>
  
 <date>&docupdate;</date>
 <releaseinfo>&docversion;</releaseinfo> 
 <abstract>
-        <para>This documentation describes the game of &kappname; version &kappversion;</para>
+        <para>This documentation describes the game of "&kappname;" version &kappversion;</para>
 </abstract>
  
 <keywordset>
@@ -118,7 +119,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
 </shortcut>
 <guimenu>Game</guimenu>
 <guimenuitem>Quit</guimenuitem></menuchoice></term>
-<listitem><para>Selecting this item will end your current game, and exit &kappname;.</para></listitem>
+<listitem><para>Selecting this item will end your current game, and exit "&kappname;".</para></listitem>
 </varlistentry>
 </variablelist>
 </sect1>
@@ -171,7 +172,7 @@ Statusbar</guimenuitem></menuchoice></term>
 </qandaentry>
 <qandaentry>
  <question><para>Where can I get cheatcodes? </para></question>
- <answer><para>You can't get cheatcodes for KDE games.</para></answer>
+ <answer><para>You cannot get cheatcodes for &kde; games.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>How do I start a new game? </para></question>
@@ -179,7 +180,7 @@ Statusbar</guimenuitem></menuchoice></term>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
- <answer><para>To pause &kappname; use the <menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice> option on the menubar, or press 'P'.</para></answer>
+ <answer><para>To pause "&kappname;" use the <menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice> option on the menubar, or press 'P'.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
@@ -191,15 +192,15 @@ Statusbar</guimenuitem></menuchoice></term>
 </qandaentry>
 <qandaentry>
  <question><para>Can I use keyboard? </para></question>
- <answer><para>No. &kappname; can only be played with a mouse.</para></answer>
+ <answer><para>No. "&kappname;" can only be played with a mouse.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I can't figure out what to do here! Are there hints? </para></question>
- <answer><para>&kappname; does not have a <quote>Hint</quote> feature.</para></answer>
+ <question><para>I cannot figure out what to do here! Are there hints? </para></question>
+ <answer><para>"&kappname;" does not have a <quote>Hint</quote> feature.</para></answer>
 </qandaentry>
 <qandaentry>
- <question><para>I have to quit the game now, but I'm not finished yet. Can I save my progress?</para></question>
-  <answer><para>You cannot save games in &kappname;.</para></answer>
+ <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
+  <answer><para>You cannot save games in "&kappname;".</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>Where are the highscores?</para></question>
@@ -210,7 +211,7 @@ Statusbar</guimenuitem></menuchoice></term>
  
 <chapter id="credits"><title>Credits and License</title>
 <para>
-&kappname;
+"&kappname;"
 </para>
 <para>
 Copyright 2007-2008 Paolo Capriotti <email>p.capriotti@gmail.com</email>
@@ -221,6 +222,8 @@ Copyright 2007-2008 Dmitri Suzdalev <email>dimsuz@gmail.com</email>
 <para>
 Documentation copyright 2008 Paolo Capriotti <email>p.capriotti@gmail.com</email>
 </para>
+
+<!--TRANS:CREDIT_FOR_TRANSLATORS-->
 
 &underFDL;
 &underGPL;
