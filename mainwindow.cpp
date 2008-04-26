@@ -17,6 +17,7 @@
 #include <KActionCollection>
 #include <KDebug>
 #include <KScoreDialog>
+#include <KUser>
 #include <KStandardGameAction>
 #include <KStatusBar>
 #include <KToggleAction>
@@ -97,10 +98,15 @@ void MainWindow::newGame()
 void MainWindow::gameOver(int time)
 {
     stateChanged("playing", KXMLGUIClient::StateReverse);
-
+    KUser user;
+    QString userName = user.property(KUser::FullName).toString();
+    if (userName.isEmpty()) {
+        userName = user.loginName();
+    }
     KScoreDialog ksdialog(KScoreDialog::Name, this);
     ksdialog.setConfigGroup(KGameDifficulty::levelString());
     KScoreDialog::FieldInfo scoreInfo;
+    scoreInfo[KScoreDialog::Name] = userName;
     scoreInfo[KScoreDialog::Score].setNum(time);
     if (ksdialog.addScore(scoreInfo, KScoreDialog::AskName)) {
         ksdialog.exec();
