@@ -114,7 +114,7 @@ Animation* MainArea::writeMessage(const QString& text)
 Animation* MainArea::writeText(const QString& text, bool fade)
 {
     m_welcome_msg.clear();
-    foreach (QString line, text.split("\n")) {
+    foreach (const QString &line, text.split("\n")) {
         m_welcome_msg.append(
             KSharedPtr<Message>(new Message(line, m_msg_font)));
     }
