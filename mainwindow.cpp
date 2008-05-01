@@ -99,7 +99,8 @@ void MainWindow::gameOver(int time)
     stateChanged("playing", KXMLGUIClient::StateReverse);
 
     KScoreDialog ksdialog(KScoreDialog::Name, this);
-    ksdialog.setConfigGroup(KGameDifficulty::levelString());
+    ksdialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings()); //Add all the translations of the group names
+    ksdialog.setConfigGroup(KGameDifficulty::localizedLevelString());
     KScoreDialog::FieldInfo scoreInfo;
     scoreInfo[KScoreDialog::Score].setNum(time);
     if (ksdialog.addScore(scoreInfo, KScoreDialog::AskName)) {
@@ -110,7 +111,8 @@ void MainWindow::gameOver(int time)
 void MainWindow::highscores()
 {
     KScoreDialog ksdialog(KScoreDialog::Name | KScoreDialog::Time, this);
-    ksdialog.setConfigGroup(KGameDifficulty::levelString());
+    ksdialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings()); //Add all the translations of the group names
+    ksdialog.setConfigGroup(KGameDifficulty::localizedLevelString());
     ksdialog.exec();
 }
 
