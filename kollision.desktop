@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=kollision
 Name[fa]=برخوردک
+Name[nds]=Kollision
 Name[x-test]=xxkollisionxx
 Name[zh_CN]=Kollision
 Exec=kollision
@@ -15,6 +16,7 @@ Comment[fi]=Yksinkertainen väistelypeli
 Comment[ga]=Cluiche simplí ina bhfuil ort liathróidí a sheachaint
 Comment[ja]=ボールをよけるシンプルなゲーム
 Comment[km]=ល្បែង​ឧបាយកល​បាល់​ធម្មតា
+Comment[nds]=En eenfach Ball-Utwiekspeel
 Comment[pt]=Um jogo simples de desvio de bolas
 Comment[pt_BR]=Um jogo simples: desvie das bolas
 Comment[sv]=Ett enkelt spel för att undvika bollar
