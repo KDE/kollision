@@ -11,6 +11,7 @@ Exec=kollision
 Icon=kollision
 Type=Application
 Comment=A simple ball dodging game
+Comment[da]=Et enkelt undvigelsesspil med bolde
 Comment[el]=Ένα απλό παιχνίδι ελιγμών με μπάλες
 Comment[es]=Un juego para esquivar una bola
 Comment[et]=Lihtne pallitogimise mäng
