@@ -19,6 +19,12 @@ Renderer::Renderer()
         KStandardDirs::locate("appdata", "pictures/theme.svgz"), 0);
 }
 
+Renderer::~Renderer()
+{
+    delete m_renderer;
+}
+
+
 QPixmap Renderer::render(const QString& id)
 {
     if (!m_cache.contains(id)) {

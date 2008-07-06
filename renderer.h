@@ -24,6 +24,7 @@ class Renderer
     KSvgRenderer* m_renderer;
 public:
     Renderer();
+    ~Renderer();
     
     QPixmap render(const QString& id);
     void resize(const QSize& size);
