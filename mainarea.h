@@ -51,11 +51,11 @@ Q_OBJECT
 
     /// the falling animation is over, we're waiting for a new game to start
     bool m_game_over;
-    
+
     bool m_paused;
     int m_pause_time;
     int m_penalty;
-    
+
     QList<MessagePtr> m_welcome_msg;
     QList<MessagePtr> m_pause_msg;
 
@@ -82,7 +82,7 @@ protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
 public:
     MainArea();
-
+    ~MainArea();
     void start();
 public slots:
     void tick();
