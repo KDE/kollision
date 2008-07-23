@@ -19,7 +19,7 @@ class Sprite : public KShared
 public:
     virtual ~Sprite() { }
     virtual qreal opacityF() const = 0;
-    virtual void setOpacityF(double val) = 0;
+    virtual void setOpacityF(qreal val) = 0;
     virtual QPointF position() const = 0;
     virtual void setPosition(const QPointF& pos) = 0;
     virtual QPointF velocity() const = 0;
