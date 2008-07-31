@@ -88,7 +88,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
 <varlistentry>
 <term><menuchoice>
 <guimenu>Game</guimenu>
-<guimenuitem>Abort</guimenuitem></menuchoice></term>
+<guimenuitem>Abort game</guimenuitem></menuchoice></term>
 <listitem><para>Abort a game and return to the welcome screen.</para></listitem>
 </varlistentry>
 
@@ -109,7 +109,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
 <shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
 </shortcut>
 <guimenu>Game</guimenu>
-<guimenuitem>Show Highscores</guimenuitem></menuchoice></term>
+<guimenuitem>Show High Scores</guimenuitem></menuchoice></term>
 <listitem><para>This will show the best scores for the current level.</para></listitem>
 </varlistentry>
 
@@ -143,7 +143,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Show/Hide
+<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Show
 Statusbar</guimenuitem></menuchoice></term>
 <listitem><para>Toggle the display of the status bar at the bottom of the main window.</para></listitem>
 </varlistentry>
@@ -154,11 +154,18 @@ Statusbar</guimenuitem></menuchoice></term>
 <listitem><para>Displays the &kde; standard dialog to customize the toolbars.</para></listitem>
 </varlistentry>
 
+<varlistentry>
+<term><menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice></term>
+<listitem><para><action>Displays a standard &kde; shortcut configuration dialog</action> 
+to change the keyboard shortcuts for &kappname;.</para></listitem>
+</varlistentry>
+
 </variablelist>
 </sect1>
 
 <sect1 id="help">
-<title>The <guimenuitem>Help</guimenuitem> Menu</title>
+<title>The <guimenu>Help</guimenu> Menu</title>
 &help.menu.documentation;
 </sect1>
 </chapter>
@@ -168,7 +175,7 @@ Statusbar</guimenuitem></menuchoice></term>
 <qandaset>
 <qandaentry>
 <question><para>Who made this game?</para></question>
- <answer><para>The kdegames team. You can find their website here.</para></answer>
+ <answer><para>The kdegames team. You can find their website <ulink url="http://games.kde.org">here</ulink>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>Where can I get cheatcodes? </para></question>
