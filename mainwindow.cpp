@@ -86,7 +86,7 @@ void MainWindow::setupActions()
     actionCollection()->addAction("options_sounds", action);
     connect(action, SIGNAL(triggered(bool)), m_main, SLOT(enableSounds(bool)));
 
-    setupGUI();
+    setupGUI(Create | Save | Keys | StatusBar);
 }
 
 void MainWindow::newGame()
