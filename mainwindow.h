@@ -28,6 +28,7 @@ Q_OBJECT
     void showCursor(bool show);
 public:
     MainWindow();
+    ~MainWindow();
 protected:
     void setupActions();
 protected slots:

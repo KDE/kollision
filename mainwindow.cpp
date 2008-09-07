@@ -69,6 +69,11 @@ MainWindow::MainWindow()
     KGameDifficulty::setLevel(KGameDifficulty::standardLevel(KollisionConfig::gameDifficulty()));
 }
 
+MainWindow::~MainWindow()
+{
+    delete m_main;
+}
+
 void MainWindow::setupActions()
 {
     // Game
