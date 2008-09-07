@@ -12,6 +12,7 @@
 #include <QPainter>
 #include <ksvgrenderer.h>
 #include <kstandarddirs.h>
+#include <KDebug>
 
 Renderer::Renderer()
 {
