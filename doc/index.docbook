@@ -61,7 +61,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
  
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title>
         <para>Game Rules, Strategies and Tips</para>
-        <sect1><title>Game Rules</title>
+        <sect1 id="rules"><title>Game Rules</title>
         <itemizedlist>
             <listitem><para>Red balls move on the game field at constant speed, bouncing against one another and the four walls.</para></listitem>
             <listitem><para>The blue ball can be freely moved inside the field with the mouse.</para></listitem>
@@ -70,7 +70,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
             <listitem><para>Pausing the game subtracts a (cumulative) 5 seconds penalty from the total time.</para></listitem>
         </itemizedlist>
         </sect1>
-        <sect1><title>Strategies and Tips</title>
+        <sect1 id="strattips"><title>Strategies and Tips</title>
         <itemizedlist>
             <listitem><para>Move the blue ball gently and slowly. Swinging across the field will make collisions with other balls more likely.</para></listitem>
             <listitem><para>Moving the cursor out of the field can be used as an elegant trick to come out of a screwed situation. Use it wisely.</para></listitem>
