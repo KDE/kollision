@@ -63,7 +63,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
         <para>Game Rules, Strategies and Tips</para>
         <sect1 id="rules"><title>Game Rules</title>
         <itemizedlist>
-            <listitem><para>Red balls move on the game field at constant speed, bouncing against one another and the four walls.</para></listitem>
+            <listitem><para>Red balls move with constant speed on the game field bouncing off walls until colliding with another ball, which causes the speed and direction of both balls to change.</para></listitem>
             <listitem><para>The blue ball can be freely moved inside the field with the mouse.</para></listitem>
             <listitem><para>The blue ball cannot escape the field. If the cursor is moved out, the ball stays on the edge, until the cursor returns.</para></listitem>
             <listitem><para>The score is directly proportional to the time the game has lasted.</para></listitem>
