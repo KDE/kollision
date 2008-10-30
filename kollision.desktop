@@ -1,15 +1,5 @@
 [Desktop Entry]
 Name=Kollision
-Name[de]=Kollision
-Name[fa]=برخوردک
-Name[it]=Kollision
-Name[lv]=Kollision
-Name[nds]=Kollision
-Name[nn]=Kollisjon
-Name[pl]=Kollision
-Name[tr]=Kollision
-Name[x-test]=xxkollisionxx
-Name[zh_CN]=Kollision
 Exec=kollision
 Icon=kollision
 Type=Application
