@@ -187,7 +187,7 @@ to change the keyboard shortcuts for &kappname;.</para></listitem>
 </qandaentry>
 <qandaentry>
  <question><para>How do I pause the game? </para></question>
- <answer><para>To pause &kappname; use the <menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice> option on the menubar, or press 'P'.</para></answer>
+ <answer><para>To pause &kappname; use the <menuchoice><guimenu>Game</guimenu><guimenuitem>Pause</guimenuitem></menuchoice> option on the menubar, or press <keycap>P</keycap>.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I want to change the way this game looks. Can I? </para></question>
