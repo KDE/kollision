@@ -470,7 +470,7 @@ void MainArea::tick()
     if (!m_death && m_time.elapsed() - m_pause_time >= m_ball_timeout * 1000 *
                                                        (m_balls.size() + m_fading.size() - 3)) {
         addBall("red_ball");
-        writeMessage(i18n("%1 balls", m_balls.size() + 1));
+        writeMessage(i18np("%1 ball", "%1 balls", m_balls.size() + 1));
     }
 
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
