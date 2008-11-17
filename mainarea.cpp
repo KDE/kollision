@@ -231,7 +231,7 @@ void MainArea::start()
 
     m_timer.start(20);
 
-    writeMessage(i18n("4 balls"));
+    writeMessage(i18np("%1 ball", "%1 balls", 4));
 
     emit changeGameTime(0);
     emit starting();
