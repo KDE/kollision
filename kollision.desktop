@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Kollision
 Name[nn]=Kollisjon
+Name[ro]=Koliziune
 Name[x-test]=xxKollisionxx
 Exec=kollision
 Icon=kollision
