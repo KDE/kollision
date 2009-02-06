@@ -80,6 +80,7 @@ Q_OBJECT
 protected:
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+    virtual void focusOutEvent(QFocusEvent*);
 public:
     MainArea();
     ~MainArea();

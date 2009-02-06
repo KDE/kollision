@@ -539,6 +539,13 @@ void MainArea::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
     }
 }
 
+void MainArea::focusOutEvent(QFocusEvent*)
+{
+    if (!m_paused) {
+        togglePause();
+    }
+}
+
 void MainArea::drawBackground(QPainter* painter, const QRectF& rect)
 {
     painter->drawPixmap(rect, m_background, rect);
