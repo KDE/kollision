@@ -97,6 +97,7 @@ void MainWindow::setupActions()
 void MainWindow::newGame()
 {
     stateChanged("playing");
+    m_lastUsedDifficulty = KGameDifficulty::localizedLevelString();
 }
 
 void MainWindow::gameOver(int time)
@@ -106,7 +107,7 @@ void MainWindow::gameOver(int time)
     KScoreDialog ksdialog(KScoreDialog::Name, this);
     ksdialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings()); //Add all the translations of the group names
     ksdialog.setConfigGroupWeights(KGameDifficulty::levelWeights());
-    ksdialog.setConfigGroup(KGameDifficulty::localizedLevelString());
+    ksdialog.setConfigGroup(m_lastUsedDifficulty);
     KScoreDialog::FieldInfo scoreInfo;
     scoreInfo[KScoreDialog::Score].setNum(time);
     if (ksdialog.addScore(scoreInfo, KScoreDialog::AskName)) {

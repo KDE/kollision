@@ -24,6 +24,7 @@ Q_OBJECT
     QLabel* m_time_label;
     Ui_Preferences m_pref_ui;
     MainArea* m_main;
+    QPair<QByteArray, QString> m_lastUsedDifficulty;
     
     void showCursor(bool show);
 public:
