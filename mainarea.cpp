@@ -51,6 +51,7 @@ MainArea::MainArea()
     m_renderer = new Renderer;
     m_renderer->resize(QSize(28, 28));
 
+    m_timer.setInterval(20);
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
 
     m_msg_font = QApplication::font();
@@ -169,7 +170,7 @@ void MainArea::togglePause()
 
     if (m_paused) {
         m_paused = false;
-        m_timer.start(20);
+        m_timer.start();
         m_welcome_msg.clear();
 
         m_pause_time += m_time.elapsed() - m_last_time;
@@ -229,7 +230,7 @@ void MainArea::start()
     m_last_time = 0;
     m_last_game_time = 0;
 
-    m_timer.start(20);
+    m_timer.start();
 
     writeMessage(i18np("%1 ball", "%1 balls", 4));
 
