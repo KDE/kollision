@@ -130,8 +130,7 @@ void MainWindow::setBallNumber(int number)
 
 void MainWindow::setGameTime(int time)
 {
-    m_time_label->setText(
-        time == 0 ? "" : i18np("Time: %1 second", "Time: %1 seconds", time));
+    m_time_label->setText(i18np("Time: %1 second", "Time: %1 seconds", time));
 }
 
 void MainWindow::changeState(bool running) {
