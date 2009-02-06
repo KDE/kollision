@@ -498,7 +498,6 @@ void MainArea::tick()
     }
 }
 
-
 void MainArea::setManPosition(const QPointF& p)
 {
     Q_ASSERT(m_man);
@@ -506,7 +505,7 @@ void MainArea::setManPosition(const QPointF& p)
     QPointF pos = p;
 
     if (pos.x() <= radius()) pos.setX((int) radius());
-    if (pos.x() >= m_size - radius()) pos.setX(m_size - (int)radius());
+    if (pos.x() >= m_size - radius()) pos.setX(m_size - (int) radius());
     if (pos.y() <= radius()) pos.setY((int) radius());
     if (pos.y() >= m_size - radius()) pos.setY(m_size - (int) radius());
 
@@ -550,4 +549,3 @@ void MainArea::drawBackground(QPainter* painter, const QRectF& rect)
 {
     painter->drawPixmap(rect, m_background, rect);
 }
-
