@@ -181,14 +181,14 @@ void MainArea::togglePause()
         m_timer.stop();
         writeText(i18n("Game paused\nClick or press P to resume"), false);
 
-    if(m_last_game_time >= 5) {
-        m_penalty += 5000;
-        m_last_game_time -= 5;
-    }
-    else {
-        m_penalty += m_last_game_time * 1000;
-        m_last_game_time = 0;
-    }
+        if(m_last_game_time >= 5) {
+            m_penalty += 5000;
+            m_last_game_time -= 5;
+        }
+        else {
+            m_penalty += m_last_game_time * 1000;
+            m_last_game_time = 0;
+        }
 
         emit changeGameTime(m_last_game_time);
     }
