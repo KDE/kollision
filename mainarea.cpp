@@ -10,6 +10,7 @@
 #include "mainarea.h"
 
 #include <QApplication>
+#include <QGraphicsView>
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 
@@ -338,6 +339,10 @@ void MainArea::abort()
 
 void MainArea::tick()
 {
+    if (!m_death && m_man && !m_paused) {
+        setManPosition(views().first()->mapFromGlobal(QCursor().pos()));
+    }
+
     int t = m_time.elapsed() - m_last_time;
     m_last_time = m_time.elapsed();
 
@@ -528,13 +533,6 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
             start();
             emit changeState(true);
         }
-    }
-}
-
-void MainArea::mouseMoveEvent(QGraphicsSceneMouseEvent* e)
-{
-    if (!m_death && m_man && !m_paused) {
-        setManPosition(e->scenePos());
     }
 }
 

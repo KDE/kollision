@@ -78,7 +78,6 @@ Q_OBJECT
     void drawBackground(QPainter*, const QRectF&);
     void updateSounds();
 protected:
-    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
     virtual void focusOutEvent(QFocusEvent*);
 public:
