@@ -2,8 +2,6 @@
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
   <!ENTITY kappname "<application>Kollision</application>">
   <!ENTITY kappversion "0.1">
-  <!ENTITY docversion "0.1">
-  <!ENTITY docupdate "2008-01-20">
   <!ENTITY package "kdegames">
   <!ENTITY % English "INCLUDE" >
   <!ENTITY % addindex "IGNORE">
@@ -23,8 +21,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
  
-<date>&docupdate;</date>
-<releaseinfo>&docversion;</releaseinfo> 
+<date>2008-01-20</date>
+<releaseinfo>&kappversion;</releaseinfo> 
 <abstract>
         <para>This documentation describes the game of &kappname; version &kappversion;</para>
 </abstract>
