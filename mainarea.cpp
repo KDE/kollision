@@ -14,6 +14,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 
+#include <KAction>
 #include <KDebug>
 #include <KGameDifficulty>
 #include <KLocalizedString>
@@ -42,6 +43,7 @@ MainArea::MainArea()
 , m_paused(false)
 , m_pause_time(0)
 , m_penalty(0)
+, m_pause_action(0)
 {
     m_size = 500;
     QRect rect(0, 0, m_size, m_size);
@@ -180,7 +182,10 @@ void MainArea::togglePause()
     else {
         m_paused = true;
         m_timer.stop();
-        writeText(i18n("Game paused\nClick or press P to resume"), false);
+        QString shortcut = m_pause_action ?
+          m_pause_action->shortcut().toString() :
+          "P";
+        writeText(i18n("Game paused\nClick or press %1 to resume", shortcut), false);
 
         if(m_last_game_time >= 5) {
             m_penalty += 5000;
@@ -245,6 +250,11 @@ void MainArea::start()
     emit changeGameTime(0);
     emit starting();
     m_player.play(AudioPlayer::START);
+}
+
+void MainArea::setPauseAction(KAction* action)
+{
+  m_pause_action = action;
 }
 
 QPointF MainArea::randomPoint() const

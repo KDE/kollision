@@ -22,6 +22,7 @@ class Renderer;
 class Ball;
 class Animation;
 class QGraphicsSceneMouseEvent;
+class KAction;
 
 struct Collision;
 
@@ -60,6 +61,8 @@ Q_OBJECT
     QList<MessagePtr> m_pause_msg;
 
     AudioPlayer m_player;
+    
+    KAction* m_pause_action;
 
     double radius() const;
     QPointF randomPoint() const;
@@ -84,6 +87,7 @@ public:
     MainArea();
     ~MainArea();
     void start();
+    void setPauseAction(KAction* action);
 public slots:
     void tick();
     void enableSounds(bool enable);

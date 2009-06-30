@@ -81,7 +81,8 @@ void MainWindow::setupActions()
     abort->setText(i18n("Abort game"));
     connect(abort, SIGNAL(triggered()), m_main, SLOT(abort()));
 
-    KStandardGameAction::pause(m_main, SLOT(togglePause()), actionCollection());
+    KAction* pause = KStandardGameAction::pause(m_main, SLOT(togglePause()), actionCollection());
+    m_main->setPauseAction(pause);
     KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
