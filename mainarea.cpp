@@ -64,9 +64,10 @@ MainArea::MainArea()
     {
         // draw gradient
         QPainter p(&tmp);
+        QColor color = palette().color(QPalette::Window);
         QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
-        grad.setColorAt(0, QColor(240, 240, 240));
-        grad.setColorAt(1, QColor(180, 180, 180));
+        grad.setColorAt(0, color.lighter(115));
+        grad.setColorAt(1, color.darker(115));
         p.fillRect(rect, grad);
     }
     m_background = QPixmap::fromImage(tmp);
