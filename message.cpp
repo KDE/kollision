@@ -10,8 +10,10 @@
 #include "message.h"
 #include <QFontMetrics>
 #include <QPainter>
+#include <QTextDocument>
+#include <QTextOption>
 
-Message::Message(const QString& text, const QFont& font)
+Message::Message(const QString& text, const QFont& font, int maxwidth)
 : QGraphicsTextItem(text)
 , m_opacity(1.0)
 , m_velocity(0.0, 0.0)
@@ -19,12 +21,14 @@ Message::Message(const QString& text, const QFont& font)
     setFont(font);
     setDefaultTextColor(Qt::black);
     setAcceptsHoverEvents(false);
+    document()->setTextWidth(maxwidth);
+    QTextOption opts = document()->defaultTextOption();
+    opts.setAlignment(Qt::AlignHCenter);
+    document()->setDefaultTextOption(opts);
     
-    // translate so that the origin is the center of the
-    // bounding rect
-    QFontMetrics metrics(font);
-    QSize offset = metrics.boundingRect(text).size();
-    translate(-offset.width() / 2, -offset.height() / 2);
+    // translate so that the origin is the center
+    translate(-document()->size().width() / 2, 
+              -document()->size().height() / 2);
 }
 
 void Message::paint(QPainter *painter, 
@@ -68,3 +72,6 @@ QPointF Message::position() const
     return QGraphicsTextItem::pos();
 }
 
+int Message::height() const {
+    return document()->size().height();
+}

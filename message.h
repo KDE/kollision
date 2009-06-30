@@ -19,7 +19,7 @@ class Message : public QGraphicsTextItem, public Sprite
     qreal m_opacity;
     QPointF m_velocity;
 public:
-    Message(const QString& text, const QFont& font);
+    Message(const QString& text, const QFont& font, int maxwidth);
     
     virtual void paint(QPainter *painter, 
                        const QStyleOptionGraphicsItem* option, 
@@ -33,6 +33,8 @@ public:
     
     virtual void setPosition(const QPointF& pos);
     virtual QPointF position() const;
+    
+    int height() const;
 };
 
 typedef KSharedPtr<Message> MessagePtr;

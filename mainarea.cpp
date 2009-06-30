@@ -96,7 +96,7 @@ void MainArea::updateSounds()
 
 Animation* MainArea::writeMessage(const QString& text)
 {
-    Message* message = new Message(text, m_msg_font);
+    Message* message = new Message(text, m_msg_font, m_size);
     message->setPosition(QPointF(m_size, m_size) / 2.0);
     addItem(message);
     message->setOpacityF(0.0);
@@ -125,7 +125,7 @@ Animation* MainArea::writeText(const QString& text, bool fade)
     m_welcome_msg.clear();
     foreach (const QString &line, text.split("\n")) {
         m_welcome_msg.append(
-            KSharedPtr<Message>(new Message(line, m_msg_font)));
+            KSharedPtr<Message>(new Message(line, m_msg_font, m_size)));
     }
     displayMessages(m_welcome_msg);
 
@@ -148,17 +148,21 @@ Animation* MainArea::writeText(const QString& text, bool fade)
 
 void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
 {
-    const int step = 45;
-    QPointF pos(m_size / 2.0, (m_size - step * messages.size()) / 2.0);
+    int totalHeight = 0;
+    foreach (KSharedPtr<Message> message, messages) {
+      totalHeight += message->height();
+    }
+    QPointF pos(m_size / 2.0, (m_size - totalHeight) / 2.0);
 
     for (int i = 0; i < messages.size(); i++) {
         KSharedPtr<Message> msg = messages[i];
+        int halfHeight = msg->height() / 2;
+        pos.ry() += halfHeight;
         msg->setPosition(pos);
         msg->setZValue(10.0);
         msg->show();
         addItem(msg.data());
-
-        pos.ry() += step;
+        pos.ry() += halfHeight;
     }
 }
 
