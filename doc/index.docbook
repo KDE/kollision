@@ -86,8 +86,8 @@ You can choose the game difficulty level on the right of the status bar. The hig
 <varlistentry>
 <term><menuchoice>
 <guimenu>Game</guimenu>
-<guimenuitem>Abort game</guimenuitem></menuchoice></term>
-<listitem><para>Abort a game and return to the welcome screen.</para></listitem>
+<guimenuitem>End game</guimenuitem></menuchoice></term>
+<listitem><para>End a game and return to the welcome screen.</para></listitem>
 </varlistentry>
 
 <varlistentry id="game-pause">
