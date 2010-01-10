@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Kollision
 Name[ca]=Kollision
+Name[ca@valencia]=Kollision
 Name[cs]=Kollision
 Name[da]=Kollision
 Name[de]=Kollision
@@ -41,6 +42,7 @@ Icon=kollision
 Type=Application
 Comment=A simple ball dodging game
 Comment[ca]=Un senzill joc d'esquivar una bola
+Comment[ca@valencia]=Un senzill joc d'esquivar una bola
 Comment[da]=Et enkelt undvigelsesspil med bolde
 Comment[de]=Ein einfaches Ausweich-Ballspiel
 Comment[el]=Ένα απλό παιχνίδι ελιγμών με μπάλες
