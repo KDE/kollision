@@ -14,14 +14,14 @@
 #include <QSize>
 #include <QPixmap>
 
-class KSvgRenderer;
+class QSvgRenderer;
 
 class Renderer
 {
     QHash<QString, QPixmap> m_cache;
     QSize m_size;
     
-    KSvgRenderer* m_renderer;
+    QSvgRenderer* m_renderer;
 public:
     Renderer();
     ~Renderer();

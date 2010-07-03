@@ -10,13 +10,13 @@
 #include "renderer.h"
 #include <QImage>
 #include <QPainter>
-#include <ksvgrenderer.h>
+#include <qsvgrenderer.h>
 #include <kstandarddirs.h>
 #include <KDebug>
 
 Renderer::Renderer()
 {
-    m_renderer = new KSvgRenderer(
+    m_renderer = new QSvgRenderer(
         KStandardDirs::locate("appdata", "pictures/theme.svgz"), 0);
 }
 
