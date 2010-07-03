@@ -138,9 +138,7 @@ bool AnimationGroup::step(int t)
 
 void AnimationGroup::stop()
 {
-    foreach (Animation* a, m_animations) {
-        delete a;
-    }
+    qDeleteAll(m_animations);
     m_animations.clear();
 }
 
