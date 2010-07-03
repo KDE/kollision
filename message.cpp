@@ -31,25 +31,14 @@ Message::Message(const QString& text, const QFont& font, int maxwidth)
               -document()->size().height() / 2);
 }
 
-void Message::paint(QPainter *painter, 
-                    const QStyleOptionGraphicsItem* option, 
-                    QWidget* widget)
-{
-    qreal oldOpacity = painter->opacity();
-    painter->setOpacity(m_opacity);
-    QGraphicsTextItem::paint(painter, option, widget);
-    painter->setOpacity(oldOpacity);
-}
-
 void Message::setOpacityF(qreal opacity)
 {
-    m_opacity = opacity;
-    update();
+    QGraphicsItem::setOpacity(opacity);
 }
 
 qreal Message::opacityF() const
 {
-    return m_opacity;
+    return QGraphicsItem::opacity();
 }
 
 void Message::setVelocity(const QPointF& vel)

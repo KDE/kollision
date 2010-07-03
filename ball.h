@@ -18,14 +18,9 @@ class Renderer;
 
 class Ball : public QGraphicsPixmapItem, public Sprite
 {
-    qreal m_opacity;
     QPointF m_velocity;
 public:
     Ball(Renderer* renderer, const QString& id);
-
-    virtual void paint(QPainter *painter, 
-                       const QStyleOptionGraphicsItem* option, 
-                       QWidget* widget = 0);
 
     virtual void setOpacityF(qreal opacity);
     virtual qreal opacityF() const;

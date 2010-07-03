@@ -20,14 +20,10 @@ class Message : public QGraphicsTextItem, public Sprite
     QPointF m_velocity;
 public:
     Message(const QString& text, const QFont& font, int maxwidth);
-    
-    virtual void paint(QPainter *painter, 
-                       const QStyleOptionGraphicsItem* option, 
-                       QWidget* widget = 0);
-    
+
     virtual void setOpacityF(qreal opacity);
     virtual qreal opacityF() const;
-
+    
     virtual void setVelocity(const QPointF& vel);
     virtual QPointF velocity() const;
     

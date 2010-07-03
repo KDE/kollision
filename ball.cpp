@@ -12,8 +12,7 @@
 #include "renderer.h"
 
 Ball::Ball(Renderer* renderer, const QString& id)
-: m_opacity(1.0)
-, m_velocity(0.0, 0.0)
+: m_velocity(0.0, 0.0)
 {
     setPixmap(renderer->render(id));
     setShapeMode(BoundingRectShape);
@@ -22,25 +21,14 @@ Ball::Ball(Renderer* renderer, const QString& id)
     setAcceptsHoverEvents(false);
 }
 
-void Ball::paint(QPainter *painter, 
-                 const QStyleOptionGraphicsItem* option,
-                 QWidget* widget)
-{
-    qreal oldOpacity = painter->opacity();
-    painter->setOpacity(m_opacity);
-    QGraphicsPixmapItem::paint(painter, option, widget);
-    painter->setOpacity(oldOpacity);
-}
-
 void Ball::setOpacityF(qreal opacity)
-{ 
-    m_opacity = opacity; 
-    update();
+{
+    QGraphicsItem::setOpacity(opacity);
 }
 
 qreal Ball::opacityF() const
 {
-    return m_opacity;
+    return QGraphicsItem::opacity();
 }
 
 void Ball::setVelocity(const QPointF& vel)
