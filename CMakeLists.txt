@@ -12,7 +12,6 @@ set(kollision_SRCS
     mainarea.cpp
     mainwindow.cpp
     message.cpp      
-    renderer.cpp
 )
 kde4_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 kde4_add_ui_files(kollision_SRCS preferences.ui)

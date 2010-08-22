@@ -1,5 +1,6 @@
 /*
   Copyright (c) 2007 Paolo Capriotti <p.capriotti@gmail.com>
+  Copyright (c) 2010 Brian Croom <brian.s.croom@gmail.com>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -13,6 +14,7 @@
 #include <QGraphicsView>
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
+#include <KGameRenderer>
 
 #include <KAction>
 #include <KDebug>
@@ -20,7 +22,6 @@
 #include <KLocalizedString>
 #include <Phonon/MediaObject>
 
-#include "renderer.h"
 #include "ball.h"
 #include "kollisionconfig.h"
 
@@ -37,7 +38,8 @@ struct Collision
 };
 
 MainArea::MainArea()
-: m_man(0)
+: m_renderer("pictures/theme.desktop")
+, m_man(0)
 , m_death(false)
 , m_game_over(false)
 , m_paused(false)
@@ -51,36 +53,28 @@ MainArea::MainArea()
 
     srand(time(0));
 
-    m_renderer = new Renderer;
-    m_renderer->resize(QSize(28, 28));
-
     m_timer.setInterval(20);
     connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
 
     m_msg_font = QApplication::font();
     m_msg_font.setPointSize(15);
 
-    QImage tmp(rect.size(), QImage::Format_ARGB32_Premultiplied);
+    QPixmap pix(rect.size());
     {
         // draw gradient
-        QPainter p(&tmp);
+        QPainter p(&pix);
         QColor color = palette().color(QPalette::Window);
         QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
         grad.setColorAt(0, color.lighter(115));
         grad.setColorAt(1, color.darker(115));
         p.fillRect(rect, grad);
     }
-    m_background = QPixmap::fromImage(tmp);
+    setBackgroundBrush(pix);
 
     writeText(i18n("Welcome to Kollision\nClick to start a game"), false);
 
     // setup audio player
     updateSounds();
-}
-
-MainArea::~MainArea()
-{
-    delete m_renderer;
 }
 
 void MainArea::enableSounds(bool enable)
@@ -169,7 +163,8 @@ void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
 
 double MainArea::radius() const
 {
-    return m_renderer->size().width() / 2.0;
+    static const int ballDiameter = 28; // this is fixed as the scene size is fixed
+    return ballDiameter / 2.0;
 }
 
 void MainArea::togglePause()
@@ -291,7 +286,7 @@ Ball* MainArea::addBall(const QString& id)
         }
     }
 
-    Ball* ball = new Ball(m_renderer, id);
+    Ball* ball = new Ball(&m_renderer, id, (int)(radius()*2));
     ball->setPosition(pos);
     addItem(ball);
 
@@ -540,7 +535,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
             setManPosition(e->scenePos());
         }
         else if (!m_man) {
-            m_man = new Ball(m_renderer, "blue_ball");
+            m_man = new Ball(&m_renderer, "blue_ball", (int)(radius()*2));
             m_man->setZValue(1.0);
             setManPosition(e->scenePos());
             addItem(m_man);
@@ -558,7 +553,3 @@ void MainArea::focusOutEvent(QFocusEvent*)
     }
 }
 
-void MainArea::drawBackground(QPainter* painter, const QRectF& rect)
-{
-    painter->drawPixmap(rect, m_background, rect);
-}

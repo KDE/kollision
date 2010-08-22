@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(ki18n("Paolo Capriotti"), KLocalizedString(), "p.capriotti@gmail.com");
     aboutData.addAuthor(ki18n("Dmitry Suzdalev"), KLocalizedString(), "dimsuz@gmail.com");
     aboutData.addCredit(ki18n("Matteo Guarnieri"), ki18n("Original idea"));
+    aboutData.addCredit(ki18n("Brian Croom"), ki18n("Port to use KGameRenderer"));
 
     KCmdLineArgs::init(argc, argv, &aboutData);
 

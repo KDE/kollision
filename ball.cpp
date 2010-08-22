@@ -1,5 +1,6 @@
 /*
   Copyright (c) 2007 Paolo Capriotti <p.capriotti@gmail.com>
+  Copyright (c) 2010 Brian Croom <brian.s.croom@gmail.com>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -9,15 +10,14 @@
 
 #include "ball.h"
 #include <QPainter>
-#include "renderer.h"
+#include <KGameRenderer>
 
-Ball::Ball(Renderer* renderer, const QString& id)
-: m_velocity(0.0, 0.0)
+Ball::Ball(KGameRenderer* renderer, const QString& id, int size)
+: KGameRenderedItem(renderer, id), m_velocity(0.0, 0.0)
 {
-    setPixmap(renderer->render(id));
+    setRenderSize(QSize(size, size));
     setShapeMode(BoundingRectShape);
-    QSize size = pixmap().size();
-    translate(-size.width() / 2, -size.height() / 2);
+    translate(-size / 2, -size / 2);
     setAcceptsHoverEvents(false);
 }
 
@@ -53,5 +53,5 @@ QPointF Ball::position() const
 
 qreal Ball::radius() const
 {
-    return pixmap().size().width() / 2.0;
+    return renderSize().width() / 2.0;
 }

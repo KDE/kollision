@@ -1,5 +1,6 @@
 /*
   Copyright (c) 2007 Paolo Capriotti <p.capriotti@gmail.com>
+  Copyright (c) 2010 Brian Croom <brian.s.croom@gmail.com>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -14,6 +15,7 @@
 #include <QTime>
 #include <QList>
 #include <QGraphicsScene>
+#include <KGameRenderer>
 #include "audioplayer.h"
 #include "animator.h"
 #include "message.h"
@@ -38,8 +40,7 @@ Q_OBJECT
     int m_ball_timeout;
 
     int m_size;
-    Renderer* m_renderer;
-    QPixmap m_background;
+    KGameRenderer m_renderer;
     Animator m_animator;
     QFont m_msg_font;
 
@@ -78,14 +79,12 @@ Q_OBJECT
     void playSound(int sound);
     void onDeath();
     void setManPosition(const QPointF& p);
-    void drawBackground(QPainter*, const QRectF&);
     void updateSounds();
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
     virtual void focusOutEvent(QFocusEvent*);
 public:
     MainArea();
-    ~MainArea();
     void start();
     void setPauseAction(KAction* action);
 public slots:
