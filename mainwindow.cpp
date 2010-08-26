@@ -36,6 +36,12 @@ MainWindow::MainWindow()
 
     setCentralWidget(view);
 
+    KGameDifficulty::init(this, this, SLOT(difficultyChanged(KGameDifficulty::standardLevel)));
+    KGameDifficulty::setRestartOnChange(KGameDifficulty::RestartOnChange);
+    KGameDifficulty::addStandardLevel(KGameDifficulty::Easy);
+    KGameDifficulty::addStandardLevel(KGameDifficulty::Medium);
+    KGameDifficulty::addStandardLevel(KGameDifficulty::Hard);
+
     setupActions();
 
     QLayout* l = layout();
@@ -60,12 +66,7 @@ MainWindow::MainWindow()
     stateChanged("playing", KXMLGUIClient::StateReverse);
     connect(m_main, SIGNAL(starting()), this, SLOT(newGame()));
     connect(m_main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
-    
-    KGameDifficulty::init(this, this, SLOT(difficultyChanged(KGameDifficulty::standardLevel)));
-    KGameDifficulty::setRestartOnChange(KGameDifficulty::RestartOnChange);
-    KGameDifficulty::addStandardLevel(KGameDifficulty::Easy);
-    KGameDifficulty::addStandardLevel(KGameDifficulty::Medium);
-    KGameDifficulty::addStandardLevel(KGameDifficulty::Hard);
+
     KGameDifficulty::setLevel(KGameDifficulty::standardLevel(KollisionConfig::gameDifficulty()));
 }
 
