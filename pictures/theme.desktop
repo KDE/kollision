@@ -2,6 +2,7 @@
 VersionFormat=1
 Name=Kollision Default Theme
 Name[es]=Tema predeterminado para Kollision
+Name[nds]=Kollision-Standardmuster
 Name[pt]=Tema Predefinido do Kollision
 Name[pt_BR]=Tema padrão do Kollision
 Name[sv]=Kollision standardtema
@@ -9,6 +10,7 @@ Name[uk]=Типова тема Kollision
 Name[x-test]=xxKollision Default Themexx
 Description=Kollision Default Theme
 Description[es]=Tema predeterminado para Kollision
+Description[nds]=Kollision-Standardmuster
 Description[pt]=Tema Predefinido do Kollision
 Description[pt_BR]=Tema padrão do Kollision
 Description[sv]=Kollision standardtema
