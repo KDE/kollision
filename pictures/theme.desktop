@@ -1,6 +1,7 @@
 [KGameTheme]
 VersionFormat=1
 Name=Kollision Default Theme
+Name[de]=Standard
 Name[es]=Tema predeterminado para Kollision
 Name[nds]=Kollision-Standardmuster
 Name[pt]=Tema Predefinido do Kollision
@@ -9,6 +10,7 @@ Name[sv]=Kollision standardtema
 Name[uk]=Типова тема Kollision
 Name[x-test]=xxKollision Default Themexx
 Description=Kollision Default Theme
+Description[de]=Das Standard-Design von Kollision.
 Description[es]=Tema predeterminado para Kollision
 Description[nds]=Kollision-Standardmuster
 Description[pt]=Tema Predefinido do Kollision
