@@ -78,7 +78,7 @@ MainWindow::~MainWindow()
 void MainWindow::setupActions()
 {
     // Game
-    KAction* abort = actionCollection()->addAction("game_abort");
+    KAction* abort = actionCollection()->addAction( QLatin1String( "game_abort" ));
     abort->setText(i18n("End game"));
     connect(abort, SIGNAL(triggered()), m_main, SLOT(abort()));
 
@@ -90,7 +90,7 @@ void MainWindow::setupActions()
     KAction* action;
     action = new KToggleAction(i18n("&Play Sounds"), this);
     action->setChecked(KollisionConfig::enableSounds());
-    actionCollection()->addAction("options_sounds", action);
+    actionCollection()->addAction( QLatin1String( "options_sounds" ), action);
     connect(action, SIGNAL(triggered(bool)), m_main, SLOT(enableSounds(bool)));
 
     setupGUI(Create | Save | Keys | StatusBar);

@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     KCmdLineOptions options;
     KCmdLineArgs::addCmdLineOptions(options);
     KApplication app;
-    KGlobal::locale()->insertCatalog("libkdegames");
+    KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
 
     MainWindow* window = new MainWindow;
     window->show();
