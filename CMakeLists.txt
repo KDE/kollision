@@ -21,5 +21,5 @@ kde4_add_executable(kollision ${kollision_SRCS})
 target_link_libraries(kollision ${KDE4_KDEUI_LIBS} kdegames ${KDE4_PHONON_LIBS})
 
 install(TARGETS kollision ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES kollision.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS kollision.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES kollisionui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kollision)
