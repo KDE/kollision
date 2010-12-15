@@ -2,6 +2,7 @@
 VersionFormat=1
 Name=Kollision Default Theme
 Name[ca]=Tema predeterminat del Kollision
+Name[da]=Kollisions standardtema
 Name[de]=Standard
 Name[en_GB]=Kollision Default Theme
 Name[es]=Tema predeterminado para Kollision
@@ -20,6 +21,7 @@ Name[zh_CN]=Kollision 默认主题
 Name[zh_TW]=Kollision 的預設主題
 Description=Kollision Default Theme
 Description[ca]=Tema predeterminat del Kollision
+Description[da]=Kollisions standardtema
 Description[de]=Das Standard-Design von Kollision.
 Description[en_GB]=Kollision Default Theme
 Description[es]=Tema predeterminado para Kollision
