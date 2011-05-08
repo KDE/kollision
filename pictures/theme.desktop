@@ -1,6 +1,7 @@
 [KGameTheme]
 VersionFormat=1
 Name=Kollision Default Theme
+Name[bs]=Podrazumijevana tema Kolizije
 Name[ca]=Tema predeterminat del Kollision
 Name[ca@valencia]=Tema predeterminat del Kollision
 Name[da]=Kollisions standardtema
@@ -26,6 +27,7 @@ Name[x-test]=xxKollision Default Themexx
 Name[zh_CN]=Kollision 默认主题
 Name[zh_TW]=Kollision 的預設主題
 Description=Kollision Default Theme
+Description[bs]=Podrazumijevana tema programa Kollision
 Description[ca]=Tema predeterminat del Kollision
 Description[ca@valencia]=Tema predeterminat del Kollision
 Description[da]=Kollisions standardtema
