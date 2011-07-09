@@ -33,6 +33,7 @@ MainWindow::MainWindow()
                                 QGraphicsView::DontAdjustForAntialiasing );
 //    view->setViewportUpdateMode( QGraphicsView::FullViewportUpdate );
     view->setCacheMode( QGraphicsView::CacheBackground );
+    view->setFrameStyle(QFrame::NoFrame);
 
     setCentralWidget(view);
 
