@@ -20,9 +20,10 @@
         </author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
+<legalnotice>&FDLNotice;</legalnotice>
  
-<date>2008-01-20</date>
-<releaseinfo>&kappversion;</releaseinfo> 
+<date>2011-09-17</date>
+<releaseinfo>&kappversion; (&kde; 4.7)</releaseinfo> 
 <abstract>
         <para>This documentation describes the game of &kappname; version &kappversion;</para>
 </abstract>
@@ -148,8 +149,9 @@ Statusbar</guimenuitem></menuchoice></term>
 
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Configure Toolbars...</guimenuitem></menuchoice></term>
-<listitem><para>Displays the &kde; standard dialog to customize the toolbars.</para></listitem>
+<guisubmenu>Difficulty</guisubmenu></menuchoice></term>
+<listitem><para>Allows you to select a difficulty <guilabel>Easy</guilabel>, <guilabel>Medium</guilabel>, 
+<guilabel>Hard</guilabel> for the game.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -211,19 +213,14 @@ Documentation copyright 2008 Paolo Capriotti <email>p.capriotti@gmail.com</email
  
 </chapter>
  
- 
 <appendix id="installation">
-<title>Installation</title>
+
+<title>Compilation and Installation</title>
  
 &install.intro.documentation;
  
- 
-<sect1 id="Compilation">
-<title>Compilation and Installation</title>
- 
 &install.compile.documentation;
  
-</sect1>
 </appendix>
  
 &documentation.index; 
