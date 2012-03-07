@@ -10,7 +10,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <KGameDifficulty>
+class KgDifficultyLevel;
 #include <KXmlGuiWindow>
 #include "ui_preferences.h"
 
@@ -24,7 +24,7 @@ Q_OBJECT
     QLabel* m_time_label;
     Ui_Preferences m_pref_ui;
     MainArea* m_main;
-    QPair<QByteArray, QString> m_lastUsedDifficulty;
+    const KgDifficultyLevel* m_lastUsedDifficulty;
     
     void showCursor(bool show);
 public:
@@ -40,7 +40,6 @@ protected slots:
     void gameOver(int);
     void highscores();
     void changeState(bool);
-    void difficultyChanged(KGameDifficulty::standardLevel level);
     void pause(bool);
 };
 

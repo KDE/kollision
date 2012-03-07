@@ -18,7 +18,7 @@
 
 #include <KAction>
 #include <KDebug>
-#include <KGameDifficulty>
+#include <KgDifficulty>
 #include <KLocalizedString>
 #include <Phonon/MediaObject>
 
@@ -215,16 +215,14 @@ void MainArea::start()
     m_death = false;
     m_game_over = false;
 
-    kDebug() << "difficulty:" << KollisionConfig::gameDifficulty();
-
-    switch (KollisionConfig::gameDifficulty()) {
-    case KGameDifficulty::Easy:
+    switch (Kg::difficultyLevel()) {
+    case KgDifficultyLevel::Easy:
         m_ball_timeout = 30;
         break;
-    case KGameDifficulty::Medium:
+    case KgDifficultyLevel::Medium:
         m_ball_timeout = 25;
         break;
-    case KGameDifficulty::Hard:
+    case KgDifficultyLevel::Hard:
     default:
         m_ball_timeout = 20;
         break;
@@ -292,15 +290,14 @@ Ball* MainArea::addBall(const QString& id)
 
     // speed depends of game difficulty
     double speed;
-    switch (KollisionConfig::gameDifficulty())
-    {
-    case KGameDifficulty::Easy:
+    switch (Kg::difficultyLevel()) {
+    case KgDifficultyLevel::Easy:
         speed = 0.2;
         break;
-    case KGameDifficulty::Medium:
+    case KgDifficultyLevel::Medium:
         speed = 0.28;
         break;
-    case KGameDifficulty::Hard:
+    case KgDifficultyLevel::Hard:
     default:
         speed = 0.4;
         break;

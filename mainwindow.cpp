@@ -16,6 +16,7 @@
 #include <KAction>
 #include <KActionCollection>
 #include <KDebug>
+#include <KgDifficulty>
 #include <KScoreDialog>
 #include <KStandardGameAction>
 #include <KStatusBar>
@@ -37,11 +38,12 @@ MainWindow::MainWindow()
 
     setCentralWidget(view);
 
-    KGameDifficulty::init(this, this, SLOT(difficultyChanged(KGameDifficulty::standardLevel)));
-    KGameDifficulty::setRestartOnChange(KGameDifficulty::RestartOnChange);
-    KGameDifficulty::addStandardLevel(KGameDifficulty::Easy);
-    KGameDifficulty::addStandardLevel(KGameDifficulty::Medium);
-    KGameDifficulty::addStandardLevel(KGameDifficulty::Hard);
+    Kg::difficulty()->addStandardLevelRange(
+        KgDifficultyLevel::Easy, KgDifficultyLevel::Hard,
+        KgDifficultyLevel::Hard //default
+    );
+    KgDifficultyGUI::init(this);
+    connect(Kg::difficulty(), SIGNAL(currentLevelChanged(const KgDifficultyLevel*)), m_main, SLOT(abort()));
 
     setupActions();
 
@@ -67,8 +69,6 @@ MainWindow::MainWindow()
     stateChanged("playing", KXMLGUIClient::StateReverse);
     connect(m_main, SIGNAL(starting()), this, SLOT(newGame()));
     connect(m_main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
-
-    KGameDifficulty::setLevel(KGameDifficulty::standardLevel(KollisionConfig::gameDifficulty()));
 }
 
 MainWindow::~MainWindow()
@@ -100,7 +100,7 @@ void MainWindow::setupActions()
 void MainWindow::newGame()
 {
     stateChanged("playing");
-    m_lastUsedDifficulty = KGameDifficulty::localizedLevelString();
+    m_lastUsedDifficulty = Kg::difficulty()->currentLevel();
 }
 
 void MainWindow::gameOver(int time)
@@ -108,9 +108,11 @@ void MainWindow::gameOver(int time)
     stateChanged("playing", KXMLGUIClient::StateReverse);
 
     KScoreDialog ksdialog(KScoreDialog::Name, this);
-    ksdialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings()); //Add all the translations of the group names
-    ksdialog.setConfigGroupWeights(KGameDifficulty::levelWeights());
-    ksdialog.setConfigGroup(m_lastUsedDifficulty);
+    ksdialog.initFromDifficulty(Kg::difficulty(), /*setConfigGroup=*/ false);
+    ksdialog.setConfigGroup(qMakePair(
+        m_lastUsedDifficulty->key(),
+        m_lastUsedDifficulty->title()
+    ));
     KScoreDialog::FieldInfo scoreInfo;
     scoreInfo[KScoreDialog::Score].setNum(time);
     if (ksdialog.addScore(scoreInfo, KScoreDialog::AskName)) {
@@ -121,9 +123,7 @@ void MainWindow::gameOver(int time)
 void MainWindow::highscores()
 {
     KScoreDialog ksdialog(KScoreDialog::Name | KScoreDialog::Time, this);
-    ksdialog.addLocalizedConfigGroupNames(KGameDifficulty::localizedLevelStrings()); //Add all the translations of the group names
-    ksdialog.setConfigGroupWeights(KGameDifficulty::levelWeights());
-    ksdialog.setConfigGroup(KGameDifficulty::localizedLevelString());
+    ksdialog.initFromDifficulty(Kg::difficulty());
     ksdialog.exec();
 }
 
@@ -139,14 +139,7 @@ void MainWindow::setGameTime(int time)
 
 void MainWindow::changeState(bool running) {
     showCursor(!running);
-    KGameDifficulty::setRunning(running);
-}
-
-void MainWindow::difficultyChanged(KGameDifficulty::standardLevel level)
-{
-    m_main->abort();
-    KollisionConfig::setGameDifficulty((int) level);
-    KollisionConfig::self()->writeConfig();
+    Kg::difficulty()->setGameRunning(running);
 }
 
 void MainWindow::pause(bool p)

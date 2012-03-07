@@ -10,10 +10,4 @@
             <default>false</default>
         </entry>
     </group>
-    <group name="game">
-        <entry name="GameDifficulty" type="Int">
-            <label>Difficulty of the game.</label>
-            <default>50</default>
-        </entry>
-    </group>
 </kcfg>
