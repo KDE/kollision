@@ -43,7 +43,7 @@ struct Theme : public KgTheme
 {
 	Theme() : KgTheme("pictures/theme.desktop")
 	{
-		setSvgPath(KStandardDirs::locate("appdata", "pictures/theme.svgz"));
+		setGraphicsPath(KStandardDirs::locate("appdata", "pictures/theme.svgz"));
 	}
 };
 
