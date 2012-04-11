@@ -19,7 +19,9 @@
 #include <KAction>
 #include <KDebug>
 #include <KgDifficulty>
+#include <KgTheme>
 #include <KLocalizedString>
+#include <KStandardDirs>
 #include <Phonon/MediaObject>
 
 #include "ball.h"
@@ -37,8 +39,16 @@ struct Collision
     QPointF line;
 };
 
+struct Theme : public KgTheme
+{
+	Theme() : KgTheme("pictures/theme.desktop")
+	{
+		setSvgPath(KStandardDirs::locate("appdata", "pictures/theme.svgz"));
+	}
+};
+
 MainArea::MainArea()
-: m_renderer("pictures/theme.desktop")
+: m_renderer(new Theme)
 , m_man(0)
 , m_death(false)
 , m_game_over(false)
