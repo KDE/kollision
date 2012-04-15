@@ -6,7 +6,6 @@ add_subdirectory(sounds)
 set(kollision_SRCS
     animation.cpp
     animator.cpp
-    audioplayer.cpp
     ball.cpp
     main.cpp
     mainarea.cpp

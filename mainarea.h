@@ -16,7 +16,7 @@
 #include <QList>
 #include <QGraphicsScene>
 #include <KGameRenderer>
-#include "audioplayer.h"
+#include <KgSound>
 #include "animator.h"
 #include "message.h"
 
@@ -61,8 +61,14 @@ Q_OBJECT
     QList<MessagePtr> m_welcome_msg;
     QList<MessagePtr> m_pause_msg;
 
-    AudioPlayer m_player;
-    
+    // Flag if sound is enabled.
+    bool m_soundEnabled;
+
+    KgSound m_soundHitWall;
+    KgSound m_soundYouLose;
+    KgSound m_soundBallLeaving;
+    KgSound m_soundStart;
+
     KAction* m_pause_action;
 
     double radius() const;
@@ -79,7 +85,6 @@ Q_OBJECT
     void playSound(int sound);
     void onDeath();
     void setManPosition(const QPointF& p);
-    void updateSounds();
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
     virtual void focusOutEvent(QFocusEvent*);

@@ -22,7 +22,6 @@
 #include <KgTheme>
 #include <KLocalizedString>
 #include <KStandardDirs>
-#include <Phonon/MediaObject>
 
 #include "ball.h"
 #include "kollisionconfig.h"
@@ -55,8 +54,15 @@ MainArea::MainArea()
 , m_paused(false)
 , m_pause_time(0)
 , m_penalty(0)
+, m_soundHitWall(KStandardDirs::locate("appdata", "sounds/hit_wall.ogg"))
+, m_soundYouLose(KStandardDirs::locate("appdata", "sounds/you_lose.ogg"))
+, m_soundBallLeaving(KStandardDirs::locate("appdata", "sounds/ball_leaving.ogg"))
+, m_soundStart(KStandardDirs::locate("appdata", "sounds/start.ogg"))
 , m_pause_action(0)
 {
+    // Initialize the sound state
+    enableSounds(KollisionConfig::enableSounds());
+
     m_size = 500;
     QRect rect(0, 0, m_size, m_size);
     setSceneRect(rect);
@@ -83,20 +89,13 @@ MainArea::MainArea()
 
     writeText(i18n("Welcome to Kollision\nClick to start a game"), false);
 
-    // setup audio player
-    updateSounds();
 }
 
-void MainArea::enableSounds(bool enable)
+void MainArea::enableSounds(bool p_enabled)
 {
-    KollisionConfig::setEnableSounds(enable);
-    updateSounds();
+    m_soundEnabled = p_enabled;
+    KollisionConfig::setEnableSounds(p_enabled);
     KollisionConfig::self()->writeConfig();
-}
-
-void MainArea::updateSounds()
-{
-    m_player.setActive(KollisionConfig::enableSounds());
 }
 
 Animation* MainArea::writeMessage(const QString& text)
@@ -257,7 +256,9 @@ void MainArea::start()
 
     emit changeGameTime(0);
     emit starting();
-    m_player.play(AudioPlayer::START);
+
+    if(m_soundEnabled)
+        m_soundStart.start();
 }
 
 void MainArea::setPauseAction(KAction* action)
@@ -390,7 +391,8 @@ void MainArea::tick()
                 ball->position(),
                 m_man->position(),
                 radius() * 2, collision)) {
-            m_player.play(AudioPlayer::YOU_LOSE);
+            if(m_soundEnabled)
+                m_soundYouLose.start();
             abort();
             break;
         }
@@ -439,8 +441,8 @@ void MainArea::tick()
                 hit_wall = true;
             }
         }
-        if (hit_wall) {
-            m_player.play(AudioPlayer::HIT_WALL);
+        if (hit_wall && m_soundEnabled) {
+            m_soundHitWall.start();
         }
 
         // handle collisions with next balls
@@ -488,7 +490,8 @@ void MainArea::tick()
         QPointF pos = ball->position();
 
         if (m_death && pos.y() >= height() + radius() + 10) {
-            m_player.play(AudioPlayer::BALL_LEAVING);
+            if(m_soundEnabled)
+                m_soundBallLeaving.start();
             delete ball;
             it = m_balls.erase(it);
         }
