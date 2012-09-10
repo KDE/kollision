@@ -1,5 +1,9 @@
 [KGameTheme]
 VersionFormat=1
 Name=Kollision Default Theme
+Name[uk]=Типова тема Kollision
+Name[x-test]=xxKollision Default Themexx
 Description=Kollision Default Theme
+Description[uk]=Типова тема Kollision
+Description[x-test]=xxKollision Default Themexx
 FileName=theme.svgz

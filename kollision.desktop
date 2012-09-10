@@ -1,9 +1,13 @@
 [Desktop Entry]
 Name=Kollision
+Name[uk]=Kollision
+Name[x-test]=xxKollisionxx
 Exec=kollision
 Icon=kollision
 Type=Application
 Comment=A simple ball dodging game
+Comment[uk]=Проста гра з кулькою
+Comment[x-test]=xxA simple ball dodging gamexx
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
 X-DocPath=kollision/index.html
