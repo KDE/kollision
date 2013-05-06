@@ -22,8 +22,8 @@
 </authorgroup>
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2011-09-17</date>
-<releaseinfo>&kappversion; (&kde; 4.7)</releaseinfo> 
+<date>2013-05-06</date>
+<releaseinfo>&kappversion; (&kde; 4.11)</releaseinfo> 
 <abstract>
         <para>This documentation describes the game of &kappname; version &kappversion;</para>
 </abstract>
@@ -80,8 +80,10 @@ You can choose the game difficulty level on the right of the status bar. The hig
  
  
 <chapter id="interface"><title>Interface Overview</title>
-<sect1 id="game-menu">
-<title>The <guimenu>Game</guimenu> Menu</title>
+
+<sect1 id="menu">
+<title>Menu Items</title>
+
 <variablelist>
 
 <varlistentry>
@@ -120,12 +122,6 @@ You can choose the game difficulty level on the right of the status bar. The hig
 <guimenuitem>Quit</guimenuitem></menuchoice></term>
 <listitem><para>Selecting this item will end your current game, and exit &kappname;.</para></listitem>
 </varlistentry>
-</variablelist>
-</sect1>
-
-<sect1 id="settings-menu">
-<title>The <guimenu>Settings</guimenu> Menu</title>
-<variablelist>
 
 <varlistentry>
 <term>
@@ -142,34 +138,24 @@ You can choose the game difficulty level on the right of the status bar. The hig
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Show
-Statusbar</guimenuitem></menuchoice></term>
-<listitem><para>Toggle the display of the status bar at the bottom of the main window.</para></listitem>
-</varlistentry>
-
-<varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu>
 <guisubmenu>Difficulty</guisubmenu></menuchoice></term>
 <listitem><para>Allows you to select a difficulty <guilabel>Easy</guilabel>, <guilabel>Medium</guilabel>, 
 <guilabel>Hard</guilabel> for the game.</para></listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice></term>
-<listitem><para><action>Displays a standard &kde; shortcut configuration dialog</action> 
-to change the keyboard shortcuts for &kappname;.</para></listitem>
-</varlistentry>
-
 </variablelist>
+
+<para>
+Additionally &kbreakout; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+menu items, for more information read the sections about the <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
+of the &kde; Fundamentals.
+</para>
+
 </sect1>
 
-<sect1 id="help">
-<title>The <guimenu>Help</guimenu> Menu</title>
-&help.menu.documentation;
-</sect1>
 </chapter>
- 
  
 <chapter id="faq"><title>Frequently asked questions</title>
 <qandaset>
