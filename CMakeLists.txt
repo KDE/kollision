@@ -1,15 +1,41 @@
 project(kollision)
 
-if(NOT COMPILING_KDEGAMES)
-	find_package(KDE4 REQUIRED)
-	include(KDE4Defaults)
-	include(MacroLibrary)
-	find_package(KDEGames 4.9.0 REQUIRED)
+cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
+set (QT_MIN_VERSION "5.3.0")
 
-	add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-	add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-	include_directories(${KDEGAMES_INCLUDE_DIRS} ${KDE4_INCLUDES} ${QDBUS_INCLUDE_DIRS})
-endif(NOT COMPILING_KDEGAMES)
+find_package(ECM 1.3.0 REQUIRED CONFIG)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Quick QuickWidgets Svg Test)
+find_package(KF5 REQUIRED COMPONENTS 
+    CoreAddons
+    Config
+    ItemModels
+    WidgetsAddons
+    WindowSystem
+    Config
+    DBusAddons
+    I18n
+    ConfigWidgets
+    TextWidgets
+    XmlGui
+    KIO
+    NotifyConfig
+    NewStuff
+    KDELibs4Support)
+
+find_package(KF5KDEGames 4.9.0 REQUIRED)
+find_package(Phonon4Qt5 CONFIG REQUIRED)
+
+include(FeatureSummary)
+include(ECMInstallIcons)
+include(KDEInstallDirs)
+include(KDECompilerSettings)
+include(KDECMakeSettings)
+
+add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(-DTRANSLATION_DOMAIN="kollision")
+
 
 add_subdirectory(pictures)
 add_subdirectory(sounds)
@@ -24,12 +50,12 @@ set(kollision_SRCS
     mainwindow.cpp
     message.cpp      
 )
-kde4_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
-kde4_add_ui_files(kollision_SRCS preferences.ui)
+kconfig_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
+ki18n_wrap_ui(kollision_SRCS preferences.ui)
 kde4_add_app_icon(kollision_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi*-app-kollision.png")
-kde4_add_executable(kollision ${kollision_SRCS})
+add_executable(kollision ${kollision_SRCS})
 
-target_link_libraries(kollision ${KDE4_KDEUI_LIBS} kdegames ${KDE4_PHONON_LIBS})
+target_link_libraries(kollision  KF5KDEGames Phonon::phonon4qt5 KF5::KDELibs4Support)
 
 install(TARGETS kollision ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS kollision.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

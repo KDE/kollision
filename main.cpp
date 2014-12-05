@@ -8,7 +8,7 @@
 */
 
 #include <KApplication>
-#include <KAboutData>
+#include <K4AboutData>
 #include <KLocale>
 #include <KCmdLineArgs>
 
@@ -17,8 +17,8 @@
 
 int main(int argc, char *argv[])
 {
-    KAboutData aboutData("kollision", 0, ki18n("Kollision"),
-                         "0.1", ki18n("KDE collision game"), KAboutData::License_GPL,
+    K4AboutData aboutData("kollision", 0, ki18n("Kollision"),
+                         "0.1", ki18n("KDE collision game"), K4AboutData::License_GPL,
                          ki18n("(c) 2007 Paolo Capriotti"), KLocalizedString(), "http://games.kde.org/kollision");
     aboutData.addAuthor(ki18n("Paolo Capriotti"), KLocalizedString(), "p.capriotti@gmail.com");
     aboutData.addAuthor(ki18n("Dmitry Suzdalev"), KLocalizedString(), "dimsuz@gmail.com");
@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
     KCmdLineOptions options;
     KCmdLineArgs::addCmdLineOptions(options);
     KApplication app;
-    KGlobal::locale()->insertCatalog( QLatin1String( "libkdegames" ));
 
     MainWindow* window = new MainWindow;
     window->show();

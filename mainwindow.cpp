@@ -13,7 +13,7 @@
 #include <QLabel>
 #include <QGraphicsView>
 
-#include <KAction>
+#include <QAction>
 #include <KActionCollection>
 #include <KDebug>
 #include <KgDifficulty>
@@ -52,7 +52,7 @@ MainWindow::MainWindow()
     l->setSizeConstraint(QLayout::SetFixedSize);
 
     // setup status bar
-    KStatusBar* bar = statusBar();
+    QStatusBar* bar = statusBar();
     Q_ASSERT(bar);
     m_time_label = new QLabel("");
     bar->addPermanentWidget(m_time_label);
@@ -79,16 +79,16 @@ MainWindow::~MainWindow()
 void MainWindow::setupActions()
 {
     // Game
-    KAction* abort = actionCollection()->addAction( QLatin1String( "game_abort" ));
+    QAction * abort = actionCollection()->addAction( QLatin1String( "game_abort" ));
     abort->setText(i18n("End game"));
     connect(abort, SIGNAL(triggered()), m_main, SLOT(abort()));
 
-    KAction* pause = KStandardGameAction::pause(m_main, SLOT(togglePause()), actionCollection());
+    QAction * pause = KStandardGameAction::pause(m_main, SLOT(togglePause()), actionCollection());
     m_main->setPauseAction(pause);
     KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
-    KAction* action;
+    QAction * action;
     action = new KToggleAction(i18n("&Play Sounds"), this);
     action->setChecked(KollisionConfig::enableSounds());
     actionCollection()->addAction( QLatin1String( "options_sounds" ), action);

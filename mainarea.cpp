@@ -15,8 +15,8 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 #include <KGameRenderer>
-
-#include <KAction>
+#include <KShortcut>
+#include <QAction>
 #include <KDebug>
 #include <KgDifficulty>
 #include <KgTheme>
@@ -261,7 +261,7 @@ void MainArea::start()
         m_soundStart.start();
 }
 
-void MainArea::setPauseAction(KAction* action)
+void MainArea::setPauseAction(QAction * action)
 {
   m_pause_action = action;
 }
