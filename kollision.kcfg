@@ -3,7 +3,6 @@
     "http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
 <kcfg>
     <kcfgfile name="kollisionrc"/>
-        <include>kglobalsettings.h</include>
         <group name="sounds">
         <entry name="EnableSounds" type="Bool">
             <label>Whether sound effects should be played.</label>
