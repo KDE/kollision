@@ -103,3 +103,4 @@ Comment[zh_TW]=簡單的閃躲球遊戲
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
 X-DocPath=kollision/index.html
+X-DBUS-ServiceName=org.kde.kollision

@@ -52,11 +52,11 @@ set(kollision_SRCS
 )
 kconfig_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 ki18n_wrap_ui(kollision_SRCS preferences.ui)
-kde4_add_app_icon(kollision_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi*-app-kollision.png")
+kde4_add_app_icon(kollision_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi*-apps-kollision.png")
 add_executable(kollision ${kollision_SRCS})
 
 target_link_libraries(kollision  KF5KDEGames Phonon::phonon4qt5 KF5::KDELibs4Support)
 
 install(TARGETS kollision ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS kollision.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES kollisionui.rc  DESTINATION  ${DATA_INSTALL_DIR}/kollision)
+install(PROGRAMS org.kde.kollision.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES kollisionui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kollision)
