@@ -190,5 +190,5 @@ void AnimationSequence::stop()
     }
 }
 
-#include "animation.moc"
+
 

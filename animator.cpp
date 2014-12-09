@@ -44,6 +44,6 @@ void Animator::tick()
 }
 
 
-#include "animator.moc"
+
 
 

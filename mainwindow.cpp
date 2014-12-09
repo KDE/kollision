@@ -157,4 +157,4 @@ void MainWindow::showCursor(bool show)
     }
 }
 
-#include "mainwindow.moc"
+
