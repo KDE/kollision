@@ -7,29 +7,35 @@
   (at your option) any later version.
 */
 
-#include <KApplication>
-#include <K4AboutData>
-#include <KLocale>
-#include <KCmdLineArgs>
+
+#include <KAboutData>
+
+#include <QApplication>
+#include <KLocalizedString>
+#include <QCommandLineParser>
 
 #include "mainwindow.h"
 
 
 int main(int argc, char *argv[])
 {
-    K4AboutData aboutData("kollision", 0, ki18n("Kollision"),
-                         "0.1", ki18n("KDE collision game"), K4AboutData::License_GPL,
-                         ki18n("(c) 2007 Paolo Capriotti"), KLocalizedString(), "http://games.kde.org/kollision");
-    aboutData.addAuthor(ki18n("Paolo Capriotti"), KLocalizedString(), "p.capriotti@gmail.com");
-    aboutData.addAuthor(ki18n("Dmitry Suzdalev"), KLocalizedString(), "dimsuz@gmail.com");
-    aboutData.addCredit(ki18n("Matteo Guarnieri"), ki18n("Original idea"));
-    aboutData.addCredit(ki18n("Brian Croom"), ki18n("Port to use KGameRenderer"));
+    KAboutData aboutData("kollision", i18n("Kollision"),
+                         "0.1", i18n("KDE collision game"), KAboutLicense::GPL,
+                         i18n("(c) 2007 Paolo Capriotti"), "http://games.kde.org/kollision");
+    aboutData.addAuthor(i18n("Paolo Capriotti"), QString(), "p.capriotti@gmail.com");
+    aboutData.addAuthor(i18n("Dmitry Suzdalev"), QString(), "dimsuz@gmail.com");
+    aboutData.addCredit(i18n("Matteo Guarnieri"), i18n("Original idea"));
+    aboutData.addCredit(i18n("Brian Croom"), i18n("Port to use KGameRenderer"));
 
-    KCmdLineArgs::init(argc, argv, &aboutData);
+    QApplication app(argc, argv);
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
-    KCmdLineOptions options;
-    KCmdLineArgs::addCmdLineOptions(options);
-    KApplication app;
 
     MainWindow* window = new MainWindow;
     window->show();

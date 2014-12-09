@@ -17,7 +17,6 @@
 #include <KGameRenderer>
 #include <KShortcut>
 #include <QAction>
-#include <KDebug>
 #include <KgDifficulty>
 #include <KgTheme>
 #include <KLocalizedString>

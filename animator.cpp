@@ -8,7 +8,6 @@
 */
 
 #include "animator.h"
-#include <kdebug.h>
 
 Animator::Animator()
 {
