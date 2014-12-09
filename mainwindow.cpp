@@ -61,14 +61,14 @@ MainWindow::MainWindow()
     bar->addWidget(m_balls_label);
 //     bar->setItemAlignment(STATUSBAR_BALLS, Qt::AlignLeft);
 
-    connect(m_main, SIGNAL(changeGameTime(int)), this, SLOT(setGameTime(int)));
-    connect(m_main, SIGNAL(changeBallNumber(int)), this, SLOT(setBallNumber(int)));
-    connect(m_main, SIGNAL(changeState(bool)), this, SLOT(changeState(bool)));
-    connect(m_main, SIGNAL(pause(bool)), this, SLOT(pause(bool)));
+    connect(m_main, &MainArea::changeGameTime, this, &MainWindow::setGameTime);
+    connect(m_main, &MainArea::changeBallNumber, this, &MainWindow::setBallNumber);
+    connect(m_main, &MainArea::changeState, this, &MainWindow::changeState);
+    connect(m_main, &MainArea::pause, this, &MainWindow::pause);
 
     stateChanged("playing", KXMLGUIClient::StateReverse);
-    connect(m_main, SIGNAL(starting()), this, SLOT(newGame()));
-    connect(m_main, SIGNAL(gameOver(int)), this, SLOT(gameOver(int)));
+    connect(m_main, &MainArea::starting, this, &MainWindow::newGame);
+    connect(m_main, &MainArea::gameOver, this, &MainWindow::gameOver);
 }
 
 MainWindow::~MainWindow()
@@ -81,7 +81,7 @@ void MainWindow::setupActions()
     // Game
     QAction * abort = actionCollection()->addAction( QLatin1String( "game_abort" ));
     abort->setText(i18n("End game"));
-    connect(abort, SIGNAL(triggered()), m_main, SLOT(abort()));
+    connect(abort, &QAction::triggered, m_main, &MainArea::abort);
 
     QAction * pause = KStandardGameAction::pause(m_main, SLOT(togglePause()), actionCollection());
     m_main->setPauseAction(pause);
@@ -92,7 +92,7 @@ void MainWindow::setupActions()
     action = new KToggleAction(i18n("&Play Sounds"), this);
     action->setChecked(KollisionConfig::enableSounds());
     actionCollection()->addAction( QLatin1String( "options_sounds" ), action);
-    connect(action, SIGNAL(triggered(bool)), m_main, SLOT(enableSounds(bool)));
+    connect(action, &QAction::triggered, m_main, &MainArea::enableSounds);
 
     setupGUI(Create | Save | Keys | StatusBar);
 }

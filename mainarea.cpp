@@ -70,7 +70,7 @@ MainArea::MainArea()
     srand(time(0));
 
     m_timer.setInterval(20);
-    connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
+    connect(&m_timer, &QTimer::timeout, this, &MainArea::tick);
 
     m_msg_font = QApplication::font();
     m_msg_font.setPointSize(15);
@@ -519,7 +519,7 @@ void MainArea::tick()
             "Click to restart", time);
         emit gameOver(time);
         Animation* a = writeText(text);
-        connect(this, SIGNAL(starting()), a, SLOT(stop()));
+        connect(this, &MainArea::starting, a, &Animation::stop);
     }
 }
 

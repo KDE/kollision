@@ -12,7 +12,7 @@
 
 Animator::Animator()
 {
-    connect(&m_timer, SIGNAL(timeout()), this, SLOT(tick()));
+    connect(&m_timer, &QTimer::timeout, this, &Animator::tick);
 }
 
 void Animator::add(Animation* a)
