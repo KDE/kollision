@@ -12,7 +12,7 @@
 #include "sprite.h"
 
 #include <math.h>
-#include <kdebug.h>
+#include <QDebug>
 
 Animation::~Animation()
 {

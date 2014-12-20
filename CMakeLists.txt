@@ -12,7 +12,6 @@ find_package(KF5 REQUIRED COMPONENTS
     Config
     ItemModels
     WidgetsAddons
-    WindowSystem
     Config
     DBusAddons
     I18n
