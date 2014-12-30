@@ -13,6 +13,7 @@
 #include <QApplication>
 #include <KLocalizedString>
 #include <QCommandLineParser>
+#include <kdelibs4configmigrator.h>
 
 #include "mainwindow.h"
 
@@ -28,6 +29,13 @@ int main(int argc, char *argv[])
     aboutData.addCredit(i18n("Brian Croom"), i18n("Port to use KGameRenderer"));
 
     QApplication app(argc, argv);
+
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("kollision"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("kollisionrc"));
+    migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
+    migrate.migrate();
+
+
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
