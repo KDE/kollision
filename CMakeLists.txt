@@ -59,3 +59,5 @@ target_link_libraries(kollision  KF5KDEGames Phonon::phonon4qt5 KF5::KDELibs4Sup
 install(TARGETS kollision ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kollision.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES kollisionui.rc  DESTINATION  ${KXMLGUI_INSTALL_DIR}/kollision)
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
