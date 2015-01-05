@@ -19,7 +19,7 @@
 #include <KgDifficulty>
 #include <KScoreDialog>
 #include <KStandardGameAction>
-#include <KStatusBar>
+#include <QStatusBar>
 #include <KToggleAction>
 
 #include "mainarea.h"
