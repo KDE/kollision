@@ -19,7 +19,7 @@
 #include <KgDifficulty>
 #include <KgTheme>
 #include <KLocalizedString>
-#include <KStandardDirs>
+
 
 #include "ball.h"
 #include "kollisionconfig.h"
@@ -29,6 +29,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <sys/time.h>
+#include <QStandardPaths>
 
 struct Collision
 {
@@ -40,7 +41,7 @@ struct Theme : public KgTheme
 {
 	Theme() : KgTheme("pictures/theme.desktop")
 	{
-		setGraphicsPath(KStandardDirs::locate("appdata", "pictures/theme.svgz"));
+		setGraphicsPath(QStandardPaths::locate(QStandardPaths::DataLocation, "pictures/theme.svgz"));
 	}
 };
 
@@ -52,10 +53,10 @@ MainArea::MainArea()
 , m_paused(false)
 , m_pause_time(0)
 , m_penalty(0)
-, m_soundHitWall(KStandardDirs::locate("appdata", "sounds/hit_wall.ogg"))
-, m_soundYouLose(KStandardDirs::locate("appdata", "sounds/you_lose.ogg"))
-, m_soundBallLeaving(KStandardDirs::locate("appdata", "sounds/ball_leaving.ogg"))
-, m_soundStart(KStandardDirs::locate("appdata", "sounds/start.ogg"))
+, m_soundHitWall(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/hit_wall.ogg"))
+, m_soundYouLose(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/you_lose.ogg"))
+, m_soundBallLeaving(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/ball_leaving.ogg"))
+, m_soundStart(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/start.ogg"))
 , m_pause_action(0)
 {
     // Initialize the sound state
@@ -93,7 +94,7 @@ void MainArea::enableSounds(bool p_enabled)
 {
     m_soundEnabled = p_enabled;
     KollisionConfig::setEnableSounds(p_enabled);
-    KollisionConfig::self()->writeConfig();
+    KollisionConfig::self()->save();
 }
 
 Animation* MainArea::writeMessage(const QString& text)
