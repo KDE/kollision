@@ -10,7 +10,6 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Qui
 find_package(KF5 REQUIRED COMPONENTS 
     CoreAddons
     Config
-    ItemModels
     WidgetsAddons
     Config
     DBusAddons
@@ -21,7 +20,7 @@ find_package(KF5 REQUIRED COMPONENTS
     KIO
     NotifyConfig
     NewStuff
-    KDELibs4Support)
+    )
 
 find_package(KF5KDEGames 4.9.0 REQUIRED)
 find_package(Phonon4Qt5 CONFIG REQUIRED)
@@ -51,10 +50,10 @@ set(kollision_SRCS
 )
 kconfig_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 ki18n_wrap_ui(kollision_SRCS preferences.ui)
-kde4_add_app_icon(kollision_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi*-apps-kollision.png")
+#kde4_add_app_icon(kollision_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi*-apps-kollision.png")
 add_executable(kollision ${kollision_SRCS})
 
-target_link_libraries(kollision  KF5KDEGames Phonon::phonon4qt5 KF5::KDELibs4Support KF5::DBusAddons)
+target_link_libraries(kollision  KF5KDEGames Phonon::phonon4qt5 KF5::DBusAddons KF5::XmlGui KF5::I18n)
 
 install(TARGETS kollision ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kollision.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
