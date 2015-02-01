@@ -13,7 +13,7 @@
 #include <QPointF>
 #include "spritefwd.h"
 
-class Sprite : public KShared
+class Sprite : public QSharedData
 {
 public:
     virtual ~Sprite() { }

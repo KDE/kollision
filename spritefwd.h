@@ -10,11 +10,11 @@
 #ifndef SPRITEFWD_H
 #define SPRITEFWD_H
 
-#include <KSharedPtr>
+#include <QExplicitlySharedDataPointer>
 
 class Sprite;
 
-typedef KSharedPtr<Sprite> SpritePtr;
+typedef QExplicitlySharedDataPointer<Sprite> SpritePtr;
 
 #endif // SPRITEFWD_H
 

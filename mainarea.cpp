@@ -128,16 +128,16 @@ Animation* MainArea::writeText(const QString& text, bool fade)
     m_welcome_msg.clear();
     foreach (const QString &line, text.split('\n')) {
         m_welcome_msg.append(
-            KSharedPtr<Message>(new Message(line, m_msg_font, m_size)));
+            QExplicitlySharedDataPointer<Message>(new Message(line, m_msg_font, m_size)));
     }
     displayMessages(m_welcome_msg);
 
     if (fade) {
         AnimationGroup* anim = new AnimationGroup;
-        foreach (KSharedPtr<Message> message, m_welcome_msg) {
+        foreach (QExplicitlySharedDataPointer<Message> message, m_welcome_msg) {
             message->setOpacityF(0.0);
             anim->add(new FadeAnimation(
-                SpritePtr::staticCast(message), 0.0, 1.0, 1000));
+                message, 0.0, 1.0, 1000));
         }
 
         m_animator.add(anim);
@@ -149,16 +149,16 @@ Animation* MainArea::writeText(const QString& text, bool fade)
     }
 }
 
-void MainArea::displayMessages(const QList<KSharedPtr<Message> >& messages)
+void MainArea::displayMessages(const QList<QExplicitlySharedDataPointer<Message> >& messages)
 {
     int totalHeight = 0;
-    foreach (KSharedPtr<Message> message, messages) {
+    foreach (QExplicitlySharedDataPointer<Message> message, messages) {
       totalHeight += message->height();
     }
     QPointF pos(m_size / 2.0, (m_size - totalHeight) / 2.0);
 
     for (int i = 0; i < messages.size(); i++) {
-        KSharedPtr<Message> msg = messages[i];
+        QExplicitlySharedDataPointer<Message> msg = messages[i];
         int halfHeight = msg->height() / 2;
         pos.ry() += halfHeight;
         msg->setPosition(pos);

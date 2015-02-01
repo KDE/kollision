@@ -11,7 +11,7 @@
 #define MESSAGE_H
 
 #include <QGraphicsTextItem>
-#include <KSharedPtr>
+#include <QExplicitlySharedDataPointer>
 #include "sprite.h"
 
 class Message : public QGraphicsTextItem, public Sprite
@@ -33,6 +33,6 @@ public:
     int height() const;
 };
 
-typedef KSharedPtr<Message> MessagePtr;
+typedef QExplicitlySharedDataPointer<Message> MessagePtr;
 
 #endif // MESSAGE_H

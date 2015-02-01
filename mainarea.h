@@ -81,7 +81,7 @@ Q_OBJECT
 
     Animation* writeMessage(const QString& text);
     Animation* writeText(const QString& lines, bool fade = true);
-    void displayMessages(const QList<KSharedPtr<Message> >& msgs);
+    void displayMessages(const QList<QExplicitlySharedDataPointer<Message> >& msgs);
     void playSound(int sound);
     void onDeath();
     void setManPosition(const QPointF& p);
