@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     KAboutData aboutData("kollision", i18n("Kollision"),
-                         "0.1", i18n("KDE collision game"), KAboutLicense::GPL,
+                         "0.2", i18n("KDE collision game"), KAboutLicense::GPL,
                          i18n("(c) 2007 Paolo Capriotti"), "http://games.kde.org/kollision");
     aboutData.addAuthor(i18n("Paolo Capriotti"), QString(), "p.capriotti@gmail.com");
     aboutData.addAuthor(i18n("Dmitry Suzdalev"), QString(), "dimsuz@gmail.com");
