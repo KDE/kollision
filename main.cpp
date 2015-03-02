@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
     migrate.migrate();
 
+    app.setWindowIcon(QIcon::fromTheme(QLatin1String("kollision")));
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
