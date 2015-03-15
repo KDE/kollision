@@ -51,7 +51,7 @@ set(kollision_SRCS
 )
 kconfig_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 ki18n_wrap_ui(kollision_SRCS preferences.ui)
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi*-apps-kollision.png")
+file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi/*-apps-kollision.png")
 ecm_add_app_icon(kollision_SRCS ICONS ${ICONS_SRCS})
 add_executable(kollision ${kollision_SRCS})
 
