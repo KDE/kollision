@@ -20,6 +20,11 @@
 
 int main(int argc, char *argv[])
 {
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("kollision"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("kollisionrc"));
+    migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
+    migrate.migrate();
+
     QApplication app(argc, argv);
 
     KAboutData aboutData("kollision", i18n("Kollision"),
@@ -30,11 +35,6 @@ int main(int argc, char *argv[])
     aboutData.addCredit(i18n("Matteo Guarnieri"), i18n("Original idea"));
     aboutData.addCredit(i18n("Brian Croom"), i18n("Port to use KGameRenderer"));
 
-
-    Kdelibs4ConfigMigrator migrate(QStringLiteral("kollision"));
-    migrate.setConfigFiles(QStringList() << QStringLiteral("kollisionrc"));
-    migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
-    migrate.migrate();
 
     app.setWindowIcon(QIcon::fromTheme(QLatin1String("kollision")));
 
