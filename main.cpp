@@ -27,6 +27,12 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("kollision"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("kollisionrc"));
+    migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
+    migrate.migrate();
+
+
     KAboutData aboutData("kollision", i18n("Kollision"),
                          "0.2", i18n("KDE collision game"), KAboutLicense::GPL,
                          i18n("(c) 2007 Paolo Capriotti"), "http://games.kde.org/kollision");
