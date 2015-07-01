@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2014 Edgar Muniz Berlinck <edgar.vv@gmail.com> -->
 <!--
      EmailAddress: wolfgang@rohdewald.de
@@ -8,11 +8,21 @@ SentUpstream: 2014-09-24
   <id>org.kde.kollision.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <summary>Casual ball game</summary>
+  <summary xml:lang="ca">Joc de pilota informal</summary>
+  <summary xml:lang="nl">Balspel ter verstrooiing</summary>
+  <summary xml:lang="sv">Vardagligt bollspel</summary>
+  <summary xml:lang="uk">Казуальна гра з кульками</summary>
+  <summary xml:lang="x-test">xxCasual ball gamexx</summary>
   <description>
     <p>
       Kollision is a casual game where you need to throw your ball and avoid the
       others balls on the table as long as possible.
     </p>
+    <p xml:lang="ca">El Kollision és un joc informal a on cal llançar la pilota i evitar les altres pilotes de la taula durant tant temps com sigui possible.</p>
+    <p xml:lang="nl">Kollision is een spel ter verstrooiing waarin u uw bal moet gooien en de andere ballen op de tafel zo lang mogelijk moet vermijden.</p>
+    <p xml:lang="sv">Kollision är ett vardagsspel där man ska kasta en boll och undvika andras bollar på spelbordet så länge som möjligt.</p>
+    <p xml:lang="uk">Kollision — казуальна гра, у якій ви кидаєте кульку так, щоб вона якомога довше не стикалася з іншими кульками на полі.</p>
+    <p xml:lang="x-test">xxKollision is a casual game where you need to throw your ball and avoid the others balls on the table as long as possible.xx</p>
   </description>
   <url type="homepage">https://projects.kde.org/projects/kde/kdegames/kollision</url>
   <screenshots>
