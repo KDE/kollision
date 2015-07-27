@@ -17,8 +17,8 @@ Ball::Ball(KGameRenderer* renderer, const QString& id, int size)
 {
     setRenderSize(QSize(size, size));
     setShapeMode(BoundingRectShape);
-    translate(-size / 2, -size / 2);
-    setAcceptsHoverEvents(false);
+    setTransform(QTransform::fromTranslate(-size / 2, -size / 2), true);
+    setAcceptHoverEvents(false);
 }
 
 void Ball::setOpacityF(qreal opacity)

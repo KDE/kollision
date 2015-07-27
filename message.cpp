@@ -20,15 +20,14 @@ Message::Message(const QString& text, const QFont& font, int maxwidth)
 {
     setFont(font);
     setDefaultTextColor(Qt::black);
-    setAcceptsHoverEvents(false);
+    setAcceptHoverEvents(false);
     document()->setTextWidth(maxwidth);
     QTextOption opts = document()->defaultTextOption();
     opts.setAlignment(Qt::AlignHCenter);
     document()->setDefaultTextOption(opts);
     
     // translate so that the origin is the center
-    translate(-document()->size().width() / 2, 
-              -document()->size().height() / 2);
+    setTransform(QTransform::fromTranslate(-document()->size().width() / 2, -document()->size().height() / 2), true);
 }
 
 void Message::setOpacityF(qreal opacity)
