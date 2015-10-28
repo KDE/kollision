@@ -15,7 +15,6 @@
 
 Message::Message(const QString& text, const QFont& font, int maxwidth)
 : QGraphicsTextItem(text)
-, m_opacity(1.0)
 , m_velocity(0.0, 0.0)
 {
     setFont(font);

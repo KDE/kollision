@@ -16,7 +16,6 @@
 
 class Message : public QGraphicsTextItem, public Sprite
 {
-    qreal m_opacity;
     QPointF m_velocity;
 public:
     Message(const QString& text, const QFont& font, int maxwidth);
