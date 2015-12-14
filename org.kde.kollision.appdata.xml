@@ -14,6 +14,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="de">Ein einfaches Ausweich-Ballspiel</summary>
   <summary xml:lang="en-GB">Casual ball game</summary>
   <summary xml:lang="es">Juego de bolas distraído</summary>
+  <summary xml:lang="fi">Rento pallopeli</summary>
   <summary xml:lang="gl">Xogo de bólas para distraerse</summary>
   <summary xml:lang="nl">Balspel ter verstrooiing</summary>
   <summary xml:lang="pl">Zwyczajna gra w piłkę</summary>
@@ -40,6 +41,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="de">Kollision ist ein Spiel, in dem Sie mit Ihrem Ball allen anderen Bällen auf dem Spielfeld solange wie möglich ausweichen müssen.</p>
     <p xml:lang="en-GB">Kollision is a casual game where you need to throw your ball and avoid the others balls on the table as long as possible.</p>
     <p xml:lang="es">Kollision es un juego de bolas distraído en el que debe lanzar una bola y evitar al resto de bolas del tablero tanto tiempo como sea posible.</p>
+    <p xml:lang="fi">Kollision on rento peli, jossa heität palloa ja yrität vältellä toisten palloja laudalla niin pitkään kuin mahdollista.</p>
     <p xml:lang="gl">Kollision é un xogo para distraerse no que te que tirar a súa bóla e evitar o resto de bólas do taboleiro tanto tempo como poida.</p>
     <p xml:lang="nl">Kollision is een spel ter verstrooiing waarin u uw bal moet gooien en de andere ballen op de tafel zo lang mogelijk moet vermijden.</p>
     <p xml:lang="pl">Kollision jest zwyczajną grą, w której musisz rzucić swoją piłkę na stół i unikać piłek innych tak długo jak to możliwe.</p>
