@@ -36,7 +36,7 @@ Q_OBJECT
     int m_time;
     int m_start;
 public:
-    PauseAnimation(int time);
+    explicit PauseAnimation(int time);
     
     virtual void start(int t);
     virtual bool step(int t);
