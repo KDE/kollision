@@ -12,6 +12,7 @@
 #include <QLayout>
 #include <QLabel>
 #include <QGraphicsView>
+#include <QPointer>
 
 #include <QAction>
 #include <KActionCollection>
@@ -107,17 +108,18 @@ void MainWindow::gameOver(int time)
 {
     stateChanged("playing", KXMLGUIClient::StateReverse);
 
-    KScoreDialog ksdialog(KScoreDialog::Name, this);
-    ksdialog.initFromDifficulty(Kg::difficulty(), /*setConfigGroup=*/ false);
-    ksdialog.setConfigGroup(qMakePair(
+    QPointer<KScoreDialog> ksdialog = new KScoreDialog(KScoreDialog::Name, this);
+    ksdialog->initFromDifficulty(Kg::difficulty(), /*setConfigGroup=*/ false);
+    ksdialog->setConfigGroup(qMakePair(
         m_lastUsedDifficulty->key(),
         m_lastUsedDifficulty->title()
     ));
     KScoreDialog::FieldInfo scoreInfo;
     scoreInfo[KScoreDialog::Score].setNum(time);
-    if (ksdialog.addScore(scoreInfo, KScoreDialog::AskName)) {
-        ksdialog.exec();
+    if (ksdialog->addScore(scoreInfo, KScoreDialog::AskName)) {
+        ksdialog->exec();
     }
+    delete ksdialog;
 }
 
 void MainWindow::highscores()
