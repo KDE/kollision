@@ -34,8 +34,6 @@ include(KDECompilerSettings)
 include(KDECMakeSettings)
 
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-add_definitions(-DTRANSLATION_DOMAIN="kollision")
-
 
 add_subdirectory(pictures)
 add_subdirectory(sounds)
@@ -48,7 +46,7 @@ set(kollision_SRCS
     main.cpp
     mainarea.cpp
     mainwindow.cpp
-    message.cpp      
+    message.cpp
 )
 kconfig_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 ki18n_wrap_ui(kollision_SRCS preferences.ui)
