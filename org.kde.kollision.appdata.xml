@@ -30,6 +30,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="uk">Казуальна гра з кульками</summary>
   <summary xml:lang="x-test">xxCasual ball gamexx</summary>
   <summary xml:lang="zh-CN">休闲球游戏</summary>
+  <summary xml:lang="zh-TW">丟球遊戲</summary>
   <description>
     <p>
       Kollision is a casual game where you need to throw your ball and avoid the
@@ -57,6 +58,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="uk">Kollision — казуальна гра, у якій ви кидаєте кульку так, щоб вона якомога довше не стикалася з іншими кульками на полі.</p>
     <p xml:lang="x-test">xxKollision is a casual game where you need to throw your ball and avoid the others balls on the table as long as possible.xx</p>
     <p xml:lang="zh-CN">Kollision 是一个休闲游戏，扔出球的同时并尽量躲避其他在桌子上的球。</p>
+    <p xml:lang="zh-TW">Kollision 是一套簡單的休閒遊戲，您要丟出球並盡量避免碰到桌上的其他球。</p>
   </description>
   <url type="homepage">https://projects.kde.org/projects/kde/kdegames/kollision</url>
   <screenshots>

@@ -22,6 +22,8 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("kollision");
+
     Kdelibs4ConfigMigrator migrate(QStringLiteral("kollision"));
     migrate.setConfigFiles(QStringList() << QStringLiteral("kollisionrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
