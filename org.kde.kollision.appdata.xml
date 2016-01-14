@@ -13,6 +13,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="de">Ein einfaches Ausweich-Ballspiel</summary>
   <summary xml:lang="en-GB">Casual ball game</summary>
   <summary xml:lang="es">Juego de bolas distraído</summary>
+  <summary xml:lang="et">Ajaviite-pallimäng</summary>
   <summary xml:lang="fi">Rento pallopeli</summary>
   <summary xml:lang="gl">Xogo de bólas para distraerse</summary>
   <summary xml:lang="nl">Balspel ter verstrooiing</summary>
@@ -41,9 +42,11 @@ SentUpstream: 2014-09-24
     <p xml:lang="de">Kollision ist ein Spiel, in dem Sie mit Ihrem Ball allen anderen Bällen auf dem Spielfeld solange wie möglich ausweichen müssen.</p>
     <p xml:lang="en-GB">Kollision is a casual game where you need to throw your ball and avoid the others balls on the table as long as possible.</p>
     <p xml:lang="es">Kollision es un juego de bolas distraído en el que debe lanzar una bola y evitar al resto de bolas del tablero tanto tiempo como sea posible.</p>
+    <p xml:lang="et">Kollision on ajaviitemäng, kus pead liigutama enda palli ja vältima võimalikult kaua teisi mängulaual liikuvaid palle.</p>
     <p xml:lang="fi">Kollision on rento peli, jossa heität palloa ja yrität vältellä toisten palloja laudalla niin pitkään kuin mahdollista.</p>
     <p xml:lang="gl">Kollision é un xogo para distraerse no que te que tirar a súa bóla e evitar o resto de bólas do taboleiro tanto tempo como poida.</p>
     <p xml:lang="nl">Kollision is een spel ter verstrooiing waarin u uw bal moet gooien en de andere ballen op de tafel zo lang mogelijk moet vermijden.</p>
+    <p xml:lang="nn">Kollision er eit kjapt og enkelt spel der du skal styra ein ball rundt på eit brett og unngå å verta treft av andre ballar som sprett rundt på brettet.</p>
     <p xml:lang="pl">Kollision jest zwyczajną grą, w której musisz rzucić swoją piłkę na stół i unikać piłek innych tak długo jak to możliwe.</p>
     <p xml:lang="pt">O Kollision é jogo de causa-efeito, onde terá de jogar a bola e evitar as outras bolas na mesa, durante o máximo de tempo possível.</p>
     <p xml:lang="pt-BR">Kollision é um jogo ocasional, onde deve-se jogar a bola e evitar as outras bolas na mesa pelo máximo de tempo possível.</p>
