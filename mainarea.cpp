@@ -48,6 +48,8 @@ struct Theme : public KgTheme
 MainArea::MainArea()
 : m_renderer(new Theme)
 , m_man(0)
+, m_manBallDiameter(28)
+, m_ballDiameter(28)
 , m_death(false)
 , m_game_over(false)
 , m_paused(false)
@@ -59,8 +61,11 @@ MainArea::MainArea()
 , m_soundStart(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/start.ogg"))
 , m_pause_action(0)
 {
+
     // Initialize the sound state
     enableSounds(KollisionConfig::enableSounds());
+
+    increaseBallSize(KollisionConfig::increaseBallSize());
 
     m_size = 500;
     QRect rect(0, 0, m_size, m_size);
@@ -88,6 +93,13 @@ MainArea::MainArea()
 
     writeText(i18n("Welcome to Kollision\nClick to start a game"), false);
 
+}
+
+void MainArea::increaseBallSize(bool p_enabled)
+{
+    m_increaseBallSize = p_enabled;
+    KollisionConfig::setIncreaseBallSize(p_enabled);
+    KollisionConfig::self()->save();
 }
 
 void MainArea::enableSounds(bool p_enabled)
@@ -171,8 +183,15 @@ void MainArea::displayMessages(const QList<QExplicitlySharedDataPointer<Message>
 
 double MainArea::radius() const
 {
-    static const int ballDiameter = 28; // this is fixed as the scene size is fixed
-    return ballDiameter / 2.0;
+    return m_ballDiameter / 2.0;
+}
+
+void MainArea::setBallDiameter(int val)
+{
+    // Limits other balls' maximum diameter to the double of man ball's diameter.
+    if (m_ballDiameter < m_manBallDiameter * 2) {
+        m_ballDiameter = val;
+    }
 }
 
 void MainArea::togglePause()
@@ -220,6 +239,10 @@ void MainArea::togglePause()
 
 void MainArea::start()
 {
+    // reset ball size
+    m_ballDiameter = m_manBallDiameter;
+    m_man->setRenderSize(QSize(m_manBallDiameter, m_manBallDiameter));
+
     m_death = false;
     m_game_over = false;
 
@@ -287,7 +310,7 @@ Ball* MainArea::addBall(const QString& id)
         done = true;
         pos = randomPoint().toPoint();
         foreach (Ball* ball, m_fading) {
-            if (collide(pos, ball->position(), ball->radius() * 2.0, tmp)) {
+            if (collide(pos, ball->position(), m_ballDiameter, m_ballDiameter, tmp)) {
                 done = false;
                 break;
             }
@@ -324,12 +347,13 @@ Ball* MainArea::addBall(const QString& id)
     return ball;
 }
 
-bool MainArea::collide(const QPointF& a, const QPointF& b, double diam, Collision& collision)
+bool MainArea::collide(const QPointF& a, const QPointF& b, double diamA, double diamB, Collision& collision)
 {
     collision.line = b - a;
     collision.square_distance = collision.line.x() * collision.line.x()
                               + collision.line.y() * collision.line.y();
-    return collision.square_distance <= diam * diam;
+
+    return collision.square_distance <= diamA * diamB;
 }
 
 void MainArea::abort()
@@ -389,7 +413,9 @@ void MainArea::tick()
         if (m_man && collide(
                 ball->position(),
                 m_man->position(),
-                radius() * 2, collision)) {
+                m_ballDiameter,
+                m_manBallDiameter,
+                collision)) {
             if(m_soundEnabled)
                 m_soundYouLose.start();
             abort();
@@ -450,7 +476,7 @@ void MainArea::tick()
 
             QPointF other_pos = other->position();
 
-            if (collide(pos, other_pos, radius() * 2, collision)) {
+            if (collide(pos, other_pos, m_ballDiameter, m_ballDiameter, collision)) {
 //                 onCollision();
                 QPointF other_vel = other->velocity();
 
@@ -501,6 +527,14 @@ void MainArea::tick()
 
     if (!m_death && m_time.elapsed() - m_pause_time >= m_ball_timeout * 1000 *
                                                        (m_balls.size() + m_fading.size() - 3)) {
+        if (m_increaseBallSize) {
+            //increase ball size by 4 units
+            setBallDiameter(m_ballDiameter + 4);
+            foreach (Ball* ball, m_balls) {
+                ball->setRenderSize(QSize(m_ballDiameter, m_ballDiameter));
+            }
+        }
+
         addBall("red_ball");
         writeMessage(i18np("%1 ball", "%1 balls", m_balls.size() + 1));
     }

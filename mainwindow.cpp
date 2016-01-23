@@ -89,6 +89,11 @@ void MainWindow::setupActions()
     KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
     KStandardGameAction::quit(this, SLOT(close()), actionCollection());
 
+    QAction * ballSize = new KToggleAction(i18n("&Increase Ball Size"), this);
+    ballSize->setChecked(KollisionConfig::increaseBallSize());
+    actionCollection()->addAction( QLatin1String( "increase_ball_size" ), ballSize);
+    connect(ballSize, &QAction::triggered, m_main, &MainArea::increaseBallSize);
+
     QAction * action;
     action = new KToggleAction(i18n("&Play Sounds"), this);
     action->setChecked(KollisionConfig::enableSounds());

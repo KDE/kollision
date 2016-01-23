@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gui name="kollision"
-     version="1"
+     version="2"
      xmlns="http://www.kde.org/standards/kxmlgui/1.0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.kde.org/standards/kxmlgui/1.0
@@ -11,9 +11,9 @@
         </Menu>
         <Menu name="settings">
             <Action name="options_sounds" />
+            <Action name="increase_ball_size" />
         </Menu>
     </MenuBar>
-
     <State name="playing">
         <enable>
             <Action name="game_abort" />

@@ -18,6 +18,13 @@
     </widget>
    </item>
    <item>
+    <widget class="QCheckBox" name="kcfg_IncreaseBallSize" >
+     <property name="text" >
+      <string>Enable automatically &amp;increasing ball size</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" >
      <item>
       <widget class="QLabel" name="label_2" >

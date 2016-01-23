@@ -48,6 +48,11 @@ Q_OBJECT
     QList<Ball*> m_fading;
     Ball* m_man;
 
+    // Player's ball diameter
+    int m_manBallDiameter;
+    // Other balls' diameter
+    int m_ballDiameter;
+
     /// the blue ball is dead
     bool m_death;
 
@@ -61,6 +66,9 @@ Q_OBJECT
     QList<MessagePtr> m_welcome_msg;
     QList<MessagePtr> m_pause_msg;
 
+    // Flag if automatic incremental ball size is enabled.
+    bool m_increaseBallSize;
+
     // Flag if sound is enabled.
     bool m_soundEnabled;
 
@@ -72,12 +80,14 @@ Q_OBJECT
     QAction * m_pause_action;
 
     double radius() const;
+    void setBallDiameter(int val);
+
     QPointF randomPoint() const;
     QPointF randomDirection(double val) const;
 
     Ball* addBall(const QString& id);
     bool collide(const QPointF& a, const QPointF& b,
-                double diam, Collision& collision);
+                double diamA, double diamB, Collision& collision);
 
     Animation* writeMessage(const QString& text);
     Animation* writeText(const QString& lines, bool fade = true);
@@ -94,6 +104,7 @@ public:
     void setPauseAction(QAction * action);
 public slots:
     void tick();
+    void increaseBallSize(bool enable);
     void enableSounds(bool enable);
     void abort();
     void togglePause();
@@ -107,4 +118,3 @@ signals:
 };
 
 #endif // MAINAREA_H
-
