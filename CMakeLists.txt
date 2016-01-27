@@ -2,26 +2,27 @@ project(kollision)
 
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
 set (QT_MIN_VERSION "5.3.0")
+set (KF5_MIN_VERSION "5.15.0")
 
 find_package(ECM 1.7.0 REQUIRED CONFIG)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets Qml Quick QuickWidgets Svg Test)
-find_package(KF5 REQUIRED COMPONENTS 
-    CoreAddons
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Config
-    WidgetsAddons
-    Config
-    DBusAddons
-    I18n
     ConfigWidgets
-    TextWidgets
-    XmlGui
-    KIO
-    NotifyConfig
-    NewStuff
+    CoreAddons
+    Crash
+    DBusAddons
     DocTools
-    )
+    I18n
+    KIO
+    NewStuff
+    NotifyConfig
+    TextWidgets
+    WidgetsAddons
+    XmlGui
+)
 
 find_package(KF5KDEGames 4.9.0 REQUIRED)
 find_package(Phonon4Qt5 CONFIG REQUIRED)
@@ -54,7 +55,14 @@ file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi/*-apps-kollision.p
 ecm_add_app_icon(kollision_SRCS ICONS ${ICONS_SRCS})
 add_executable(kollision ${kollision_SRCS})
 
-target_link_libraries(kollision  KF5KDEGames Phonon::phonon4qt5 KF5::DBusAddons KF5::XmlGui KF5::I18n)
+target_link_libraries(kollision
+    KF5::Crash
+    KF5::DBusAddons
+    KF5::I18n
+    KF5::XmlGui
+    Phonon::phonon4qt5
+    KF5KDEGames
+)
 
 install(TARGETS kollision ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kollision.desktop DESTINATION ${KDE_INSTALL_APPDIR})
