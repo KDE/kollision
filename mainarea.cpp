@@ -71,7 +71,7 @@ MainArea::MainArea()
     QRect rect(0, 0, m_size, m_size);
     setSceneRect(rect);
 
-    srand(time(0));
+    qsrand(time(0));
 
     m_timer.setInterval(20);
     connect(&m_timer, &QTimer::timeout, this, &MainArea::tick);
