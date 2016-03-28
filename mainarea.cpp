@@ -27,8 +27,7 @@
 // for rand
 #include <math.h>
 #include <stdio.h>
-#include <time.h>
-#include <sys/time.h>
+#include <ctime>
 #include <QStandardPaths>
 
 struct Collision
@@ -71,7 +70,7 @@ MainArea::MainArea()
     QRect rect(0, 0, m_size, m_size);
     setSceneRect(rect);
 
-    qsrand(time(0));
+    qsrand(std::time(nullptr));
 
     m_timer.setInterval(20);
     connect(&m_timer, &QTimer::timeout, this, &MainArea::tick);
