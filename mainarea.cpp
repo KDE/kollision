@@ -40,7 +40,7 @@ struct Theme : public KgTheme
 {
 	Theme() : KgTheme("pictures/theme.desktop")
 	{
-		setGraphicsPath(QStandardPaths::locate(QStandardPaths::DataLocation, "pictures/theme.svgz"));
+		setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, "pictures/theme.svgz"));
 	}
 };
 
@@ -54,10 +54,10 @@ MainArea::MainArea()
 , m_paused(false)
 , m_pause_time(0)
 , m_penalty(0)
-, m_soundHitWall(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/hit_wall.ogg"))
-, m_soundYouLose(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/you_lose.ogg"))
-, m_soundBallLeaving(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/ball_leaving.ogg"))
-, m_soundStart(QStandardPaths::locate(QStandardPaths::DataLocation, "sounds/start.ogg"))
+, m_soundHitWall(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/hit_wall.ogg"))
+, m_soundYouLose(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/you_lose.ogg"))
+, m_soundBallLeaving(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/ball_leaving.ogg"))
+, m_soundStart(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/start.ogg"))
 , m_pause_action(0)
 {
 
