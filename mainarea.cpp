@@ -38,10 +38,10 @@ struct Collision
 
 struct Theme : public KgTheme
 {
-	Theme() : KgTheme("pictures/theme.desktop")
-	{
-		setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, "pictures/theme.svgz"));
-	}
+    Theme() : KgTheme("pictures/theme.desktop")
+    {
+        setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, "pictures/theme.svgz"));
+    }
 };
 
 MainArea::MainArea()
@@ -119,10 +119,7 @@ Animation* MainArea::writeMessage(const QString& text)
 
     AnimationGroup* move = new AnimationGroup;
     move->add(new FadeAnimation(sprite, 1.0, 0.0, 1500));
-    move->add(new MovementAnimation(sprite,
-            sprite->position(),
-            QPointF(0, -0.1),
-            1500));
+    move->add(new MovementAnimation(sprite, sprite->position(), QPointF(0, -0.1), 1500));
     AnimationSequence* sequence = new AnimationSequence;
     sequence->add(new PauseAnimation(200));
     sequence->add(new FadeAnimation(sprite, 0.0, 1.0, 1000));
@@ -147,8 +144,7 @@ Animation* MainArea::writeText(const QString& text, bool fade)
         AnimationGroup* anim = new AnimationGroup;
         foreach (QExplicitlySharedDataPointer<Message> message, m_welcome_msg) {
             message->setOpacityF(0.0);
-            anim->add(new FadeAnimation(
-                message, 0.0, 1.0, 1000));
+            anim->add(new FadeAnimation(message, 0.0, 1.0, 1000));
         }
 
         m_animator.add(anim);
