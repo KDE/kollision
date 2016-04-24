@@ -285,14 +285,14 @@ void MainArea::setPauseAction(QAction * action)
 
 QPointF MainArea::randomPoint() const
 {
-    double x = (double)rand() * (m_size - radius() * 2) / RAND_MAX + radius();
-    double y = (double)rand() * (m_size - radius() * 2) / RAND_MAX + radius();
+    double x = static_cast<double>(rand()) * (m_size - radius() * 2) / RAND_MAX + radius();
+    double y = static_cast<double>(rand()) * (m_size - radius() * 2) / RAND_MAX + radius();
     return QPointF(x, y);
 }
 
 QPointF MainArea::randomDirection(double val) const
 {
-    double angle = (double)rand() * 2 * M_PI / RAND_MAX;
+    double angle = static_cast<double>(rand()) * 2 * M_PI / RAND_MAX;
     return QPointF(val * sin(angle), val * cos(angle));
 }
 
@@ -312,7 +312,7 @@ Ball* MainArea::addBall(const QString& id)
         }
     }
 
-    Ball* ball = new Ball(&m_renderer, id, (int)(radius()*2));
+    Ball* ball = new Ball(&m_renderer, id, static_cast<int>(radius()*2));
     ball->setPosition(pos);
     addItem(ball);
 
@@ -557,10 +557,10 @@ void MainArea::setManPosition(const QPointF& p)
 
     QPointF pos = p;
 
-    if (pos.x() <= radius()) pos.setX((int) radius());
-    if (pos.x() >= m_size - radius()) pos.setX(m_size - (int) radius());
-    if (pos.y() <= radius()) pos.setY((int) radius());
-    if (pos.y() >= m_size - radius()) pos.setY(m_size - (int) radius());
+    if (pos.x() <= radius()) pos.setX(static_cast<int>(radius()));
+    if (pos.x() >= m_size - radius()) pos.setX(m_size - static_cast<int>(radius()));
+    if (pos.y() <= radius()) pos.setY(static_cast<int>(radius()));
+    if (pos.y() >= m_size - radius()) pos.setY(m_size - static_cast<int>(radius()));
 
     m_man->setPosition(pos);
 }
@@ -573,7 +573,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
             setManPosition(e->scenePos());
         }
         else if (!m_man) {
-            m_man = new Ball(&m_renderer, "blue_ball", (int)(radius()*2));
+            m_man = new Ball(&m_renderer, "blue_ball", static_cast<int>(radius()*2));
             m_man->setZValue(1.0);
             setManPosition(e->scenePos());
             addItem(m_man);
