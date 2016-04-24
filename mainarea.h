@@ -90,13 +90,13 @@ Q_OBJECT
                 double diamA, double diamB, Collision& collision);
 
     Animation* writeMessage(const QString& text);
-    Animation* writeText(const QString& lines, bool fade = true);
+    Animation* writeText(const QString& text, bool fade = true);
     void displayMessages(const QList<QExplicitlySharedDataPointer<Message> >& msgs);
     void playSound(int sound);
     void onDeath();
     void setManPosition(const QPointF& p);
 protected:
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent* e);
     virtual void focusOutEvent(QFocusEvent*);
 public:
     MainArea();

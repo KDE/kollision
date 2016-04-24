@@ -94,17 +94,17 @@ MainArea::MainArea()
 
 }
 
-void MainArea::increaseBallSize(bool p_enabled)
+void MainArea::increaseBallSize(bool enable)
 {
-    m_increaseBallSize = p_enabled;
-    KollisionConfig::setIncreaseBallSize(p_enabled);
+    m_increaseBallSize = enable;
+    KollisionConfig::setIncreaseBallSize(enable);
     KollisionConfig::self()->save();
 }
 
-void MainArea::enableSounds(bool p_enabled)
+void MainArea::enableSounds(bool enabled)
 {
-    m_soundEnabled = p_enabled;
-    KollisionConfig::setEnableSounds(p_enabled);
+    m_soundEnabled = enabled;
+    KollisionConfig::setEnableSounds(enabled);
     KollisionConfig::self()->save();
 }
 
