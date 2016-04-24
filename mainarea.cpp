@@ -50,13 +50,13 @@ MainArea::MainArea()
 , m_death(false)
 , m_game_over(false)
 , m_paused(false)
-, m_pause_time(0)
+, m_pauseTime(0)
 , m_penalty(0)
 , m_soundHitWall(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/hit_wall.ogg"))
 , m_soundYouLose(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/you_lose.ogg"))
 , m_soundBallLeaving(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/ball_leaving.ogg"))
 , m_soundStart(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/start.ogg"))
-, m_pause_action(0)
+, m_pauseAction(0)
 {
 
     // Initialize the sound state
@@ -73,8 +73,8 @@ MainArea::MainArea()
     m_timer.setInterval(20);
     connect(&m_timer, &QTimer::timeout, this, &MainArea::tick);
 
-    m_msg_font = QApplication::font();
-    m_msg_font.setPointSize(15);
+    m_msgFont = QApplication::font();
+    m_msgFont.setPointSize(15);
 
     QPixmap pix(rect.size());
     {
@@ -108,7 +108,7 @@ void MainArea::enableSounds(bool enabled)
 
 Animation* MainArea::writeMessage(const QString& text)
 {
-    Message* message = new Message(text, m_msg_font, m_size);
+    Message* message = new Message(text, m_msgFont, m_size);
     message->setPosition(QPointF(m_size, m_size) / 2.0);
     addItem(message);
     message->setOpacityF(0.0);
@@ -131,16 +131,16 @@ Animation* MainArea::writeMessage(const QString& text)
 
 Animation* MainArea::writeText(const QString& text, bool fade)
 {
-    m_welcome_msg.clear();
+    m_welcomeMsg.clear();
     foreach (const QString &line, text.split('\n')) {
-        m_welcome_msg.append(
-            QExplicitlySharedDataPointer<Message>(new Message(line, m_msg_font, m_size)));
+        m_welcomeMsg.append(
+            QExplicitlySharedDataPointer<Message>(new Message(line, m_msgFont, m_size)));
     }
-    displayMessages(m_welcome_msg);
+    displayMessages(m_welcomeMsg);
 
     if (fade) {
         AnimationGroup* anim = new AnimationGroup;
-        foreach (QExplicitlySharedDataPointer<Message> message, m_welcome_msg) {
+        foreach (QExplicitlySharedDataPointer<Message> message, m_welcomeMsg) {
             message->setOpacityF(0.0);
             anim->add(new FadeAnimation(message, 0.0, 1.0, 1000));
         }
@@ -194,29 +194,29 @@ void MainArea::togglePause()
     if (m_paused) {
         m_paused = false;
         m_timer.start();
-        m_welcome_msg.clear();
+        m_welcomeMsg.clear();
 
-        m_pause_time += m_time.elapsed() - m_last_time;
-        m_last_time = m_time.elapsed();
+        m_pauseTime += m_time.elapsed() - m_lastTime;
+        m_lastTime = m_time.elapsed();
     }
     else {
         m_paused = true;
         m_timer.stop();
-        QString shortcut = m_pause_action ?
-          m_pause_action->shortcut().toString() :
+        QString shortcut = m_pauseAction ?
+          m_pauseAction->shortcut().toString() :
           "P";
         writeText(i18n("Game paused\nClick or press %1 to resume", shortcut), false);
 
-        if(m_last_game_time >= 5) {
+        if(m_lastGameTime >= 5) {
             m_penalty += 5000;
-            m_last_game_time -= 5;
+            m_lastGameTime -= 5;
         }
         else {
-            m_penalty += m_last_game_time * 1000;
-            m_last_game_time = 0;
+            m_penalty += m_lastGameTime * 1000;
+            m_lastGameTime = 0;
         }
 
-        emit changeGameTime(m_last_game_time);
+        emit changeGameTime(m_lastGameTime);
     }
 
     m_man->setVisible(!m_paused);
@@ -252,18 +252,18 @@ void MainArea::start()
         break;
     }
 
-    m_welcome_msg.clear();
+    m_welcomeMsg.clear();
 
     addBall("red_ball");
     addBall("red_ball");
     addBall("red_ball");
     addBall("red_ball");
 
-    m_pause_time = 0;
+    m_pauseTime = 0;
     m_penalty = 0;
     m_time.restart();
-    m_last_time = 0;
-    m_last_game_time = 0;
+    m_lastTime = 0;
+    m_lastGameTime = 0;
 
     m_timer.start();
 
@@ -278,7 +278,7 @@ void MainArea::start()
 
 void MainArea::setPauseAction(QAction * action)
 {
-  m_pause_action = action;
+  m_pauseAction = action;
 }
 
 QPointF MainArea::randomPoint() const
@@ -377,13 +377,13 @@ void MainArea::tick()
         setManPosition(views().first()->mapFromGlobal(QCursor().pos()));
     }
 
-    int t = m_time.elapsed() - m_last_time;
-    m_last_time = m_time.elapsed();
+    int t = m_time.elapsed() - m_lastTime;
+    m_lastTime = m_time.elapsed();
 
     // compute game time && update statusbar
-    if ((m_time.elapsed() - m_pause_time - m_penalty) / 1000 > m_last_game_time) {
-        m_last_game_time = (m_time.elapsed() - m_pause_time - m_penalty) / 1000;
-        emit changeGameTime(m_last_game_time);
+    if ((m_time.elapsed() - m_pauseTime - m_penalty) / 1000 > m_lastGameTime) {
+        m_lastGameTime = (m_time.elapsed() - m_pauseTime - m_penalty) / 1000;
+        emit changeGameTime(m_lastGameTime);
     }
 
     Collision collision;
@@ -518,7 +518,7 @@ void MainArea::tick()
         }
     }
 
-    if (!m_death && m_time.elapsed() - m_pause_time >= m_ball_timeout * 1000 *
+    if (!m_death && m_time.elapsed() - m_pauseTime >= m_ball_timeout * 1000 *
                                                        (m_balls.size() + m_fading.size() - 3)) {
         if (m_increaseBallSize) {
             //increase ball size by 4 units
@@ -535,7 +535,7 @@ void MainArea::tick()
     if (m_death && m_balls.isEmpty() && m_fading.isEmpty()) {
         m_game_over = true;
         m_timer.stop();
-        int time = (m_time.restart() - m_pause_time - m_penalty) / 1000;
+        int time = (m_time.restart() - m_pauseTime - m_penalty) / 1000;
         QString text = i18np(
             "GAME OVER\n"
             "You survived for %1 second\n"

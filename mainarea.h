@@ -32,8 +32,8 @@ class MainArea : public QGraphicsScene
 {
 Q_OBJECT
     QTimer m_timer;
-    int m_last_time;
-    int m_last_game_time;
+    int m_lastTime;
+    int m_lastGameTime;
     QTime m_time;
 
     /// time interval between two balls being added
@@ -42,7 +42,7 @@ Q_OBJECT
     int m_size;
     KGameRenderer m_renderer;
     Animator m_animator;
-    QFont m_msg_font;
+    QFont m_msgFont;
 
     QList<Ball*> m_balls;
     QList<Ball*> m_fading;
@@ -60,11 +60,11 @@ Q_OBJECT
     bool m_game_over;
 
     bool m_paused;
-    int m_pause_time;
+    int m_pauseTime;
     int m_penalty;
 
-    QList<MessagePtr> m_welcome_msg;
-    QList<MessagePtr> m_pause_msg;
+    QList<MessagePtr> m_welcomeMsg;
+    QList<MessagePtr> m_pauseMsg;
 
     // Flag if automatic incremental ball size is enabled.
     bool m_increaseBallSize;
@@ -77,7 +77,7 @@ Q_OBJECT
     KgSound m_soundBallLeaving;
     KgSound m_soundStart;
 
-    QAction * m_pause_action;
+    QAction * m_pauseAction;
 
     double radius() const;
     void setBallDiameter(int val);
