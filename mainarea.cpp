@@ -19,16 +19,14 @@
 #include <KgDifficulty>
 #include <KgTheme>
 #include <KLocalizedString>
-
+#include <QStandardPaths>
 
 #include "ball.h"
 #include "kollisionconfig.h"
 
-// for rand
-#include <math.h>
-#include <stdio.h>
+#include <cmath>
 #include <ctime>
-#include <QStandardPaths>
+#include <stdio.h>
 
 struct Collision
 {
@@ -285,14 +283,14 @@ void MainArea::setPauseAction(QAction * action)
 
 QPointF MainArea::randomPoint() const
 {
-    double x = static_cast<double>(rand()) * (m_size - radius() * 2) / RAND_MAX + radius();
-    double y = static_cast<double>(rand()) * (m_size - radius() * 2) / RAND_MAX + radius();
+    double x = static_cast<double>(qrand()) * (m_size - radius() * 2) / RAND_MAX + radius();
+    double y = static_cast<double>(qrand()) * (m_size - radius() * 2) / RAND_MAX + radius();
     return QPointF(x, y);
 }
 
 QPointF MainArea::randomDirection(double val) const
 {
-    double angle = static_cast<double>(rand()) * 2 * M_PI / RAND_MAX;
+    double angle = static_cast<double>(qrand()) * 2 * M_PI / RAND_MAX;
     return QPointF(val * sin(angle), val * cos(angle));
 }
 
