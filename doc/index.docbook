@@ -1,15 +1,13 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kappname "<application>Kollision</application>">
-  <!ENTITY kappversion "0.1">
-  <!ENTITY package "kdegames">
+  <!ENTITY kollision "<application>Kollision</application>">
   <!ENTITY % English "INCLUDE" >
   <!ENTITY % addindex "IGNORE">
 ]>
  
 <book id="kollision" lang="&language;">
 <bookinfo>
-        <title>The &kappname; Handbook</title>
+        <title>The &kollision; Handbook</title>
 <authorgroup>
         <author>
                 <firstname>Paolo</firstname>
@@ -22,10 +20,10 @@
 </authorgroup>
 <legalnotice>&FDLNotice;</legalnotice>
  
-<date>2013-05-06</date>
-<releaseinfo>&kappversion; (&kde; 4.11)</releaseinfo> 
+<date>2016-05-10</date>
+<releaseinfo>0.3 (applications 16.04)</releaseinfo> 
 <abstract>
-        <para>This documentation describes the game of &kappname; version &kappversion;</para>
+        <para>This documentation describes the game of &kollision; version 0.3</para>
 </abstract>
  
 <keywordset>
@@ -47,6 +45,18 @@
  
 <chapter id="howto"><title>How to play</title>
         <note><title>Objective:</title><para>Let the blue ball move in the field without touching the red balls.</para></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>&kollision; Game Board</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
         <para>
 Click on the empty field to start a game: a blue ball immediately replaces your mouse cursor, and a number of red balls start to fade into the field.
         </para>
@@ -120,7 +130,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
 </shortcut>
 <guimenu>Game</guimenu>
 <guimenuitem>Quit</guimenuitem></menuchoice></term>
-<listitem><para>Selecting this item will end your current game, and exit &kappname;.</para></listitem>
+<listitem><para>Selecting this item will end your current game, and exit &kollision;.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -147,7 +157,7 @@ You can choose the game difficulty level on the right of the status bar. The hig
 </variablelist>
 
 <para>
-Additionally &kappname; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
+Additionally &kollision; has the common &kde; <guimenu>Settings</guimenu> and <guimenu>Help</guimenu>
 menu items, for more information read the sections about the <ulink url="help:/fundamentals/ui.html#menus-settings"
 >Settings Menu</ulink> and <ulink url="help:/fundamentals/ui.html#menus-help">Help Menu</ulink>
 of the &kde; Fundamentals.
@@ -165,22 +175,22 @@ of the &kde; Fundamentals.
 </qandaentry>
 <qandaentry>
  <question><para>Can I use the keyboard to play the game? </para></question>
- <answer><para>No. &kappname; can only be played with a mouse.</para></answer>
+ <answer><para>No. &kollision; can only be played with a mouse.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I cannot figure out what to do here! Are there hints? </para></question>
- <answer><para>&kappname; does not have a <quote>Hint</quote> feature.</para></answer>
+ <answer><para>&kollision; does not have a <quote>Hint</quote> feature.</para></answer>
 </qandaentry>
 <qandaentry>
  <question><para>I have to quit the game now, but I am not finished yet. Can I save my progress?</para></question>
-  <answer><para>You cannot save games in &kappname;.</para></answer>
+  <answer><para>You cannot save games in &kollision;.</para></answer>
 </qandaentry>
 </qandaset>
 </chapter>
  
 <chapter id="credits"><title>Credits and License</title>
 <para>
-&kappname;
+&kollision;
 </para>
 <para>
 Copyright 2007-2008 Paolo Capriotti <email>p.capriotti@gmail.com</email>
@@ -198,17 +208,7 @@ Documentation copyright 2008 Paolo Capriotti <email>p.capriotti@gmail.com</email
 &underGPL;
  
 </chapter>
- 
-<appendix id="installation">
 
-<title>Compilation and Installation</title>
- 
-&install.intro.documentation;
- 
-&install.compile.documentation;
- 
-</appendix>
- 
 &documentation.index; 
 </book>
 <!--
