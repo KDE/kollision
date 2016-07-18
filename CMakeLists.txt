@@ -59,7 +59,7 @@ target_link_libraries(kollision
 
 install(TARGETS kollision ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kollision.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES org.kde.kollision.appdata.xml DESTINATION ${KDE_INSTALL_DATAROOTDIR}/appdata/)
+install(FILES org.kde.kollision.appdata.xml DESTINATION ${KDE_INSTALL_METAINFO})
 install(FILES kollisionui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kollision)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
