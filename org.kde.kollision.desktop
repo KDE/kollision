@@ -77,6 +77,7 @@ GenericName[sr@latin]=Jednostavna igra izbegavanja lopti
 GenericName[sv]=Ett enkelt spel för att undvika bollar
 GenericName[uk]=Проста гра з кулькою
 GenericName[x-test]=xxA simple ball dodging gamexx
+GenericName[zh_TW]=簡單的閃躲球遊戲
 Terminal=false
 Categories=Qt;KDE;Game;ArcadeGame;
 X-DocPath=kollision/index.html
