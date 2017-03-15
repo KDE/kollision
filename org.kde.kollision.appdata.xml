@@ -8,6 +8,11 @@ SentUpstream: 2014-09-24
   <id>org.kde.kollision.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <name>Kollision</name>
+  <name xml:lang="ca">Kollision</name>
+  <name xml:lang="pt">Kollision</name>
+  <name xml:lang="sv">Kollision</name>
+  <name xml:lang="uk">Kollision</name>
+  <name xml:lang="x-test">xxKollisionxx</name>
   <summary>Casual ball game</summary>
   <summary xml:lang="ca">Joc de pilota informal</summary>
   <summary xml:lang="ca-valencia">Joc de pilota informal</summary>
