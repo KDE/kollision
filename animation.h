@@ -38,9 +38,9 @@ Q_OBJECT
 public:
     explicit PauseAnimation(int time);
     
-    virtual void start(int t);
-    virtual bool step(int t);
-    virtual void stop() { }
+    void start(int t) Q_DECL_OVERRIDE;
+    bool step(int t) Q_DECL_OVERRIDE;
+    void stop() Q_DECL_OVERRIDE { }
 };
 
 class FadeAnimation : public Animation
@@ -56,9 +56,9 @@ Q_OBJECT
 public:
     FadeAnimation(const SpritePtr& sprite, double from, double to, int time);
     
-    virtual void start(int t);
-    virtual bool step(int t);
-    virtual void stop();
+    void start(int t) Q_DECL_OVERRIDE;
+    bool step(int t) Q_DECL_OVERRIDE;
+    void stop() Q_DECL_OVERRIDE;
 };
 
 class MovementAnimation : public Animation
@@ -73,9 +73,9 @@ public:
     MovementAnimation(const SpritePtr& sprite, const QPointF& from, 
                       const QPointF& velocity, int time);
     
-    virtual void start(int t);
-    virtual bool step(int t);
-    virtual void stop();
+    void start(int t) Q_DECL_OVERRIDE;
+    bool step(int t) Q_DECL_OVERRIDE;
+    void stop() Q_DECL_OVERRIDE;
 };
 
 
@@ -90,9 +90,9 @@ public:
     
     void add(Animation* animation);
     
-    virtual void start(int t);
-    virtual bool step(int t);
-    virtual void stop();
+    void start(int t) Q_DECL_OVERRIDE;
+    bool step(int t) Q_DECL_OVERRIDE;
+    void stop() Q_DECL_OVERRIDE;
 };
 
 class AnimationSequence : public Animation
@@ -105,9 +105,9 @@ public:
     
     void add(Animation* animation);
     
-    virtual void start(int t);
-    virtual bool step(int t);
-    virtual void stop();
+    void start(int t) Q_DECL_OVERRIDE;
+    bool step(int t) Q_DECL_OVERRIDE;
+    void stop() Q_DECL_OVERRIDE;
 };
 
 #endif // ANIMATION_H

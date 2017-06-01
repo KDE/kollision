@@ -23,14 +23,14 @@ class Ball : public KGameRenderedItem, public Sprite
 public:
     Ball(KGameRenderer* renderer, const QString& id, int size);
 
-    virtual void setOpacityF(qreal opacity);
-    virtual qreal opacityF() const;
+    void setOpacityF(qreal opacity) Q_DECL_OVERRIDE;
+    qreal opacityF() const Q_DECL_OVERRIDE;
 
-    virtual void setVelocity(const QPointF& vel);
-    virtual QPointF velocity() const;
+    void setVelocity(const QPointF& vel) Q_DECL_OVERRIDE;
+    QPointF velocity() const Q_DECL_OVERRIDE;
     
-    virtual void setPosition(const QPointF& pos);
-    virtual QPointF position() const;
+    void setPosition(const QPointF& pos) Q_DECL_OVERRIDE;
+    QPointF position() const Q_DECL_OVERRIDE;
     
     qreal radius() const;
 };

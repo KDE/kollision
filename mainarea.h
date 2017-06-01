@@ -96,8 +96,8 @@ Q_OBJECT
     void onDeath();
     void setManPosition(const QPointF& p);
 protected:
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent* e);
-    virtual void focusOutEvent(QFocusEvent*);
+    void mousePressEvent(QGraphicsSceneMouseEvent* e) Q_DECL_OVERRIDE;
+    void focusOutEvent(QFocusEvent*) Q_DECL_OVERRIDE;
 public:
     MainArea();
     void start();
