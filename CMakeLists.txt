@@ -43,6 +43,8 @@ set(kollision_SRCS
     mainwindow.cpp
     message.cpp
 )
+qt5_add_resources(kollision_SRCS kollision.qrc)
+
 kconfig_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 ki18n_wrap_ui(kollision_SRCS preferences.ui)
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/pictures/hi/*-apps-kollision.png")
@@ -60,6 +62,5 @@ target_link_libraries(kollision
 install(TARGETS kollision ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.kollision.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kollision.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES kollisionui.rc  DESTINATION  ${KDE_INSTALL_KXMLGUI5DIR}/kollision)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
