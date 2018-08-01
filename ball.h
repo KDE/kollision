@@ -19,7 +19,6 @@ class KGameRenderer;
 
 class Ball : public KGameRenderedItem, public Sprite
 {
-    QPointF m_velocity;
 public:
     Ball(KGameRenderer* renderer, const QString& id, int size);
 
@@ -33,6 +32,8 @@ public:
     QPointF position() const Q_DECL_OVERRIDE;
     
     qreal radius() const;
+private:
+    QPointF m_velocity;
 };
 
 #endif // BALL_H

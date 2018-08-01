@@ -31,6 +31,7 @@ struct Collision;
 class MainArea : public QGraphicsScene
 {
 Q_OBJECT
+private:
     QTimer m_timer;
     int m_lastTime;
     int m_lastGameTime;

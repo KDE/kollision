@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
     migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
     migrate.migrate();
 
-    KAboutData aboutData("kollision", i18n("Kollision"),
-                         "0.3", i18n("KDE collision game"), KAboutLicense::GPL,
+    KAboutData aboutData(QStringLiteral("kollision"), i18n("Kollision"),
+                         QStringLiteral("0.3"), i18n("KDE collision game"), KAboutLicense::GPL,
                          i18n("(c) 2007 Paolo Capriotti"));
-    aboutData.addAuthor(i18n("Paolo Capriotti"), QString(), "p.capriotti@gmail.com");
-    aboutData.addAuthor(i18n("Dmitry Suzdalev"), QString(), "dimsuz@gmail.com");
+    aboutData.addAuthor(i18n("Paolo Capriotti"), QString(), QStringLiteral("p.capriotti@gmail.com"));
+    aboutData.addAuthor(i18n("Dmitry Suzdalev"), QString(), QStringLiteral("dimsuz@gmail.com"));
     aboutData.addCredit(i18n("Matteo Guarnieri"), i18n("Original idea"));
     aboutData.addCredit(i18n("Brian Croom"), i18n("Port to use KGameRenderer"));
-    aboutData.setHomepage("http://games.kde.org/kollision");
+    aboutData.setHomepage(QStringLiteral("http://games.kde.org/kollision"));
 
 
     app.setWindowIcon(QIcon::fromTheme(QLatin1String("kollision")));

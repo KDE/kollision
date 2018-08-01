@@ -38,13 +38,13 @@ struct Theme : public KgTheme
 {
     Theme() : KgTheme("pictures/theme.desktop")
     {
-        setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, "pictures/theme.svgz"));
+        setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("pictures/theme.svgz")));
     }
 };
 
 MainArea::MainArea()
 : m_renderer(new Theme)
-, m_man(0)
+, m_man(nullptr)
 , m_manBallDiameter(28)
 , m_ballDiameter(28)
 , m_death(false)
@@ -52,11 +52,11 @@ MainArea::MainArea()
 , m_paused(false)
 , m_pauseTime(0)
 , m_penalty(0)
-, m_soundHitWall(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/hit_wall.ogg"))
-, m_soundYouLose(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/you_lose.ogg"))
-, m_soundBallLeaving(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/ball_leaving.ogg"))
-, m_soundStart(QStandardPaths::locate(QStandardPaths::AppDataLocation, "sounds/start.ogg"))
-, m_pauseAction(0)
+, m_soundHitWall(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("sounds/hit_wall.ogg")))
+, m_soundYouLose(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("sounds/you_lose.ogg")))
+, m_soundBallLeaving(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("sounds/ball_leaving.ogg")))
+, m_soundStart(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("sounds/start.ogg")))
+, m_pauseAction(nullptr)
 {
 
     // Initialize the sound state
@@ -132,7 +132,7 @@ Animation* MainArea::writeMessage(const QString& text)
 Animation* MainArea::writeText(const QString& text, bool fade)
 {
     m_welcomeMsg.clear();
-    foreach (const QString &line, text.split('\n')) {
+    foreach (const QString &line, text.split(QLatin1Char('\n'))) {
         m_welcomeMsg.append(
             QExplicitlySharedDataPointer<Message>(new Message(line, m_msgFont, m_size)));
     }
@@ -150,7 +150,7 @@ Animation* MainArea::writeText(const QString& text, bool fade)
         return anim;
     }
     else {
-        return 0;
+        return nullptr;
     }
 }
 
@@ -204,7 +204,7 @@ void MainArea::togglePause()
         m_timer.stop();
         QString shortcut = m_pauseAction ?
           m_pauseAction->shortcut().toString() :
-          "P";
+          QStringLiteral("P");
         writeText(i18n("Game paused\nClick or press %1 to resume", shortcut), false);
 
         if(m_lastGameTime >= 5) {
@@ -254,10 +254,10 @@ void MainArea::start()
 
     m_welcomeMsg.clear();
 
-    addBall("red_ball");
-    addBall("red_ball");
-    addBall("red_ball");
-    addBall("red_ball");
+    addBall(QStringLiteral("red_ball"));
+    addBall(QStringLiteral("red_ball"));
+    addBall(QStringLiteral("red_ball"));
+    addBall(QStringLiteral("red_ball"));
 
     m_pauseTime = 0;
     m_penalty = 0;
@@ -359,7 +359,7 @@ void MainArea::abort()
 
         m_man->setVelocity(QPointF(0, 0));
         m_balls.push_back(m_man);
-        m_man = 0;
+        m_man = nullptr;
         emit changeState(false);
 
         foreach (Ball* fball, m_fading) {
@@ -528,7 +528,7 @@ void MainArea::tick()
             }
         }
 
-        addBall("red_ball");
+        addBall(QStringLiteral("red_ball"));
         writeMessage(i18np("%1 ball", "%1 balls", m_balls.size() + 1));
     }
 
@@ -571,7 +571,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
             setManPosition(e->scenePos());
         }
         else if (!m_man) {
-            m_man = new Ball(&m_renderer, "blue_ball", static_cast<int>(radius()*2));
+            m_man = new Ball(&m_renderer, QStringLiteral("blue_ball"), static_cast<int>(radius()*2));
             m_man->setZValue(1.0);
             setManPosition(e->scenePos());
             addItem(m_man);

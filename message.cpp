@@ -59,6 +59,7 @@ QPointF Message::position() const
     return QGraphicsTextItem::pos();
 }
 
-int Message::height() const {
+int Message::height() const
+{
     return document()->size().height();
 }

@@ -55,10 +55,10 @@ MainWindow::MainWindow()
     // setup status bar
     QStatusBar* bar = statusBar();
     Q_ASSERT(bar);
-    m_time_label = new QLabel("");
+    m_time_label = new QLabel;
     bar->addPermanentWidget(m_time_label);
 
-    m_balls_label = new QLabel("");
+    m_balls_label = new QLabel;
     bar->addWidget(m_balls_label);
 //     bar->setItemAlignment(STATUSBAR_BALLS, Qt::AlignLeft);
 
@@ -67,7 +67,7 @@ MainWindow::MainWindow()
     connect(m_main, &MainArea::changeState, this, &MainWindow::changeState);
     connect(m_main, &MainArea::pause, this, &MainWindow::pause);
 
-    stateChanged("playing", KXMLGUIClient::StateReverse);
+    stateChanged(QStringLiteral("playing"), KXMLGUIClient::StateReverse);
     connect(m_main, &MainArea::starting, this, &MainWindow::newGame);
     connect(m_main, &MainArea::gameOver, this, &MainWindow::gameOver);
 }
@@ -105,13 +105,13 @@ void MainWindow::setupActions()
 
 void MainWindow::newGame()
 {
-    stateChanged("playing");
+    stateChanged(QStringLiteral("playing"));
     m_lastUsedDifficulty = Kg::difficulty()->currentLevel();
 }
 
 void MainWindow::gameOver(int time)
 {
-    stateChanged("playing", KXMLGUIClient::StateReverse);
+    stateChanged(QStringLiteral("playing"), KXMLGUIClient::StateReverse);
 
     QPointer<KScoreDialog> ksdialog = new KScoreDialog(KScoreDialog::Name, this);
     ksdialog->initFromDifficulty(Kg::difficulty(), /*setConfigGroup=*/ false);

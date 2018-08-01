@@ -17,8 +17,6 @@
 class Animator : public AnimationGroup
 {
 Q_OBJECT
-    QTimer m_timer;
-    QTime m_time;
 public:
     Animator();
     
@@ -27,6 +25,9 @@ public:
     void add(Animation* a);
 public slots:
     void tick();
+private:
+    QTimer m_timer;
+    QTime m_time;
 };
 
 #endif // ANIMATOR_H

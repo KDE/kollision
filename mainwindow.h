@@ -20,13 +20,6 @@ class MainArea;
 class MainWindow : public KXmlGuiWindow
 {
 Q_OBJECT
-    QLabel* m_balls_label;
-    QLabel* m_time_label;
-    Ui_Preferences m_pref_ui;
-    MainArea* m_main;
-    const KgDifficultyLevel* m_lastUsedDifficulty;
-    
-    void showCursor(bool show);
 public:
     MainWindow();
     ~MainWindow();
@@ -41,6 +34,15 @@ protected slots:
     void highscores();
     void changeState(bool);
     void pause(bool);
+private:
+    QLabel* m_balls_label = nullptr;
+    QLabel* m_time_label = nullptr;
+    Ui_Preferences m_pref_ui;
+    MainArea* m_main = nullptr;
+    const KgDifficultyLevel* m_lastUsedDifficulty = nullptr;
+
+    void showCursor(bool show);
+
 };
 
 

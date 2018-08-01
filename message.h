@@ -16,7 +16,6 @@
 
 class Message : public QGraphicsTextItem, public Sprite
 {
-    QPointF m_velocity;
 public:
     Message(const QString& text, const QFont& font, int maxwidth);
 
@@ -30,6 +29,8 @@ public:
     QPointF position() const Q_DECL_OVERRIDE;
     
     int height() const;
+private:
+    QPointF m_velocity;
 };
 
 typedef QExplicitlySharedDataPointer<Message> MessagePtr;
