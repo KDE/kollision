@@ -100,6 +100,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="zh-TW">Kollision 是一套簡單的休閒遊戲，您要丟出球並盡量避免碰到桌上的其他球。</p>
   </description>
   <url type="homepage">https://projects.kde.org/projects/kde/kdegames/kollision</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kollision&amp;source=appdata</url>
   <screenshots>
     <screenshot type="default">
       <image>http://games.kde.org/games/kollision/screenshots/originals/kollision01.jpg</image>
