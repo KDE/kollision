@@ -17,6 +17,7 @@ SentUpstream: 2014-09-24
   <name xml:lang="fi">Kollision</name>
   <name xml:lang="fr">Kollision</name>
   <name xml:lang="gl">Kollision</name>
+  <name xml:lang="id">Kollision</name>
   <name xml:lang="it">Kollision</name>
   <name xml:lang="nl">Kollision</name>
   <name xml:lang="nn">Kollisjon</name>
@@ -47,6 +48,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="fi">Rento pallopeli</summary>
   <summary xml:lang="fr">Jeu de balle</summary>
   <summary xml:lang="gl">Xogo de bólas para distraerse</summary>
+  <summary xml:lang="id">Permainan bola kasual</summary>
   <summary xml:lang="it">Gioco scacciapensieri della palla</summary>
   <summary xml:lang="nl">Balspel ter verstrooiing</summary>
   <summary xml:lang="nn">Enkelt ballspel</summary>
@@ -80,6 +82,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="fi">Kollision on rento peli, jossa heität palloa ja yrität vältellä toisten palloja laudalla niin pitkään kuin mahdollista.</p>
     <p xml:lang="fr">Kollision est un jeu de balle simple dans lequel vous devez lancer votre balle sur la table et éviter les balles des autres joueurs aussi longtemps que possible.</p>
     <p xml:lang="gl">Kollision é un xogo para distraerse no que te que tirar a súa bóla e evitar o resto de bólas do taboleiro tanto tempo como poida.</p>
+    <p xml:lang="id">Kollision adalah permainan kasual di mana kamu harus melempar bola dan menghindari lainnya yang mengamuk di atas meja selama mungkin.</p>
     <p xml:lang="it">Kollision è un gioco scacciapensieri in cui devi lanciare la tua palla ed evitare le altre sul tavolo il più a lungo possibile.</p>
     <p xml:lang="nl">Kollision is een spel ter verstrooiing waarin u uw bal moet gooien en de andere ballen op de tafel zo lang mogelijk moet vermijden.</p>
     <p xml:lang="nn">Kollision er eit kjapt og enkelt spel der du skal styra ein ball rundt på eit brett og unngå å verta treft av andre ballar som sprett rundt på brettet.</p>
