@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     aboutData.setHomepage(QStringLiteral("http://games.kde.org/kollision"));
 
 
-    app.setWindowIcon(QIcon::fromTheme(QLatin1String("kollision")));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kollision")));
 
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);

@@ -44,7 +44,7 @@ MainWindow::MainWindow()
         KgDifficultyLevel::Hard //default
     );
     KgDifficultyGUI::init(this);
-    connect(Kg::difficulty(), SIGNAL(currentLevelChanged(const KgDifficultyLevel*)), m_main, SLOT(abort()));
+    connect(Kg::difficulty(), &KgDifficulty::currentLevelChanged, m_main, &MainArea::abort);
 
     setupActions();
 
@@ -80,7 +80,7 @@ MainWindow::~MainWindow()
 void MainWindow::setupActions()
 {
     // Game
-    QAction * abort = actionCollection()->addAction( QLatin1String( "game_abort" ));
+    QAction * abort = actionCollection()->addAction( QStringLiteral( "game_abort" ));
     abort->setText(i18n("End game"));
     connect(abort, &QAction::triggered, m_main, &MainArea::abort);
 
@@ -91,13 +91,13 @@ void MainWindow::setupActions()
 
     QAction * ballSize = new KToggleAction(i18n("&Increase Ball Size"), this);
     ballSize->setChecked(KollisionConfig::increaseBallSize());
-    actionCollection()->addAction( QLatin1String( "increase_ball_size" ), ballSize);
+    actionCollection()->addAction( QStringLiteral( "increase_ball_size" ), ballSize);
     connect(ballSize, &QAction::triggered, m_main, &MainArea::increaseBallSize);
 
     QAction * action;
     action = new KToggleAction(i18n("&Play Sounds"), this);
     action->setChecked(KollisionConfig::enableSounds());
-    actionCollection()->addAction( QLatin1String( "options_sounds" ), action);
+    actionCollection()->addAction( QStringLiteral( "options_sounds" ), action);
     connect(action, &QAction::triggered, m_main, &MainArea::enableSounds);
 
     setupGUI(Create | Save | Keys | StatusBar);
