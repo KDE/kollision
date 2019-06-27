@@ -9,7 +9,6 @@
 */
 
 #include "ball.h"
-#include <QPainter>
 #include <KGameRenderer>
 
 Ball::Ball(KGameRenderer* renderer, const QString& id, int size)

@@ -8,10 +8,8 @@
 */
 
 #include "message.h"
-#include <QFontMetrics>
-#include <QPainter>
-#include <QTextDocument>
 #include <QTextOption>
+#include <QTextDocument>
 
 Message::Message(const QString& text, const QFont& font, int maxwidth)
 : QGraphicsTextItem(text)

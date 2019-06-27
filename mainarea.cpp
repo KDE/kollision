@@ -14,7 +14,6 @@
 #include <QGraphicsView>
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
-#include <KGameRenderer>
 #include <QAction>
 #include <KgDifficulty>
 #include <KgTheme>

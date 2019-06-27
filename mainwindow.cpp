@@ -16,7 +16,6 @@
 
 #include <QAction>
 #include <KActionCollection>
-#include <QDebug>
 #include <KgDifficulty>
 #include <KScoreDialog>
 #include <KStandardGameAction>
