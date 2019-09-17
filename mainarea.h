@@ -11,7 +11,7 @@
 #ifndef MAINAREA_H
 #define MAINAREA_H
 
-#include <QTimer>
+#include <QElapsedTimer>
 #include <QTime>
 #include <QList>
 #include <QGraphicsScene>
@@ -35,7 +35,7 @@ private:
     QTimer m_timer;
     int m_lastTime;
     int m_lastGameTime;
-    QTime m_time;
+    QElapsedTimer m_time;
 
     /// time interval between two balls being added
     int m_ball_timeout;

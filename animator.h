@@ -12,7 +12,7 @@
 
 #include "animation.h"
 #include <QTimer>
-#include <QTime>
+#include <QElapsedTimer>
 
 class Animator : public AnimationGroup
 {
@@ -27,7 +27,7 @@ public slots:
     void tick();
 private:
     QTimer m_timer;
-    QTime m_time;
+    QElapsedTimer m_time;
 };
 
 #endif // ANIMATOR_H
