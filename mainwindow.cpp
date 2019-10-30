@@ -29,7 +29,7 @@ MainWindow::MainWindow()
 {
     m_main = new MainArea();
     QGraphicsView* view = new QGraphicsView(m_main, this);
-    view->setOptimizationFlags( QGraphicsView::DontClipPainter |
+    view->setOptimizationFlags( 
                                 QGraphicsView::DontSavePainterState |
                                 QGraphicsView::DontAdjustForAntialiasing );
 //    view->setViewportUpdateMode( QGraphicsView::FullViewportUpdate );
