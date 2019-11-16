@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Dmitry Suzdalev"), QString(), QStringLiteral("dimsuz@gmail.com"));
     aboutData.addCredit(i18n("Matteo Guarnieri"), i18n("Original idea"));
     aboutData.addCredit(i18n("Brian Croom"), i18n("Port to use KGameRenderer"));
-    aboutData.setHomepage(QStringLiteral("http://games.kde.org/kollision"));
+    aboutData.setHomepage(QStringLiteral("https://kde.org/applications/games/org.kde.kollision"));
 
 
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kollision")));
