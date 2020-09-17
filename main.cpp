@@ -17,7 +17,7 @@
 #include <kdelibs4configmigrator.h>
 #include <KDBusService>
 #include "mainwindow.h"
-
+#include "kollision_version.h"
 
 int main(int argc, char *argv[])
 {
@@ -33,7 +33,9 @@ int main(int argc, char *argv[])
     migrate.migrate();
 
     KAboutData aboutData(QStringLiteral("kollision"), i18n("Kollision"),
-                         QStringLiteral("0.3"), i18n("KDE collision game"), KAboutLicense::GPL,
+                         QStringLiteral(KOLLISION_VERSION_STRING),
+                         i18n("Casual ball game"),
+                         KAboutLicense::GPL,
                          i18n("(c) 2007 Paolo Capriotti"));
     aboutData.addAuthor(i18n("Paolo Capriotti"), QString(), QStringLiteral("p.capriotti@gmail.com"));
     aboutData.addAuthor(i18n("Dmitry Suzdalev"), QString(), QStringLiteral("dimsuz@gmail.com"));

@@ -1,6 +1,17 @@
-project(kollision)
-
 cmake_minimum_required (VERSION 3.5 FATAL_ERROR)
+
+# Release Service version, managed by release script
+set (RELEASE_SERVICE_VERSION_MAJOR "20")
+set (RELEASE_SERVICE_VERSION_MINOR "11")
+set (RELEASE_SERVICE_VERSION_MICRO "70")
+set (RELEASE_SERVICE_COMPACT_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}${RELEASE_SERVICE_VERSION_MINOR}${RELEASE_SERVICE_VERSION_MICRO}")
+
+# Bump KOLLISION_BASE_VERSION once new features are added
+set(KOLLISION_BASE_VERSION "0.3")
+set(KOLLISION_VERSION "${KOLLISION_BASE_VERSION}.${RELEASE_SERVICE_COMPACT_VERSION}")
+
+project(kollision VERSION ${KOLLISION_VERSION})
+
 set (QT_MIN_VERSION "5.9.0")
 set (KF5_MIN_VERSION "5.46.0")
 
@@ -27,6 +38,7 @@ include(ECMInstallIcons)
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
+include(ECMSetupVersion)
 
 add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DTRANSLATION_DOMAIN="kollision")
@@ -38,6 +50,11 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 add_subdirectory(pictures)
 add_subdirectory(sounds)
 add_subdirectory(doc)
+
+ecm_setup_version(${KOLLISION_VERSION}
+    VARIABLE_PREFIX KOLLISION
+    VERSION_HEADER kollision_version.h
+)
 
 set(kollision_SRCS
     animation.cpp
