@@ -15,6 +15,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 #include <QAction>
+
 #include <KgDifficulty>
 #include <KgTheme>
 #include <KLocalizedString>
@@ -24,7 +25,6 @@
 #include "kollisionconfig.h"
 
 #include <cmath>
-#include <ctime>
 #include <stdio.h>
 
 struct Collision
@@ -56,6 +56,7 @@ MainArea::MainArea()
 , m_soundBallLeaving(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("sounds/ball_leaving.ogg")))
 , m_soundStart(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("sounds/start.ogg")))
 , m_pauseAction(nullptr)
+, m_random(new QRandomGenerator(QRandomGenerator::global()->generate()))
 {
 
     // Initialize the sound state
@@ -66,8 +67,6 @@ MainArea::MainArea()
     m_size = 500;
     QRect rect(0, 0, m_size, m_size);
     setSceneRect(rect);
-
-    qsrand(std::time(nullptr));
 
     m_timer.setInterval(20);
     connect(&m_timer, &QTimer::timeout, this, &MainArea::tick);
@@ -283,14 +282,14 @@ void MainArea::setPauseAction(QAction * action)
 
 QPointF MainArea::randomPoint() const
 {
-    double x = static_cast<double>(qrand()) * (m_size - radius() * 2) / RAND_MAX + radius();
-    double y = static_cast<double>(qrand()) * (m_size - radius() * 2) / RAND_MAX + radius();
+    const double x = m_random->bounded(m_size - radius() * 2) + radius();
+    const double y = m_random->bounded(m_size - radius() * 2) + radius();
     return QPointF(x, y);
 }
 
 QPointF MainArea::randomDirection(double val) const
 {
-    double angle = static_cast<double>(qrand()) * 2 * M_PI / RAND_MAX;
+    const double angle = m_random->bounded(2 * M_PI);
     return QPointF(val * sin(angle), val * cos(angle));
 }
 

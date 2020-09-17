@@ -15,6 +15,9 @@
 #include <QTime>
 #include <QList>
 #include <QGraphicsScene>
+#include <QScopedPointer>
+#include <QRandomGenerator>
+
 #include <KGameRenderer>
 #include <KgSound>
 #include "animator.h"
@@ -79,6 +82,8 @@ private:
     KgSound m_soundStart;
 
     QAction * m_pauseAction;
+
+    QScopedPointer<QRandomGenerator> m_random;
 
     double radius() const;
     void setBallDiameter(int val);
