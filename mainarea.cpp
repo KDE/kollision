@@ -131,7 +131,8 @@ Animation* MainArea::writeMessage(const QString& text)
 Animation* MainArea::writeText(const QString& text, bool fade)
 {
     m_welcomeMsg.clear();
-    foreach (const QString &line, text.split(QLatin1Char('\n'))) {
+    const QStringList lines = text.split(QLatin1Char('\n'));
+    for (const QString &line : lines) {
         m_welcomeMsg.append(
             QExplicitlySharedDataPointer<Message>(new Message(line, m_msgFont, m_size)));
     }
@@ -139,7 +140,7 @@ Animation* MainArea::writeText(const QString& text, bool fade)
 
     if (fade) {
         AnimationGroup* anim = new AnimationGroup;
-        foreach (QExplicitlySharedDataPointer<Message> message, m_welcomeMsg) {
+        for (const auto& message : qAsConst(m_welcomeMsg)) {
             message->setOpacityF(0.0);
             anim->add(new FadeAnimation(message, 0.0, 1.0, 1000));
         }
@@ -156,7 +157,7 @@ Animation* MainArea::writeText(const QString& text, bool fade)
 void MainArea::displayMessages(const QList<QExplicitlySharedDataPointer<Message> >& messages)
 {
     int totalHeight = 0;
-    foreach (QExplicitlySharedDataPointer<Message> message, messages) {
+    for (const auto& message : messages) {
       totalHeight += message->height();
     }
     QPointF pos(m_size / 2.0, (m_size - totalHeight) / 2.0);
@@ -219,10 +220,10 @@ void MainArea::togglePause()
     }
 
     m_man->setVisible(!m_paused);
-    foreach (Ball* ball, m_balls) {
+    for (Ball* ball : qAsConst(m_balls)) {
         ball->setVisible(!m_paused);
     }
-    foreach (Ball* ball, m_fading) {
+    for (Ball* ball : qAsConst(m_fading)) {
         ball->setVisible(!m_paused);
     }
 
@@ -301,7 +302,7 @@ Ball* MainArea::addBall(const QString& id)
 
         done = true;
         pos = randomPoint().toPoint();
-        foreach (Ball* ball, m_fading) {
+        for (Ball* ball : qAsConst(m_fading)) {
             if (collide(pos, ball->position(), m_ballDiameter, m_ballDiameter, tmp)) {
                 done = false;
                 break;
@@ -361,7 +362,7 @@ void MainArea::abort()
         m_man = nullptr;
         emit changeState(false);
 
-        foreach (Ball* fball, m_fading) {
+        for (Ball* fball : qAsConst(m_fading)) {
             fball->setOpacityF(1.0);
             fball->setVelocity(QPointF(0.0, 0.0));
             m_balls.push_back(fball);
@@ -401,7 +402,7 @@ void MainArea::tick()
     }
 
     // handle deadly collisions
-    foreach (Ball* ball, m_balls) {
+    for (Ball* ball : qAsConst(m_balls)) {
         if (m_man && collide(
                 ball->position(),
                 m_man->position(),
@@ -416,7 +417,7 @@ void MainArea::tick()
     }
 
     // integrate
-    foreach (Ball* ball, m_balls) {
+    for (Ball* ball : qAsConst(m_balls)) {
         // position
         ball->setPosition(ball->position() +
             ball->velocity() * t);
@@ -522,7 +523,7 @@ void MainArea::tick()
         if (m_increaseBallSize) {
             //increase ball size by 4 units
             setBallDiameter(m_ballDiameter + 4);
-            foreach (Ball* ball, m_balls) {
+            for (Ball* ball : qAsConst(m_balls)) {
                 ball->setRenderSize(QSize(m_ballDiameter, m_ballDiameter));
             }
         }
