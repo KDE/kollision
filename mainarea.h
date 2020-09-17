@@ -103,13 +103,13 @@ public:
     MainArea();
     void start();
     void setPauseAction(QAction * action);
-public slots:
+public Q_SLOTS:
     void tick();
     void increaseBallSize(bool enable);
     void enableSounds(bool enable);
     void abort();
     void togglePause();
-signals:
+Q_SIGNALS:
     void starting();
     void gameOver(int);
     void changeBallNumber(int);

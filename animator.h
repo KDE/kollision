@@ -23,7 +23,7 @@ public:
     void startTimer();
     void stopTimer();
     void add(Animation* a);
-public slots:
+public Q_SLOTS:
     void tick();
 private:
     QTimer m_timer;

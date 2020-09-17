@@ -24,9 +24,9 @@ public:
     
     virtual void start(int t) = 0;
     virtual bool step(int t) = 0;
-public slots:
+public Q_SLOTS:
     virtual void stop() = 0;
-signals:
+Q_SIGNALS:
     void over();
 };
 

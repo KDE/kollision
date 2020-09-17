@@ -15,7 +15,7 @@
 
 Animation::~Animation()
 {
-    emit over();
+    Q_EMIT over();
 }
 
 PauseAnimation::PauseAnimation(int time)

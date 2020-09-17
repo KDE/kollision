@@ -216,7 +216,7 @@ void MainArea::togglePause()
             m_lastGameTime = 0;
         }
 
-        emit changeGameTime(m_lastGameTime);
+        Q_EMIT changeGameTime(m_lastGameTime);
     }
 
     m_man->setVisible(!m_paused);
@@ -227,7 +227,7 @@ void MainArea::togglePause()
         ball->setVisible(!m_paused);
     }
 
-    emit pause(m_paused);
+    Q_EMIT pause(m_paused);
 }
 
 void MainArea::start()
@@ -269,8 +269,8 @@ void MainArea::start()
 
     writeMessage(i18np("%1 ball", "%1 balls", 4));
 
-    emit changeGameTime(0);
-    emit starting();
+    Q_EMIT changeGameTime(0);
+    Q_EMIT starting();
 
     if(m_soundEnabled)
         m_soundStart.start();
@@ -335,7 +335,7 @@ Ball* MainArea::addBall(const QString& id)
     m_fading.push_back(ball);
 
     // update statusbar
-    emit changeBallNumber(m_balls.size() + m_fading.size());
+    Q_EMIT changeBallNumber(m_balls.size() + m_fading.size());
 
     return ball;
 }
@@ -360,7 +360,7 @@ void MainArea::abort()
         m_man->setVelocity(QPointF(0, 0));
         m_balls.push_back(m_man);
         m_man = nullptr;
-        emit changeState(false);
+        Q_EMIT changeState(false);
 
         for (Ball* fball : qAsConst(m_fading)) {
             fball->setOpacityF(1.0);
@@ -383,7 +383,7 @@ void MainArea::tick()
     // compute game time && update statusbar
     if ((m_time.elapsed() - m_pauseTime - m_penalty) / 1000 > m_lastGameTime) {
         m_lastGameTime = (m_time.elapsed() - m_pauseTime - m_penalty) / 1000;
-        emit changeGameTime(m_lastGameTime);
+        Q_EMIT changeGameTime(m_lastGameTime);
     }
 
     Collision collision;
@@ -543,7 +543,7 @@ void MainArea::tick()
             "GAME OVER\n"
             "You survived for %1 seconds\n"
             "Click to restart", time);
-        emit gameOver(time);
+        Q_EMIT gameOver(time);
         Animation* a = writeText(text);
         connect(this, &MainArea::starting, a, &Animation::stop);
     }
@@ -577,7 +577,7 @@ void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
             addItem(m_man);
 
             start();
-            emit changeState(true);
+            Q_EMIT changeState(true);
         }
     }
 }

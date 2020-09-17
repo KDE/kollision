@@ -25,7 +25,7 @@ public:
     ~MainWindow();
 protected:
     void setupActions();
-protected slots:
+protected Q_SLOTS:
     void setGameTime(int time);
     void setBallNumber(int number);
     
