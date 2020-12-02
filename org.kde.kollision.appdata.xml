@@ -115,4 +115,7 @@ SentUpstream: 2014-09-24
       <image>https://cdn.kde.org/screenshots/kollision/kollision.png</image>
     </screenshot>
   </screenshots>
+  <releases>
+    <release version="0.3.20120" date="2020-12-10"/>
+  </releases>
 </component>
