@@ -80,10 +80,10 @@ void MainWindow::setupActions()
     abort->setText(i18n("End game"));
     connect(abort, &QAction::triggered, m_main, &MainArea::abort);
 
-    QAction * pause = KStandardGameAction::pause(m_main, SLOT(togglePause()), actionCollection());
+    QAction * pause = KStandardGameAction::pause(m_main, &MainArea::togglePause, actionCollection());
     m_main->setPauseAction(pause);
-    KStandardGameAction::highscores(this, SLOT(highscores()), actionCollection());
-    KStandardGameAction::quit(this, SLOT(close()), actionCollection());
+    KStandardGameAction::highscores(this, &MainWindow::highscores, actionCollection());
+    KStandardGameAction::quit(this, &QWidget::close, actionCollection());
 
     QAction * ballSize = new KToggleAction(i18n("&Increase Ball Size"), this);
     ballSize->setChecked(KollisionConfig::increaseBallSize());
