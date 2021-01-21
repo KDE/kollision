@@ -16,14 +16,14 @@ class Message : public QGraphicsTextItem, public Sprite
 public:
     Message(const QString& text, const QFont& font, int maxwidth);
 
-    void setOpacityF(qreal opacity) Q_DECL_OVERRIDE;
-    qreal opacityF() const Q_DECL_OVERRIDE;
+    void setOpacityF(qreal opacity) override;
+    qreal opacityF() const override;
     
-    void setVelocity(const QPointF& vel) Q_DECL_OVERRIDE;
-    QPointF velocity() const Q_DECL_OVERRIDE;
+    void setVelocity(const QPointF& vel) override;
+    QPointF velocity() const override;
     
-    void setPosition(const QPointF& pos) Q_DECL_OVERRIDE;
-    QPointF position() const Q_DECL_OVERRIDE;
+    void setPosition(const QPointF& pos) override;
+    QPointF position() const override;
     
     int height() const;
 private:

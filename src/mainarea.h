@@ -99,8 +99,8 @@ private:
     void onDeath();
     void setManPosition(const QPointF& p);
 protected:
-    void mousePressEvent(QGraphicsSceneMouseEvent* e) Q_DECL_OVERRIDE;
-    void focusOutEvent(QFocusEvent*) Q_DECL_OVERRIDE;
+    void mousePressEvent(QGraphicsSceneMouseEvent* e) override;
+    void focusOutEvent(QFocusEvent*) override;
 public:
     MainArea();
     void start();

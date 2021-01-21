@@ -19,7 +19,7 @@ class MainWindow : public KXmlGuiWindow
 Q_OBJECT
 public:
     MainWindow();
-    ~MainWindow();
+    ~MainWindow() override;
 protected:
     void setupActions();
 protected Q_SLOTS:
