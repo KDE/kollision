@@ -116,6 +116,7 @@ SentUpstream: 2014-09-24
     </screenshot>
   </screenshots>
   <releases>
+    <release version="0.3.20122" date="2021-02-04"/>
     <release version="0.3.20121" date="2021-01-07"/>
     <release version="0.3.20120" date="2020-12-10"/>
   </releases>
