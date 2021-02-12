@@ -11,9 +11,9 @@ set(kollision_SRCS
     mainarea.cpp
     mainwindow.cpp
     message.cpp
+    kollision.qrc
 )
 
-qt5_add_resources(kollision_SRCS kollision.qrc)
 
 kconfig_add_kcfg_files(kollision_SRCS kollisionconfig.kcfgc)
 
