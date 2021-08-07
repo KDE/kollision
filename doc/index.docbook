@@ -1,10 +1,9 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kollision "<application>Kollision</application>">
   <!ENTITY % English "INCLUDE" >
   <!ENTITY % addindex "IGNORE">
 ]>
- 
+
 <book id="kollision" lang="&language;">
 <bookinfo>
         <title>The &kollision; Handbook</title>
@@ -19,13 +18,13 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 <legalnotice>&FDLNotice;</legalnotice>
- 
-<date>2016-05-10</date>
-<releaseinfo>0.3 (applications 16.04)</releaseinfo> 
+
+<date>2021-08-07</date>
+<releaseinfo>0.3 (KDE Gear 21.08)</releaseinfo>
 <abstract>
         <para>This documentation describes the game of &kollision; version 0.3</para>
 </abstract>
- 
+
 <keywordset>
         <keyword>KDE</keyword>
         <keyword>kdegames</keyword>
@@ -39,10 +38,10 @@
         <note><title>Gametype:</title><para>Arcade</para></note>
         <note><title>Number of possible players:</title><para>One</para></note>
         <para>
-	  A simple ball dodging game
+	  A simple ball dodging game.
         </para>
 </chapter>
- 
+
 <chapter id="howto"><title>How to play</title>
         <note><title>Objective:</title><para>Let the blue ball move in the field without touching the red balls.</para></note>
 
@@ -67,7 +66,7 @@ When the red balls finish materializing, they move at a random speed in a random
 You can choose the game difficulty level on the right of the status bar. The higher the difficulty level, the faster red balls move, and the more balls will appear on the play field.
         </para>
 </chapter>
- 
+
 <chapter id="rules_and_tips"><title>Game Rules, Strategies and Tips</title>
         <para>Game Rules, Strategies and Tips</para>
         <sect1 id="rules"><title>Game Rules</title>
@@ -87,8 +86,8 @@ You can choose the game difficulty level on the right of the status bar. The hig
         </itemizedlist>
         </sect1>
 </chapter>
- 
- 
+
+
 <chapter id="interface"><title>Interface Overview</title>
 
 <sect1 id="menu">
@@ -148,9 +147,17 @@ You can choose the game difficulty level on the right of the status bar. The hig
 </varlistentry>
 
 <varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Increase Ball Size</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Toggle to make the balls bigger.</action> The default is off.</para></listitem>
+</varlistentry>
+
+<varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu>
 <guisubmenu>Difficulty</guisubmenu></menuchoice></term>
-<listitem><para>Allows you to select a difficulty <guilabel>Easy</guilabel>, <guilabel>Medium</guilabel>, 
+<listitem><para>Allows you to select a difficulty <guilabel>Easy</guilabel>, <guilabel>Medium</guilabel>,
 <guilabel>Hard</guilabel> for the game.</para></listitem>
 </varlistentry>
 
@@ -166,7 +173,7 @@ of the &kde; Fundamentals.
 </sect1>
 
 </chapter>
- 
+
 <chapter id="faq"><title>Frequently asked questions</title>
 <qandaset>
 <qandaentry>
@@ -187,7 +194,7 @@ of the &kde; Fundamentals.
 </qandaentry>
 </qandaset>
 </chapter>
- 
+
 <chapter id="credits"><title>Credits and License</title>
 <para>
 &kollision;
@@ -206,10 +213,10 @@ Documentation copyright 2008 Paolo Capriotti <email>p.capriotti@gmail.com</email
 
 &underFDL;
 &underGPL;
- 
+
 </chapter>
 
-&documentation.index; 
+&documentation.index;
 </book>
 <!--
 Local Variables:
