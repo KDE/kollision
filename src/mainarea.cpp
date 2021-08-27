@@ -136,7 +136,7 @@ Animation* MainArea::writeText(const QString& text, bool fade)
 
     if (fade) {
         AnimationGroup* anim = new AnimationGroup;
-        for (const auto& message : qAsConst(m_welcomeMsg)) {
+        for (const auto& message : std::as_const(m_welcomeMsg)) {
             message->setOpacityF(0.0);
             anim->add(new FadeAnimation(message, 0.0, 1.0, 1000));
         }
@@ -216,10 +216,10 @@ void MainArea::togglePause()
     }
 
     m_man->setVisible(!m_paused);
-    for (Ball* ball : qAsConst(m_balls)) {
+    for (Ball* ball : std::as_const(m_balls)) {
         ball->setVisible(!m_paused);
     }
-    for (Ball* ball : qAsConst(m_fading)) {
+    for (Ball* ball : std::as_const(m_fading)) {
         ball->setVisible(!m_paused);
     }
 
@@ -298,7 +298,7 @@ Ball* MainArea::addBall(const QString& id)
 
         done = true;
         pos = randomPoint().toPoint();
-        for (Ball* ball : qAsConst(m_fading)) {
+        for (Ball* ball : std::as_const(m_fading)) {
             if (collide(pos, ball->position(), m_ballDiameter, m_ballDiameter, tmp)) {
                 done = false;
                 break;
@@ -358,7 +358,7 @@ void MainArea::abort()
         m_man = nullptr;
         Q_EMIT changeState(false);
 
-        for (Ball* fball : qAsConst(m_fading)) {
+        for (Ball* fball : std::as_const(m_fading)) {
             fball->setOpacityF(1.0);
             fball->setVelocity(QPointF(0.0, 0.0));
             m_balls.push_back(fball);
@@ -398,7 +398,7 @@ void MainArea::tick()
     }
 
     // handle deadly collisions
-    for (Ball* ball : qAsConst(m_balls)) {
+    for (Ball* ball : std::as_const(m_balls)) {
         if (m_man && collide(
                 ball->position(),
                 m_man->position(),
@@ -413,7 +413,7 @@ void MainArea::tick()
     }
 
     // integrate
-    for (Ball* ball : qAsConst(m_balls)) {
+    for (Ball* ball : std::as_const(m_balls)) {
         // position
         ball->setPosition(ball->position() +
             ball->velocity() * t);
@@ -519,7 +519,7 @@ void MainArea::tick()
         if (m_increaseBallSize) {
             //increase ball size by 4 units
             setBallDiameter(m_ballDiameter + 4);
-            for (Ball* ball : qAsConst(m_balls)) {
+            for (Ball* ball : std::as_const(m_balls)) {
                 ball->setRenderSize(QSize(m_ballDiameter, m_ballDiameter));
             }
         }

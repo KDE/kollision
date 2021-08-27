@@ -110,7 +110,7 @@ void AnimationGroup::add(Animation* a)
 void AnimationGroup::start(int t)
 {
     m_last = t;
-    for (Animation* a : qAsConst(m_animations)) {
+    for (Animation* a : std::as_const(m_animations)) {
         a->start(t);
     }
 }
