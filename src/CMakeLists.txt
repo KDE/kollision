@@ -7,12 +7,20 @@ add_executable(kollision)
 
 target_sources(kollision PRIVATE
     animation.cpp
+    animation.h
     animator.cpp
+    animator.h
     ball.cpp
-    main.cpp
+    ball.h
     mainarea.cpp
+    mainarea.h
+    main.cpp
     mainwindow.cpp
+    mainwindow.h
     message.cpp
+    message.h
+    spritefwd.h
+    sprite.h
 
     kollision.qrc
 )
