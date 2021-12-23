@@ -8,6 +8,7 @@ SentUpstream: 2014-09-24
   <id>org.kde.kollision.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <name>Kollision</name>
+  <name xml:lang="ar">التصادم</name>
   <name xml:lang="ca">Kollision</name>
   <name xml:lang="ca-valencia">Kollision</name>
   <name xml:lang="cs">Kollision</name>
@@ -42,6 +43,7 @@ SentUpstream: 2014-09-24
   <name xml:lang="zh-CN">Kollision</name>
   <name xml:lang="zh-TW">Kollision</name>
   <summary>Casual ball game</summary>
+  <summary xml:lang="ar">لعبة كرة عرضية</summary>
   <summary xml:lang="ca">Joc de pilota informal</summary>
   <summary xml:lang="ca-valencia">Joc de pilota informal</summary>
   <summary xml:lang="de">Ein einfaches Ausweich-Ballspiel</summary>
@@ -77,6 +79,7 @@ SentUpstream: 2014-09-24
       Kollision is a casual game where you need to throw your ball and avoid the
       others balls on the table as long as possible.
     </p>
+    <p xml:lang="ar">التصادم هي لعبة عرضية حيث تحتاج إلى رمي الكرة وتجنب الكرات الأخرى على الطاولة لأطول فترة ممكنة.</p>
     <p xml:lang="ca">El Kollision és un joc informal a on cal llançar la pilota i evitar les altres pilotes de la taula durant tant temps com sigui possible.</p>
     <p xml:lang="ca-valencia">El Kollision és un joc informal a on cal llançar la pilota i evitar les altres pilotes de la taula durant tant temps com siga possible.</p>
     <p xml:lang="de">Kollision ist ein Spiel, in dem Sie mit Ihrem Ball allen anderen Bällen auf dem Spielfeld solange wie möglich ausweichen müssen.</p>
