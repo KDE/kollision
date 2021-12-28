@@ -11,7 +11,9 @@
 #include <QApplication>
 #include <KLocalizedString>
 #include <QCommandLineParser>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <kdelibs4configmigrator.h>
+#endif
 #include <KDBusService>
 #include "mainwindow.h"
 #include "kollision_version.h"
@@ -19,15 +21,18 @@
 int main(int argc, char *argv[])
 {
     // Fixes blurry icons with fractional scaling
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+#endif
     QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("kollision");
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Kdelibs4ConfigMigrator migrate(QStringLiteral("kollision"));
     migrate.setConfigFiles(QStringList() << QStringLiteral("kollisionrc"));
     migrate.setUiFiles(QStringList() << QStringLiteral("kollisionui.rc"));
     migrate.migrate();
+#endif
 
     KAboutData aboutData(QStringLiteral("kollision"), i18n("Kollision"),
                          QStringLiteral(KOLLISION_VERSION_STRING),
