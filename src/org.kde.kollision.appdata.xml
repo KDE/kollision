@@ -61,6 +61,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="pl">Zwyczajna gra w piłkę</summary>
   <summary xml:lang="pt">Jogo de bolas arbitrárias</summary>
   <summary xml:lang="pt-BR">Jogo de bolas ocasional</summary>
+  <summary xml:lang="ru">Казуальная игра с шариками</summary>
   <summary xml:lang="sk">Ležérna loptová hra</summary>
   <summary xml:lang="sl">Igra z žogo</summary>
   <summary xml:lang="sr">Необавезна игра са лоптицама</summary>
@@ -97,6 +98,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="pl">Kollision jest zwyczajną grą, w której musisz rzucić swoją piłkę na stół i unikać piłek innych tak długo jak to możliwe.</p>
     <p xml:lang="pt">O Kollision é jogo de causa-efeito, onde terá de jogar a bola e evitar as outras bolas na mesa, durante o máximo de tempo possível.</p>
     <p xml:lang="pt-BR">Kollision é um jogo ocasional, onde deve-se jogar a bola e evitar as outras bolas na mesa pelo máximo de tempo possível.</p>
+    <p xml:lang="ru">Kollision — казуальная игра, в которой нужно бросать шарик и как можно дольше уклоняться от столкновения с другими шариками.</p>
     <p xml:lang="sk">Kollision je ležérna loptová hra, kde potrebujete hodiť loptu a vyhnúť sa ostatným loptám na stole, kým je to možné.</p>
     <p xml:lang="sl">Kollision je igra, v kateri vržete žogo in nato poskusite čim dlje preprečevati njen stik z žogami drugih.</p>
     <p xml:lang="sr">Колизија је необавезна игра у којој бацате своју лоптицу и избегавате друге лоптице на табли што дуже можете.</p>
