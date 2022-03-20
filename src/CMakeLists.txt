@@ -34,6 +34,7 @@ ecm_add_app_icon(kollision ICONS ${ICONS_SRCS})
 
 target_link_libraries(kollision
     KF5KDEGames
+    KF5::CoreAddons
     KF5::Crash
     KF5::DBusAddons
     KF5::I18n
