@@ -29,6 +29,7 @@ SentUpstream: 2014-09-24
   <name xml:lang="pl">Kolizja</name>
   <name xml:lang="pt">Kollision</name>
   <name xml:lang="pt-BR">Kollision</name>
+  <name xml:lang="ro">Koliziune</name>
   <name xml:lang="ru">Kollision</name>
   <name xml:lang="sk">Kollision</name>
   <name xml:lang="sl">Kollision</name>
@@ -63,6 +64,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="pl">Zwyczajna gra w piłkę</summary>
   <summary xml:lang="pt">Jogo de bolas arbitrárias</summary>
   <summary xml:lang="pt-BR">Jogo de bolas ocasional</summary>
+  <summary xml:lang="ro">Joc cu mingi de ocazie</summary>
   <summary xml:lang="ru">Казуальная игра с шариками</summary>
   <summary xml:lang="sk">Ležérna loptová hra</summary>
   <summary xml:lang="sl">Igra z žogo</summary>
@@ -83,7 +85,7 @@ SentUpstream: 2014-09-24
     </p>
     <p xml:lang="ar">التصادم هي لعبة عرضية حيث تحتاج إلى رمي الكرة وتجنب الكرات الأخرى على الطاولة لأطول فترة ممكنة.</p>
     <p xml:lang="ca">El Kollision és un joc informal a on cal llançar la pilota i evitar les altres pilotes de la taula durant tant temps com sigui possible.</p>
-    <p xml:lang="ca-valencia">Kollision és un joc informal a on cal iniciar la pilota i evitar les altres pilotes de la taula durant tant temps com siga possible.</p>
+    <p xml:lang="ca-valencia">Kollision és un joc informal a on cal iniciar la pilota i evitar les atres pilotes de la taula durant tant temps com siga possible.</p>
     <p xml:lang="da">Kollision er et afslappet boldspil, hvor du skal kaste din bold og undgå de andres bolde på bordet så længe som muligt.</p>
     <p xml:lang="de">Kollision ist ein Spiel, in dem Sie mit Ihrem Ball allen anderen Bällen auf dem Spielfeld solange wie möglich ausweichen müssen.</p>
     <p xml:lang="el">Το Kollision είναι ένα συνηθισμένο παιχνίδι όπου ρίχνεις τη μπάλα σου και αποφεύγεις τις άλλες μπάλες στον πίνακα όσο το δυνατόν περισσότερο.</p>
@@ -101,6 +103,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="pl">Kollision jest zwyczajną grą, w której musisz rzucić swoją piłkę na stół i unikać piłek innych tak długo jak to możliwe.</p>
     <p xml:lang="pt">O Kollision é jogo de causa-efeito, onde terá de jogar a bola e evitar as outras bolas na mesa, durante o máximo de tempo possível.</p>
     <p xml:lang="pt-BR">Kollision é um jogo ocasional, onde deve-se jogar a bola e evitar as outras bolas na mesa pelo máximo de tempo possível.</p>
+    <p xml:lang="ro">Koliziune e un joc de ocazie în care trebuie să vă aruncați mingea și să evitați mingile celorlalți de pe tablă cât mai mult timp.</p>
     <p xml:lang="ru">Kollision — казуальная игра, в которой нужно бросать шарик и как можно дольше уклоняться от столкновения с другими шариками.</p>
     <p xml:lang="sk">Kollision je ležérna loptová hra, kde potrebujete hodiť loptu a vyhnúť sa ostatným loptám na stole, kým je to možné.</p>
     <p xml:lang="sl">Kollision je igra, v kateri vržete žogo in nato poskusite čim dlje preprečevati njen stik z žogami drugih.</p>
