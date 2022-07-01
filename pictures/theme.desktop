@@ -2,6 +2,7 @@
 VersionFormat=1
 Name=Kollision Default Theme
 Name[ar]=السمة المبدئية للعبة التصادم
+Name[bg]=Тема по подразбиране на Kollision
 Name[bs]=Podrazumijevana tema Kolizije
 Name[ca]=Tema predeterminat del Kollision
 Name[ca@valencia]=Tema predeterminat de Kollision
@@ -49,6 +50,7 @@ Name[zh_CN]=Kollision 默认主题
 Name[zh_TW]=Kollision 的預設主題
 Description=Kollision Default Theme
 Description[ar]=السمة المبدئية للعبة التصادم
+Description[bg]=Тема по подразбиране на Kollision
 Description[bs]=Podrazumijevana tema programa Kollision
 Description[ca]=Tema predeterminat del Kollision
 Description[ca@valencia]=Tema predeterminat de Kollision
