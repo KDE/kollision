@@ -38,12 +38,13 @@ int main(int argc, char *argv[])
                          QStringLiteral(KOLLISION_VERSION_STRING),
                          i18n("Casual ball game"),
                          KAboutLicense::GPL,
-                         i18n("(c) 2007 Paolo Capriotti"));
+                         i18n("(c) 2007 Paolo Capriotti"),
+                         QString(),
+                         QStringLiteral("https://apps.kde.org/kollision"));
     aboutData.addAuthor(i18n("Paolo Capriotti"), QString(), QStringLiteral("p.capriotti@gmail.com"));
     aboutData.addAuthor(i18n("Dmitry Suzdalev"), QString(), QStringLiteral("dimsuz@gmail.com"));
     aboutData.addCredit(i18n("Matteo Guarnieri"), i18n("Original idea"));
     aboutData.addCredit(i18n("Brian Croom"), i18n("Port to use KGameRenderer"));
-    aboutData.setHomepage(QStringLiteral("https://kde.org/applications/games/org.kde.kollision"));
 
 
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kollision")));
