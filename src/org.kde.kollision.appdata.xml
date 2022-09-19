@@ -120,7 +120,12 @@ SentUpstream: 2014-09-24
   </description>
   <content_rating type="oars-1.1"/>
   <url type="homepage">https://apps.kde.org/kollision</url>
+  <url type="help">https://docs.kde.org/?application=kollision</url>
   <url type="donation">https://www.kde.org/community/donations/?app=kollision&amp;source=appdata</url>
+  <launchable type="desktop-id">org.kde.kollision.desktop</launchable>
+  <provides>
+    <binary>kollision</binary>
+  </provides>
   <screenshots>
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/kollision/kollision.png</image>
