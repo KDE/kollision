@@ -1,0 +1,401 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Dutch "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Het handboek van &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+&Freek.de.Kruijf; 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-07</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>Deze documentatie beschrijft het spel van &kollision; versie 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>spel</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arcade</keyword>
+        <keyword
+>één speler</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Inleiding</title>
+        <note
+><title
+>Speltype:</title
+><para
+>Arcade</para
+></note>
+        <note
+><title
+>Aantal mogelijke spelers:</title
+><para
+>Eén</para
+></note>
+        <para
+>Een eenvoudig balkaatsspel. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Hoe te spelen</title>
+        <note
+><title
+>Doel:</title
+><para
+>Laat de blauwe bal in het veld bewegen zonder de rode ballen te raken.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Het spelbord van &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Klik op het lege veld om een spel te starten: een blauwe bal vervangt onmiddellijk uw muiscursor en een aantal rode ballen beginnen te naar het veld. </para>
+        <para
+>Wanneer de rode ballen niet meer verschijnen, dan bewegen ze met een willekeurige snelheid in een willekeurige richting en u zult ze onmiddellijk moeten vermijden door de blauwe bal binnen het veld met de muis te verplaatsen. Na enige tijd verschijnen er langzaam andere rode ballen, zoals eerder, en beginnen te bewegen. Wees er op bedacht ook deze te vermijden. </para>
+        <para
+>U kunt de moeilijkheidsgraag van het spel kiezen rechts van de statusbalk. Hoe hoger de moeilijkheidsgraad, hoer sneller rode ballen bewegen en hoe meer ballen er zullen verschijnen op het speelveld. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Spelregels, strategieën en tips</title>
+        <para
+>Spelregels, strategieën en tips</para>
+        <sect1 id="rules"
+><title
+>Spelregels</title>
+        <itemizedlist>
+            <listitem
+><para
+>Rode ballen bewegen met een constante snelheid over het speelveld kaatsen terug van de muren totdat ze botsen met een andere bal, waardoor de snelheid en richting van beide ballen wijzigen.</para
+></listitem>
+            <listitem
+><para
+>De blauwe bal kan vrij bewogen worden in het veld met de muis.</para
+></listitem>
+            <listitem
+><para
+>De blauwe bal kan uit het veld ontsnappen. Als de cursor er uit wordt geplaatst, blijft de bal aan de rand, totdat de cursor terugkeert.</para
+></listitem>
+            <listitem
+><para
+>De score is direct evenredig met de tijd die het spel heeft geduurd.</para
+></listitem>
+            <listitem
+><para
+>Het spel pauzeren trekt (cumulatief) 5 seconden straf van de totale tijd af.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strategieën en tips</title>
+        <itemizedlist>
+            <listitem
+><para
+>De blauwe bal voorzichtig en langzaam verplaatsen. Het over het veld slingeren zal botsingen met andere ballen waarschijnlijker maken.</para
+></listitem>
+            <listitem
+><para
+>De cursor uit het veld plaatsen kan worden gebruikt als een elegante truc om uit een vervelende situatie te geraken. Met wijsheid gebruiken.</para
+></listitem>
+            <listitem
+><para
+>Het spel niet beëindigen, tenzij absoluut noodzakelijk.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Overzicht van het interface</title>
+
+<sect1 id="menu">
+<title
+>Menu-items</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Spel beëindigen</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Beëindig een spel en keer terug naar het welkomstscherm.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Pauze</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Pauzeert of gaat verder met het spel.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Topscores tonen</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Dit zal de beste scores op het huidige niveau tonen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Dit item selecteren zal uw huidige spel afsluiten en &kollision; beëindigen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Geluiden afspelen</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Afspelen van geluidseffecten omschakelen.</action
+> De standaard is uit. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Balgrootte verhogen</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Omschakelen om de ballen groter te maken.</action
+> De standaard is uit.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>Geluiden afspelen</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Stelt u in staat om een moeilijkheidsgraad <guilabel
+>Gemakkelijk</guilabel
+>, <guilabel
+>Gemiddeld</guilabel
+>, <guilabel
+>Moeilijk</guilabel
+> voor het spel te kiezen.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Bovendien heeft &kollision; de gezamenlijke menu-items van &kde; <guimenu
+>Instellingen</guimenu
+> en <guimenu
+>Help</guimenu
+>, voor meer informatie lees de secties over de <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Instellingen</ulink
+> en <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Help</ulink
+> van &kde;-fundamentals. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Veel voorkomende vragen</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Ik wil het uiterlijk van dit spel wijzigen. Kan dat? </para
+></question>
+ <answer
+><para
+>Nee.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kan ik het toetsenbord gebruiken om het spel te spelen? </para
+></question>
+ <answer
+><para
+>Nee. &kollision; kan alleen met een muis worden gespeeld.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik kom er niet achter wat hier te doen! Zijn er tips? </para
+></question>
+ <answer
+><para
+>&kollision; heeft geen mogelijkheid <quote
+>Tip</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ik moet het spel nu beëindigen, maar ik ben nog niet klaar. Kan ik mijn spel opslaan?</para
+></question>
+  <answer
+><para
+>U kunt in &kollision; geen spellen opslaan.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Dankbetuiging en licentie</title>
+<para
+>&kollision; </para>
+<para
+>Copyright 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Documentatie copyright 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+&meld.fouten;&vertaling.freek; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

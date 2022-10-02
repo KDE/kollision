@@ -1,0 +1,217 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Tamas Szanto <tszanto@interware.hu>, 2009.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2011-01-31 23:02+0100\n"
+"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"Language-Team: Hungarian <kde-i18n-doc@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Szántó Tamás,Kiszel Kristóf,Krutki Tamás"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tszanto@interware.hu,ulysses@kubuntu.org,negusnyul@gmail.com"
+
+#. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
+#: kollision.kcfg:9
+#, kde-format
+msgid "Whether automatically increasing ball size should be applied."
+msgstr ""
+
+#. i18n: ectx: label, entry (EnableSounds), group (sounds)
+#: kollision.kcfg:15
+#, kde-format
+msgid "Whether sound effects should be played."
+msgstr "Ha be van jelölve, lesznek hanghatások."
+
+#. i18n: ectx: Menu (game)
+#: kollisionui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "&Játék"
+
+#: main.cpp:37
+#, kde-format
+msgid "Kollision"
+msgstr "Kollision"
+
+#: main.cpp:39
+#, kde-format
+msgid "Casual ball game"
+msgstr ""
+
+#: main.cpp:41
+#, kde-format
+msgid "(c) 2007 Paolo Capriotti"
+msgstr "(c) Paolo Capriotti, 2007."
+
+#: main.cpp:44
+#, kde-format
+msgid "Paolo Capriotti"
+msgstr "Paolo Capriotti"
+
+#: main.cpp:45
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:46
+#, kde-format
+msgid "Matteo Guarnieri"
+msgstr "Matteo Guarnieri"
+
+#: main.cpp:46
+#, kde-format
+msgid "Original idea"
+msgstr "Alapötlet"
+
+#: main.cpp:47
+#, kde-format
+msgid "Brian Croom"
+msgstr "Brian Croom"
+
+#: main.cpp:47
+#, kde-format
+msgid "Port to use KGameRenderer"
+msgstr "Átírva a KGameRenderer használatára"
+
+#: mainarea.cpp:86
+#, kde-format
+msgid ""
+"Welcome to Kollision\n"
+"Click to start a game"
+msgstr ""
+"Üdvözöljük a Kollision játékban!\n"
+"Új játék kezdéséhez kattintson egyet"
+
+#: mainarea.cpp:204
+#, kde-format
+msgid ""
+"Game paused\n"
+"Click or press %1 to resume"
+msgstr ""
+"A játék szünetel\n"
+"Folytatáshoz kattintson egyet vagy nyomja meg a(z) %1 billentyűt"
+
+#: mainarea.cpp:266 mainarea.cpp:528
+#, kde-format
+msgid "%1 ball"
+msgid_plural "%1 balls"
+msgstr[0] "%1 golyó"
+msgstr[1] "%1 golyó"
+
+#: mainarea.cpp:536
+#, kde-format
+msgid ""
+"GAME OVER\n"
+"You survived for %1 second\n"
+"Click to restart"
+msgid_plural ""
+"GAME OVER\n"
+"You survived for %1 seconds\n"
+"Click to restart"
+msgstr[0] ""
+"Vége a játéknak!\n"
+"%1 másodpercig sikerült elkerülni az ütközést.\n"
+"Új játék kezdéséhez kattintson egyet"
+msgstr[1] ""
+"Vége a játéknak!\n"
+"%1 másodpercig sikerült elkerülni az ütközést.\n"
+"Új játék kezdéséhez kattintson egyet"
+
+#: mainwindow.cpp:80
+#, kde-format
+msgid "End game"
+msgstr "Játék befejezése"
+
+#: mainwindow.cpp:88
+#, kde-format
+msgid "&Increase Ball Size"
+msgstr ""
+
+#: mainwindow.cpp:94
+#, kde-format
+msgid "&Play Sounds"
+msgstr "&Hanghatások"
+
+#: mainwindow.cpp:135
+#, kde-format
+msgid "Balls: %1"
+msgstr "Golyó: %1"
+
+#: mainwindow.cpp:140
+#, kde-format
+msgid "Time: %1 second"
+msgid_plural "Time: %1 seconds"
+msgstr[0] "Idő: %1 másodperc"
+msgstr[1] "Idő: %1 másodperc"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableSounds)
+#: preferences.ui:16
+#, kde-format
+msgid "Enable &sounds"
+msgstr "&Hanghatások"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IncreaseBallSize)
+#: preferences.ui:23
+#, kde-format
+msgid "Enable automatically &increasing ball size"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: preferences.ui:32
+#, kde-format
+msgid "&Difficulty:"
+msgstr "Nehé&zségi szint:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:43
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Easy"
+msgstr "Könnyű"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:48
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Medium"
+msgstr "Közepes"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:53
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Hard"
+msgstr "Nehéz"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: preferences.ui:65
+#, kde-format
+msgid "&Animation smoothness:"
+msgstr "Az &animáció simasága:"
+
+#~ msgid "KDE collision game"
+#~ msgstr "Ütközős játék"
+
+#~ msgid "Difficulty of the game."
+#~ msgstr "A játék nehézségi szintje."
+
+#~ msgid "Abort game"
+#~ msgstr "A játék megszakítása"

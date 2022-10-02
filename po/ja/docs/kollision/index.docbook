@@ -1,0 +1,490 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "<application
+>Kollision</application
+>">
+  <!ENTITY kappversion "0.1">
+  <!ENTITY docversion "0.1">
+  <!ENTITY docupdate "2008-01-20">
+  <!ENTITY package "kdegames">
+  <!ENTITY % Japanese "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book lang="&language;">
+<bookinfo>
+        <title
+>&kappname; ハンドブック</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<!--TRANS:ROLES_OF_TRANSLATORS-->
+</authorgroup>
+ 
+<date
+>&docupdate;</date>
+<releaseinfo
+>&docversion;</releaseinfo
+> 
+<abstract>
+        <para
+>このドキュメントは &kappname; のバージョン &kappversion; に基づいています。</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>ゲーム</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>アーケード</keyword>
+        <keyword
+>一人プレイ</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>はじめに</title>
+        <note
+><title
+>ゲームの種類:</title
+><para
+>アーケードゲーム</para
+></note>
+        <note
+><title
+>プレイヤー数:</title
+><para
+>1 人</para
+></note>
+        <para
+>&kappname; は動き回るボールをよけるシンプルなゲームです。 </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>プレイ方法</title>
+        <note
+><title
+>目的:</title
+><para
+>赤ボールに当たらないようにプレイフィールド内で青ボールを動かしてください。</para
+></note>
+        <para
+>空のフィールドをクリックしてゲームを開始すると、マウスカーソルが青いボールに変わります。続いて、いくつかの赤いボールがゆっくりとフィールドに現れます。 </para>
+        <para
+>赤ボールが完全にその姿を現すと、ランダムな速度でランダムな方向に動き始めます。マウスを使って青ボールを動かして、これらのボールを素早くよけてください。しばらくすると別の赤ボールが最初のときと同じようにゆっくりと現れ、動き始めます。それにも備えておかなければなりません。 </para>
+        <para
+>ゲームの難易度はステータスバーの右側で選択できます。難易度が高くなるほど、赤ボールの動きが速くなり、フィールドに現れる数も多くなります。 </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>ゲームのルール、戦略、ヒント</title>
+        <para
+>ゲームのルール、戦略、ヒント</para>
+        <sect1 id="rules"
+><title
+>ルール</title>
+        <itemizedlist>
+            <listitem
+><para
+>赤ボールは他のボールと衝突するまでは壁に当たって跳ね返りながら一定の速度でフィールド内を移動します。衝突すると両方のボールの速度と方向が変わります。</para
+></listitem>
+            <listitem
+><para
+>青ボールはマウスを使ってフィールド内で自由に動かせます。</para
+></listitem>
+            <listitem
+><para
+>青ボールをフィールドの外に出すことはできません。カーソルがフィールドから外れると、カーソルが戻ってくるまでフィールドの端にとどまります。</para
+></listitem>
+            <listitem
+><para
+>スコアはゲームの継続時間に比例します。</para
+></listitem>
+            <listitem
+><para
+>ゲームを一時停止すると、ペナルティとして継続時間から 1 回につき 5 秒差し引かれます。</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>戦略とヒント</title>
+        <itemizedlist>
+            <listitem
+><para
+>青ボールは静かにゆっくり動かしてください。フィールド内を大きく行ったり来たりすると、余計に赤ボールに当たりやすくなります。</para
+></listitem>
+            <listitem
+><para
+>カーソルをフィールドの外に出すのは、窮地から逃れる裏技として使えます。上手に利用してください。</para
+></listitem>
+            <listitem
+><para
+>本当に必要でなければゲームを一時停止しないようにしましょう。</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>インターフェースの概要</title>
+<sect1 id="game-menu">
+<title
+><guimenu
+>ゲーム</guimenu
+> メニュー</title>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>ゲーム</guimenu
+> <guimenuitem
+>ゲームを中止</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>ゲームを中止して開始画面に戻ります。</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>ゲーム</guimenu
+> <guimenuitem
+>一時停止</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>ゲームを一時停止します。ゲームを再開するときにも使います。</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ゲーム</guimenu
+> <guimenuitem
+>ハイスコアを表示</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>現在のレベルのハイスコアを表示します。</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>ゲーム</guimenu
+> <guimenuitem
+>終了</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>現在のゲームを中止し、&kappname; を終了します。</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+><guimenu
+>設定</guimenu
+> メニュー</title>
+<variablelist>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>設定</guimenu
+> <guimenuitem
+>効果音あり</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+>効果音のオン/オフを切り替えます。標準設定はオフです。 </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>設定</guimenu
+><guimenuitem
+>ステータスバーを表示</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>メインウィンドウ下部のステータスバーの表示/非表示を切り替えます。</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>設定</guimenu
+> <guimenuitem
+>ツールバーを設定...</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>ツールバーをカスタマイズするためのダイアログを開きます。</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>設定</guimenu
+> <guimenuitem
+>ショートカットを設定...</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>&kappname; のキーボードショートカットを変更するための &kde; 標準のショートカット設定ダイアログを開きます。</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help">
+<title
+><guimenu
+>ヘルプ</guimenu
+> メニュー</title>
+&help.menu.documentation; </sect1>
+</chapter>
+ 
+ 
+<chapter id="faq"
+><title
+>よくある質問</title>
+<qandaset>
+<qandaentry>
+<question
+><para
+>このゲームは誰が作ったのですか？</para
+></question>
+ <answer
+><para
+>kdegames 開発チームです。<ulink url="http://games.kde.org"
+>ウェブサイト</ulink
+> をご覧ください。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>隠しコマンド (チートコード) はどこで入手できますか？ </para
+></question>
+ <answer
+><para
+>&kde; のゲームには隠しコマンドはありません。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>新しいゲームを開始するには？ </para
+></question>
+ <answer
+><para
+>プレイフィールドをマウスでクリックしてください。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>ゲームを一時停止するには？ </para
+></question>
+ <answer
+><para
+>&kappname; を一時停止するには、メニューバーの <menuchoice
+><guimenu
+>ゲーム</guimenu
+><guimenuitem
+>一時停止</guimenuitem
+></menuchoice
+> を使うか、<keycap
+>P</keycap
+> を押します。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>ゲームの外観を変えることはできますか？ </para
+></question>
+ <answer
+><para
+>いいえ。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>へまをしてしまいました。元に戻せますか？ </para
+></question>
+ <answer
+><para
+>へまをすると、あなたの負けです。気を悪くせずに新しいゲームを開始してください。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>キーボードを使ってプレイできますか？ </para
+></question>
+ <answer
+><para
+>いいえ。&kappname; はマウスでしかプレイできません。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>次の手が思いつきません。ヒントはありますか？ </para
+></question>
+ <answer
+><para
+>いいえ。&kappname; には「ヒント」機能はありません。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>途中でゲームをやめなければならないときにゲームを保存できますか？</para
+></question>
+  <answer
+><para
+>いいえ。&kappname; のゲームは保存できません。</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>ハイスコアはどこにありますか？</para
+></question>
+ <answer
+><para
+>ハイスコアを見るには、メニューバーの <menuchoice
+><guimenu
+>ゲーム</guimenu
+><guimenuitem
+>ハイスコアを表示</guimenuitem
+></menuchoice
+> を使います。</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>クレジットとライセンス</title>
+<para
+>&kappname; </para>
+<para
+>Copyright 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>ドキュメンテーション Copyright 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+&underFDL; &underGPL; </chapter>
+ 
+ 
+<appendix id="installation">
+<title
+>インストール</title>
+ 
+&install.intro.documentation;
+ 
+ 
+<sect1 id="Compilation">
+<title
+>コンパイルとインストール</title>
+&install.compile.documentation; </sect1>
+</appendix>
+ 
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

@@ -1,0 +1,401 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Catalan  "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>El manual del &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>7 d'agost de 2021</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>Aquesta documentació descriu el joc &kollision; versió 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>joc</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arcade</keyword>
+        <keyword
+>un jugador</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Introducció</title>
+        <note
+><title
+>Tipus de joc:</title
+><para
+>Arcade</para
+></note>
+        <note
+><title
+>Nombre de possibles jugadors:</title
+><para
+>Un</para
+></note>
+        <para
+>Un joc senzill d'esquivar una pilota. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Com es juga</title>
+        <note
+><title
+>Objectiu:</title
+><para
+>Fer que la pilota blava es mogui pel camp sense tocar les pilotes vermelles.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Tauler de joc del &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Feu clic sobre el camp buit per a iniciar una partida: una pilota blava substituirà immediatament el cursor del ratolí i diverses pilotes vermelles començaran a aparèixer a dins del camp. </para>
+        <para
+>Quan acabin de materialitzar-se les pilotes vermelles, es mouran a una velocitat i direcció aleatòries, i haureu d'esquivar-les ràpidament amb el ratolí fent de pilota blava dins el camp. Després d'algun temps, apareixeran altres pilotes vermelles, apareixeran com abans i després es començaran a moure. Esteu preparat per a evitar-les. </para>
+        <para
+>Podeu triar el nivell de dificultat del joc a la dreta de la barra d'estat. Com més gran sigui el nivell de dificultat, les pilotes vermelles es mouran més de pressa i apareixeran més pilotes en el camp de joc. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Les regles del joc, estratègies i consells</title>
+        <para
+>Les regles del joc, estratègies i consells</para>
+        <sect1 id="rules"
+><title
+>Les regles del joc</title>
+        <itemizedlist>
+            <listitem
+><para
+>Les pilotes vermelles es mouen amb una velocitat constant en el camp de joc i van rebotant per les parets fins que xoquen amb una altra pilota, el qual fa que canviï la velocitat i la direcció d'ambdues pilotes.</para
+></listitem>
+            <listitem
+><para
+>La pilota blava es pot moure lliurement amb el ratolí dins el camp.</para
+></listitem>
+            <listitem
+><para
+>La pilota blava no pot escapar del camp. Si es mou el cursor a fora, la pilota romandrà a la vora, fins que torni el cursor.</para
+></listitem>
+            <listitem
+><para
+>La puntuació és directament proporcional al temps que ha durat la partida.</para
+></listitem>
+            <listitem
+><para
+>Fer una pausa en la partida restarà (acumulatiu) 5 segons de penalització del temps total.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Les estratègies i consells</title>
+        <itemizedlist>
+            <listitem
+><para
+>Moveu la pilota blava amb suavitat i lentament. El balanceig a través del camp farà que siguin més probables les col·lisions amb les altres pilotes.</para
+></listitem>
+            <listitem
+><para
+>Moure el cursor fora del camp es pot utilitzar com un truc elegant per a sortir d'una situació difícil. Feu-ho servir amb saviesa.</para
+></listitem>
+            <listitem
+><para
+>No feu una pausa en la partida si no és absolutament necessari.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Resum de la interfície</title>
+
+<sect1 id="menu">
+<title
+>Elements de menú</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Joc</guimenu
+> <guimenuitem
+>Finalitza la partida</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Acaba una partida i es torna a la pantalla de benvinguda.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Posa en pausa o resumeix la partida.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Mostra les puntuacions</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Mostrarà les millors puntuacions per al nivell actual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Joc</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>En seleccionar aquest element s'acabarà la partida en joc i se sortirà del &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Reprodueix els sons</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Alterna si s'han de reproduir els efectes de so.</action
+> El valor predeterminat és desactivat. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guimenuitem
+>Augmenta la mida de la pilota</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Alterna si s'han de fer les pilotes més grans.</action
+> El valor predeterminat és desactivat.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Arranjament</guimenu
+> <guisubmenu
+>Dificultat</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Permet seleccionar una dificultat <guilabel
+>Fàcil</guilabel
+>, <guilabel
+>Mitjana</guilabel
+> i <guilabel
+>Difícil</guilabel
+> per a la partida.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>De manera addicional, el &kollision; té la configuració comuna al &kde; i els elements dels menús <guimenu
+>Arranjament</guimenu
+> i <guimenu
+>Ajuda</guimenu
+>. Per a obtenir més informació, llegiu les seccions sobre <ulink url="help:/fundamentals/menus.html#menus-settings"
+>El menú Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>El menú Ajuda</ulink
+> en els Fonaments del &kde;. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Preguntes més freqüents</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Vull canviar l'aparença d'aquest joc. Puc fer-ho? </para
+></question>
+ <answer
+><para
+>No.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Puc utilitzar el teclat per a jugar a aquest joc? </para
+></question>
+ <answer
+><para
+>No. El &kollision; només es pot jugar amb un ratolí.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>No sé què fer aquí! Hi ha cap consell? </para
+></question>
+ <answer
+><para
+>El &kollision; no té una característica de pista.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>He de sortir del joc ara, però encara no he acabat. Puc desar el meu progrés?</para
+></question>
+  <answer
+><para
+>En el &kollision; no es poden desar les partides.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Crèdits i llicència</title>
+<para
+>&kollision; </para>
+<para
+>Copyright 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Copyright de la documentació 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

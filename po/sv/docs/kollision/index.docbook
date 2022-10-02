@@ -1,0 +1,419 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Swedish "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Handbok &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-07</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>Denna dokumentation beskriver spelet &kollision;, version 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>spel</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>spelhall</keyword>
+        <keyword
+>en spelare</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Inledning</title>
+        <note
+><title
+>Speltyp:</title
+><para
+>Spelhall</para
+></note>
+        <note
+><title
+>Antal möjliga spelare:</title
+><para
+>En</para
+></note>
+        <para
+>Ett enkelt spel för att undvika bollar. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Hur man spelar</title>
+        <note
+><title
+>Syfte:</title
+><para
+>Låt den blåa bollen röra sig på fältet utan att röra de röda bollarna.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Spelbrädet i &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Klicka på ett tomt fält för att starta ett spel: En blå boll ersätter omedelbart muspekaren, och ett antal röda bollar börjar dyka upp på fältet. </para>
+        <para
+>När de röda bollarna har materialiserats färdigt, rör de sig med slumpmässig hastighet i en slumpmässig riktning, och du måste genast undvika dem genom att flytta den blåa bollen inne i fältet med musen. Efter en viss tid dyker andra röda bollar upp, materialiseras som tidigare och börjar därefter röra sig. Var beredd att undvika dem också. </para>
+        <para
+>Du kan välja spelets svårighetsnivå till höger om statusraden. Ju högre svårighetsnivå, desto snabbare rör sig de röda bollarna, och desto fler bollar visas på spelfältet. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Spelets regler, strategi och tips</title>
+        <para
+>Spelets regler, strategi och tips</para>
+        <sect1 id="rules"
+><title
+>Spelregler</title>
+        <itemizedlist>
+            <listitem
+><para
+>Röda bollar rör sig med konstant hastighet på spelplanen och studsar från väggarna till de kolliderar med en annan boll, vilket gör att båda bollarnas hastighet och riktning ändras.</para
+></listitem>
+            <listitem
+><para
+>Den blåa bollen kan röras fritt inne i fältet med musen.</para
+></listitem>
+            <listitem
+><para
+>Den blåa bollen kan inte fly utanför fältet. Om pekaren flyttas utanför, förblir bollen vid kanten till pekaren återvänder.</para
+></listitem>
+            <listitem
+><para
+>Poängen är direkt proportionella mot hur länge spelet har pågått.</para
+></listitem>
+            <listitem
+><para
+>Att göra paus i spelet subtraherar 5 sekunders (växande) straff från totaltiden.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strategi och tips</title>
+        <itemizedlist>
+            <listitem
+><para
+>Flytta den blåa bollen mjukt och långsamt. Att slänga den över fältet gör det mycket troligare att kollidera med andra bollar.</para
+></listitem>
+            <listitem
+><para
+>Att flytta pekaren utanför fältet kan användas som ett elegant trick för att ta sig ur en komplicerad situation. Använd det med vishet.</para
+></listitem>
+            <listitem
+><para
+>Gör inte paus i spelet om det inte är absolut nödvändigt.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Översikt av gränssnittet</title>
+
+<sect1 id="menu">
+<title
+>Menyalternativ</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Sluta spelet</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Sluta ett spel och återgår till välkomstskärmen.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Gör paus</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Gör paus eller återupptar spelet.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Visa bästa resultat</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Det här visar de bästa resultaten för den här nivån.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avsluta</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Att välja alternativet avbryter pågående spel, och avslutar &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Spela ljud</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Bestäm om ljudeffekter ska spelas eller inte.</action
+> Normalvärdet är av. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+> <guimenuitem
+>Öka bollstorlek</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sätt på för att göra bollarna större.</action
+> Normalvärdet är av.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Inställningar</guimenu
+><guisubmenu
+>Svårighet</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Låter dig välja en svårighetsnivå för spelet: <guilabel
+>Lätt</guilabel
+>, <guilabel
+>Normal</guilabel
+> eller <guilabel
+>Svår</guilabel
+>..</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Dessutom har &kollision; de vanliga menyalternativen <guimenu
+>Inställningar</guimenu
+> och <guimenu
+>Hjälp</guimenu
+> i &kde;. För mer information, läs avsnitten  <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menyn Inställningar</ulink
+> och <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menyn Hjälp</ulink
+> i &kde;:s Grunder. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Vanliga frågor</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Jag vill ändra hur spelet ser ut. Kan man göra det? </para
+></question>
+ <answer
+><para
+>Nej.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kan man använda tangentbordet för att spela? </para
+></question>
+ <answer
+><para
+>Nej. &kollision; kan bara spelas med en mus.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag kan inte räkna ut vad man ska göra här. Finns det några tips? </para
+></question>
+ <answer
+><para
+>&kollision; har inte någon <quote
+>tipsfunktion</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Jag måste avsluta spelet nu, men jag är inte klar än. Kan man spara det man har gjort?</para
+></question>
+  <answer
+><para
+>Du kan inte spara spel i &kollision;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Tack till och licens</title>
+<para
+>&kollision; </para>
+<para
+>Copyright 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Dokumentation copyright 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

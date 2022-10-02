@@ -1,0 +1,419 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Ukrainian "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Підручник з &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>7 серпня 2021 року</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>У цій документації описано гру &kollision; версії 0.3.</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>гра</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>аркада</keyword>
+        <keyword
+>один гравець</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Вступ</title>
+        <note
+><title
+>Тип гри:</title
+><para
+>Аркада</para
+></note>
+        <note
+><title
+>Можлива кількість гравців:</title
+><para
+>Один</para
+></note>
+        <para
+>Проста гра з кулькою. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Як грати</title>
+        <note
+><title
+>Мета:</title
+><para
+>Зробити так, щоб синя кулька рухалася полем, не торкаючись червоних кульок.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Ігрова дошка &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Наведіть вказівник миші на вільне місце і клацніть клавішею, щоб розпочати гру. Вказівник миші одразу ж буде замінено на синю кульку, а на полі почнуть з’являтися червоні кульки. </para>
+        <para
+>Після повної матеріалізації червоних кульок ці кульки почнуть рухатися з випадковою швидкістю у випадковому напрямку, а вам слід буде негайно ухиляти свою синю кульку від зіткнень за допомогою вашої мишки. За деякий час з’являться нові червоні кульки, матеріалізуючись як і попередні, а потім розпочинаючи рух. Будьте готові уникнути зіткнень і з цими кульками. </para>
+        <para
+>У правій частині смужки стану ви зможете обрати рівень складності гри. Чим вищим буде рівень складності, тим швидше рухатимуться червоні кульки, і тим більше їх з’являтиметься на ігровому полі. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Правила гри, стратегія та поради</title>
+        <para
+>Правила гри, стратегія та поради</para>
+        <sect1 id="rules"
+><title
+>Правила гри</title>
+        <itemizedlist>
+            <listitem
+><para
+>Червоні кульки рухаються зі сталою швидкістю ігровим полем, відбиваючись від стін, аж до зіткнення з іншими кульками, які спричиняють зміну швидкості і напрямку руху обох кульок.</para
+></listitem>
+            <listitem
+><para
+>Синю кульку можна рухати ігровим полем довільним чином за допомогою миші.</para
+></listitem>
+            <listitem
+><para
+>Синю кульку неможливо вивести за поле. Якщо вказівник миші полишить межі поля, кулька залишиться на його краю до того часу, доки вказівник не повернеться у поле.</para
+></listitem>
+            <listitem
+><para
+>Рахунок прямо пропорційний до часу, який триватиме гра.</para
+></listitem>
+            <listitem
+><para
+>Призупинка гри накладає штраф (з нагромадженням) у 5 секунд на загальний час.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Стратегія та поради</title>
+        <itemizedlist>
+            <listitem
+><para
+>Пересувайте синю кульку обережно і повільно. Скакання всім полем збільшує ймовірність зіткнення з іншими кульками.</para
+></listitem>
+            <listitem
+><para
+>Пересуванням вказівника миші за межі поля можна скористатися як елегантним трюком для виходу зі складних ситуацій. Користуйтеся цим трюком мудро.</para
+></listitem>
+            <listitem
+><para
+>Не призупиняйте гру без кончої потреби.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Огляд інтерфейсу</title>
+
+<sect1 id="menu">
+<title
+>Пункти меню</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Гра</guimenu
+> <guimenuitem
+>Завершити гру</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Завершує гру і повертає вас до вікна вітання.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Пауза</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Призупиняє або поновлює гру.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Показати найкращі результати</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Відкриває діалогове вікно з найкращими результатами на поточному рівні.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Гра</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Вибір цього пункту меню завершує поточну гру і закриває вікно програми &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Відтворювати звуки</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Вмикає або вимикає відтворення звукових ефектів під час гри.</action
+> Типово, звуки вимкнено. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Збільшувати розмір кульки</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Вмикає або вимикає збільшення кульки.</action
+> Типово, збільшення вимкнено.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Параметри</guimenu
+> <guisubmenu
+>Складність</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Надає вам змогу визначити складність гри: <guilabel
+>Проста</guilabel
+>, <guilabel
+>Середня</guilabel
+> чи <guilabel
+>Складна</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Крім того, у &kollision; передбачено типові для &kde; пункти меню <guimenu
+>Параметри</guimenu
+> і <guimenu
+>Довідка</guimenu
+>. Щоб дізнатися більше, ознайомтеся з розділами щодо <ulink url="help:/fundamentals/menus.html#menus-settings"
+>меню «Параметри»</ulink
+> та <ulink url="help:/fundamentals/menus.html#menus-help"
+>меню «Довідка»</ulink
+> підручника з основ роботи у &kde;. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Часті запитання</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Я хочу змінити вигляд цієї гри. Як це зробити? </para
+></question>
+ <answer
+><para
+>Ні.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Чи можна використовувати для гри клавіатуру? </para
+></question>
+ <answer
+><para
+>Ні. У &kollision; можна грати лише за допомогою миші.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Не можу з’ясувати, що слід робити! Чи є у грі підказки? </para
+></question>
+ <answer
+><para
+>У &kollision; немає функції <quote
+>Підказка</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Я змушений (змушена) перервати гру, але гру ще не завершено. Чи можу я зберегти поточний стан?</para
+></question>
+  <answer
+><para
+>У &kollision; зберігати гру не можна.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Подяки і ліцензія</title>
+<para
+>&kollision; </para>
+<para
+>Авторські права на програму належать Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+>, ©2007–2008 </para>
+<para
+>Авторські права на програму належать Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+>, ©2007–2008 </para>
+<para
+>Авторські права на документацію належать Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+>, ©2008 </para>
+
+<para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

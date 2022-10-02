@@ -1,0 +1,214 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Vít Pelčák <vit@pelcak.org>, 2011.
+# Vit Pelcak <vpelcak@suse.cz>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kollision\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2011-03-30 09:16+0200\n"
+"Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "David Kolibáč"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "david@kolibac.cz"
+
+#. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
+#: kollision.kcfg:9
+#, kde-format
+msgid "Whether automatically increasing ball size should be applied."
+msgstr ""
+
+#. i18n: ectx: label, entry (EnableSounds), group (sounds)
+#: kollision.kcfg:15
+#, kde-format
+msgid "Whether sound effects should be played."
+msgstr "Jestli mají být přehrávány zvukové efekty."
+
+#. i18n: ectx: Menu (game)
+#: kollisionui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "&Hra"
+
+#: main.cpp:37
+#, kde-format
+msgid "Kollision"
+msgstr "Kollision"
+
+#: main.cpp:39
+#, kde-format
+msgid "Casual ball game"
+msgstr ""
+
+#: main.cpp:41
+#, kde-format
+msgid "(c) 2007 Paolo Capriotti"
+msgstr "(c) 2007 Paolo Capriotti"
+
+#: main.cpp:44
+#, kde-format
+msgid "Paolo Capriotti"
+msgstr "Paolo Capriotti"
+
+#: main.cpp:45
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:46
+#, kde-format
+msgid "Matteo Guarnieri"
+msgstr "Matteo Guarnieri"
+
+#: main.cpp:46
+#, kde-format
+msgid "Original idea"
+msgstr "Původní nápad"
+
+#: main.cpp:47
+#, kde-format
+msgid "Brian Croom"
+msgstr "Brian Croom"
+
+#: main.cpp:47
+#, kde-format
+msgid "Port to use KGameRenderer"
+msgstr "Port použití KGameRendereru"
+
+#: mainarea.cpp:86
+#, kde-format
+msgid ""
+"Welcome to Kollision\n"
+"Click to start a game"
+msgstr ""
+"Vítejte v Kollision\n"
+"Klikněte pro započetí hry"
+
+#: mainarea.cpp:204
+#, kde-format
+msgid ""
+"Game paused\n"
+"Click or press %1 to resume"
+msgstr ""
+"Hra pozastavena\n"
+"Klikněte, nebo stiskněte %1 pro pokračování"
+
+#: mainarea.cpp:266 mainarea.cpp:528
+#, kde-format
+msgid "%1 ball"
+msgid_plural "%1 balls"
+msgstr[0] "%1 míček"
+msgstr[1] "%1 míčky"
+msgstr[2] "%1 míčků"
+
+#: mainarea.cpp:536
+#, kde-format
+msgid ""
+"GAME OVER\n"
+"You survived for %1 second\n"
+"Click to restart"
+msgid_plural ""
+"GAME OVER\n"
+"You survived for %1 seconds\n"
+"Click to restart"
+msgstr[0] ""
+"KONEC HRY\n"
+"Přežili jste po %1 sekundu\n"
+"Klikněte pro restartování hry"
+msgstr[1] ""
+"KONEC HRY\n"
+"Přežili jste po %1 sekundy\n"
+"Klikněte pro restartování hry"
+msgstr[2] ""
+"KONEC HRY\n"
+"Přežili jste po %1 sekund\n"
+"Klikněte pro restartování hry"
+
+#: mainwindow.cpp:80
+#, kde-format
+msgid "End game"
+msgstr "Ukončit hru"
+
+#: mainwindow.cpp:88
+#, kde-format
+msgid "&Increase Ball Size"
+msgstr ""
+
+#: mainwindow.cpp:94
+#, kde-format
+msgid "&Play Sounds"
+msgstr "&Přehrávat zvuky"
+
+#: mainwindow.cpp:135
+#, kde-format
+msgid "Balls: %1"
+msgstr "Míčků: %1"
+
+#: mainwindow.cpp:140
+#, kde-format
+msgid "Time: %1 second"
+msgid_plural "Time: %1 seconds"
+msgstr[0] "Čas: %1 sekunda"
+msgstr[1] "Čas: %1 sekundy"
+msgstr[2] "Čas: %1 sekund"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableSounds)
+#: preferences.ui:16
+#, kde-format
+msgid "Enable &sounds"
+msgstr "Povolit &zvuky"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IncreaseBallSize)
+#: preferences.ui:23
+#, kde-format
+msgid "Enable automatically &increasing ball size"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: preferences.ui:32
+#, kde-format
+msgid "&Difficulty:"
+msgstr "&Obtížnost:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:43
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Easy"
+msgstr "Nízká"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:48
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Medium"
+msgstr "Střední"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:53
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Hard"
+msgstr "Vysoká"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: preferences.ui:65
+#, kde-format
+msgid "&Animation smoothness:"
+msgstr "Plynulost &animací:"

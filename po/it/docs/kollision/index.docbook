@@ -1,0 +1,419 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Italian "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Manuale di &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>07/08/2021</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>Questa documentazione descrive il gioco &kollision; versione 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>gioco</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arcade</keyword>
+        <keyword
+>giocatore singolo</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Introduzione</title>
+        <note
+><title
+>Tipo di gioco:</title
+><para
+>Arcade</para
+></note>
+        <note
+><title
+>Numero di giocatori possibili:</title
+><para
+>Uno</para
+></note>
+        <para
+>Un semplice gioco di destrezza. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Come si gioca</title>
+        <note
+><title
+>Obbiettivo:</title
+><para
+>Fai muovere la pallina blu nel campo senza toccare quelle rosse.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Tabellone di &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Fai clic sul campo vuoto per avviare un gioco: una pallina blu sostituisce immediatamente il puntatore del mouse, e un certo numero di palline rosse cominciano ad apparire nel campo. </para>
+        <para
+>Quando le palline rosse si sono materializzate, si spostano a una velocità casuale in una direzione casuale, e devi schivarle spostando la pallina blu dentro al campo con il mouse. Dopo un po', appariranno altre palline rosse, e cominceranno a muoversi. Schiva anche quelle. </para>
+        <para
+>Puoi scegliere il livello di difficoltà del gioco sulla destra della barra di stato. Più alto è il livello di difficoltà, più velocemente si muovono le palline rosse, e più palline rosse appariranno sul campo. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Regole del gioco, strategie e suggerimenti</title>
+        <para
+>Regole del gioco, strategie e suggerimenti</para>
+        <sect1 id="rules"
+><title
+>Regole del gioco</title>
+        <itemizedlist>
+            <listitem
+><para
+>Le palline rosse si muovono con velocità costante sul campo da gioco, rimbalzando sulle pareti finché collidono con un'altra pallina, il che fa cambiare velocità e direzione ad entrambe le palline.</para
+></listitem>
+            <listitem
+><para
+>La pallina blu può essere spostata liberamente all'interno del campo con il mouse.</para
+></listitem>
+            <listitem
+><para
+>La pallina blu non può sfuggire al campo. Se il puntatore viene spostato fuori, la pallina sta sul bordo, fino al ritorno del puntatore.</para
+></listitem>
+            <listitem
+><para
+>Il punteggio è direttamente proporzionale al tempo per cui è durata la partita.</para
+></listitem>
+            <listitem
+><para
+>Mettere il gioco in pausa fa incorrere in una penalità (cumulativa) di cinque secondi sul tempo totale.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strategie e suggerimenti</title>
+        <itemizedlist>
+            <listitem
+><para
+>Sposta la pallina blu lentamente. Sventagliarla nel campo renderà più probabili le collisioni con le altre palline.</para
+></listitem>
+            <listitem
+><para
+>Spostare il puntatore fuori dal campo può essere un trucco elegante per cavarsi da una situazione difficile. Usalo con prudenza.</para
+></listitem>
+            <listitem
+><para
+>Non mettere il gioco in pausa a meno che sia assolutamente necessario.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Panoramica dell'interfaccia</title>
+
+<sect1 id="menu">
+<title
+>Elementi dei menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Partita</guimenu
+> <guimenuitem
+>Fine della partita</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Conclude una partita e torna alla schermata di benvenuto.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Pausa</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Mette in pausa o riprende la partita.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Mostra la classifica</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Questo mostrerà i punteggi migliori per il livello attuale.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Selezionando questo elemento concluderai la partita attuale, e uscirai da &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Riproduci suoni</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Attiva o disattiva gli effetti sonori</action
+>. Secondo l'impostazione predefinita sono disattivati. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Aumenta le dimensioni della palla</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Attivalo per rendere la palla più grande.</action
+> Per impostazione predefinita è disattivato.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guisubmenu
+>Difficoltà</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Permette di selezionare una difficoltà di gioco <guilabel
+>Facile</guilabel
+>, <guilabel
+>Media</guilabel
+> e <guilabel
+>Difficile</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Inoltre, &kollision; ha i normali elementi dei menu di &kde; <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+>; per maggiori informazioni leggi le sezioni sul <ulink url="help:/fundamentals/ui.html#menus-settings"
+>menu Impostazioni</ulink
+> e sul <ulink url="help:/fundamentals/menus.html#menus-help"
+>menu Aiuto</ulink
+> dei Fondamentali di &kde;. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Domande ricorrenti</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Voglio cambiare l'aspetto del gioco. Posso? </para
+></question>
+ <answer
+><para
+>No.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Posso usare la tastiera per giocare? </para
+></question>
+ <answer
+><para
+>No. Si può giocare a &kollision; solo con il mouse.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Non riesco a capire cosa devo fare! Ci sono dei suggerimenti? </para
+></question>
+ <answer
+><para
+>&kollision; non ha una funzionalità per i <quote
+>suggerimenti</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Devo andare via adesso, ma non ho ancora finito la partita. Posso salvare la mia posizione?</para
+></question>
+  <answer
+><para
+>Non puoi salvare le partite in &kollision;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Riconoscimenti e licenza</title>
+<para
+>&kollision; </para>
+<para
+>Copyright 2007-2008 di Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 di Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Copyright della documentazione di 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Traduzione di Federico Zenith<email
+>federico.zenith@member.fsf.org</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

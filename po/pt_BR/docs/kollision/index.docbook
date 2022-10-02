@@ -1,0 +1,422 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kollision "<application
+>Kollision</application
+>">
+  <!ENTITY % Brazilian-Portuguese "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Manual do &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Marcus</firstname
+><surname
+>Gama</surname
+><affiliation
+><address
+><email
+>marcus.gama@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>André Marcelo</firstname
+><surname
+>Alvarenga</surname
+><affiliation
+><address
+><email
+>alvarenga@kde.org</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+ 
+<date
+>10/05/2016</date>
+<releaseinfo
+>0.3 (applications 16.04)</releaseinfo
+> 
+<abstract>
+        <para
+>Esta documentação descreve o jogo &kollision; versão 0.3</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>jogo</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arcade</keyword>
+        <keyword
+>um jogador</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Introdução</title>
+        <note
+><title
+>Tipo de jogo:</title
+><para
+>Arcade</para
+></note>
+        <note
+><title
+>Número de possíveis jogadores:</title
+><para
+>Um</para
+></note>
+        <para
+>Um jogo simples de desvio de bolas </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Como jogar</title>
+        <note
+><title
+>Objetivo:</title
+><para
+>Faça com que a bola azul se mova pelo campo sem tocar nas bolas vermelhas.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Tabuleiro do jogo &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Clique no campo em branco para começar um jogo: uma bola azul irá substituir imediatamente o seu cursor do mouse, começando a aparecer bolas vermelhas no campo. </para>
+        <para
+>Quando as bolas vermelhas acabarem de se materializar, estas se moverão com uma velocidade e direção aleatórias, e você terá que se desviar imediatamente, movendo a bola azul dentro do campo com o seu mouse. Ao fim de algum tempo, irão começar a aparecer outras bolas vermelhas, aparecendo gradualmente e começando a mover-se. Prepare-se para se desviar também destas. </para>
+        <para
+>Você poderá escolher o nível de dificuldade do lado direito da barra de estado. Quanto maior o nível de dificuldade, mais depressa as bolas vermelhas irão se mexer e mais bolas irão começar a aparecer em campo. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Regras, Estratégias e Dicas do Jogo</title>
+        <para
+>Regras, Estratégias e Dicas do Jogo</para>
+        <sect1 id="rules"
+><title
+>Regras do jogo</title>
+        <itemizedlist>
+            <listitem
+><para
+>As bolas vermelhas movem-se com uma velocidade constante no campo de jogo, batendo nas paredes, até que colidam com outra bola, o que fará com que a velocidade e direção das bolas mude.</para
+></listitem>
+            <listitem
+><para
+>A bola azul poderá mover-se de forma livre dentro do campo com o mouse.</para
+></listitem>
+            <listitem
+><para
+>A bola azul não poderá fugir do campo. Se o cursor saltar para fora, a bola fica nessa borda até que o cursor regresse.</para
+></listitem>
+            <listitem
+><para
+>A pontuação é diretamente proporcional ao tempo que o jogo durou.</para
+></listitem>
+            <listitem
+><para
+>Se colocar o jogo em pausa, irá subtrair uma penalidade de 5 segundos (acumulativa) a partir do tempo total.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Estratégias e dicas</title>
+        <itemizedlist>
+            <listitem
+><para
+>Mova a bola azul devagar e com cuidado. A agitação por todo o campo tornará mais prováveis as colisões com outras bolas.</para
+></listitem>
+            <listitem
+><para
+>Mover o cursor para fora do campo poderá ser usado como um truque elegante para sair de uma situação complicada. Use-a com cuidado.</para
+></listitem>
+            <listitem
+><para
+>Não coloque o jogo em pausa, a menos que seja absolutamente necessário.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>Resumo da interface</title>
+
+<sect1 id="menu">
+<title
+>Itens dos menus</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Terminar o jogo</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Termina um jogo e volta à tela de boas-vindas.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Pausar</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Pausa ou continua o jogo.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Mostrar recordes</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Esta opção irá mostrar os recordes para o nível atual.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jogo</guimenu
+> <guimenuitem
+>Sair</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Selecionar este item irá terminar o seu jogo atual e sair do &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Configurações</guimenu
+> <guimenuitem
+>Reproduzir sons</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Ativa ou desativa os efeitos sonoros.</action
+> Por padrão, estão desativados. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configurações</guimenu
+> <guisubmenu
+>Dificuldade</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Permite a você selecionar a dificuldade <guilabel
+>Fácil</guilabel
+>, <guilabel
+>Médio</guilabel
+> e <guilabel
+>Difícil</guilabel
+> para o jogo.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>O &kollision; possui os itens dos menus <guimenu
+>Configurações</guimenu
+> e <guimenu
+>Ajuda</guimenu
+>, comuns do &kde;. Para mais informações, consulte as seções sobre o <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu Configurações</ulink
+> e o <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu Ajuda</ulink
+> dos Fundamentos do &kde;. </para>
+
+</sect1>
+
+</chapter>
+ 
+<chapter id="faq"
+><title
+>Perguntas frequentes</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Eu quero alterar o visual do jogo. É possível? </para
+></question>
+ <answer
+><para
+>Não.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Posso usar o teclado para jogar? </para
+></question>
+ <answer
+><para
+>Não. O &kollision; só poderá ser jogado com o mouse.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Não consigo descobrir o que fazer aqui! Existe alguma sugestão? </para
+></question>
+ <answer
+><para
+>O &kollision; não tem uma funcionalidade de <quote
+>Dica</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Eu tenho que sair do jogo agora, mas ainda não terminei. Posso salvar a minha situação atual?</para
+></question>
+  <answer
+><para
+>Você não pode salvar jogos no &kollision;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Créditos e Licença</title>
+<para
+>&kollision; </para>
+<para
+>Direitos autorais 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Direitos autorais 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Documentação com 'copyright' 2008 de Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Tradução de Marcus Gama <email
+>marcus.gama@gmail.com</email
+> e André Marcelo Alvarenga <email
+>alvarenga@kde.org</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

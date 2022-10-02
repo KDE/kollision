@@ -1,0 +1,438 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "<application
+>Kollision</application
+>">
+  <!ENTITY kappversion "0.1">
+  <!ENTITY package "kdegames">
+  <!ENTITY % Norwegian-Nynorsk "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book lang="&language;">
+<bookinfo>
+        <title
+>&kappname;-handbok</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Karl Ove</firstname
+><surname
+>Hufthammer</surname
+><affiliation
+><address
+><email
+>karl@huftis.org</email
+></address
+></affiliation
+><contrib
+>Omsetjing</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<date
+>2008-01-20</date>
+<releaseinfo
+>&kappversion;</releaseinfo
+> 
+<abstract>
+        <para
+>Dette er hjelpeteksten til spelet &kappname; versjon &kappversion;.</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>spel</keyword>
+        <keyword
+>Kollisjon</keyword>
+        <keyword
+>arkade</keyword>
+        <keyword
+>éinspelar</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Introduksjon</title>
+        <note
+><title
+>Speltype:</title
+><para
+>Arkadespel</para
+></note>
+        <note
+><title
+>Talet på spelarar:</title
+><para
+>Éin</para
+></note>
+        <para
+>Eit enkelt spel der du skal unngå kollisjonar </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Korleis spela</title>
+        <note
+><title
+>Mål:</title
+><para
+>Flytt den blå ballen rundt på spelebrettet utan å komma borti dei raude ballane.</para
+></note>
+        <para
+>Trykk på det tomme feltet for å starta spelet. Musepeikaren vert då til ein blå ball, og fleire raude ballar kjem gradvis til syne. </para>
+        <para
+>Når dei raude ballane er heilt synlege, set dei i gong å røra på seg i tilfeldige retningar. Du må no unngå at dei støytar saman med den blå ballen, ved å flytta han rundt på spelebrettet med musa. Etter kvart dukkar det òg opp fleire nye raude ballar som du må unngå. </para>
+        <para
+>Du kan velja vanskegrad til høgre på statuslinja. Jo høgare vanskegrad, jo raskare rører dei raude kulene på seg, og jo fleire kuler dukkar opp på spelebrettet. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Spelereglar, strategiar og tips</title>
+        <para
+>Spelereglar, strategiar og tips</para>
+        <sect1 id="rules"
+><title
+>Spelereglar</title>
+        <itemizedlist>
+            <listitem
+><para
+>Dei raude ballane flyttar seg med jamn fart over spelebrettet, og sprett når dei treff veggene, heilt til dei krasjar med ein annan ball, som gjer at både fart og retning til begge ballane vert endra.</para
+></listitem>
+            <listitem
+><para
+>Du kan fritt flytta den blå ballen inne på spelebrettet med musa.</para
+></listitem>
+            <listitem
+><para
+>Du kan ikkje ta den blå ballen ut av spelebrettet. Når du flyttar musepeikaren ut, vert ballen verande att langs kanten, heilt til peikaren kjem attende.</para
+></listitem>
+            <listitem
+><para
+>Kor mange poeng du får er direkte proporsjonalt med kor lenge du har spelt.</para
+></listitem>
+            <listitem
+><para
+>Kvar gong du pausar spelet, vert det trekt fem sekund frå poengsummen din.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strategiar og tips</title>
+        <itemizedlist>
+            <listitem
+><para
+>Flytt den blå ballen roleg og forsiktig. Viss du sender han tvers over spelebrettet i stor fart, er det lett å støyta saman med dei raude ballane.</para
+></listitem>
+            <listitem
+><para
+>Eit elegant triks er å flytta musepeikaren ut av spelebrettet og så ta han inn att frå ei anna side. Men bruk dette trikset med omhu.</para
+></listitem>
+            <listitem
+><para
+>Ikkje bruk pausefunksjonen med mindre du er heilt nøydd.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>Oversikt over brukargrensesnittet</title>
+<sect1 id="game-menu">
+<title
+><guimenu
+>Spel</guimenu
+>-menyen</title>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avslutt spel</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Avslutt spelet og gå tilbake til velkomstbiletet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Pause</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Pausa eller hald fram med å spela.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Vis rekordar</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Vis dei høgste poengsummane oppnådd for gjeldande vanskegrad.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spel</guimenu
+> <guimenuitem
+>Avslutt</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Stopp spelet som køyrer, og avslutt &kappname;.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+><guimenu
+>Innstillingar</guimenu
+>-menyen</title>
+<variablelist>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Innstillingar</guimenu
+> <guimenuitem
+>Spel lydar</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Vel om det skal spelast av lydeffektar.</action
+> Standard er lydeffektar av. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillingar</guimenu
+><guimenuitem
+>Vis statuslinje</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Vel om statuslinja skal visast under spelebrettet.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillingar</guimenu
+> <guimenuitem
+>Set opp verktøylinjer …</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Vis &kde;-dialogvindauga for tilpassing av verktøylinjer.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Innstillingar</guimenu
+> <guimenuitem
+>Set opp snarvegar …</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+><action
+>Vis &kde;-snarvegvindauget,</action
+> slik at du kan endra tastane du skal bruka til å spela &kappname;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help">
+<title
+><guimenu
+>Spel</guimenu
+>-menyen</title>
+&help.menu.documentation; </sect1>
+</chapter>
+ 
+ 
+<chapter id="faq"
+><title
+>Ofte spurte spørsmål</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Eg har lyst til å endra korleis spelet skjer ut. Kan eg det? </para
+></question>
+ <answer
+><para
+>Nei.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kan eg bruka tastaturet til å spela? </para
+></question>
+ <answer
+><para
+>Nei. Du kan berre spela &kappname; med musa.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Eg forstår ikkje kva eg skal gjera. Finst det hint? </para
+></question>
+ <answer
+><para
+>&kappname; har ikkje nokon <quote
+>hint</quote
+>-funksjon.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Eg må slutta å spela no, men eg er ikkje ferdig. Kan eg lagra spelet og komma attende til det seinare?</para
+></question>
+  <answer
+><para
+>Nei, du kan ikkje lagra spel i &kappname;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Bidragsytarar og lisensvilkår</title>
+<para
+>&kappname; </para>
+<para
+>© 2007–2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>© 2007–2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Hjelpetekstar © 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Omsetjing: Karl Ove Hufthammer <email
+>karl@huftis.org</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+ 
+ 
+<appendix id="installation">
+<title
+>Installering</title>
+ 
+&install.intro.documentation;
+ 
+ 
+<sect1 id="Compilation">
+<title
+>Kompilering og installering</title>
+&install.compile.documentation; </sect1>
+</appendix>
+ 
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

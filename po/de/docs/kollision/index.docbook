@@ -1,0 +1,422 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kollision "<application
+>Kollision</application
+>">
+  <!ENTITY % German "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Das Handbuch zu &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Linda-Maria</firstname
+><surname
+>Wirthmann</surname
+><affiliation
+><address
+><email
+>dont.breathe.today@googlemail.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Johannes </firstname
+><surname
+>Obermayr</surname
+><affiliation
+><address
+><email
+>johannesobermayr@gmx.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+>  
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+ 
+<date
+>2016-05-10</date>
+<releaseinfo
+>0.3 (Anwendungen 16.04)</releaseinfo
+> 
+<abstract>
+        <para
+>Dieses Handbuch beschreibt das Spiel &kollision; in der Version 0.3</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>KDE-Spiele</keyword>
+        <keyword
+>Spiel</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>Arcade</keyword>
+        <keyword
+>ein Spieler</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Einführung</title>
+        <note
+><title
+>Spieltyp:</title
+><para
+>Arcade</para
+></note>
+        <note
+><title
+>Anzahl der Spieler:</title
+><para
+>Einer</para
+></note>
+        <para
+>Ein einfaches Ausweich-Ballspiel </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Spielanleitung</title>
+        <note
+><title
+>Ziel des Spiels:</title
+><para
+>Bewegen Sie den blauen Ball im Feld umher, ohne die roten Bälle zu berühren.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>&kollision;-Spielfeld</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Klicken Sie auf das leere Spielfeld, um ein Spiel zu starten. Ihr Mauszeiger wird durch einen blauen Ball ersetzt und mehrere rote Bälle erscheinen langsam im Feld. </para>
+        <para
+>Sobald die roten Bälle vollständig erschienen sind, bewegen sie sich mit zufälliger Geschwindigkeit in zufällige Richtungen. Sie müssen ihnen ausweichen, indem Sie den blauen Ball mit ihrem Mauszeiger im Feld umher bewegen. Nach einiger Zeit erscheinen weitere rote Bälle, die sich genau wie die vorigen verhalten. Auch ihnen müssen Sie ausweichen. </para>
+        <para
+>Sie können den Schwierigkeitsgrad rechts in der Statusleiste auswählen. Je höher der Schwierigkeitsgrad, umso schneller und zahlreicher werden die Bälle. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Spielregeln, Spielstrategien und Tipps</title>
+        <para
+>Spielregeln, Spielstrategien und Tipps</para>
+        <sect1 id="rules"
+><title
+>Spielregeln</title>
+        <itemizedlist>
+            <listitem
+><para
+>Die roten Bälle bewegen sich mit gleichbleibender Geschwindigkeit durch das Spielfeld und prallen von den Wänden ab. Beim Zusammenstoss zweier Bälle ändert sich deren Geschwindigkeit und Richtung.</para
+></listitem>
+            <listitem
+><para
+>Der blaue Ball kann mit der Maus frei innerhalb des Feldes bewegt werden.</para
+></listitem>
+            <listitem
+><para
+>Der blaue Ball kann das Spielfeld nicht verlassen. Solange sich der Mauszeiger außerhalb des Feldes befindet, verharrt der Ball am Spielfeldrand.</para
+></listitem>
+            <listitem
+><para
+>Die Punktzahl ist identisch mit der Spielzeit.</para
+></listitem>
+            <listitem
+><para
+>Das Spiel anzuhalten zieht 5 Sekunden (und steigend) von der Gesamtzeit ab.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Spielstrategien und Tipps</title>
+        <itemizedlist>
+            <listitem
+><para
+>Bewegen Sie den blauen Ball vorsichtig und langsam. Ihn durch das Spielfeld zu schleudern macht Kollisionen mit anderen Bällen wahrscheinlicher.</para
+></listitem>
+            <listitem
+><para
+>Den Mauszeiger aus dem Spielfeld heraus zu bewegen kann ein eleganter Trick sein, um sich aus ausweglosen Situationen zu befreien. Verwenden Sie ihn mit Bedacht.</para
+></listitem>
+            <listitem
+><para
+>Halten Sie das Spiel nicht an, sofern es nicht absolut notwendig ist.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>Die Benutzeroberfläche</title>
+
+<sect1 id="menu">
+<title
+>Menüeinträge</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Spiel beenden</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Beendet ein Spiel und zeigt den Startbildschirm an.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Pause</guimenuitem
+>  </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Hält das Spiel an bzw. setzt es fort.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Bestenliste anzeigen</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Zeigt die Bestenliste für die gegenwärtige Ebene.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Spiel</guimenu
+> <guimenuitem
+>Beenden</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Diese Auswahl beendet das laufende Spiel und &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guimenuitem
+>Klänge wiedergeben</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Legt fest, ob Klänge abgespielt werden sollen.</action
+> Per Voreinstellung sind die Klänge ausgeschaltet. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
+> <guisubmenu
+>Schwierigkeitsgrad</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Ermöglicht die Einstellung des Schwierigkeitsgrads <guilabel
+>Einfach</guilabel
+>, <guilabel
+>Mittel</guilabel
+>, <guilabel
+>Schwierig</guilabel
+> für das Spiel.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Zusätzlich hat &kollision; die bekannten &kde;-Einträge im Menü <guimenu
+>Einstellungen</guimenu
+> und <guimenu
+>Hilfe</guimenu
+>, weitere Informationen dazu finden Sie in den Abschnitten über die Menüs <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Einstellungen</ulink
+> und <ulink url="help:/fundamentals/menus.html#menus-help"
+>Hilfe</ulink
+> der &kde;-Grundlagen. </para>
+
+</sect1>
+
+</chapter>
+ 
+<chapter id="faq"
+><title
+>Häufig gestellte Fragen</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Kann ich das Erscheinungsbild des Spiels ändern? </para
+></question>
+ <answer
+><para
+>Nein.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kann ich mit der Tastatur spielen? </para
+></question>
+ <answer
+><para
+>Nein. &kollision; kann nur mit der Maus gespielt werden.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ich komme im Spiel nicht weiter, gibt es Tipps? </para
+></question>
+ <answer
+><para
+>Nein. In &kollision; gibt es keine Tipps.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ich muss das Spiel unterbrechen, kann ich den aktuellen Spielstand speichern?</para
+></question>
+  <answer
+><para
+>Sie können in &kollision; keine Spiele speichern.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Danksagungen und Lizenz</title>
+<para
+>&kollision; </para>
+<para
+>Copyright 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Dokumentation Copyright 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Linda-Maria Wirthmann<email
+>dont.breathe.today@googlemail.de</email
+></para
+> <para
+>Johannes Obermayr<email
+>johannesobermayr@gmx.de</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

@@ -1,0 +1,406 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kollision "<application
+>Kollision</application
+>">
+  <!ENTITY % Indonesian "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Buku Panduan &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Wantoyo</firstname
+><surname
+></surname
+><affiliation
+><address
+><email
+>wantoyek@gmail.com</email
+></address
+></affiliation
+><contrib
+>Terjemahan</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+ 
+<date
+>10-05-2016</date>
+<releaseinfo
+>0.3 (applications 16.04)</releaseinfo
+> 
+<abstract>
+        <para
+>Dokumentasi ini menjelaskan permainan &kollision; pada versi 0.3</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>permainan</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arkade</keyword>
+        <keyword
+>satu pemain</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Pengenalan</title>
+        <note
+><title
+>Tipe permainan:</title
+><para
+>Arkade</para
+></note>
+        <note
+><title
+>Jumlah pemain yang memungkinkan:</title
+><para
+>Satu</para
+></note>
+        <para
+>Sebuah permainan sederhana menghindari bola-bola </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Bagaimana memainkannya</title>
+        <note
+><title
+>Objektif:</title
+><para
+>Usahakan bola biru bergerak di dalam bidang tanpa menyenggol bola-bola merah.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Permainan Papan &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Klik pada bidang kosong untuk memulai permainan: sebuah bola biru langsung menggantikan kursor mouse-mu, dan sejumlah bola-bola merah mulai melesap nongol ke dalam lapangan. </para>
+        <para
+>Saat bola merah selesai muncul, mereka bergerak dengan kecepatan acak ke arah yang acak, dan kamu harus segera menghindarinya dengan menggerakkan bola biru di dalam lapangan dengan mouse-mu. Setelah beberapa waktu, bola merah lainnya akan muncul, melesap nongol seperti sebelumnya dan kemudian mulai bergerak. Bersiaplah untuk menghindarinya juga. </para>
+        <para
+>Kamu bisa memilih tingkat kesulitan game di sebelah kanan bilah status. Semakin tinggi tingkat kesulitannya, semakin cepat bola merah bergerak, dan semakin banyak bola yang akan muncul di lapangan permainan. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Peraturan Permainan, Kiat dan Strategi</title>
+        <para
+>Peraturan Permainan, Kiat dan Strategi</para>
+        <sect1 id="rules"
+><title
+>Peraturan Permainan</title>
+        <itemizedlist>
+            <listitem
+><para
+>Bola merah bergerak dengan kecepatan konstan di lapangan permainan yang memantul ke dinding hingga bertabrakan dengan bola lain, yang menyebabkan kecepatan dan arah kedua bola berubah.</para
+></listitem>
+            <listitem
+><para
+>Bola biru boleh bebas dipindahkan ke dalam lapangan dengan mouse.</para
+></listitem>
+            <listitem
+><para
+>Bola biru tidak bisa lepas dari lapangan. Jika kursor dipindahkan, bola tetap di tepi, sampai kursor kembali.</para
+></listitem>
+            <listitem
+><para
+>Skor tersebut berbanding lurus dengan waktu permainan yang telah berlangsung.</para
+></listitem>
+            <listitem
+><para
+>Menjeda permainan akan mengurangi penalti (kumulatif) 5 detik dari total waktu.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Kiat dan Strategis</title>
+        <itemizedlist>
+            <listitem
+><para
+>Gerakkan bola biru dengan lembut dan perlahan. Mengayunkan bola di lapangan akan membuat tabrakan dengan bola lain lebih memungkinkan terjadi.</para
+></listitem>
+            <listitem
+><para
+>Memindahkan kursor keluar dari lapangan bisa digunakan sebagai trik elegan untuk keluar dari situasi yang kacau. Gunakan dengan bijak.</para
+></listitem>
+            <listitem
+><para
+>Jangan menjeda game kecuali benar-benar diperlukan.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>Ikhtisar Antarmuka</title>
+
+<sect1 id="menu">
+<title
+>Item Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Game</guimenu
+> <guimenuitem
+>End game</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Akhiri permainan dan kembali ke layar selamat datang.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Game</guimenu
+> <guimenuitem
+>Pause</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Jeda atau lanjutkan permainan.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Game</guimenu
+> <guimenuitem
+>Show High Scores</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Ini akan menunjukkan skor terbaik untuk level saat ini.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Game</guimenu
+> <guimenuitem
+>Quit</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Memilih item ini akan mengakhiri permainanmu saat ini, dan mengeluarkan &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Settings</guimenu
+> <guimenuitem
+>Play Sounds</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Jungkitan apakah efek suara harus dibunyikan.</action
+> Bakunya adalah off. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Pengaturan</guimenu
+> <guisubmenu
+>Tingkat Kesulitan</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Memungkinkanmu untuk memilih tingkat kesulitan <guilabel
+>Easy</guilabel
+>, <guilabel
+>Medium</guilabel
+>, <guilabel
+>Hard</guilabel
+> untuk game.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Selain itu &kollision; memiliki item-item menu pada umumnya &kde; yaitu <guimenu
+>Settings</guimenu
+> dan <guimenu
+>Help</guimenu
+>, untuk informasi selebihnya bacalah bagian tentang <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Settings Menu</ulink
+> dan <ulink url="help:/fundamentals/menus.html#menus-help"
+>Help Menu</ulink
+> pada asas &kde; Fundamentals. </para>
+
+</sect1>
+
+</chapter>
+ 
+<chapter id="faq"
+><title
+>Yang paling sering ditanyakan</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Aku ingin mengubah tampilan game ini. Bisakah? </para
+></question>
+ <answer
+><para
+>Tidak.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Bisakah aku menggunakan keyboard untuk memainkan permainan ini? </para
+></question>
+ <answer
+><para
+>Tidak. &kollision; hanya bisa dimainkan pakai mouse.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Aku tidak tahu apa yang harus dilakukan di sini! Apakah ada petunjuk? </para
+></question>
+ <answer
+><para
+>&kollision; belum memiliki fitur <quote
+>Hint</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Aku telah memberhentikan permainan, tetapi aku belum menyelesaikannya. Bisakah aku menyimpan progresku?</para
+></question>
+  <answer
+><para
+>Kamu tidak bisa menyimpan permainan di dalam &kollision;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Pujian dan Lisensi</title>
+<para
+>&kollision; </para>
+<para
+>Hakcipta 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Hakcipta 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Hakcipta dokumentasi 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Wantoyo<email
+>wantoyek@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

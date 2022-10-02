@@ -1,0 +1,224 @@
+# translation of kollision to Romanian
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kollision package.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2012, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kollision\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2022-04-30 11:22+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergiu Bivol"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sergiu@cip.md"
+
+#. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
+#: kollision.kcfg:9
+#, kde-format
+msgid "Whether automatically increasing ball size should be applied."
+msgstr "Dacă să fie aplicată creșterea automată a dimensiunii mingii."
+
+#. i18n: ectx: label, entry (EnableSounds), group (sounds)
+#: kollision.kcfg:15
+#, kde-format
+msgid "Whether sound effects should be played."
+msgstr "Dacă să fie redate efecte sonore."
+
+#. i18n: ectx: Menu (game)
+#: kollisionui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "&Joc"
+
+#: main.cpp:37
+#, kde-format
+msgid "Kollision"
+msgstr "Koliziune"
+
+#: main.cpp:39
+#, kde-format
+msgid "Casual ball game"
+msgstr "Joc cu mingi de ocazie"
+
+#: main.cpp:41
+#, kde-format
+msgid "(c) 2007 Paolo Capriotti"
+msgstr "(c) 2007 Paolo Capriotti"
+
+#: main.cpp:44
+#, kde-format
+msgid "Paolo Capriotti"
+msgstr "Paolo Capriotti"
+
+#: main.cpp:45
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:46
+#, kde-format
+msgid "Matteo Guarnieri"
+msgstr "Matteo Guarnieri"
+
+#: main.cpp:46
+#, kde-format
+msgid "Original idea"
+msgstr "Ideea originală"
+
+#: main.cpp:47
+#, kde-format
+msgid "Brian Croom"
+msgstr "Brian Croom"
+
+#: main.cpp:47
+#, kde-format
+msgid "Port to use KGameRenderer"
+msgstr "Modificări pentru a folosi KGameRenderer"
+
+#: mainarea.cpp:86
+#, kde-format
+msgid ""
+"Welcome to Kollision\n"
+"Click to start a game"
+msgstr ""
+"Bun venit în Koliziune\n"
+"Faceți clic pentru a începe jocul"
+
+#: mainarea.cpp:204
+#, kde-format
+msgid ""
+"Game paused\n"
+"Click or press %1 to resume"
+msgstr ""
+"Joc întrerupt\n"
+"Faceți clic sau apăsați %1 pentru reluare"
+
+#: mainarea.cpp:266 mainarea.cpp:528
+#, kde-format
+msgid "%1 ball"
+msgid_plural "%1 balls"
+msgstr[0] "%1 bilă"
+msgstr[1] "%1 bile"
+msgstr[2] "%1 de bile"
+
+#: mainarea.cpp:536
+#, kde-format
+msgid ""
+"GAME OVER\n"
+"You survived for %1 second\n"
+"Click to restart"
+msgid_plural ""
+"GAME OVER\n"
+"You survived for %1 seconds\n"
+"Click to restart"
+msgstr[0] ""
+"JOC ÎNCHEIAT\n"
+"Ați supraviețuit %1 secundă\n"
+"Faceți clic pentru reinițializare"
+msgstr[1] ""
+"JOC ÎNCHEIAT\n"
+"Ați supraviețuit %1 secunde\n"
+"Faceți clic pentru reinițializare"
+msgstr[2] ""
+"JOC ÎNCHEIAT\n"
+"Ați supraviețuit %1 de secunde\n"
+"Faceți clic pentru reinițializare"
+
+#: mainwindow.cpp:80
+#, kde-format
+msgid "End game"
+msgstr "Termină jocul"
+
+#: mainwindow.cpp:88
+#, kde-format
+msgid "&Increase Ball Size"
+msgstr "Crește d&imensiunea mingii"
+
+#: mainwindow.cpp:94
+#, kde-format
+msgid "&Play Sounds"
+msgstr "&Redă sunete"
+
+#: mainwindow.cpp:135
+#, kde-format
+msgid "Balls: %1"
+msgstr "Bile: %1"
+
+#: mainwindow.cpp:140
+#, kde-format
+msgid "Time: %1 second"
+msgid_plural "Time: %1 seconds"
+msgstr[0] "Timp: %1 secundă"
+msgstr[1] "Timp: %1 secunde"
+msgstr[2] "Timp: %1 de secunde"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableSounds)
+#: preferences.ui:16
+#, kde-format
+msgid "Enable &sounds"
+msgstr "Activează &sunetul"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IncreaseBallSize)
+#: preferences.ui:23
+#, kde-format
+msgid "Enable automatically &increasing ball size"
+msgstr "Act&ivează creșterea automată a dimensiunii mingii"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: preferences.ui:32
+#, kde-format
+msgid "&Difficulty:"
+msgstr "&Dificultate:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:43
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Easy"
+msgstr "Ușor"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:48
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Medium"
+msgstr "Mediu"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:53
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Hard"
+msgstr "Dificil"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: preferences.ui:65
+#, kde-format
+msgid "&Animation smoothness:"
+msgstr "Calitatea &animației:"
+
+#~ msgid "KDE collision game"
+#~ msgstr "Joc de coliziune KDE"
+
+#~ msgid "Difficulty of the game."
+#~ msgstr "Dificultatea jocului."
+
+#~ msgid "Abort game"
+#~ msgstr "Abandonează jocul"

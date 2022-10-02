@@ -1,0 +1,403 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % French "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Manuel utilisateur de &kollision; </title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+&traducteurStanislasZeller; 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>07-08-2021</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>Cette documentation décrit le jeu &kollision; version 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>jeu kde</keyword>
+        <keyword
+>jeu</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arcade</keyword>
+        <keyword
+>un joueur</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Introduction</title>
+        <note
+><title
+>Type de jeu : </title
+><para
+>Arcade</para
+></note>
+        <note
+><title
+>Nombre possible de joueurs : </title
+><para
+>Un</para
+></note>
+        <para
+>Un simple jeu où il faut éviter des balles </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Comment jouer</title>
+        <note
+><title
+>Objectif : </title
+><para
+>Laissez la balle bleue se déplacer dans le champ sans toucher les balles rouges.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Jeu de plateau &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Cliquez sur un champ vide pour démarrer la partie : une balle bleue remplace immédiatement votre pointeur de souris et un nombre de balles rouges commence à apparaître sur le champ de jeu. </para>
+        <para
+>Quand les balles rouges finissent de se matérialiser, elles se déplacent à une vitesse aléatoire dans une direction aléatoire, et vous êtes invité à déplacer la balle bleue dans le champ avec votre souris. Après quelque temps, d'autres balles rouges apparaîtront comme avant, et commenceront à se déplacer. Préparez vous à leur échapper. </para>
+        <para
+>Vous pouvez choisir le niveau de difficulté du jeu sur la droite de la barre d'état. Plus le niveau de difficulté est élevé, plus les balles rouges se déplacent rapidement, et plus des balles apparaissent sur le champ de jeu. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Règles du jeu, stratégies et astuces</title>
+        <para
+>Règles du jeu, stratégies et astuces</para>
+        <sect1 id="rules"
+><title
+>Règles du jeu</title>
+        <itemizedlist>
+            <listitem
+><para
+>Les balles rouges se déplacent è une vitesse constante sur l'aire de jeu rebondissant contre les murs jusqu'à entrer en collision avec une autre balle, laquelle provoque la modification de la vitesse et de la direction de l'ensemble des balles.</para
+></listitem>
+            <listitem
+><para
+>La balle bleue peut se déplacer librement à l'intérieur du champ au moyen de la souris.</para
+></listitem>
+            <listitem
+><para
+>La balle bleue ne peut pas s'échapper du champ. Si le curseur sort du champ, la balle reste sur le bord jusqu'à ce que le curseur revienne sur le champ de jeu.</para
+></listitem>
+            <listitem
+><para
+>Le score est directement proportionnel au temps de jeu passé.</para
+></listitem>
+            <listitem
+><para
+>Mettre en pause le jeu ajoute une pénalité de 5 secondes soustraite au temps de jeu total.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Stratégies et astuces</title>
+        <itemizedlist>
+            <listitem
+><para
+>Déplacez la balle bleue doucement et sûrement. Slalomer à travers le champ risquera de la faire entrer en collision avec les autres balles plus rapidement.</para
+></listitem>
+            <listitem
+><para
+>Déplacer le curseur en dehors du champ peut être utilisé comme une astuce élégante pour se sortir de situations difficiles. Utilisez la avec sagesse.</para
+></listitem>
+            <listitem
+><para
+>Ne pas mettre en pause le jeu sans que cela ne soit absolument nécessaire.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Vue d'ensemble de l'interface</title>
+
+<sect1 id="menu">
+<title
+>Éléments de menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Terminer le jeu</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Arrête une partie et retourne à l'écran d'accueil.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Pause</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Met en pause ou résume la partie.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Afficher les meilleurs scores</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Affiche les meilleurs scores pour le niveau courant.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Jeu</guimenu
+> <guimenuitem
+>Quitter</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>La sélection de cet élément terminera la partie courante et fermera &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Configuration</guimenu
+> <guimenuitem
+>Activer les sons</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Active ou désactive les effets sonores.</action
+>. Désactivé par défaut. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guimenuitem
+>Augmenter la taille des balles</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Active ou non la possibilité d'augmenter la taille des balles.</action
+>. Désactivé par défaut.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guimenuitem
+>Niveau de difficulté</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Vous permet de sélectionner un niveau de difficulté pour le jeu comme <guilabel
+>Facile</guilabel
+>, <guilabel
+>Moyen</guilabel
+>, <guilabel
+>Difficile</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>De plus, &kollision; possède des éléments communs de menu &kde; <guimenu
+>Configuration</guimenu
+> et <guimenu
+>Aide</guimenu
+>. Pour plus d'informations, veuillez consulter les sections <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu de configuration</ulink
+> et <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu d'aide</ulink
+> des fondamentaux de &kde;. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Foire aux questions</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Je veux modifier la façon dont le jeu s'affiche. Est-ce possible ? </para
+></question>
+ <answer
+><para
+>Non.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Puis-je utiliser le clavier pour jouer à ce jeu ? </para
+></question>
+ <answer
+><para
+>Non. &kollision; ne peut se jouer qu'avec la souris.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je ne comprend pas quoi faire ! Y a t-il une astuce ? </para
+></question>
+ <answer
+><para
+>&kollision; ne propose de fonctionnalité <quote
+>Astuces</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je veux quitter le jeu maintenant, mais ma partie n'est pas terminée. Puis je l'enregistrer ?</para
+></question>
+  <answer
+><para
+>Vous ne pouvez pas enregistrer des parties dans &kollision;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Remerciements et licence</title>
+<para
+>&kollision; </para>
+<para
+>Copyright 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Copyright de la documentation 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Traduction française par &StanislasZeller;.</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

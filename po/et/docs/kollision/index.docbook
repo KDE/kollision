@@ -1,0 +1,407 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "<application
+>Kollision</application
+>">
+  <!ENTITY kappversion "0.1">
+  <!ENTITY package "kdegames">
+  <!ENTITY % Estonian  "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>&kappname;i käsiraamat</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+ 
+<date
+>2013-05-06</date>
+<releaseinfo
+>&kappversion; (&kde; 4.11)</releaseinfo
+> 
+<abstract>
+        <para
+>See käsiraamat kirjeldab mängu &kappname; versiooni &kappversion;.</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>mäng</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arkaadmäng</keyword>
+        <keyword
+>üks mängija</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Sissejuhatus</title>
+        <note
+><title
+>Mängu tüüp:</title
+><para
+>arkaadmäng</para
+></note>
+        <note
+><title
+>Mängijate arv:</title
+><para
+>Üks</para
+></note>
+        <para
+>Lihtne pallitogimise mäng </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Kuidas mängida</title>
+        <note
+><title
+>Eesmärk:</title
+><para
+>liigutada sinist palli väljal ilma punaste pallidega kokku puutumata.</para
+></note>
+        <para
+>Klõpsa tühjal väljal mängu alustamiseks. Kursori alla ilmub kohe sinine pall ning väljale saabuvad ka mõned punased pallid. </para>
+        <para
+>Kui punased pallid on väljale ilmunud, hakkavad nad liikuma juhusliku kiirusega juhuslikus suunas ning sa pead nende eest kõrvale hoidma, liigutades selleks koos hiirega selle külge kinnitatud sinist palli. Mõni aeg hiljem ilmub punaseid palle veel juurde, samamoodi esialgu tuhmilt ja siis juba selgelt ning liikuma hakates. Ka nende eest tuleb end kõrvale hoida. </para>
+        <para
+>Olekuriba paremas servas saab valida mängu raskusastme. Mida raskem mäng, seda kiiremini pallid liiguvad ja seda rohkem on neid mänguväljal. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Mängureeglid, strateegia ja nõuanded</title>
+        <para
+>Mängureeglid, strateegia ja nõuanded</para>
+        <sect1 id="rules"
+><title
+>Mängureeglid</title>
+        <itemizedlist>
+            <listitem
+><para
+>Punased pallid liiguvad seina vastu põrgates püsiva kiirusega seni, kuni põrkavad kokku teise palliga, mis muudab mõlema palli kiirust ja suunda.</para
+></listitem>
+            <listitem
+><para
+>Sinist palli saab hiirega mänguväljal täiesti vabalt liigutada.</para
+></listitem>
+            <listitem
+><para
+>Sinine pall ei saa mänguväljalt lahkuda. Kui kursor mänguväljalt välja viiakse, jääb pall servale seisma, kuni kursor tagasi tuuakse.</para
+></listitem>
+            <listitem
+><para
+>Tulemus sõltub otseselt sellest, kui kaua mäng kestab.</para
+></listitem>
+            <listitem
+><para
+>Pausi tegemine võtab (iga korraga) koguajast 5 sekundit maha.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strateegia ja nõuanded</title>
+        <itemizedlist>
+            <listitem
+><para
+>Liiguta sinist palli aeglaselt ja ettevaatlikult. Mööda välja tormates on kokkupõrkamine teiste pallidega märksa tõenäolisem.</para
+></listitem>
+            <listitem
+><para
+>Kursori viimine mänguväljalt välja võib olla kaval võte keerulisest olukorrast jagusaamiseks. Kasuta seda võimalust mõistlikult.</para
+></listitem>
+            <listitem
+><para
+>Ära peata mängu, kui see ei ole täiesti vajalik.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>Liidese tutvustus</title>
+
+<sect1 id="menu">
+<title
+>Menüükirjed</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mäng</guimenu
+><guimenuitem
+>Lõpeta mäng</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Lõpetab mängu ja näitab uuesti avaekraani.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Paus</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Peatab või taasalustab mängu.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Näita rekordeid</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Näitab aktiivse taseme edetabelit.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Mäng</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Lõpetab aktiivse mängu ning &kappname;i töö.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Helide esitamine</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Lülitab helide esitamise sisse ja välja.</action
+> Vaikimisi on see sees. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guisubmenu
+>Raskusaste</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Võimaldab valida mängu raskusastme: <guilabel
+>kerge</guilabel
+>, <guilabel
+>keskmine</guilabel
+>, <guilabel
+>raske</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Lisaks on &kappname;il tavapärased &kde; <guimenu
+>seadistuste</guimenu
+> ja <guimenu
+>abi</guimenu
+>menüü elemendid, mille kohta leiab rohkem teavet &kde; põhialuste käsiraamatu osadest <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Menüü Seadistused</ulink
+> ja <ulink url="help:/fundamentals/ui.html#menus-help"
+>Menüü Abi</ulink
+>. </para>
+
+</sect1>
+
+</chapter>
+ 
+<chapter id="faq"
+><title
+>Korduma kippuvad küsimused</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Ma soovin muuta mängu välimust. On see võimalik? </para
+></question>
+ <answer
+><para
+>Ei.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Kas mängida saab ka klaviatuuri abil? </para
+></question>
+ <answer
+><para
+>Ei, &kappname;i saab mängida ainult hiirega.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ma ei saa aru, mida ma peaksin tegema! Kas mingeid vihjeid ei ole? </para
+></question>
+ <answer
+><para
+>Ei, &kappname; ei paku <quote
+>vihjeid</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ma pean mängust väljuma, aga mäng ei ole veel läbi. Kas ma saan oma seisu salvestada?</para
+></question>
+  <answer
+><para
+>&kappname;is ei saa mänge salvestada.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Autorid ja litsents</title>
+<para
+>&kappname; </para>
+<para
+>Autoriõigus 2007-2008: Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Autoriõigus 2007-2008: Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Dokumentatsiooni autoriõigus 2008: Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@smail.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+ 
+<appendix id="installation">
+
+<title
+>Kompileerimine ja paigaldamine</title>
+ 
+&install.intro.documentation;
+ 
+&install.compile.documentation;
+ 
+</appendix>
+ 
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

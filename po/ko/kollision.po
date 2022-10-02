@@ -1,0 +1,204 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Shinjo Park <kde@peremen.name>, 2011, 2019, 2020, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"PO-Revision-Date: 2022-04-16 22:23+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
+#: kollision.kcfg:9
+#, kde-format
+msgid "Whether automatically increasing ball size should be applied."
+msgstr "자동으로 공 크기를 증가시킬지 여부입니다."
+
+#. i18n: ectx: label, entry (EnableSounds), group (sounds)
+#: kollision.kcfg:15
+#, kde-format
+msgid "Whether sound effects should be played."
+msgstr "소리 재생 여부입니다."
+
+#. i18n: ectx: Menu (game)
+#: kollisionui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "게임(&G)"
+
+#: main.cpp:37
+#, kde-format
+msgid "Kollision"
+msgstr "Kollision"
+
+#: main.cpp:39
+#, kde-format
+msgid "Casual ball game"
+msgstr "캐주얼 공 게임"
+
+#: main.cpp:41
+#, kde-format
+msgid "(c) 2007 Paolo Capriotti"
+msgstr "(c) 2007 Paolo Capriotti"
+
+#: main.cpp:44
+#, kde-format
+msgid "Paolo Capriotti"
+msgstr "Paolo Capriotti"
+
+#: main.cpp:45
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "Dmitry Suzdalev"
+
+#: main.cpp:46
+#, kde-format
+msgid "Matteo Guarnieri"
+msgstr "Matteo Guarnieri"
+
+#: main.cpp:46
+#, kde-format
+msgid "Original idea"
+msgstr "아이디어 제공"
+
+#: main.cpp:47
+#, kde-format
+msgid "Brian Croom"
+msgstr "Brian Croom"
+
+#: main.cpp:47
+#, kde-format
+msgid "Port to use KGameRenderer"
+msgstr "KGameRenderer 포팅"
+
+#: mainarea.cpp:86
+#, kde-format
+msgid ""
+"Welcome to Kollision\n"
+"Click to start a game"
+msgstr ""
+"Kollision에 오신 것을 환영합니다\n"
+"게임을 시작하려면 클릭하십시오"
+
+#: mainarea.cpp:204
+#, kde-format
+msgid ""
+"Game paused\n"
+"Click or press %1 to resume"
+msgstr ""
+"일시 정지되었습니다\n"
+"클릭하거나 %1을(를) 누르면 다시 시작합니다"
+
+#: mainarea.cpp:266 mainarea.cpp:528
+#, kde-format
+msgid "%1 ball"
+msgid_plural "%1 balls"
+msgstr[0] "공 %1개"
+
+#: mainarea.cpp:536
+#, kde-format
+msgid ""
+"GAME OVER\n"
+"You survived for %1 second\n"
+"Click to restart"
+msgid_plural ""
+"GAME OVER\n"
+"You survived for %1 seconds\n"
+"Click to restart"
+msgstr[0] ""
+"게임이 끝났습니다\n"
+"%1초 동안 살아 있었습니다\n"
+"다시 시작하려면 클릭하십시오"
+
+#: mainwindow.cpp:80
+#, kde-format
+msgid "End game"
+msgstr "게임 끝내기"
+
+#: mainwindow.cpp:88
+#, kde-format
+msgid "&Increase Ball Size"
+msgstr "공 크기 증가(&I)"
+
+#: mainwindow.cpp:94
+#, kde-format
+msgid "&Play Sounds"
+msgstr "소리 재생(&P)"
+
+#: mainwindow.cpp:135
+#, kde-format
+msgid "Balls: %1"
+msgstr "공 개수: %1"
+
+#: mainwindow.cpp:140
+#, kde-format
+msgid "Time: %1 second"
+msgid_plural "Time: %1 seconds"
+msgstr[0] "시간: %1초"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableSounds)
+#: preferences.ui:16
+#, kde-format
+msgid "Enable &sounds"
+msgstr "소리 재생(&S)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IncreaseBallSize)
+#: preferences.ui:23
+#, kde-format
+msgid "Enable automatically &increasing ball size"
+msgstr "자동으로 공 크기 증가(&I)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: preferences.ui:32
+#, kde-format
+msgid "&Difficulty:"
+msgstr "난이도(&D):"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:43
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Easy"
+msgstr "쉬움"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:48
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Medium"
+msgstr "중간"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:53
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Hard"
+msgstr "어려움"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: preferences.ui:65
+#, kde-format
+msgid "&Animation smoothness:"
+msgstr "애니메이션 품질(&A):"
+
+#~ msgid "KDE collision game"
+#~ msgstr "KDE 충돌 게임"

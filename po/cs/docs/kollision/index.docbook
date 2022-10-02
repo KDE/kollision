@@ -1,0 +1,406 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kollision "<application
+>Kollision</application
+>">
+  <!ENTITY % Czech "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Příručka aplikace &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Lukáš</firstname
+><surname
+>Vlček</surname
+><affiliation
+><address
+><email
+>lukas.vlcek777@gmail.com</email
+></address
+></affiliation
+><contrib
+>Překlad</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+ 
+<date
+>10.5.2016</date>
+<releaseinfo
+>0.3 (Aplikace 16.04)</releaseinfo
+> 
+<abstract>
+        <para
+>Tato dokumentace popisuje hru &kollision; ve verzi 0.3.</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>game</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arcade</keyword>
+        <keyword
+>jeden hráč</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Úvod</title>
+        <note
+><title
+>Typ hry:</title
+><para
+>Arkáda</para
+></note>
+        <note
+><title
+>Počet možných hráčů:</title
+><para
+>Jeden</para
+></note>
+        <para
+>Jednoduchá hra s uhýbacím míčem </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Jak hrát</title>
+        <note
+><title
+>Cíl:</title
+><para
+>Přesouvejte modrý míč po desce bez nárazu do červeného míčku.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Hrací deska hry &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Abyste spustili hru, klikněte na prázdnou desku: modrý míč ihned nahradí kurzor myši a na ploše se objeví počet červených míčů. </para>
+        <para
+>Když červené míčky dokončí zhmotnění, začnou se pohybovat náhodnou rychlostí v náhodném směru a vy budete muset modrým míčkem uvnitř desky rychle uhýbat. Po nějakém čase se objeví další míček, plně se vybarví a začne se pohybovat. Buďte připraveni vyhnout se všem míčkům. </para>
+        <para
+>Vpravo ve stavové liště si můžete vybrat úroveň obtížnosti hry. V nejvyšší úrovni obtížnosti se budou míče rychleji pohybovat a míčů se v herní ploše objeví více. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Herní pravidla, strategie a tipy</title>
+        <para
+>Herní pravidla, strategie a tipy</para>
+        <sect1 id="rules"
+><title
+>Herní pravidla</title>
+        <itemizedlist>
+            <listitem
+><para
+>Červené míče se po herní ploše pohybují stálou rychlostí a odrážejí se od zdí, dokud se nesrazí s jiným míčem, což změní rychlost i směr obou míčů.</para
+></listitem>
+            <listitem
+><para
+>Modrý míč může být volně přesouván pomocí myši uvnitř plochy.</para
+></listitem>
+            <listitem
+><para
+>Modrý míč nemůže opustit plochu. Přesune-li se kursor ven, míč zůstane na okraji, dokud se kursor nevrátí.</para
+></listitem>
+            <listitem
+><para
+>Skóre je přímo úměrné času trvání hry.</para
+></listitem>
+            <listitem
+><para
+>Pozastavení hry odečte z celkového času 5 (kumulativních) trestných sekund.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strategie a tipy</title>
+        <itemizedlist>
+            <listitem
+><para
+>Modrý míč posouvejte zlehka a pomalu. Kmitání po celé ploše bude častěji způsobovat kolizi s ostatními míči.</para
+></listitem>
+            <listitem
+><para
+>Přesunutí kursoru mimo plochu může být použito jako elegantní trik, jak se vyhnout zapeklité situaci. To používejte rozumně.</para
+></listitem>
+            <listitem
+><para
+>Nepozastavujte hru, pokud to není opravdu nezbytné.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>Náhled na rozhraní</title>
+
+<sect1 id="menu">
+<title
+>Položky hlavní nabídky</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Hra</guimenu
+> <guimenuitem
+>Ukončit hru</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Ukončuje hru a vrací se do uvítací obrazovky.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Hra</guimenu
+> <guimenuitem
+>Pozastavit</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Pozastavuje nebo obnovuje hru.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Hra</guimenu
+> <guimenuitem
+>Zobrazit nejlepší výsledky</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Bude zobrazovat nejlepší výsledky současné úrovně.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Hra</guimenu
+> <guimenuitem
+>Ukončit</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Zvolení této položky ukončí současnou hru a zavře aplikaci &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Nastavení</guimenu
+><guimenuitem
+>Přehrávat zvuky</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Přepíná, zda by měly být přehrávány zvukové efekty.</action
+> Výchozí je vypnuto. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Nastavení</guimenu
+><guimenuitem
+>Obtížnost</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Umožní zvolit obtížnost hry: <guilabel
+>Jednoduchá</guilabel
+>, <guilabel
+>Střední</guilabel
+>, <guilabel
+>Těžká</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>&kollision; má běžné položky &kde; nabídek <guimenu
+>Nastavení</guimenu
+> a <guimenu
+>Nápověda</guimenu
+>. Pro více informací si přečtěte část o <ulink url="help:/fundamentals/ui.html#menus-settings"
+>nabídce Nastavení</ulink
+> a <ulink url="help:/fundamentals/ui.html#menus-help"
+>nabídce Nápověda</ulink
+> v nápovědě Základy &kde;. </para>
+
+</sect1>
+
+</chapter>
+ 
+<chapter id="faq"
+><title
+>Často kladené otázky</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Chci změnit vzhled hry. Mohu? </para
+></question>
+ <answer
+><para
+>Ne.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Mohu při hraní této hry použít klávesnici? </para
+></question>
+ <answer
+><para
+>Ne. &kollision; můžete hrát pouze pomocí myši.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Nevím jak hrát dál! Jsou zde rady? </para
+></question>
+ <answer
+><para
+>&kollision; nemá funkci <quote
+>Rada</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Musím ukončit svoji hru ještě před dokončením. Mohu uložit svůj průběh?</para
+></question>
+  <answer
+><para
+>Ve aplikaci &kollision; nelze uložit hru.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Informace o autorech a licenční ujednání</title>
+<para
+>&kollision; </para>
+<para
+>Copyright 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Copyright 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Documentation copyright 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Překlad dokumentace Lukáš Vlček <email
+>lukas.vlcek777@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

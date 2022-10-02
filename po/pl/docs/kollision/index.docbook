@@ -1,0 +1,438 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "<application
+>Kollision</application
+>">
+  <!ENTITY kappversion "0.1">
+  <!ENTITY package "kdegames">
+  <!ENTITY % Polish "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+ 
+<book lang="&language;">
+<bookinfo>
+        <title
+>Podręcznik &kappname;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+> <firstname
+>Krzysztof</firstname
+><surname
+>Woźniak</surname
+><affiliation
+><address
+><email
+>wozniakk@ceti.pl</email
+></address
+></affiliation
+><contrib
+>Aktualizacja polskiego tłumaczenia</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<date
+>2008-01-20</date>
+<releaseinfo
+>&kappversion;</releaseinfo
+> 
+<abstract>
+        <para
+>Niniejsza dokumentacja opisuje grę &kappname; w wersji &kappversion;</para>
+</abstract>
+ 
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>gra</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>zręcznościowa</keyword>
+        <keyword
+>jeden gracz</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Wprowadzenie</title>
+        <note
+><title
+>Rodzaj gry:</title
+><para
+>Zręcznościowa</para
+></note>
+        <note
+><title
+>Liczba graczy:</title
+><para
+>Jeden</para
+></note>
+        <para
+>Prosta gra w omijanie kul </para>
+</chapter>
+ 
+<chapter id="howto"
+><title
+>Jak grać</title>
+        <note
+><title
+>Cel:</title
+><para
+>Poruszaj niebieską kulą po polu tak, aby nie dotykać kul czerwonych.</para
+></note>
+        <para
+>Kliknij na puste pole, aby rozpocząć grę: niebieska kula natychmiast zastąpi kursor myszy i po chwili czerwone kule zaczną poruszać się po polu.  </para>
+        <para
+>Kiedy czerwone kule skończą się tworzyć, zaczynają poruszać się z losową szybkością w dowolnym kierunku. Musisz natychmiast uciekać niebieską kulą z okolic tworzących się kul. Po jakimś czasie zaczną pojawiać się kolejne kule. Początkowo będą nieruchome, ale za chwile zaczną się poruszać, tak jak inne. Przygotuj się na omijanie ich. </para>
+        <para
+>Poziom trudności możesz zmienić po prawej stronie pasku stanu. Na wyższym poziomie trudności czerwone kule poruszają się szybciej i kolejne kule powstają w krótszym odcinku czasu. </para>
+</chapter>
+ 
+<chapter id="rules_and_tips"
+><title
+>Zasady, strategie i porady</title>
+        <para
+>Zasady, strategie i porady</para>
+        <sect1 id="rules"
+><title
+>Zasady gry</title>
+        <itemizedlist>
+            <listitem
+><para
+>Czerwone kule przesuwają się w grze ze stałą prędkością odbijając się od ścian, do momentu aż zderzą się z inną kulą, co powoduje zmianę prędkości i kierunku obydwu kul.</para
+></listitem>
+            <listitem
+><para
+>Niebieską kula możemy poruszać dowolnie myszką po polu gry.</para
+></listitem>
+            <listitem
+><para
+>Niebieska kula nie może wyjść poza pole gry. Jeżeli kursor wyjdzie, piłka pozostanie na krawędzi dopóki kursor nie wróci.</para
+></listitem>
+            <listitem
+><para
+>Wynik jest wprost proporcjonalny do czasu gry.</para
+></listitem>
+            <listitem
+><para
+>Każde zatrzymanie gry w trakcie powoduje odjęcie 5 sekund od całkowitego wyniku.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strategie i porady</title>
+        <itemizedlist>
+            <listitem
+><para
+>Poruszaj niebieską kulą łagodnie i powoli. Gwałtowne poruszanie to większe prawdopodobieństwo, że uderzysz w czerwoną kulę.</para
+></listitem>
+            <listitem
+><para
+>Możesz przesunąć kursor poza obszar gry, przesunąć go i wrócić na pole. Ta sztuczka pomaga w beznadziejnych sytuacjach. Używaj jej rozważnie.</para
+></listitem>
+            <listitem
+><para
+>Nie zatrzymuj gry, jeżeli nie jest to naprawdę konieczne.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+ 
+ 
+<chapter id="interface"
+><title
+>Interfejs</title>
+<sect1 id="game-menu">
+<title
+>Menu <guimenu
+>Gra</guimenu
+></title>
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Gra</guimenu
+> <guimenuitem
+>Zakończ grę</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Kończy grę i wraca do ekranu powitalnego.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Gra</guimenu
+> <guimenuitem
+>Pauza</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Zatrzymuje lub wznawia grę.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gra</guimenu
+> <guimenuitem
+>Pokaż najlepsze wyniki</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Pokazuje najlepsze wyniki dla aktualnego poziomu trudności.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gra</guimenu
+> <guimenuitem
+>Zakończ</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Kończy aktualną grę i wychodzi z aplikacji  &kappname;.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Menu <guimenu
+>Ustawienia</guimenu
+></title>
+<variablelist>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Odtwarzaj dźwięki</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+> Przełączając możesz włączyć lub wyłączyć dźwięki.</action
+> Domyślnie jest wyłączone. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Pokaż pasek stanu</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Przełączając możesz włączyć i wyłączyć pasek stanu na dole okna.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguracja pasków narzędzi...</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Pokazuje standardowe okno &kde; do ustawiania paska narzędzi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ustawienia</guimenu
+> <guimenuitem
+>Konfiguracja skrótów...</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+><action
+>Wyświetla</action
+> standardowe okno dialogowe &kde; pozwalające zmienić skróty klawiszowe używane przez &kappname;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help">
+<title
+>Menu <guimenu
+>Pomoc</guimenu
+></title>
+&help.menu.documentation; </sect1>
+</chapter>
+ 
+ 
+<chapter id="faq"
+><title
+>Najczęściej zadawane pytania</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Chcę zmienić wygląd gry. Czy mogę? </para
+></question>
+ <answer
+><para
+>Nie.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Czy można grać za pomocą klawiatury? </para
+></question>
+ <answer
+><para
+>Nie. W &kappname; możemy grać tylko za pomocą myszki.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Nie wiem co dalej robić! Czy jest dostępna jakaś podpowiedź? </para
+></question>
+ <answer
+><para
+>&kappname; nie zawiera opcji <quote
+>Podpowiedź</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Muszę wyjść z gry, ale nie jest ona jeszcze zakończona. Czy mogę ją zapisać?</para
+></question>
+  <answer
+><para
+>Nie można zapisywać gier w &kappname;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+ 
+<chapter id="credits"
+><title
+>Autorzy i licencja</title>
+<para
+>&kappname; </para>
+<para
+>Prawa autorskie 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Prawa autorskie 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Prawa autorskie dokumentacji 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Aktualizacja polskiego tłumaczenia dokumentacji: Krzysztof Woźniak<email
+>wozniakk@ceti.pl</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+ 
+ 
+<appendix id="installation">
+<title
+>Instalacja</title>
+ 
+&install.intro.documentation;
+ 
+ 
+<sect1 id="Compilation">
+<title
+>Kompilacja i instalacja</title>
+&install.compile.documentation; </sect1>
+</appendix>
+ 
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
