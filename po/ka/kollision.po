@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-20 00:42+0000\n"
-"PO-Revision-Date: 2022-09-30 20:59+0200\n"
+"PO-Revision-Date: 2022-11-27 06:43+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -32,7 +32,7 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: kollision.kcfg:9
 #, kde-format
 msgid "Whether automatically increasing ball size should be applied."
-msgstr ""
+msgstr "უნდა გაიზარდოს ბურთის ზომა ავტომატურად თუ არა."
 
 #. i18n: ectx: label, entry (EnableSounds), group (sounds)
 #: kollision.kcfg:15
@@ -170,7 +170,7 @@ msgstr "&ხმების ჩართვა"
 #: preferences.ui:23
 #, kde-format
 msgid "Enable automatically &increasing ball size"
-msgstr ""
+msgstr "ბურთის ზომის ავტომატური გაზრდის მხარდაჭერის ჩართვა"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: preferences.ui:32
