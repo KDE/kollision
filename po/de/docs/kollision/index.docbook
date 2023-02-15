@@ -1,12 +1,9 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kollision "<application
->Kollision</application
->">
   <!ENTITY % German "INCLUDE">
   <!ENTITY % addindex "IGNORE">
 ]>
- 
+
 <book id="kollision" lang="&language;">
 <bookinfo>
         <title
@@ -56,17 +53,16 @@
 </authorgroup>
 <legalnotice
 >&FDLNotice;</legalnotice>
- 
+
 <date
->2016-05-10</date>
+>2021-08-07</date>
 <releaseinfo
->0.3 (Anwendungen 16.04)</releaseinfo
-> 
+>0.3 (KDE Gear 21.08)</releaseinfo>
 <abstract>
         <para
 >Dieses Handbuch beschreibt das Spiel &kollision; in der Version 0.3</para>
 </abstract>
- 
+
 <keywordset>
         <keyword
 >KDE</keyword>
@@ -98,9 +94,9 @@
 >Einer</para
 ></note>
         <para
->Ein einfaches Ausweich-Ballspiel </para>
+>Ein einfaches Ausweich-Ballspiel. </para>
 </chapter>
- 
+
 <chapter id="howto"
 ><title
 >Spielanleitung</title>
@@ -130,7 +126,7 @@
         <para
 >Sie können den Schwierigkeitsgrad rechts in der Statusleiste auswählen. Je höher der Schwierigkeitsgrad, umso schneller und zahlreicher werden die Bälle. </para>
 </chapter>
- 
+
 <chapter id="rules_and_tips"
 ><title
 >Spielregeln, Spielstrategien und Tipps</title>
@@ -181,8 +177,8 @@
         </itemizedlist>
         </sect1>
 </chapter>
- 
- 
+
+
 <chapter id="interface"
 ><title
 >Die Benutzeroberfläche</title>
@@ -293,6 +289,23 @@
 ><menuchoice
 ><guimenu
 >Einstellungen</guimenu
+> <guimenuitem
+>Bälle vergrößern</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Aktivieren, um die Bälle zu vergrößern.</action
+> Die Voreinstellung ist aus.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Einstellungen</guimenu
 > <guisubmenu
 >Schwierigkeitsgrad</guisubmenu
 ></menuchoice
@@ -325,7 +338,7 @@
 </sect1>
 
 </chapter>
- 
+
 <chapter id="faq"
 ><title
 >Häufig gestellte Fragen</title>
@@ -372,7 +385,7 @@
 </qandaentry>
 </qandaset>
 </chapter>
- 
+
 <chapter id="credits"
 ><title
 >Danksagungen und Lizenz</title>
@@ -401,7 +414,7 @@
 ></para
 > &underFDL; &underGPL; </chapter>
 
-&documentation.index; 
+&documentation.index;
 </book>
 <!--
 Local Variables:
