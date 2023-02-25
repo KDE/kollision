@@ -1,12 +1,9 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
-  <!ENTITY kollision "<application
->Kollision</application
->">
   <!ENTITY % Brazilian-Portuguese "INCLUDE">
   <!ENTITY % addindex "IGNORE">
 ]>
- 
+
 <book id="kollision" lang="&language;">
 <bookinfo>
         <title
@@ -56,17 +53,16 @@
 </authorgroup>
 <legalnotice
 >&FDLNotice;</legalnotice>
- 
+
 <date
->10/05/2016</date>
+>07/08/2021</date>
 <releaseinfo
->0.3 (applications 16.04)</releaseinfo
-> 
+>0.3 (KDE Gear 21.08)</releaseinfo>
 <abstract>
         <para
 >Esta documentação descreve o jogo &kollision; versão 0.3</para>
 </abstract>
- 
+
 <keywordset>
         <keyword
 >KDE</keyword>
@@ -98,9 +94,9 @@
 >Um</para
 ></note>
         <para
->Um jogo simples de desvio de bolas </para>
+>Um jogo simples de desvio de bolas. </para>
 </chapter>
- 
+
 <chapter id="howto"
 ><title
 >Como jogar</title>
@@ -130,7 +126,7 @@
         <para
 >Você poderá escolher o nível de dificuldade do lado direito da barra de estado. Quanto maior o nível de dificuldade, mais depressa as bolas vermelhas irão se mexer e mais bolas irão começar a aparecer em campo. </para>
 </chapter>
- 
+
 <chapter id="rules_and_tips"
 ><title
 >Regras, Estratégias e Dicas do Jogo</title>
@@ -181,8 +177,8 @@
         </itemizedlist>
         </sect1>
 </chapter>
- 
- 
+
+
 <chapter id="interface"
 ><title
 >Resumo da interface</title>
@@ -293,6 +289,23 @@
 ><menuchoice
 ><guimenu
 >Configurações</guimenu
+> <guimenuitem
+>Aumentar tamanho da bola</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Alterna para tornar as bolas maiores.</action
+> O padrão é desligado.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configurações</guimenu
 > <guisubmenu
 >Dificuldade</guisubmenu
 ></menuchoice
@@ -325,7 +338,7 @@
 </sect1>
 
 </chapter>
- 
+
 <chapter id="faq"
 ><title
 >Perguntas frequentes</title>
@@ -374,7 +387,7 @@
 </qandaentry>
 </qandaset>
 </chapter>
- 
+
 <chapter id="credits"
 ><title
 >Créditos e Licença</title>
@@ -401,7 +414,7 @@
 ></para
 > &underFDL; &underGPL; </chapter>
 
-&documentation.index; 
+&documentation.index;
 </book>
 <!--
 Local Variables:
