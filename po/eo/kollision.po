@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-20 00:42+0000\n"
-"PO-Revision-Date: 2023-03-20 22:31+0100\n"
+"PO-Revision-Date: 2023-06-09 20:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: pology\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -59,7 +58,7 @@ msgstr "Komforta pilkoludo"
 #: main.cpp:41
 #, kde-format
 msgid "(c) 2007 Paolo Capriotti"
-msgstr ""
+msgstr "(c) 2007 Paolo Capriotti"
 
 #: main.cpp:44
 #, kde-format
@@ -79,17 +78,17 @@ msgstr "Matteo Guarnieri"
 #: main.cpp:46
 #, kde-format
 msgid "Original idea"
-msgstr ""
+msgstr "Origina ideo"
 
 #: main.cpp:47
 #, kde-format
 msgid "Brian Croom"
-msgstr ""
+msgstr "Brian Croom"
 
 #: main.cpp:47
 #, kde-format
 msgid "Port to use KGameRenderer"
-msgstr ""
+msgstr "Portado al uzo de KGameRenderer"
 
 #: mainarea.cpp:86
 #, kde-format
@@ -106,6 +105,8 @@ msgid ""
 "Game paused\n"
 "Click or press %1 to resume"
 msgstr ""
+"Ludo paŭzita\n"
+"Alklaku aŭ premu %1 por rekomenci"
 
 #: mainarea.cpp:266 mainarea.cpp:528
 #, kde-format
@@ -125,7 +126,13 @@ msgid_plural ""
 "You survived for %1 seconds\n"
 "Click to restart"
 msgstr[0] ""
+"LUDOFINO\n"
+"Vi pluvivis dum %1 sekundo\n"
+"Alklaku por restartigi"
 msgstr[1] ""
+"LUDOFINO\n"
+"Vi pluvivis dum %1 sekundoj\n"
+"Alklaku por restartigi"
 
 #: mainwindow.cpp:80
 #, kde-format
@@ -164,7 +171,7 @@ msgstr "Ebligi &sonorojn"
 #: preferences.ui:23
 #, kde-format
 msgid "Enable automatically &increasing ball size"
-msgstr ""
+msgstr "Ebl&igi aŭtomate pligrandiĝantan pilkograndecon"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: preferences.ui:32
