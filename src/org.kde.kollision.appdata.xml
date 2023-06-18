@@ -16,6 +16,7 @@ SentUpstream: 2014-09-24
   <name xml:lang="de">Kollision</name>
   <name xml:lang="el">Kollision</name>
   <name xml:lang="en-GB">Kollision</name>
+  <name xml:lang="eo">Kollision</name>
   <name xml:lang="es">Kollision</name>
   <name xml:lang="et">Kollision</name>
   <name xml:lang="eu">Kollision</name>
@@ -53,6 +54,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="de">Ein einfaches Ausweich-Ballspiel</summary>
   <summary xml:lang="el">Συνηθισμένο παιχνίδι με μπάλες</summary>
   <summary xml:lang="en-GB">Casual ball game</summary>
+  <summary xml:lang="eo">Neformala pilkoludo</summary>
   <summary xml:lang="es">Juego de bolas distraído</summary>
   <summary xml:lang="et">Ajaviite-pallimäng</summary>
   <summary xml:lang="eu">Pilota joko informala</summary>
