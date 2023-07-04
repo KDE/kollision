@@ -39,7 +39,4 @@ void Animator::tick()
     }
 }
 
-
-
-
-
+#include "moc_animator.cpp"

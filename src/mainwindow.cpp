@@ -160,4 +160,4 @@ void MainWindow::showCursor(bool show)
     }
 }
 
-
+#include "moc_mainwindow.cpp"

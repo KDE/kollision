@@ -585,3 +585,4 @@ void MainArea::focusOutEvent(QFocusEvent*)
     }
 }
 
+#include "moc_mainarea.cpp"

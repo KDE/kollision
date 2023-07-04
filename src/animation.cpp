@@ -186,5 +186,4 @@ void AnimationSequence::stop()
     }
 }
 
-
-
+#include "moc_animation.cpp"
