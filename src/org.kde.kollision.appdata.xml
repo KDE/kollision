@@ -16,7 +16,6 @@ SentUpstream: 2014-09-24
   <name xml:lang="de">Kollision</name>
   <name xml:lang="el">Kollision</name>
   <name xml:lang="en-GB">Kollision</name>
-  <name xml:lang="eo">Kollision</name>
   <name xml:lang="es">Kollision</name>
   <name xml:lang="et">Kollision</name>
   <name xml:lang="eu">Kollision</name>
@@ -41,7 +40,7 @@ SentUpstream: 2014-09-24
   <name xml:lang="sr-ijekavian">Колизија</name>
   <name xml:lang="sr-ijekavianlatin">Kolizija</name>
   <name xml:lang="sv">Kollision</name>
-  <name xml:lang="tr">Kolizyon</name>
+  <name xml:lang="tr">Kollision</name>
   <name xml:lang="uk">Kollision</name>
   <name xml:lang="x-test">xxKollisionxx</name>
   <name xml:lang="zh-CN">Kollision</name>
@@ -54,7 +53,6 @@ SentUpstream: 2014-09-24
   <summary xml:lang="de">Ein einfaches Ausweich-Ballspiel</summary>
   <summary xml:lang="el">Συνηθισμένο παιχνίδι με μπάλες</summary>
   <summary xml:lang="en-GB">Casual ball game</summary>
-  <summary xml:lang="eo">Neformala pilkoludo</summary>
   <summary xml:lang="es">Juego de bolas distraído</summary>
   <summary xml:lang="et">Ajaviite-pallimäng</summary>
   <summary xml:lang="eu">Pilota joko informala</summary>
@@ -96,7 +94,6 @@ SentUpstream: 2014-09-24
     <p xml:lang="de">Kollision ist ein Spiel, in dem Sie mit Ihrem Ball allen anderen Bällen auf dem Spielfeld solange wie möglich ausweichen müssen.</p>
     <p xml:lang="el">Το Kollision είναι ένα συνηθισμένο παιχνίδι όπου ρίχνεις τη μπάλα σου και αποφεύγεις τις άλλες μπάλες στον πίνακα όσο το δυνατόν περισσότερο.</p>
     <p xml:lang="en-GB">Kollision is a casual game where you need to throw your ball and avoid the others balls on the table as long as possible.</p>
-    <p xml:lang="eo">Kollision estas senĝena ludo, kie vi devas ĵeti vian pilkon kaj eviti la aliajn pilkojn sur la tablo kiel eble plej longe.</p>
     <p xml:lang="es">Kollision es un juego de bolas distraído en el que debe lanzar una bola y evitar al resto de bolas del tablero tanto tiempo como sea posible.</p>
     <p xml:lang="et">Kollision on ajaviitemäng, kus pead liigutama enda palli ja vältima võimalikult kaua teisi mängulaual liikuvaid palle.</p>
     <p xml:lang="eu">Kollision pilota joko informal bat da, non zure pilota jaurti eta besteenak ahal duzun luzeen saihestu behar dituzun.</p>
@@ -121,7 +118,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="sr-ijekavian">Колизија је необавезна игра у којој бацате своју лоптицу и избегавате друге лоптице на табли што дуже можете.</p>
     <p xml:lang="sr-ijekavianlatin">Kolizija je neobavezna igra u kojoj bacate svoju lopticu i izbegavate druge loptice na tabli što duže možete.</p>
     <p xml:lang="sv">Kollision är ett vardagsspel där man ska kasta en boll och undvika andras bollar på spelbordet så länge som möjligt.</p>
-    <p xml:lang="tr">Kolizyon, topu fırlatmayı ve masaüstünde olabildiğince diğer toplardan kaçmayı hedef alan sıradan bir top oyunudur.</p>
+    <p xml:lang="tr">Kollision, topu fırlatmayı ve masaüstünde olabildiğince diğer toplardan kaçmayı hedef alan sıradan bir top oyunudur.</p>
     <p xml:lang="uk">Kollision — казуальна гра, у якій ви кидаєте кульку так, щоб вона якомога довше не стикалася з іншими кульками на полі.</p>
     <p xml:lang="x-test">xxKollision is a casual game where you need to throw your ball and avoid the others balls on the table as long as possible.xx</p>
     <p xml:lang="zh-CN">Kollision 是一个休闲游戏，扔出球的同时并尽量躲避其他在桌子上的球。</p>
