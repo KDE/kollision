@@ -12,13 +12,14 @@
 #include <QTime>
 #include <QList>
 #include <QGraphicsScene>
-#include <QScopedPointer>
 #include <QRandomGenerator>
 
 #include <KGameRenderer>
 #include <KgSound>
 #include "animator.h"
 #include "message.h"
+
+#include <memory>
 
 class Renderer;
 class Ball;
@@ -80,7 +81,7 @@ private:
 
     QAction * m_pauseAction;
 
-    QScopedPointer<QRandomGenerator> m_random;
+    std::unique_ptr<QRandomGenerator> m_random;
 
     double radius() const;
     void setBallDiameter(int val);
