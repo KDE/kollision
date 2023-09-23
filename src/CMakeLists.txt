@@ -32,18 +32,13 @@ ki18n_wrap_ui(kollision preferences.ui)
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/pictures/hi/*-apps-kollision.png")
 ecm_add_app_icon(kollision ICONS ${ICONS_SRCS})
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kollision KDEGames6)
-else()
-    target_link_libraries(kollision KF5KDEGames)
-endif()
-
 target_link_libraries(kollision
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::Crash
-    KF${KF_MAJOR_VERSION}::DBusAddons
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::XmlGui
+    KDEGames6
+    KF6::CoreAddons
+    KF6::Crash
+    KF6::DBusAddons
+    KF6::I18n
+    KF6::XmlGui
 )
 
 install(TARGETS kollision ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
