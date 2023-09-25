@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-20 00:42+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2010-11-07 21:45+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -47,47 +47,47 @@ msgstr "Om lydeffekter skal spilles."
 msgid "&Game"
 msgstr "S&pill"
 
-#: main.cpp:37
+#: main.cpp:24
 #, kde-format
 msgid "Kollision"
 msgstr "Kollision"
 
-#: main.cpp:39
+#: main.cpp:26
 #, kde-format
 msgid "Casual ball game"
 msgstr ""
 
-#: main.cpp:41
+#: main.cpp:28
 #, kde-format
 msgid "(c) 2007 Paolo Capriotti"
 msgstr "© 2007 Paolo Capriotti"
 
-#: main.cpp:44
+#: main.cpp:31
 #, kde-format
 msgid "Paolo Capriotti"
 msgstr "Paolo Capriotti"
 
-#: main.cpp:45
+#: main.cpp:32
 #, kde-format
 msgid "Dmitry Suzdalev"
 msgstr "Dmitry Suzdalev"
 
-#: main.cpp:46
+#: main.cpp:33
 #, kde-format
 msgid "Matteo Guarnieri"
 msgstr "Matteo Guarnieri"
 
-#: main.cpp:46
+#: main.cpp:33
 #, kde-format
 msgid "Original idea"
 msgstr "Opprinnelig idé"
 
-#: main.cpp:47
+#: main.cpp:34
 #, kde-format
 msgid "Brian Croom"
 msgstr "Brian Croom"
 
-#: main.cpp:47
+#: main.cpp:34
 #, kde-format
 msgid "Port to use KGameRenderer"
 msgstr "Port til å bruke KGameRenderer"

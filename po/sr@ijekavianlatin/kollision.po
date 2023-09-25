@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-11 03:22+0200\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2016-01-31 00:15+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -49,52 +49,52 @@ msgstr "Da li puštati zvučne efekte."
 msgid "&Game"
 msgstr "&Igra"
 
-#: main.cpp:35
+#: main.cpp:24
 #, kde-format
 msgid "Kollision"
 msgstr "Kolizija"
 
-#: main.cpp:36
+#: main.cpp:26
 #, kde-format
-msgid "KDE collision game"
-msgstr "Igra sudaranja za KDE"
+msgid "Casual ball game"
+msgstr ""
 
-#: main.cpp:37
+#: main.cpp:28
 #, kde-format
 msgid "(c) 2007 Paolo Capriotti"
 msgstr "© 2007, Paolo Kaprioti"
 
-#: main.cpp:38
+#: main.cpp:31
 #, kde-format
 msgid "Paolo Capriotti"
 msgstr "Paolo Kaprioti"
 
-#: main.cpp:39
+#: main.cpp:32
 #, kde-format
 msgid "Dmitry Suzdalev"
 msgstr "Dmitrij Suzdaljev"
 
-#: main.cpp:40
+#: main.cpp:33
 #, kde-format
 msgid "Matteo Guarnieri"
 msgstr "Mateo Gvarnijeri"
 
-#: main.cpp:40
+#: main.cpp:33
 #, kde-format
 msgid "Original idea"
 msgstr "izvorna ideja"
 
-#: main.cpp:41
+#: main.cpp:34
 #, kde-format
 msgid "Brian Croom"
 msgstr "Brajan Krum"
 
-#: main.cpp:41
+#: main.cpp:34
 #, kde-format
 msgid "Port to use KGameRenderer"
 msgstr "Prenos na KGameRenderer"
 
-#: mainarea.cpp:90
+#: mainarea.cpp:86
 #, kde-format
 msgid ""
 "Welcome to Kollision\n"
@@ -103,7 +103,7 @@ msgstr ""
 "Dobrodošli u Koliziju.\n"
 "Kliknite za početak igre."
 
-#: mainarea.cpp:207
+#: mainarea.cpp:204
 #, kde-format
 msgid ""
 "Game paused\n"
@@ -112,7 +112,7 @@ msgstr ""
 "Igra je pauzirana.\n"
 "Kliknite ili pritisnite %1 za nastavak."
 
-#: mainarea.cpp:269 mainarea.cpp:531
+#: mainarea.cpp:266 mainarea.cpp:528
 #, kde-format
 msgid "%1 ball"
 msgid_plural "%1 balls"
@@ -121,7 +121,7 @@ msgstr[1] "%1 loptice"
 msgstr[2] "%1 loptica"
 msgstr[3] "1 loptica"
 
-#: mainarea.cpp:539
+#: mainarea.cpp:536
 #, kde-format
 msgid ""
 "GAME OVER\n"
@@ -148,29 +148,29 @@ msgstr[3] ""
 "Preživjeli ste jednu sekundu.\n"
 "Kliknite za novu igru."
 
-#: mainwindow.cpp:83
+#: mainwindow.cpp:80
 #, kde-format
 msgid "End game"
 msgstr "Završi igru"
 
-#: mainwindow.cpp:91
+#: mainwindow.cpp:88
 #, kde-format
 msgid "&Increase Ball Size"
 msgstr "&Uvećavaj loptu"
 
-#: mainwindow.cpp:97
+#: mainwindow.cpp:94
 #, kde-format
 msgid "&Play Sounds"
 msgstr "&Puštaj zvukove"
 
 # >> @info:status
-#: mainwindow.cpp:138
+#: mainwindow.cpp:135
 #, kde-format
 msgid "Balls: %1"
 msgstr "lopticâ: %1"
 
 # >> @info:status
-#: mainwindow.cpp:143
+#: mainwindow.cpp:140
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"
@@ -223,3 +223,6 @@ msgstr "teško"
 #, kde-format
 msgid "&Animation smoothness:"
 msgstr "Glatkoća &animacije:"
+
+#~ msgid "KDE collision game"
+#~ msgstr "Igra sudaranja za KDE"
