@@ -15,7 +15,7 @@
 #include <QRandomGenerator>
 
 #include <KGameRenderer>
-#include <KgSound>
+#include <KGameSound>
 #include "animator.h"
 #include "message.h"
 
@@ -74,10 +74,10 @@ private:
     // Flag if sound is enabled.
     bool m_soundEnabled;
 
-    KgSound m_soundHitWall;
-    KgSound m_soundYouLose;
-    KgSound m_soundBallLeaving;
-    KgSound m_soundStart;
+    KGameSound m_soundHitWall;
+    KGameSound m_soundYouLose;
+    KGameSound m_soundBallLeaving;
+    KGameSound m_soundStart;
 
     QAction * m_pauseAction;
 
