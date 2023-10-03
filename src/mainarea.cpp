@@ -14,7 +14,7 @@
 #include <QAction>
 
 #include <KGameDifficulty>
-#include <KgTheme>
+#include <KGameTheme>
 #include <KLocalizedString>
 #include <QStandardPaths>
 
@@ -30,9 +30,9 @@ struct Collision
     QPointF line;
 };
 
-struct Theme : public KgTheme
+struct Theme : public KGameTheme
 {
-    Theme() : KgTheme("pictures/theme.desktop")
+    Theme() : KGameTheme("pictures/theme.desktop")
     {
         setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("pictures/theme.svgz")));
     }
