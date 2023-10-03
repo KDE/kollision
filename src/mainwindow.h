@@ -7,7 +7,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-class KgDifficultyLevel;
+class KGameDifficultyLevel;
 #include <KXmlGuiWindow>
 #include "ui_preferences.h"
 
@@ -36,7 +36,7 @@ private:
     QLabel* m_time_label = nullptr;
     Ui_Preferences m_pref_ui;
     MainArea* m_main = nullptr;
-    const KgDifficultyLevel* m_lastUsedDifficulty = nullptr;
+    const KGameDifficultyLevel* m_lastUsedDifficulty = nullptr;
 
     void showCursor(bool show);
 

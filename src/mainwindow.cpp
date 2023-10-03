@@ -13,7 +13,7 @@
 
 #include <QAction>
 #include <KActionCollection>
-#include <KgDifficulty>
+#include <KGameDifficulty>
 #include <KScoreDialog>
 #include <KStandardGameAction>
 #include <QStatusBar>
@@ -35,12 +35,12 @@ MainWindow::MainWindow()
 
     setCentralWidget(view);
 
-    Kg::difficulty()->addStandardLevelRange(
-        KgDifficultyLevel::Easy, KgDifficultyLevel::Hard,
-        KgDifficultyLevel::Hard //default
+    KGameDifficulty::global()->addStandardLevelRange(
+        KGameDifficultyLevel::Easy, KGameDifficultyLevel::Hard,
+        KGameDifficultyLevel::Hard //default
     );
-    KgDifficultyGUI::init(this);
-    connect(Kg::difficulty(), &KgDifficulty::currentLevelChanged, m_main, &MainArea::abort);
+    KGameDifficultyGUI::init(this);
+    connect(KGameDifficulty::global(), &KGameDifficulty::currentLevelChanged, m_main, &MainArea::abort);
 
     setupActions();
 
@@ -102,7 +102,7 @@ void MainWindow::setupActions()
 void MainWindow::newGame()
 {
     stateChanged(QStringLiteral("playing"));
-    m_lastUsedDifficulty = Kg::difficulty()->currentLevel();
+    m_lastUsedDifficulty = KGameDifficulty::global()->currentLevel();
 }
 
 void MainWindow::gameOver(int time)
@@ -110,7 +110,7 @@ void MainWindow::gameOver(int time)
     stateChanged(QStringLiteral("playing"), KXMLGUIClient::StateReverse);
 
     QPointer<KScoreDialog> ksdialog = new KScoreDialog(KScoreDialog::Name, this);
-    ksdialog->initFromDifficulty(Kg::difficulty(), /*setConfigGroup=*/ false);
+    ksdialog->initFromDifficulty(KGameDifficulty::global(), /*setConfigGroup=*/ false);
     ksdialog->setConfigGroup(qMakePair(
         m_lastUsedDifficulty->key(),
         m_lastUsedDifficulty->title()
@@ -126,7 +126,7 @@ void MainWindow::gameOver(int time)
 void MainWindow::highscores()
 {
     KScoreDialog ksdialog(KScoreDialog::Name | KScoreDialog::Time, this);
-    ksdialog.initFromDifficulty(Kg::difficulty());
+    ksdialog.initFromDifficulty(KGameDifficulty::global());
     ksdialog.exec();
 }
 
@@ -142,7 +142,7 @@ void MainWindow::setGameTime(int time)
 
 void MainWindow::changeState(bool running) {
     showCursor(!running);
-    Kg::difficulty()->setGameRunning(running);
+    KGameDifficulty::global()->setGameRunning(running);
 }
 
 void MainWindow::pause(bool p)

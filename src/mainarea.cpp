@@ -13,7 +13,7 @@
 #include <QPainter>
 #include <QAction>
 
-#include <KgDifficulty>
+#include <KGameDifficulty>
 #include <KgTheme>
 #include <KLocalizedString>
 #include <QStandardPaths>
@@ -235,14 +235,14 @@ void MainArea::start()
     m_death = false;
     m_game_over = false;
 
-    switch (Kg::difficultyLevel()) {
-    case KgDifficultyLevel::Easy:
+    switch (KGameDifficulty::globalLevel()) {
+    case KGameDifficultyLevel::Easy:
         m_ball_timeout = 30;
         break;
-    case KgDifficultyLevel::Medium:
+    case KGameDifficultyLevel::Medium:
         m_ball_timeout = 25;
         break;
-    case KgDifficultyLevel::Hard:
+    case KGameDifficultyLevel::Hard:
     default:
         m_ball_timeout = 20;
         break;
@@ -312,14 +312,14 @@ Ball* MainArea::addBall(const QString& id)
 
     // speed depends of game difficulty
     double speed;
-    switch (Kg::difficultyLevel()) {
-    case KgDifficultyLevel::Easy:
+    switch (KGameDifficulty::globalLevel()) {
+    case KGameDifficultyLevel::Easy:
         speed = 0.2;
         break;
-    case KgDifficultyLevel::Medium:
+    case KGameDifficultyLevel::Medium:
         speed = 0.28;
         break;
-    case KgDifficultyLevel::Hard:
+    case KGameDifficultyLevel::Hard:
     default:
         speed = 0.4;
         break;
