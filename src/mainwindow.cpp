@@ -15,7 +15,7 @@
 #include <KActionCollection>
 #include <KGameDifficulty>
 #include <KScoreDialog>
-#include <KStandardGameAction>
+#include <KGameStandardAction>
 #include <QStatusBar>
 #include <KToggleAction>
 
@@ -80,10 +80,10 @@ void MainWindow::setupActions()
     abort->setText(i18n("End game"));
     connect(abort, &QAction::triggered, m_main, &MainArea::abort);
 
-    QAction * pause = KStandardGameAction::pause(m_main, &MainArea::togglePause, actionCollection());
+    QAction * pause = KGameStandardAction::pause(m_main, &MainArea::togglePause, actionCollection());
     m_main->setPauseAction(pause);
-    KStandardGameAction::highscores(this, &MainWindow::highscores, actionCollection());
-    KStandardGameAction::quit(this, &QWidget::close, actionCollection());
+    KGameStandardAction::highscores(this, &MainWindow::highscores, actionCollection());
+    KGameStandardAction::quit(this, &QWidget::close, actionCollection());
 
     QAction * ballSize = new KToggleAction(i18n("&Increase Ball Size"), this);
     ballSize->setChecked(KollisionConfig::increaseBallSize());
