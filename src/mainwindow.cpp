@@ -10,14 +10,15 @@
 #include <QLabel>
 #include <QGraphicsView>
 #include <QPointer>
-
-#include <QAction>
-#include <KActionCollection>
-#include <KGameDifficulty>
-#include <KScoreDialog>
-#include <KGameStandardAction>
 #include <QStatusBar>
+#include <QAction>
+
+#include <KActionCollection>
 #include <KToggleAction>
+
+#include <KGameDifficulty>
+#include <KGameHighScoreDialog>
+#include <KGameStandardAction>
 
 #include "mainarea.h"
 #include "kollisionconfig.h"
@@ -109,15 +110,15 @@ void MainWindow::gameOver(int time)
 {
     stateChanged(QStringLiteral("playing"), KXMLGUIClient::StateReverse);
 
-    QPointer<KScoreDialog> ksdialog = new KScoreDialog(KScoreDialog::Name, this);
+    QPointer<KGameHighScoreDialog> ksdialog = new KGameHighScoreDialog(KGameHighScoreDialog::Name, this);
     ksdialog->initFromDifficulty(KGameDifficulty::global(), /*setConfigGroup=*/ false);
     ksdialog->setConfigGroup(qMakePair(
         m_lastUsedDifficulty->key(),
         m_lastUsedDifficulty->title()
     ));
-    KScoreDialog::FieldInfo scoreInfo;
-    scoreInfo[KScoreDialog::Score].setNum(time);
-    if (ksdialog->addScore(scoreInfo, KScoreDialog::AskName)) {
+    KGameHighScoreDialog::FieldInfo scoreInfo;
+    scoreInfo[KGameHighScoreDialog::Score].setNum(time);
+    if (ksdialog->addScore(scoreInfo, KGameHighScoreDialog::AskName)) {
         ksdialog->exec();
     }
     delete ksdialog;
@@ -125,7 +126,7 @@ void MainWindow::gameOver(int time)
 
 void MainWindow::highscores()
 {
-    KScoreDialog ksdialog(KScoreDialog::Name | KScoreDialog::Time, this);
+    KGameHighScoreDialog ksdialog(KGameHighScoreDialog::Name | KGameHighScoreDialog::Time, this);
     ksdialog.initFromDifficulty(KGameDifficulty::global());
     ksdialog.exec();
 }
