@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2010-11-07 21:45+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -134,27 +134,27 @@ msgstr[1] ""
 "Du overlevde i %1 sekunder.\n"
 "Klikk for å starte et nytt spill"
 
-#: mainwindow.cpp:80
+#: mainwindow.cpp:81
 #, kde-format
 msgid "End game"
 msgstr "Slutt på spillet"
 
-#: mainwindow.cpp:88
+#: mainwindow.cpp:89
 #, kde-format
 msgid "&Increase Ball Size"
 msgstr ""
 
-#: mainwindow.cpp:94
+#: mainwindow.cpp:95
 #, kde-format
 msgid "&Play Sounds"
 msgstr "S&pill lyder"
 
-#: mainwindow.cpp:135
+#: mainwindow.cpp:136
 #, kde-format
 msgid "Balls: %1"
 msgstr "Baller: %1"
 
-#: mainwindow.cpp:140
+#: mainwindow.cpp:141
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"

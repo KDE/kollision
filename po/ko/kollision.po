@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2022-04-16 22:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -129,27 +129,27 @@ msgstr[0] ""
 "%1초 동안 살아 있었습니다\n"
 "다시 시작하려면 클릭하십시오"
 
-#: mainwindow.cpp:80
+#: mainwindow.cpp:81
 #, kde-format
 msgid "End game"
 msgstr "게임 끝내기"
 
-#: mainwindow.cpp:88
+#: mainwindow.cpp:89
 #, kde-format
 msgid "&Increase Ball Size"
 msgstr "공 크기 증가(&I)"
 
-#: mainwindow.cpp:94
+#: mainwindow.cpp:95
 #, kde-format
 msgid "&Play Sounds"
 msgstr "소리 재생(&P)"
 
-#: mainwindow.cpp:135
+#: mainwindow.cpp:136
 #, kde-format
 msgid "Balls: %1"
 msgstr "공 개수: %1"
 
-#: mainwindow.cpp:140
+#: mainwindow.cpp:141
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"

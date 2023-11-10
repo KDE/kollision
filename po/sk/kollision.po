@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2021-11-20 21:39+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -136,27 +136,27 @@ msgstr[2] ""
 "KONIEC HRY! Prežili ste %1 sekúnd\n"
 "Kliknite pre reštart hry"
 
-#: mainwindow.cpp:80
+#: mainwindow.cpp:81
 #, kde-format
 msgid "End game"
 msgstr "Ukončiť hru"
 
-#: mainwindow.cpp:88
+#: mainwindow.cpp:89
 #, kde-format
 msgid "&Increase Ball Size"
 msgstr "Zväčšiť veľkosť lopty"
 
-#: mainwindow.cpp:94
+#: mainwindow.cpp:95
 #, kde-format
 msgid "&Play Sounds"
 msgstr "Pre&hrávať zvuky"
 
-#: mainwindow.cpp:135
+#: mainwindow.cpp:136
 #, kde-format
 msgid "Balls: %1"
 msgstr "Loptičiek: %1"
 
-#: mainwindow.cpp:140
+#: mainwindow.cpp:141
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"

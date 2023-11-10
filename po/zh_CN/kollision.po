@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
 "PO-Revision-Date: 2023-10-21 13:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -129,27 +129,27 @@ msgstr[0] ""
 "您坚持了 %1 秒\n"
 "点击鼠标重新开始游戏"
 
-#: mainwindow.cpp:80
+#: mainwindow.cpp:81
 #, kde-format
 msgid "End game"
 msgstr "结束游戏"
 
-#: mainwindow.cpp:88
+#: mainwindow.cpp:89
 #, kde-format
 msgid "&Increase Ball Size"
 msgstr "增加球尺寸(&I)"
 
-#: mainwindow.cpp:94
+#: mainwindow.cpp:95
 #, kde-format
 msgid "&Play Sounds"
 msgstr "播放声音(&P)"
 
-#: mainwindow.cpp:135
+#: mainwindow.cpp:136
 #, kde-format
 msgid "Balls: %1"
 msgstr "球数：%1"
 
-#: mainwindow.cpp:140
+#: mainwindow.cpp:141
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"
