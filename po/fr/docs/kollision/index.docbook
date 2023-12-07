@@ -39,7 +39,7 @@
         <keyword
 >KDE</keyword>
         <keyword
->jeu kde</keyword>
+>kdegames</keyword>
         <keyword
 >jeu</keyword>
         <keyword
@@ -110,7 +110,7 @@
         <itemizedlist>
             <listitem
 ><para
->Les balles rouges se déplacent è une vitesse constante sur l'aire de jeu rebondissant contre les murs jusqu'à entrer en collision avec une autre balle, laquelle provoque la modification de la vitesse et de la direction de l'ensemble des balles.</para
+>Les balles rouges se déplacent à une vitesse constante sur l'aire de jeu rebondissant contre les murs jusqu'à entrer en collision avec une autre balle, laquelle provoque la modification de la vitesse et de la direction de l'ensemble des balles.</para
 ></listitem>
             <listitem
 ><para
