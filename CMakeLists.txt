@@ -53,6 +53,7 @@ ecm_set_disabled_deprecation_versions(
     KDEGAMES 6.0
 )
 
+add_subdirectory(themes)
 add_subdirectory(pictures)
 add_subdirectory(sounds)
 add_subdirectory(doc)

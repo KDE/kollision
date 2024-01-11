@@ -32,9 +32,9 @@ struct Collision
 
 struct Theme : public KGameTheme
 {
-    Theme() : KGameTheme("pictures/theme.desktop")
+    Theme() : KGameTheme("themes/default.desktop")
     {
-        setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("pictures/theme.svgz")));
+        setGraphicsPath(QStandardPaths::locate(QStandardPaths::AppDataLocation, QStringLiteral("themes/default.svgz")));
     }
 };
 
