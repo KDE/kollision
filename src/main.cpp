@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain("kollision");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kollision"));
 
     KAboutData aboutData(QStringLiteral("kollision"), i18n("Kollision"),
                          QStringLiteral(KOLLISION_VERSION_STRING),
