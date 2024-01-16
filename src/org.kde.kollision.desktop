@@ -103,4 +103,3 @@ GenericName[zh_CN]=一个简单的躲避球游戏
 GenericName[zh_TW]=簡單的閃躲球遊戲
 Categories=Qt;KDE;Game;ArcadeGame;
 X-DocPath=kollision/index.html
-X-DBUS-ServiceName=org.kde.kollision
