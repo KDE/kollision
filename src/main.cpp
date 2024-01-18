@@ -33,15 +33,16 @@ int main(int argc, char *argv[])
     aboutData.addCredit(i18n("Matteo Guarnieri"), i18n("Original idea"));
     aboutData.addCredit(i18n("Brian Croom"), i18n("Port to use KGameRenderer"));
 
+    KAboutData::setApplicationData(aboutData);
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("kollision")));
 
-    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("kollision")));
+    KCrash::initialize();
 
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
-    KCrash::initialize();
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
+
     KDBusService service;
 
     MainWindow* window = new MainWindow;
