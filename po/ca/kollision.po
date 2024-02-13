@@ -211,6 +211,3 @@ msgstr "Difícil"
 #, kde-format
 msgid "&Animation smoothness:"
 msgstr "Suavitat de l'&animació:"
-
-#~ msgid "Difficulty of the game."
-#~ msgstr "Dificultat de la partida."
