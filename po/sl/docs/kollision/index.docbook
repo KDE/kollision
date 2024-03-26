@@ -1,0 +1,419 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Slovenian "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>&kollision; Priročnik</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Matjaž</firstname
+><surname
+>Jeran</surname
+><affiliation
+><address
+><email
+>matjaz.jeran@amis.net</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>07.08.2021</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>Ta dokumentacija opisuje igro &kollision; različica 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>igra</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>arkada</keyword>
+        <keyword
+>en igralec</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Uvod</title>
+        <note
+><title
+>Vrsta igre:</title
+><para
+>Arkadna</para
+></note>
+        <note
+><title
+>Število možnih igralcev:</title
+><para
+>Eden</para
+></note>
+        <para
+>Preprosta igra izogibanja žogi. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Kako igrati</title>
+        <note
+><title
+>Cilj:</title
+><para
+>Naj se modra žoga premika po polju, ne da bi se dotaknila rdečih žog.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>&kollision; Igralna plošča</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Kliknite na prazno polje, da začnete igro: modra krogla takoj nadomesti kazalec miške in številne rdeče kroglice začnejo bledeti v polju. </para>
+        <para
+>Ko se rdeče kroglice končajo z materializacijo, se premikajo z naključno hitrostjo v naključno smer, vi pa se jim morate nemudoma izogniti, tako da z miško premikate modro kroglico znotraj polja. Čez nekaj časa se bodo pojavile druge rdeče kroglice, ki bodo zbledele kot prej in se nato začele premikati. Bodite pripravljeni, da se jim tudi izognete. </para>
+        <para
+>Na desni strani vrstice stanja lahko izberete težavnostno stopnjo igre. Višja kot je težavnostna stopnja, hitreje se premikajo rdeče kroglice in več žog se bo pojavilo na igrišču. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Pravila, strategije in nasveti igre</title>
+        <para
+>Pravila igre, strategije in nasveti</para>
+        <sect1 id="rules"
+><title
+>Pravila igre</title>
+        <itemizedlist>
+            <listitem
+><para
+>Rdeče žoge se premikajo s konstantno hitrostjo po igralnem polju in se odbijajo od sten, dokler ne trčijo z drugo žogico, kar povzroči spremembo hitrosti in smeri obeh žog.</para
+></listitem>
+            <listitem
+><para
+>Modro kroglo lahko z miško prosto premikate po polju.</para
+></listitem>
+            <listitem
+><para
+>Modra žoga ne more pobegniti iz polja. Če se kazalec premakne ven, žogica ostane na robu, dokler se kazalec ne vrne.</para
+></listitem>
+            <listitem
+><para
+>Rezultat je neposredno sorazmeren s časom trajanja igre.</para
+></listitem>
+            <listitem
+><para
+>Če prekinete igro, se od skupnega časa odšteje (kumulativno) 5 sekund kazni.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Strategije in nasveti</title>
+        <itemizedlist>
+            <listitem
+><para
+>Nežno in počasi premikajte modro kroglo. Z nihanjem čez polje bodo trki z drugimi žogicami bolj verjetni.</para
+></listitem>
+            <listitem
+><para
+>Premikanje kazalca izven polja lahko uporabite kot eleganten trik za izhod iz brezupne situacije. Uporabljajte ga pametno.</para
+></listitem>
+            <listitem
+><para
+>Ne prekinjajte igre, razen če je to nujno potrebno.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Pregled vmesnika</title>
+
+<sect1 id="menu">
+<title
+>Elementi menija</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Igra</guimenu
+> <guimenuitem
+>Končaj igro</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Končajte igro in se vrnite na pozdravni zaslon.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Premor</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Začasno ustavi ali nadaljuje igro.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Prikaži najboljše rezultate</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>To bo pokazalo najboljše rezultate za trenutno raven.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Igra</guimenu
+> <guimenuitem
+>Zapusti</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Če izberete ta element, boste končali trenutno igro in zapustili &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Nastavitve</guimenu
+> <guimenuitem
+>Predvajaj zvoke</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Preklopite, ali naj se predvajajo zvočni učinki.</action
+> Privzeto je izklopljeno. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Nastavitve</guimenu
+> <guimenuitem
+>Povečaj velikost žoge</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Preklopite, da povečate kroglice.</action
+> Privzeto je izklopljeno.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Nastavitve</guimenu
+> <guisubmenu
+>Težavnost</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Omogoča vam izbiro težavnosti igre <guilabel
+>Enostavno</guilabel
+>, <guilabel
+>Srednje</guilabel
+>, <guilabel
+>Težko</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Poleg tega &kollision; ima skupno &kde; Elemente menija <guimenu
+>Nastavitve</guimenu
+> in <guimenu
+>Pomoč</guimenu
+>, za več informacij preberite razdelke o <ulink url="help:/fundamentals/menus.html#menus-settings"
+>meniju z nastavitvami</ulink
+> in <ulink url="help:/fundamentals/menus.html#menus-help"
+>meni Pomoč</ulink
+> v &kde; Osnove. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Pogosto zastavljena vprašanja</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Želim spremeniti videz te igre. Ali lahko? </para
+></question>
+ <answer
+><para
+>Ne.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ali lahko uporabljam tipkovnico za igranje igre? </para
+></question>
+ <answer
+><para
+>Ne. &kollision; se lahko igra samo z miško.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Ne morem ugotoviti, kaj naj naredim tukaj! Ali obstajajo namigi? </para
+></question>
+ <answer
+><para
+>&kollision; nima funkcije <quote
+>Namig</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Zdaj moram zapustiti igro, vendar še nisem končal. Ali lahko shranim svoj napredek?</para
+></question>
+  <answer
+><para
+>Iger ne morete shraniti v &kollision;.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Zasluge in licenca</title>
+<para
+>&kollision; </para>
+<para
+>Avtorske pravice 2007-2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>Avtorske pravice 2007-2008 Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>Avtorske pravice za dokumentacijo 2008 Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>Prevod: Matjaž Jeran<email
+>matjaz.jeran@amis.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
