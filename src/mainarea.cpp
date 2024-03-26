@@ -199,7 +199,7 @@ void MainArea::togglePause()
         m_paused = true;
         m_timer.stop();
         QString shortcut = m_pauseAction ?
-          m_pauseAction->shortcut().toString() :
+          m_pauseAction->shortcut().toString(QKeySequence::NativeText) :
           QStringLiteral("P");
         writeText(i18n("Game paused\nClick or press %1 to resume", shortcut), false);
 
