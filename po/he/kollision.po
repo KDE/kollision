@@ -1,0 +1,220 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kollision package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kollision\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"PO-Revision-Date: 2024-04-05 23:10+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
+#: kollision.kcfg:9
+#, kde-format
+msgid "Whether automatically increasing ball size should be applied."
+msgstr "האם להחיל הגדלה אוטומטית הדרגתית של הכדור."
+
+#. i18n: ectx: label, entry (EnableSounds), group (sounds)
+#: kollision.kcfg:15
+#, kde-format
+msgid "Whether sound effects should be played."
+msgstr "האם להשמיע אפקטים קוליים."
+
+#. i18n: ectx: Menu (game)
+#: kollisionui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "מ&שחק"
+
+#: main.cpp:24
+#, kde-format
+msgid "Kollision"
+msgstr "Kollision"
+
+#: main.cpp:26
+#, kde-format
+msgid "Casual ball game"
+msgstr "משחק כדור פשוט"
+
+#: main.cpp:28
+#, kde-format
+msgid "(c) 2007 Paolo Capriotti"
+msgstr "(c) 2007 פאולו קפריוטי"
+
+#: main.cpp:31
+#, kde-format
+msgid "Paolo Capriotti"
+msgstr "פאולו קפריוטי"
+
+#: main.cpp:32
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "דמיטרי סוזדלב"
+
+#: main.cpp:33
+#, kde-format
+msgid "Matteo Guarnieri"
+msgstr "מתיאו גוארניירי"
+
+#: main.cpp:33
+#, kde-format
+msgid "Original idea"
+msgstr "רעיון מקורי"
+
+#: main.cpp:34
+#, kde-format
+msgid "Brian Croom"
+msgstr "בראיין קרום"
+
+#: main.cpp:34
+#, kde-format
+msgid "Port to use KGameRenderer"
+msgstr "הסבה לשימוש ב־KGameRenderer"
+
+#: mainarea.cpp:86
+#, kde-format
+msgid ""
+"Welcome to Kollision\n"
+"Click to start a game"
+msgstr ""
+"ברוך בואך ל־Kollision\n"
+"לחיצה תתחיל במשחק"
+
+#: mainarea.cpp:204
+#, kde-format
+msgid ""
+"Game paused\n"
+"Click or press %1 to resume"
+msgstr ""
+"המשחק מושהה\n"
+"יש ללחוץ עם העכבר או על %1 כדי להמשיך"
+
+#: mainarea.cpp:266 mainarea.cpp:528
+#, kde-format
+msgid "%1 ball"
+msgid_plural "%1 balls"
+msgstr[0] "כדור"
+msgstr[1] "שני כדורים"
+msgstr[2] "%1 כדורים"
+msgstr[3] "%1 כדורים"
+
+#: mainarea.cpp:536
+#, kde-format
+msgid ""
+"GAME OVER\n"
+"You survived for %1 second\n"
+"Click to restart"
+msgid_plural ""
+"GAME OVER\n"
+"You survived for %1 seconds\n"
+"Click to restart"
+msgstr[0] ""
+"המשחק הסתיים\n"
+"שרדת למשך שנייה\n"
+"לחיצה תתחיל מחדש"
+msgstr[1] ""
+"המשחק הסתיים\n"
+"שרדת למשך שתי שניות\n"
+"לחיצה תתחיל מחדש"
+msgstr[2] ""
+"המשחק הסתיים\n"
+"שרדת למשך %1 שניות\n"
+"לחיצה תתחיל מחדש"
+msgstr[3] ""
+"המשחק הסתיים\n"
+"שרדת למשך %1 שניות\n"
+"לחיצה תתחיל מחדש"
+
+#: mainwindow.cpp:81
+#, kde-format
+msgid "End game"
+msgstr "סיום המשחק"
+
+#: mainwindow.cpp:89
+#, kde-format
+msgid "&Increase Ball Size"
+msgstr "ה&גדלת הכדור"
+
+#: mainwindow.cpp:95
+#, kde-format
+msgid "&Play Sounds"
+msgstr "ה&שמעת צלילים"
+
+#: mainwindow.cpp:136
+#, kde-format
+msgid "Balls: %1"
+msgstr "כדורים: %1"
+
+#: mainwindow.cpp:141
+#, kde-format
+msgid "Time: %1 second"
+msgid_plural "Time: %1 seconds"
+msgstr[0] "זמן: שנייה"
+msgstr[1] "זמן: שתי שניות"
+msgstr[2] "זמן: %1 שניות"
+msgstr[3] "זמן: %1 שניות"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableSounds)
+#: preferences.ui:16
+#, kde-format
+msgid "Enable &sounds"
+msgstr "השמעת &צלילים"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IncreaseBallSize)
+#: preferences.ui:23
+#, kde-format
+msgid "Enable automatically &increasing ball size"
+msgstr "הפעלת הגדלת הכדור ה&דרגתית"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: preferences.ui:32
+#, kde-format
+msgid "&Difficulty:"
+msgstr "דרגת &קושי:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:43
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Easy"
+msgstr "קלה"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:48
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Medium"
+msgstr "בינונית"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:53
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Hard"
+msgstr "קשה"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: preferences.ui:65
+#, kde-format
+msgid "&Animation smoothness:"
+msgstr "חלקלקות הה&נפשה:"
