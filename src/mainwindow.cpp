@@ -92,7 +92,8 @@ void MainWindow::setupActions()
     connect(ballSize, &QAction::triggered, m_main, &MainArea::increaseBallSize);
 
     QAction * action;
-    action = new KToggleAction(i18nc("@option:check", "Play Sounds"), this);
+    action = new KToggleAction(QIcon::fromTheme(QStringLiteral("speaker")),
+                               i18nc("@option:check", "Play Sounds"), this);
     action->setChecked(KollisionConfig::enableSounds());
     actionCollection()->addAction( QStringLiteral( "options_sounds" ), action);
     connect(action, &QAction::triggered, m_main, &MainArea::enableSounds);
