@@ -78,7 +78,7 @@ void MainWindow::setupActions()
 {
     // Game
     QAction * abort = actionCollection()->addAction( QStringLiteral( "game_abort" ));
-    abort->setText(i18n("End game"));
+    abort->setText(i18nc("@action", "End Game"));
     connect(abort, &QAction::triggered, m_main, &MainArea::abort);
 
     QAction * pause = KGameStandardAction::pause(m_main, &MainArea::togglePause, actionCollection());
@@ -86,13 +86,13 @@ void MainWindow::setupActions()
     KGameStandardAction::highscores(this, &MainWindow::highscores, actionCollection());
     KGameStandardAction::quit(this, &QWidget::close, actionCollection());
 
-    QAction * ballSize = new KToggleAction(i18n("&Increase Ball Size"), this);
+    QAction * ballSize = new KToggleAction(i18nc("@option:check", "&Increase Ball Size"), this);
     ballSize->setChecked(KollisionConfig::increaseBallSize());
     actionCollection()->addAction( QStringLiteral( "increase_ball_size" ), ballSize);
     connect(ballSize, &QAction::triggered, m_main, &MainArea::increaseBallSize);
 
     QAction * action;
-    action = new KToggleAction(i18n("&Play Sounds"), this);
+    action = new KToggleAction(i18nc("@option:check", "Play Sounds"), this);
     action->setChecked(KollisionConfig::enableSounds());
     actionCollection()->addAction( QStringLiteral( "options_sounds" ), action);
     connect(action, &QAction::triggered, m_main, &MainArea::enableSounds);
