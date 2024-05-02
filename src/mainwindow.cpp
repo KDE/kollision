@@ -79,6 +79,7 @@ void MainWindow::setupActions()
     // Game
     QAction * abort = actionCollection()->addAction( QStringLiteral( "game_abort" ));
     abort->setText(i18nc("@action", "End Game"));
+    abort->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
     connect(abort, &QAction::triggered, m_main, &MainArea::abort);
 
     QAction * pause = KGameStandardAction::pause(m_main, &MainArea::togglePause, actionCollection());
