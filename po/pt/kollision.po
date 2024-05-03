@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2016-01-24 17:06+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -132,26 +132,32 @@ msgstr[1] ""
 "Carregue para reiniciar"
 
 #: mainwindow.cpp:81
-#, kde-format
-msgid "End game"
+#, fuzzy, kde-format
+#| msgid "End game"
+msgctxt "@action"
+msgid "End Game"
 msgstr "Terminar o jogo"
 
-#: mainwindow.cpp:89
-#, kde-format
+#: mainwindow.cpp:90
+#, fuzzy, kde-format
+#| msgid "&Increase Ball Size"
+msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "Aumentar o &Tamanho da Bola"
 
-#: mainwindow.cpp:95
-#, kde-format
-msgid "&Play Sounds"
+#: mainwindow.cpp:97
+#, fuzzy, kde-format
+#| msgid "&Play Sounds"
+msgctxt "@option:check"
+msgid "Play Sounds"
 msgstr "&Efeitos Sonoros"
 
-#: mainwindow.cpp:136
+#: mainwindow.cpp:138
 #, kde-format
 msgid "Balls: %1"
 msgstr "Bolas: %1"
 
-#: mainwindow.cpp:141
+#: mainwindow.cpp:143
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"

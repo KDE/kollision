@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:46+0000\n"
+"POT-Creation-Date: 2024-05-03 00:37+0000\n"
 "PO-Revision-Date: 2020-09-19 21:16+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -151,26 +151,32 @@ msgstr[3] ""
 "Kliknite za novo igro."
 
 #: mainwindow.cpp:81
-#, kde-format
-msgid "End game"
+#, fuzzy, kde-format
+#| msgid "End game"
+msgctxt "@action"
+msgid "End Game"
 msgstr "Končaj igro"
 
-#: mainwindow.cpp:89
-#, kde-format
+#: mainwindow.cpp:90
+#, fuzzy, kde-format
+#| msgid "&Increase Ball Size"
+msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "Povečaj vel&ikost žogic"
 
-#: mainwindow.cpp:95
-#, kde-format
-msgid "&Play Sounds"
+#: mainwindow.cpp:97
+#, fuzzy, kde-format
+#| msgid "&Play Sounds"
+msgctxt "@option:check"
+msgid "Play Sounds"
 msgstr "&Predvajaj zvoke"
 
-#: mainwindow.cpp:136
+#: mainwindow.cpp:138
 #, kde-format
 msgid "Balls: %1"
 msgstr "Žogice: %1"
 
-#: mainwindow.cpp:141
+#: mainwindow.cpp:143
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"
