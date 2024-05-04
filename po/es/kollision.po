@@ -5,45 +5,47 @@
 # Jaime Robles <jaime@kde.org>, 2008.
 # Santi <santi@kde-es.org>, 2008.
 # santi <santi@kde-es.org>, 2009.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2016, 2020.
+# SPDX-FileCopyrightText: 2009, 2016, 2020, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 # Huever, 2009.
 # Kira J. Fernandez <kirajfdez@gmail.com>, 2010.
+# Sofía Priego <spriego@darksylvania.net>, %Y.
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2020-09-20 12:10+0200\n"
-"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"PO-Revision-Date: 2024-05-03 20:27+0100\n"
+"Last-Translator: Sofía Priego <spriego@darksylvania.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Jaime Robles,Kira J. Fernández"
+msgstr "Sofía Priego,Jaime Robles,Kira J. Fernández"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "jaime@kde.org,kirajfdez@gmail.com"
+msgstr "spriego@darksylvania.net,jaime@kde.org,kirajfdez@gmail.com"
 
 #. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
 #: kollision.kcfg:9
 #, kde-format
 msgid "Whether automatically increasing ball size should be applied."
-msgstr "Si se debe aplicar automáticamente el aumento del tamaño de la bola."
+msgstr ""
+"Indica si se debe aplicar automáticamente el aumento del tamaño de la bola."
 
 #. i18n: ectx: label, entry (EnableSounds), group (sounds)
 #: kollision.kcfg:15
 #, kde-format
 msgid "Whether sound effects should be played."
-msgstr "Indicar si deben reproducirse efectos de sonido."
+msgstr "Indica si se deben reproducir efectos de sonido."
 
 #. i18n: ectx: Menu (game)
 #: kollisionui.rc:9
@@ -64,7 +66,7 @@ msgstr "Juego de bolas informal"
 #: main.cpp:28
 #, kde-format
 msgid "(c) 2007 Paolo Capriotti"
-msgstr "(c) 2007 Paolo Capriotti"
+msgstr "© 2007 Paolo Capriotti"
 
 #: main.cpp:31
 #, kde-format
@@ -84,7 +86,7 @@ msgstr "Matteo Guarnieri"
 #: main.cpp:33
 #, kde-format
 msgid "Original idea"
-msgstr "Idea original"
+msgstr "Idea original."
 
 #: main.cpp:34
 #, kde-format
@@ -94,7 +96,7 @@ msgstr "Brian Croom"
 #: main.cpp:34
 #, kde-format
 msgid "Port to use KGameRenderer"
-msgstr "Puerto para usar KGameRenderer"
+msgstr "Adaptación para usar KGameRenderer."
 
 #: mainarea.cpp:86
 #, kde-format
@@ -103,7 +105,7 @@ msgid ""
 "Click to start a game"
 msgstr ""
 "Bienvenido a Kollision\n"
-"Pulse para iniciar la partida"
+"Pulsa para empezar la partida"
 
 #: mainarea.cpp:204
 #, kde-format
@@ -111,8 +113,8 @@ msgid ""
 "Game paused\n"
 "Click or press %1 to resume"
 msgstr ""
-"Juego detenido\n"
-"Haga clic o pulse %1 para continuar"
+"Juego en pausa\n"
+"Haz clic o pulsa %1 para continuar"
 
 #: mainarea.cpp:266 mainarea.cpp:528
 #, kde-format
@@ -132,34 +134,31 @@ msgid_plural ""
 "You survived for %1 seconds\n"
 "Click to restart"
 msgstr[0] ""
-"FIN\n"
-"Ha sobrevivido durante %1 segundo\n"
-"Pulse para reiniciar"
+"PARTIDA TERMINADA\n"
+"Has sobrevivido durante %1 segundo\n"
+"Pulsa para reiniciar"
 msgstr[1] ""
-"FIN\n"
-"Ha sobrevivido durante %1 segundos\n"
-"Pulse para reiniciar"
+"PARTIDA TERMINADA\n"
+"Has sobrevivido durante %1 segundos\n"
+"Pulsa para reiniciar"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
-msgstr "Finalizar la partida"
+msgstr "Terminar la partida"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "A&umentar el tamaño de la bola"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "Re&producir sonidos"
+msgstr "Reproducir sonidos"
 
 #: mainwindow.cpp:138
 #, kde-format
@@ -203,7 +202,7 @@ msgstr "Fácil"
 #, kde-format
 msgctxt "Difficulty level"
 msgid "Medium"
-msgstr "Medio"
+msgstr "Media"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
 #: preferences.ui:53
@@ -216,7 +215,7 @@ msgstr "Difícil"
 #: preferences.ui:65
 #, kde-format
 msgid "&Animation smoothness:"
-msgstr "Suavizado de la &animación:"
+msgstr "Suavidad de la &animación:"
 
 #~ msgid "KDE collision game"
 #~ msgstr "Juego de Colisión para KDE"

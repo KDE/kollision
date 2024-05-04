@@ -11,17 +11,17 @@ msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2020-09-19 21:16+0200\n"
+"PO-Revision-Date: 2024-05-03 10:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 2.4.1\n"
+"Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -135,41 +135,38 @@ msgid_plural ""
 "Click to restart"
 msgstr[0] ""
 "KONEC IGRE\n"
-"Preživeli ste %1 sekundo.\n"
+"Preživeli ste %1 sekund.\n"
 "Kliknite za novo igro"
 msgstr[1] ""
 "KONEC IGRE\n"
-"Preživeli ste %1 sekundi.\n"
+"Preživeli ste %1 sekundo.\n"
 "Kliknite za novo igro."
 msgstr[2] ""
 "KONEC IGRE\n"
-"Preživeli ste %1 sekunde.\n"
+"Preživeli ste %1 sekundi.\n"
 "Kliknite za novo igro."
 msgstr[3] ""
 "KONEC IGRE\n"
-"Preživeli ste %1 sekund.\n"
+"Preživeli ste %1 sekunde.\n"
 "Kliknite za novo igro."
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
-msgstr "Končaj igro"
+msgstr "Konec igre"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr "Povečaj vel&ikost žogic"
+msgstr "Povečaj vel&ikost žogice"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Predvajaj zvoke"
+msgstr "Predvajaj zvoke"
 
 #: mainwindow.cpp:138
 #, kde-format
