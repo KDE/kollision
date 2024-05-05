@@ -4,22 +4,22 @@
 # mvillarino <mvillarino@users.sourceforge.net>, 2008.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2009, 2016.
 # Xosé <xosecalvo@gmail.com>, 2012.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019, 2023.
+# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2023-04-23 06:54+0200\n"
+"PO-Revision-Date: 2024-05-04 10:43+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -139,25 +139,22 @@ msgstr[1] ""
 "Preme para volver xogar"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Rematar a partida"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr "&Aumentar o tamaño da bóla"
+msgstr "&Aumentar o tamaño da bóla."
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "Re&producir os sons"
+msgstr "Reproducir os sons."
 
 #: mainwindow.cpp:138
 #, kde-format

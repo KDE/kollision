@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kollision package.
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2021-12-22 22:27+0400\n"
+"PO-Revision-Date: 2024-05-04 11:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -156,25 +156,22 @@ msgstr[5] ""
 "انقر للإعادة"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
-msgstr "إنهاء اللعبة"
+msgstr "أنه اللعبة"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr "&زِد حجم الكرة"
+msgstr "زِد &حجم الكرة"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "شغّل الأ&صوات"
+msgstr "شغّل الأصوات"
 
 #: mainwindow.cpp:138
 #, kde-format
