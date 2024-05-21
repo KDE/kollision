@@ -1,22 +1,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2011.
-# Vit Pelcak <vit@pelcak.org>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2011-03-30 09:16+0200\n"
-"Last-Translator: Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2024-05-17 14:00+0200\n"
+"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -144,19 +144,19 @@ msgstr[2] ""
 #, kde-format
 msgctxt "@action"
 msgid "End Game"
-msgstr ""
+msgstr "Ukončit hru"
 
 #: mainwindow.cpp:90
 #, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr ""
+msgstr "Zvětš&it velikost míče"
 
 #: mainwindow.cpp:97
 #, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr ""
+msgstr "Přehrávat zvuky"
 
 #: mainwindow.cpp:138
 #, kde-format

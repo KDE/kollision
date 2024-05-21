@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2009, 2010.
-# Steve Allewell <steve.allewell@gmail.com>, 2016, 2020.
+# SPDX-FileCopyrightText: 2016, 2020, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2020-09-20 20:20+0100\n"
+"PO-Revision-Date: 2024-05-20 19:24+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -136,25 +136,22 @@ msgstr[1] ""
 "Click to restart"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
-msgstr "End game"
+msgstr "End Game"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "&Increase Ball Size"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Play Sounds"
+msgstr "Play Sounds"
 
 #: mainwindow.cpp:138
 #, kde-format
