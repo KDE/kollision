@@ -1,14 +1,14 @@
 # translation of kollision to Romanian
 # Copyright (C) 2008 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kollision package.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2012, 2022.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2012, 2022, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2022-04-30 11:22+0100\n"
+"PO-Revision-Date: 2024-06-09 13:01+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -142,25 +142,22 @@ msgstr[2] ""
 "Faceți clic pentru reinițializare"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Termină jocul"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "Crește d&imensiunea mingii"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Redă sunete"
+msgstr "Redă sunete"
 
 #: mainwindow.cpp:138
 #, kde-format
