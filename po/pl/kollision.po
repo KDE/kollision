@@ -2,18 +2,18 @@
 # translation of kollision.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Paweł Wysocki <pawel_wys@o2.pl>, 2008.
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2008.
 # Maciej Wikło <maciej.wiklo@wp.pl>, 2009.
 # Marta Rybczynska <kde-i18n@rybczynska.net>, 2009.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2014, 2016, 2020.
+# SPDX-FileCopyrightText: 2011, 2014, 2016, 2020, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2020-12-24 20:19+0100\n"
+"PO-Revision-Date: 2024-07-20 10:33+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -22,6 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -146,25 +147,22 @@ msgstr[2] ""
 "Kliknij, aby zagrać ponownie"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Koniec gry"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "&Zwiększ rozmiar kuli"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Odtwarzaj dźwięki"
+msgstr "Odtwarzaj dźwięki"
 
 #: mainwindow.cpp:138
 #, kde-format
