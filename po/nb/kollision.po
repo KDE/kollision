@@ -136,7 +136,6 @@ msgstr[1] ""
 
 #: mainwindow.cpp:81
 #, fuzzy, kde-format
-#| msgid "End game"
 msgctxt "@action"
 msgid "End Game"
 msgstr "Slutt på spillet"
@@ -149,7 +148,6 @@ msgstr ""
 
 #: mainwindow.cpp:97
 #, fuzzy, kde-format
-#| msgid "&Play Sounds"
 msgctxt "@option:check"
 msgid "Play Sounds"
 msgstr "S&pill lyder"
