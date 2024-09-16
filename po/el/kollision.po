@@ -142,25 +142,22 @@ msgstr[1] ""
 "Κάντε κλικ για να ξαναπαίξετε"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Τέλος παιχνιδιού"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "&Αύξηση μεγέθους μπάλας"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Αναπαραγωγή ήχων"
+msgstr "Αναπαραγωγή ήχων"
 
 #: mainwindow.cpp:138
 #, kde-format
