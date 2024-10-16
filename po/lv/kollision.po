@@ -5,37 +5,38 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Maris Nartiss <maris.kde@gmail.com>, 2008.
 # Einars Sprugis <einars8@gmail.com>, 2010.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2010-04-24 20:56+0300\n"
-"Last-Translator: Einars Sprugis <einars8@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-10-14 13:58+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Viesturs Zariņš"
+msgstr "Viesturs Zariņš, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "viesturs.zarins@mii.lu.lv"
+msgstr "viesturs.zarins@mii.lu.lv, toms.trasuns@posteo.net"
 
 #. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
 #: kollision.kcfg:9
 #, kde-format
 msgid "Whether automatically increasing ball size should be applied."
-msgstr ""
+msgstr "Vai piemērot automātisku bumbas palielināšanu."
 
 #. i18n: ectx: label, entry (EnableSounds), group (sounds)
 #: kollision.kcfg:15
@@ -57,7 +58,7 @@ msgstr "Kollision"
 #: main.cpp:26
 #, kde-format
 msgid "Casual ball game"
-msgstr ""
+msgstr "Vienkārša bumbas spēle"
 
 #: main.cpp:28
 #, kde-format
@@ -87,12 +88,12 @@ msgstr "Sākotnējā ideja"
 #: main.cpp:34
 #, kde-format
 msgid "Brian Croom"
-msgstr ""
+msgstr "Brian Croom"
 
 #: main.cpp:34
 #, kde-format
 msgid "Port to use KGameRenderer"
-msgstr ""
+msgstr "Ports, lai izmantotu „KGameRenderer“"
 
 #: mainarea.cpp:86
 #, kde-format
@@ -100,8 +101,8 @@ msgid ""
 "Welcome to Kollision\n"
 "Click to start a game"
 msgstr ""
-"Sveicināti Kollision\n"
-"Noklikšķini, lai sāktu spēli"
+"Sveicināti „Kollision“!\n"
+"Klikšķini, lai sāktu spēli"
 
 #: mainarea.cpp:204
 #, kde-format
@@ -109,8 +110,8 @@ msgid ""
 "Game paused\n"
 "Click or press %1 to resume"
 msgstr ""
-"Spēle nopauzēta\n"
-"Lai turpinātu, noklikšķini vai nospied %1"
+"Spēle ir pauzēta\n"
+"Lai turpinātu, klikšķini vai nospied „%1“"
 
 #: mainarea.cpp:266 mainarea.cpp:528
 #, kde-format
@@ -133,19 +134,18 @@ msgid_plural ""
 msgstr[0] ""
 "SPĒLE GALĀ\n"
 "Tu izdzīvoji %1 sekundi\n"
-"Noklikšķini, lai sāktu no jauna"
+"Klikšķini, lai sāktu no jauna"
 msgstr[1] ""
 "SPĒLE GALĀ\n"
 "Tu izdzīvoji %1 sekundes\n"
-"Noklikšķini, lai sāktu no jauna"
+"Klikšķini, lai sāktu no jauna"
 msgstr[2] ""
 "SPĒLE GALĀ\n"
 "Tu izdzīvoji %1 sekunžu\n"
-"Noklikšķini, lai sāktu no jauna"
+"Klikšķini, lai sāktu no jauna"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Beigt spēli"
@@ -154,14 +154,13 @@ msgstr "Beigt spēli"
 #, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr ""
+msgstr "&Palielināt bumbas izmēru"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Atskaņot skaņas"
+msgstr "Atskaņot skaņas"
 
 #: mainwindow.cpp:138
 #, kde-format
@@ -186,7 +185,7 @@ msgstr "Ieslēgt &skaņas"
 #: preferences.ui:23
 #, kde-format
 msgid "Enable automatically &increasing ball size"
-msgstr ""
+msgstr "Ieslēgt automātisku &bumbas palielināšanos"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: preferences.ui:32
@@ -219,7 +218,7 @@ msgstr "Grūta"
 #: preferences.ui:65
 #, kde-format
 msgid "&Animation smoothness:"
-msgstr "&Animācijas gludums:"
+msgstr "&Animāciju gludums:"
 
 #~ msgid "KDE collision game"
 #~ msgstr "KDE sadursmju spēle"
