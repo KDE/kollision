@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdegames\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 00:37+0000\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
 "PO-Revision-Date: 2013-10-18 20:12+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -48,47 +48,47 @@ msgstr "Da li puštati zvučne efekte."
 msgid "&Game"
 msgstr "&Igra"
 
-#: main.cpp:24
+#: main.cpp:41
 #, kde-format
 msgid "Kollision"
 msgstr "Kollision"
 
-#: main.cpp:26
+#: main.cpp:43
 #, kde-format
 msgid "Casual ball game"
 msgstr ""
 
-#: main.cpp:28
+#: main.cpp:45
 #, kde-format
 msgid "(c) 2007 Paolo Capriotti"
 msgstr "© 2007 Paolo Capriotti"
 
-#: main.cpp:31
+#: main.cpp:48
 #, kde-format
 msgid "Paolo Capriotti"
 msgstr "Paolo Capriotti"
 
-#: main.cpp:32
+#: main.cpp:49
 #, kde-format
 msgid "Dmitry Suzdalev"
 msgstr "Dmitry Suzdalev"
 
-#: main.cpp:33
+#: main.cpp:50
 #, kde-format
 msgid "Matteo Guarnieri"
 msgstr "Matteo Guarnieri"
 
-#: main.cpp:33
+#: main.cpp:50
 #, kde-format
 msgid "Original idea"
 msgstr "Orginalna ideja"
 
-#: main.cpp:34
+#: main.cpp:51
 #, kde-format
 msgid "Brian Croom"
 msgstr "Brian Croom"
 
-#: main.cpp:34
+#: main.cpp:51
 #, kde-format
 msgid "Port to use KGameRenderer"
 msgstr "Portiraje za korištenje KGameRenderer"

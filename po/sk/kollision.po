@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-03 00:37+0000\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
 "PO-Revision-Date: 2021-11-20 21:39+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -45,47 +45,47 @@ msgstr "Či majú byť prehrávané zvukové efekty."
 msgid "&Game"
 msgstr "&Hra"
 
-#: main.cpp:24
+#: main.cpp:41
 #, kde-format
 msgid "Kollision"
 msgstr "Kollision"
 
-#: main.cpp:26
+#: main.cpp:43
 #, kde-format
 msgid "Casual ball game"
 msgstr "Ležérna loptová hra"
 
-#: main.cpp:28
+#: main.cpp:45
 #, kde-format
 msgid "(c) 2007 Paolo Capriotti"
 msgstr "(c) 2007 Paolo Capriotti"
 
-#: main.cpp:31
+#: main.cpp:48
 #, kde-format
 msgid "Paolo Capriotti"
 msgstr "Paolo Capriotti"
 
-#: main.cpp:32
+#: main.cpp:49
 #, kde-format
 msgid "Dmitry Suzdalev"
 msgstr "Dmitry Suzdalev"
 
-#: main.cpp:33
+#: main.cpp:50
 #, kde-format
 msgid "Matteo Guarnieri"
 msgstr "Matteo Guarnieri"
 
-#: main.cpp:33
+#: main.cpp:50
 #, kde-format
 msgid "Original idea"
 msgstr "Originálny nápad"
 
-#: main.cpp:34
+#: main.cpp:51
 #, kde-format
 msgid "Brian Croom"
 msgstr "Brian Croom"
 
-#: main.cpp:34
+#: main.cpp:51
 #, kde-format
 msgid "Port to use KGameRenderer"
 msgstr "Portovanie na KGameRenderer"
