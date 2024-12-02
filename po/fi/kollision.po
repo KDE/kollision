@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2008.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2010, 2014, 2016.
-# Tommi Nieminen <translator@legisign.org>, 2011, 2020.
+# SPDX-FileCopyrightText: 2011, 2020, 2024 Tommi Nieminen <translator@legisign.org>
 #
 # KDE Finnish translation sprint participants:
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-03 00:37+0000\n"
-"PO-Revision-Date: 2020-12-27 17:14+0200\n"
+"PO-Revision-Date: 2024-10-28 21:12+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -19,8 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-POT-Import-Date: 2012-12-01 22:24:03+0000\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -142,25 +141,22 @@ msgstr[1] ""
 "Käynnistä uusi peli napsauttamalla"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Lopeta peli"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr "&Kasvata pallojen kokoa"
+msgstr "&Kasvata pallokokoa"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Käytä peliääniä"
+msgstr "Käytä ääniä"
 
 #: mainwindow.cpp:138
 #, kde-format
