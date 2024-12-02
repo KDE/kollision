@@ -42,6 +42,18 @@ target_link_libraries(kollision
     KF6::IconThemes
 )
 
+if(APPLE)
+    set_target_properties(kollision PROPERTIES
+           MACOSX_BUNDLE_DISPLAY_NAME "Kollision"
+        MACOSX_BUNDLE_BUNDLE_NAME "Kollision"
+        MACOSX_BUNDLE_LONG_VERSION_STRING "Kollision ${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_SHORT_VERSION_STRING "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}"
+        MACOSX_BUNDLE_BUNDLE_VERSION "${RELEASE_SERVICE_VERSION}"
+        MACOSX_BUNDLE_GUI_IDENTIFIER "org.kde.kollision"
+        MACOSX_BUNDLE_COPYRIGHT "2024 The Kollision Developers")
+endif()
+
+
 install(TARGETS kollision ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(PROGRAMS org.kde.kollision.desktop DESTINATION ${KDE_INSTALL_APPDIR})
