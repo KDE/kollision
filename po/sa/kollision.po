@@ -1,0 +1,204 @@
+# Sanskrit translations for kollision package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kollision package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kollision\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-11-22 00:38+0000\n"
+"PO-Revision-Date: 2024-12-13 19:09+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
+#: kollision.kcfg:9
+#, kde-format
+msgid "Whether automatically increasing ball size should be applied."
+msgstr "स्वयमेव कन्दुकस्य आकारं वर्धयन् प्रयोक्तव्यः वा।"
+
+#. i18n: ectx: label, entry (EnableSounds), group (sounds)
+#: kollision.kcfg:15
+#, kde-format
+msgid "Whether sound effects should be played."
+msgstr "ध्वनिप्रभावाः वादनीयाः वा।"
+
+#. i18n: ectx: Menu (game)
+#: kollisionui.rc:9
+#, kde-format
+msgid "&Game"
+msgstr "&क्रीडा"
+
+#: main.cpp:41
+#, kde-format
+msgid "Kollision"
+msgstr "टकरावः"
+
+#: main.cpp:43
+#, kde-format
+msgid "Casual ball game"
+msgstr "आकस्मिक कन्दुकक्रीडा"
+
+#: main.cpp:45
+#, kde-format
+msgid "(c) 2007 Paolo Capriotti"
+msgstr "(ग) २००७ पाओलो कैप्रियोट्टी"
+
+#: main.cpp:48
+#, kde-format
+msgid "Paolo Capriotti"
+msgstr "पाओलो कैप्रियोट्टी"
+
+#: main.cpp:49
+#, kde-format
+msgid "Dmitry Suzdalev"
+msgstr "दिमित्री सुजदालेव"
+
+#: main.cpp:50
+#, kde-format
+msgid "Matteo Guarnieri"
+msgstr "मट्टियो गुआर्नियरी"
+
+#: main.cpp:50
+#, kde-format
+msgid "Original idea"
+msgstr "मौलिक विचार"
+
+#: main.cpp:51
+#, kde-format
+msgid "Brian Croom"
+msgstr "ब्रायन क्रूम"
+
+#: main.cpp:51
+#, kde-format
+msgid "Port to use KGameRenderer"
+msgstr "KGameRenderer इत्यस्य उपयोगाय पोर्ट्"
+
+#: mainarea.cpp:86
+#, kde-format
+msgid ""
+"Welcome to Kollision\n"
+"Click to start a game"
+msgstr ""
+"कोलिसिओन् इत्यत्र स्वागतम्\n"
+"क्रीडां आरभ्यतुं क्लिक् कुर्वन्तु"
+
+#: mainarea.cpp:204
+#, kde-format
+msgid ""
+"Game paused\n"
+"Click or press %1 to resume"
+msgstr ""
+"क्रीडा विरमति स्म\n"
+"पुनः आरभ्य %1 नुदन्तु अथवा नुदन्तु"
+
+#: mainarea.cpp:266 mainarea.cpp:528
+#, kde-format
+msgid "%1 ball"
+msgid_plural "%1 balls"
+msgstr[0] ""
+msgstr[1] ""
+
+#: mainarea.cpp:536
+#, kde-format
+msgid ""
+"GAME OVER\n"
+"You survived for %1 second\n"
+"Click to restart"
+msgid_plural ""
+"GAME OVER\n"
+"You survived for %1 seconds\n"
+"Click to restart"
+msgstr[0] ""
+msgstr[1] ""
+
+#: mainwindow.cpp:81
+#, kde-format
+msgctxt "@action"
+msgid "End Game"
+msgstr ""
+
+#: mainwindow.cpp:90
+#, kde-format
+msgctxt "@option:check"
+msgid "&Increase Ball Size"
+msgstr ""
+
+#: mainwindow.cpp:97
+#, kde-format
+msgctxt "@option:check"
+msgid "Play Sounds"
+msgstr ""
+
+#: mainwindow.cpp:138
+#, kde-format
+msgid "Balls: %1"
+msgstr "कन्दुकाः : %1"
+
+#: mainwindow.cpp:143
+#, kde-format
+msgid "Time: %1 second"
+msgid_plural "Time: %1 seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableSounds)
+#: preferences.ui:16
+#, kde-format
+msgid "Enable &sounds"
+msgstr "&ध्वनिं सक्षमं कुर्वन्तु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IncreaseBallSize)
+#: preferences.ui:23
+#, kde-format
+msgid "Enable automatically &increasing ball size"
+msgstr "स्वयमेव सक्षमं कुर्वन्तु &गोलकस्य आकारं वर्धयन्"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: preferences.ui:32
+#, kde-format
+msgid "&Difficulty:"
+msgstr "&कठिनता : १."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:43
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Easy"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:48
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Medium"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
+#: preferences.ui:53
+#, kde-format
+msgctxt "Difficulty level"
+msgid "Hard"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: preferences.ui:65
+#, kde-format
+msgid "&Animation smoothness:"
+msgstr "&एनिमेशन सुचारूता : १."
