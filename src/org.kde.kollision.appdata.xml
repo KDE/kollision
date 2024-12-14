@@ -43,6 +43,7 @@ SentUpstream: 2014-09-24
   <name xml:lang="pt-BR">Kollision</name>
   <name xml:lang="ro">Koliziune</name>
   <name xml:lang="ru">Kollision</name>
+  <name xml:lang="sa">टकरावः</name>
   <name xml:lang="sk">Kollision</name>
   <name xml:lang="sl">Kollision</name>
   <name xml:lang="sr">Колизија</name>
@@ -85,6 +86,7 @@ SentUpstream: 2014-09-24
   <summary xml:lang="pt-BR">Jogo de bolas ocasional</summary>
   <summary xml:lang="ro">Joc cu mingi de ocazie</summary>
   <summary xml:lang="ru">Казуальная игра с шариками</summary>
+  <summary xml:lang="sa">आकस्मिक कन्दुकक्रीडा</summary>
   <summary xml:lang="sk">Ležérna loptová hra</summary>
   <summary xml:lang="sl">Igra z žogo</summary>
   <summary xml:lang="sr">Необавезна игра са лоптицама</summary>
@@ -131,6 +133,7 @@ SentUpstream: 2014-09-24
     <p xml:lang="pt-BR">Kollision é um jogo ocasional, onde deve-se jogar a bola e evitar as outras bolas na mesa pelo máximo de tempo possível.</p>
     <p xml:lang="ro">Koliziune e un joc de ocazie în care trebuie să vă aruncați mingea și să evitați mingile celorlalți de pe tablă cât mai mult timp.</p>
     <p xml:lang="ru">Kollision — казуальная игра, в которой нужно бросать шарик и как можно дольше уклоняться от столкновения с другими шариками.</p>
+    <p xml:lang="sa">कोलिशन इति आकस्मिकः क्रीडा यत्र भवन्तः स्वकन्दुकं क्षिप्तुं आवश्यकं भवति तथा च यथासम्भवं दीर्घकालं यावत् मेजस्य उपरि अन्येषां कन्दुकानाम् परिहारं कर्तुं प्रवृत्ताः सन्ति।</p>
     <p xml:lang="sk">Kollision je ležérna loptová hra, kde potrebujete hodiť loptu a vyhnúť sa ostatným loptám na stole, kým je to možné.</p>
     <p xml:lang="sl">Kollision je igra, v kateri vržete žogo in nato poskusite čim dlje preprečevati njen stik z žogami drugih.</p>
     <p xml:lang="sr">Колизија је необавезна игра у којој бацате своју лоптицу и избегавате друге лоптице на табли што дуже можете.</p>
