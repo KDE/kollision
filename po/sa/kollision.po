@@ -3,29 +3,31 @@
 # This file is distributed under the same license as the kollision package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-22 00:38+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-14 01:42+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
 #: kollision.kcfg:9
@@ -112,8 +114,8 @@ msgstr ""
 #, kde-format
 msgid "%1 ball"
 msgid_plural "%1 balls"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 कन्दुकम्"
+msgstr[1] "%1 कन्दुकम्"
 
 #: mainarea.cpp:536
 #, kde-format
@@ -126,25 +128,31 @@ msgid_plural ""
 "You survived for %1 seconds\n"
 "Click to restart"
 msgstr[0] ""
+"GAME OVER इति\n"
+"भवान् %1 सेकण्ड् यावत् जीवितः अभवत्\n"
+"पुनः आरभ्यतुं क्लिक् कुर्वन्तु"
 msgstr[1] ""
+"GAME OVER इति\n"
+"भवान् %1 सेकण्ड् यावत् जीवितः अभवत्\n"
+"पुनः आरभ्यतुं क्लिक् कुर्वन्तु"
 
 #: mainwindow.cpp:81
 #, kde-format
 msgctxt "@action"
 msgid "End Game"
-msgstr ""
+msgstr "अन्त क्रीडा"
 
 #: mainwindow.cpp:90
 #, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr ""
+msgstr "&गोलस्य आकारं वर्धयन्तु"
 
 #: mainwindow.cpp:97
 #, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr ""
+msgstr "ध्वनयः वादयन्तु"
 
 #: mainwindow.cpp:138
 #, kde-format
@@ -155,8 +163,8 @@ msgstr "कन्दुकाः : %1"
 #, kde-format
 msgid "Time: %1 second"
 msgid_plural "Time: %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "समयः %1 सेकण्डः"
+msgstr[1] "समयः %1 सेकण्ड्"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableSounds)
 #: preferences.ui:16
@@ -181,21 +189,21 @@ msgstr "&कठिनता : १."
 #, kde-format
 msgctxt "Difficulty level"
 msgid "Easy"
-msgstr ""
+msgstr "सरलम्‌"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
 #: preferences.ui:48
 #, kde-format
 msgctxt "Difficulty level"
 msgid "Medium"
-msgstr ""
+msgstr "मध्यम"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_GameDifficulty)
 #: preferences.ui:53
 #, kde-format
 msgctxt "Difficulty level"
 msgid "Hard"
-msgstr ""
+msgstr "रूक्षः"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: preferences.ui:65
