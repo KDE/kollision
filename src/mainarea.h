@@ -96,8 +96,6 @@ private:
     Animation* writeMessage(const QString& text);
     Animation* writeText(const QString& text, bool fade = true);
     void displayMessages(const QList<QExplicitlySharedDataPointer<Message> >& msgs);
-    void playSound(int sound);
-    void onDeath();
     void setManPosition(const QPointF& p);
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent* e) override;
