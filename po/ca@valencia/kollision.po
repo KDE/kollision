@@ -112,7 +112,7 @@ msgid ""
 "Click or press %1 to resume"
 msgstr ""
 "Joc en pausa\n"
-"Feu clic o premeu %1 per a reprendre"
+"Feu clic o premeu «%1» per a reprendre"
 
 #: mainarea.cpp:266 mainarea.cpp:528
 #, kde-format
