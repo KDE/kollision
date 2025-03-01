@@ -26,6 +26,8 @@ public:
     QPointF position() const override;
     
     int height() const;
+protected:
+    bool eventFilter(QObject *target, QEvent *event) override;
 private:
     QPointF m_velocity;
 };

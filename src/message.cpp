@@ -5,6 +5,9 @@
 */
 
 #include "message.h"
+#include <QApplication>
+#include <QGraphicsScene>
+#include <QPalette>
 #include <QTextOption>
 #include <QTextDocument>
 
@@ -12,8 +15,10 @@ Message::Message(const QString& text, const QFont& font, int maxwidth)
 : QGraphicsTextItem(text)
 , m_velocity(0.0, 0.0)
 {
+    qApp->installEventFilter(this);
+
     setFont(font);
-    setDefaultTextColor(Qt::black);
+    setDefaultTextColor(QApplication::palette().color(QPalette::WindowText));
     setAcceptHoverEvents(false);
     document()->setTextWidth(maxwidth);
     QTextOption opts = document()->defaultTextOption();
@@ -57,4 +62,12 @@ QPointF Message::position() const
 int Message::height() const
 {
     return document()->size().height();
+}
+
+bool Message::eventFilter(QObject *watched, QEvent *e)
+{
+    if (watched == scene() && e->type() == QEvent::PaletteChange) {
+        setDefaultTextColor(scene()->palette().color(QPalette::WindowText));
+    }
+    return QGraphicsTextItem::eventFilter(watched, e);
 }

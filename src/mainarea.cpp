@@ -71,20 +71,25 @@ MainArea::MainArea()
     m_msgFont = QApplication::font();
     m_msgFont.setPointSize(15);
 
-    QPixmap pix(rect.size());
-    {
-        // draw gradient
-        QPainter p(&pix);
-        QColor color = palette().color(QPalette::Window);
-        QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
-        grad.setColorAt(0, color.lighter(115));
-        grad.setColorAt(1, color.darker(115));
-        p.fillRect(rect, grad);
-    }
-    setBackgroundBrush(pix);
+    updateBackground();
 
     writeText(i18n("Welcome to Kollision\nClick to start a game"), false);
 
+}
+
+void MainArea::updateBackground()
+{
+    QRect rect(0, 0, m_size, m_size);
+    QPixmap pix(rect.size());
+
+    QPainter p(&pix);
+    QColor color = palette().color(QPalette::Window);
+    QLinearGradient grad(QPointF(0, 0), QPointF(0, height()));
+    grad.setColorAt(0, color.lighter(115));
+    grad.setColorAt(1, color.darker(115));
+    p.fillRect(rect, grad);
+
+    setBackgroundBrush(pix);
 }
 
 void MainArea::increaseBallSize(bool enable)
@@ -557,6 +562,14 @@ void MainArea::setManPosition(const QPointF& p)
     if (pos.y() >= m_size - radius()) pos.setY(m_size - static_cast<int>(radius()));
 
     m_man->setPosition(pos);
+}
+
+bool MainArea::event(QEvent *e)
+{
+    if (e->type() == QEvent::PaletteChange) {
+        updateBackground();
+    }
+    return QGraphicsScene::event(e);
 }
 
 void MainArea::mousePressEvent(QGraphicsSceneMouseEvent* e)
