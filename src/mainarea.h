@@ -97,7 +97,9 @@ private:
     Animation* writeText(const QString& text, bool fade = true);
     void displayMessages(const QList<QExplicitlySharedDataPointer<Message> >& msgs);
     void setManPosition(const QPointF& p);
+    void updateBackground();
 protected:
+    bool event(QEvent *event) override;
     void mousePressEvent(QGraphicsSceneMouseEvent* e) override;
     void focusOutEvent(QFocusEvent*) override;
 public:
