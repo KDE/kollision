@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-22 00:38+0000\n"
+"POT-Creation-Date: 2025-03-10 02:47+0000\n"
 "PO-Revision-Date: 2011-01-21 10:18+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -93,7 +93,7 @@ msgstr "Brian Croom"
 msgid "Port to use KGameRenderer"
 msgstr "Kode för den Bruuk vun \"KGameRenderer\" överdragen"
 
-#: mainarea.cpp:86
+#: mainarea.cpp:76
 #, kde-format
 msgid ""
 "Welcome to Kollision\n"
@@ -102,7 +102,7 @@ msgstr ""
 "Willkamen bi Kollischoon.\n"
 "Klick, wenn Du en Speel starten wullt"
 
-#: mainarea.cpp:204
+#: mainarea.cpp:209
 #, kde-format
 msgid ""
 "Game paused\n"
@@ -111,14 +111,14 @@ msgstr ""
 "Speel anhollen\n"
 "Klick, oder drück \"%1\", wenn Du wiedermaken wullt"
 
-#: mainarea.cpp:266 mainarea.cpp:528
+#: mainarea.cpp:271 mainarea.cpp:533
 #, kde-format
 msgid "%1 ball"
 msgid_plural "%1 balls"
 msgstr[0] "%1 Ball"
 msgstr[1] "%1 Bäll"
 
-#: mainarea.cpp:536
+#: mainarea.cpp:541
 #, kde-format
 msgid ""
 "GAME OVER\n"

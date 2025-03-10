@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-22 00:38+0000\n"
+"POT-Creation-Date: 2025-03-10 02:47+0000\n"
 "PO-Revision-Date: 2024-05-03 09:04+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr "Brian Croom"
 msgid "Port to use KGameRenderer"
 msgstr "Adaptació per a usar el «KGameRenderer»"
 
-#: mainarea.cpp:86
+#: mainarea.cpp:76
 #, kde-format
 msgid ""
 "Welcome to Kollision\n"
@@ -105,7 +105,7 @@ msgstr ""
 "Et donem la benvinguda al Kollision\n"
 "Feu clic per a començar una partida"
 
-#: mainarea.cpp:204
+#: mainarea.cpp:209
 #, kde-format
 msgid ""
 "Game paused\n"
@@ -114,14 +114,14 @@ msgstr ""
 "Joc en pausa\n"
 "Feu clic o premeu %1 per a reprendre"
 
-#: mainarea.cpp:266 mainarea.cpp:528
+#: mainarea.cpp:271 mainarea.cpp:533
 #, kde-format
 msgid "%1 ball"
 msgid_plural "%1 balls"
 msgstr[0] "%1 pilota"
 msgstr[1] "%1 pilotes"
 
-#: mainarea.cpp:536
+#: mainarea.cpp:541
 #, kde-format
 msgid ""
 "GAME OVER\n"
@@ -214,6 +214,3 @@ msgstr "Difícil"
 #, kde-format
 msgid "&Animation smoothness:"
 msgstr "Suavitat de l'&animació:"
-
-#~ msgid "Difficulty of the game."
-#~ msgstr "Dificultat de la partida."
