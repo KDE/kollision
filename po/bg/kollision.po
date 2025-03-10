@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-22 00:38+0000\n"
+"POT-Creation-Date: 2025-03-10 00:40+0000\n"
 "PO-Revision-Date: 2021-12-29 00:46+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -90,28 +90,28 @@ msgstr ""
 msgid "Port to use KGameRenderer"
 msgstr ""
 
-#: mainarea.cpp:86
+#: mainarea.cpp:76
 #, kde-format
 msgid ""
 "Welcome to Kollision\n"
 "Click to start a game"
 msgstr ""
 
-#: mainarea.cpp:204
+#: mainarea.cpp:209
 #, kde-format
 msgid ""
 "Game paused\n"
 "Click or press %1 to resume"
 msgstr ""
 
-#: mainarea.cpp:266 mainarea.cpp:528
+#: mainarea.cpp:271 mainarea.cpp:533
 #, kde-format
 msgid "%1 ball"
 msgid_plural "%1 balls"
 msgstr[0] ""
 msgstr[1] ""
 
-#: mainarea.cpp:536
+#: mainarea.cpp:541
 #, kde-format
 msgid ""
 "GAME OVER\n"

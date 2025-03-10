@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-22 00:38+0000\n"
+"POT-Creation-Date: 2025-03-10 00:40+0000\n"
 "PO-Revision-Date: 2009-07-03 17:01+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Port to use KGameRenderer"
 msgstr ""
 
-#: mainarea.cpp:86
+#: mainarea.cpp:76
 #, kde-format
 msgid ""
 "Welcome to Kollision\n"
@@ -99,7 +99,7 @@ msgstr ""
 "કોલિઝન રમત રમવા સ્વાગત છે\n"
 "રમત શરુ કરવા ક્લિક કરો"
 
-#: mainarea.cpp:204
+#: mainarea.cpp:209
 #, kde-format
 msgid ""
 "Game paused\n"
@@ -108,14 +108,14 @@ msgstr ""
 "રમત સ્થગિત\n"
 "આગળ રમવા માટે %1 દબાવો"
 
-#: mainarea.cpp:266 mainarea.cpp:528
+#: mainarea.cpp:271 mainarea.cpp:533
 #, kde-format
 msgid "%1 ball"
 msgid_plural "%1 balls"
 msgstr[0] "%1 દડો"
 msgstr[1] "%1 દડાઓ"
 
-#: mainarea.cpp:536
+#: mainarea.cpp:541
 #, kde-format
 msgid ""
 "GAME OVER\n"
