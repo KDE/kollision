@@ -103,7 +103,7 @@ msgid ""
 "Click to start a game"
 msgstr ""
 "Et donem la benvinguda a Kollision\n"
-"Feu clic per a començar una partida"
+"Cliqueu per a començar una partida"
 
 #: mainarea.cpp:209
 #, kde-format
@@ -112,7 +112,7 @@ msgid ""
 "Click or press %1 to resume"
 msgstr ""
 "Joc en pausa\n"
-"Feu clic o premeu «%1» per a reprendre"
+"Cliqueu o premeu «%1» per a reprendre"
 
 #: mainarea.cpp:271 mainarea.cpp:533
 #, kde-format
@@ -134,11 +134,11 @@ msgid_plural ""
 msgstr[0] ""
 "FINAL DE LA PARTIDA\n"
 "Has sobreviscut durant %1 segon\n"
-"Fes clic per a reiniciar"
+"Clica per a reiniciar"
 msgstr[1] ""
 "FINAL DE LA PARTIDA\n"
 "Has sobreviscut durant %1 segons\n"
-"Fes clic per a reiniciar"
+"Clica per a reiniciar"
 
 #: mainwindow.cpp:81
 #, kde-format
