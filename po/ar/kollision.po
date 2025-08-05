@@ -31,7 +31,7 @@ msgstr "zayed.alsaidi@gmail.com"
 #: kollision.kcfg:9
 #, kde-format
 msgid "Whether automatically increasing ball size should be applied."
-msgstr "ما إذا كان يجب تطبيق زيادة حجم الكرة تلقائيًا."
+msgstr "ما إذا كان يجب تطبيق زيادة حجم الكرة آليًّا."
 
 #. i18n: ectx: label, entry (EnableSounds), group (sounds)
 #: kollision.kcfg:15
@@ -198,7 +198,7 @@ msgstr "&مكن الأصوات"
 #: preferences.ui:23
 #, kde-format
 msgid "Enable automatically &increasing ball size"
-msgstr "مكن الزيادة التلقائية ل&حجم الكرة"
+msgstr "مكن الزيادة الآليّة ل&حجم الكرة"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: preferences.ui:32
