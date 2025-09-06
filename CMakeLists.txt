@@ -52,7 +52,7 @@ add_definitions(-DTRANSLATION_DOMAIN="kollision")
 
 ecm_set_disabled_deprecation_versions(
     QT 6.9.0
-    KF 6.17.0
+    KF 6.18.0
     KDEGAMES 6.0
 )
 
