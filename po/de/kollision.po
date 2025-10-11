@@ -1,8 +1,8 @@
 # SPDX-FileCopyrightText: 2009, 2010, 2024 Johannes Obermayr <johannesobermayr@gmx.de>
-# Burkhard Lück <lueck@hube-lueck.de>, 2008, 2011, 2020.
-# Thomas Reitelbach <tr@erdfunkstelle.de>, 2009.
-# Panagiotis Papadopoulos <pano_90@gmx.net>, 2009.
-# Frederik Schwarzer <schwarzer@kde.org>, 2016.
+# SPDX-FileCopyrightText: 2008, 2011, 2020 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2009 Thomas Reitelbach <tr@erdfunkstelle.de>
+# SPDX-FileCopyrightText: 2009 Panagiotis Papadopoulos <pano_90@gmx.net>
+# SPDX-FileCopyrightText: 2016 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
