@@ -92,9 +92,9 @@
 </screenshot>
 
         <para
->Cliquez sur un champ vide pour démarrer la partie : une balle bleue remplace immédiatement votre pointeur de souris et un nombre de balles rouges commence à apparaître sur le champ de jeu. </para>
+>Cliquez sur un champ vide pour démarrer la partie : une balle bleue remplace immédiatement votre pointeur de souris et un nombre de balles rouges commence à apparaitre sur le champ de jeu. </para>
         <para
->Quand les balles rouges finissent de se matérialiser, elles se déplacent à une vitesse aléatoire dans une direction aléatoire, et vous êtes invité à déplacer la balle bleue dans le champ avec votre souris. Après quelque temps, d'autres balles rouges apparaîtront comme avant, et commenceront à se déplacer. Préparez vous à leur échapper. </para>
+>Quand les balles rouges finissent de se matérialiser, elles se déplacent à une vitesse aléatoire dans une direction aléatoire, et vous êtes invité à déplacer la balle bleue dans le champ avec votre souris. Après quelque temps, d'autres balles rouges apparaitront comme avant, et commenceront à se déplacer. Préparez vous à leur échapper. </para>
         <para
 >Vous pouvez choisir le niveau de difficulté du jeu sur la droite de la barre d'état. Plus le niveau de difficulté est élevé, plus les balles rouges se déplacent rapidement, et plus des balles apparaissent sur le champ de jeu. </para>
 </chapter>
