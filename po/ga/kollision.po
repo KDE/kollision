@@ -150,11 +150,10 @@ msgstr[4] ""
 "Cliceáil chun cluiche nua a thosú"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
-msgstr "Cuir cluiche i gcrích"
+msgstr ""
 
 #: mainwindow.cpp:90
 #, kde-format
@@ -163,11 +162,10 @@ msgid "&Increase Ball Size"
 msgstr ""
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "Seinn &Fuaimeanna"
+msgstr ""
 
 #: mainwindow.cpp:138
 #, kde-format
@@ -228,15 +226,3 @@ msgstr "Deacair"
 #, kde-format
 msgid "&Animation smoothness:"
 msgstr "Míne n&a beochana:"
-
-#~ msgid "KDE collision game"
-#~ msgstr "Cluiche imbhuailte KDE"
-
-#~ msgid "Difficulty of the game."
-#~ msgstr "Deacracht an chluiche."
-
-#~ msgid "Abort game"
-#~ msgstr "Tobscoir an cluiche"
-
-#~ msgid "4 balls"
-#~ msgstr "4 liathróid"
