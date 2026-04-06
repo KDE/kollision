@@ -96,7 +96,7 @@ msgid ""
 "Welcome to Kollision\n"
 "Click to start a game"
 msgstr ""
-"مرحبا بك في التصادم\n"
+"مرحبًا بك في التصادم\n"
 "انقر لبدء اللعبة"
 
 #: mainarea.cpp:209
