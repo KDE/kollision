@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2011-08-09 23:22+0300\n"
+"PO-Revision-Date: 2026-05-11 11:52+0300\n"
 "Last-Translator: Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -17,29 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Andrius Štikonas"
+msgstr "Andrius Štikonas, Moo"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "andrius@stikonas.eu"
+msgstr "andrius@stikonas.eu, <>"
 
 #. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
 #: kollision.kcfg:9
 #, kde-format
 msgid "Whether automatically increasing ball size should be applied."
-msgstr ""
+msgstr "Ar turėtų būti taikomas automatiškai didėjantis kamuolio dydis."
 
 #. i18n: ectx: label, entry (EnableSounds), group (sounds)
 #: kollision.kcfg:15
 #, kde-format
 msgid "Whether sound effects should be played."
-msgstr "Ar turi būti grojami garso efektai."
+msgstr "Ar turi būti atkuriami garso efektai."
 
 #. i18n: ectx: Menu (game)
 #: kollisionui.rc:9
@@ -55,7 +55,7 @@ msgstr "Kollision"
 #: main.cpp:43
 #, kde-format
 msgid "Casual ball game"
-msgstr ""
+msgstr "Paprastas žaidimas kamuoliu"
 
 #: main.cpp:45
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "Brian Croom"
 #: main.cpp:51
 #, kde-format
 msgid "Port to use KGameRenderer"
-msgstr "KGameRenderer naudojantis variantas"
+msgstr "KGameRenderer realizavimas"
 
 #: mainarea.cpp:76
 #, kde-format
@@ -99,7 +99,7 @@ msgid ""
 "Click to start a game"
 msgstr ""
 "Jus sveikina Kollision\n"
-"Spragtelėkite, kad pradėtumėte žaidimą"
+"Spustelėkite norėdami pradėti žaidimą"
 
 #: mainarea.cpp:209
 #, kde-format
@@ -108,7 +108,7 @@ msgid ""
 "Click or press %1 to resume"
 msgstr ""
 "Žaidimas pristabdytas\n"
-"Spragtelėkite arba nuspauskite %1, kad pratęstumėte"
+"Spustelėkite arba paspauskite %1, kad pratęstumėte"
 
 #: mainarea.cpp:271 mainarea.cpp:533
 #, kde-format
@@ -132,23 +132,22 @@ msgid_plural ""
 msgstr[0] ""
 "ŽAIDIMAS BAIGTAS\n"
 "Jūs išgyvenote %1 sekundę\n"
-"Spragtelėkite, kad pradėtumėte iš naujo"
+"Spustelėkite norėdami pradėti iš naujo"
 msgstr[1] ""
 "ŽAIDIMAS BAIGTAS\n"
 "Jūs išgyvenote %1 sekundes\n"
-"Spragtelėkite, kad pradėtumėte iš naujo"
+"Spustelėkite norėdami pradėti iš naujo"
 msgstr[2] ""
 "ŽAIDIMAS BAIGTAS\n"
 "Jūs išgyvenote %1 sekundžių\n"
-"Spragtelėkite, kad pradėtumėte iš naujo"
+"Spustelėkite norėdami pradėti iš naujo"
 msgstr[3] ""
 "ŽAIDIMAS BAIGTAS\n"
 "Jūs išgyvenote %1 sekundę\n"
-"Spragtelėkite, kad pradėtumėte iš naujo"
+"Spustelėkite norėdami pradėti iš naujo"
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Baigti žaidimą"
@@ -157,14 +156,13 @@ msgstr "Baigti žaidimą"
 #, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
-msgstr ""
+msgstr "D&idinti kamuolio dydį"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Groti garsus"
+msgstr "Atkurti garsus"
 
 #: mainwindow.cpp:138
 #, kde-format
@@ -184,13 +182,13 @@ msgstr[3] "Laikas: %1 sekundė"
 #: preferences.ui:16
 #, kde-format
 msgid "Enable &sounds"
-msgstr "Įgalinti &garsus"
+msgstr "Įjungti &garsus"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_IncreaseBallSize)
 #: preferences.ui:23
 #, kde-format
 msgid "Enable automatically &increasing ball size"
-msgstr ""
+msgstr "Įjungti automatinį kamuolio dydžio d&idinimą"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: preferences.ui:32
