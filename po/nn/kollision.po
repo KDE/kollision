@@ -1,5 +1,6 @@
 # Translation of kollision to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2008, 2009, 2010, 2016, 2020, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
