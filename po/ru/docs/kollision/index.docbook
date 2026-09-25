@@ -1,0 +1,417 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Russian "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>Руководство пользователя &kollision;</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>Александр</firstname
+><surname
+>Яворский</surname
+><affiliation
+><address
+><email
+>kekcuha@gmail.com</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-07</date>
+<releaseinfo
+>0.3 (KDE Gear 21.08)</releaseinfo>
+<abstract>
+        <para
+>В этом руководстве описывается игра &kollision; версии 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>KDE</keyword>
+        <keyword
+>kdegames</keyword>
+        <keyword
+>игра</keyword>
+        <keyword
+>Kollision</keyword>
+        <keyword
+>аркада</keyword>
+        <keyword
+>один игрок</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>Введение</title>
+        <note
+><title
+>Тип игры:</title
+><para
+>Аркада</para
+></note>
+        <note
+><title
+>Число игроков:</title
+><para
+>Один</para
+></note>
+        <para
+>Простая игра, в которой нужно уклоняться от шаров. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Правила игры</title>
+        <note
+><title
+>Цель:</title
+><para
+>Двигайте синий шар по полю, не касаясь красных шаров.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Игровое поле &kollision;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>Чтобы начать игру, щёлкните по пустому полю: синий шар сразу заменит указатель мыши, а несколько красных шаров начнут постепенно проявляться на поле. </para>
+        <para
+>Когда красные шары полностью проявятся, они начинают двигаться со случайной скоростью в случайном направлении, и от них нужно быстро уворачиваться, перемещая синий шар по полю мышью. Через некоторое время появятся новые красные шары: они так же постепенно проявятся, а затем начнут двигаться. Будьте готовы уворачиваться и от них. </para>
+        <para
+>Уровень сложности выбирается в правой части строки состояния. Чем выше уровень сложности, тем быстрее движутся красные шары и тем больше шаров появляется на игровом поле. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Правила игры, стратегия и советы</title>
+        <para
+>Правила игры, стратегия и советы</para>
+        <sect1 id="rules"
+><title
+>Правила игры</title>
+        <itemizedlist>
+            <listitem
+><para
+>Красные шары движутся по игровому полю с постоянной скоростью, отскакивая от стенок, пока не столкнутся с другим шаром; при столкновении скорость и направление обоих шаров меняются.</para
+></listitem>
+            <listitem
+><para
+>Синий шар можно свободно перемещать по полю с помощью мыши.</para
+></listitem>
+            <listitem
+><para
+>Синий шар не может выйти за пределы поля. Если указатель мыши выходит за его границы, шар остаётся на краю, пока указатель не вернётся.</para
+></listitem>
+            <listitem
+><para
+>Счёт прямо пропорционален продолжительности игры.</para
+></listitem>
+            <listitem
+><para
+>За каждую паузу из общего времени вычитается штраф 5 секунд (штрафы суммируются).</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>Стратегия и советы</title>
+        <itemizedlist>
+            <listitem
+><para
+>Двигайте синий шар плавно и медленно. Размашистые движения по полю повышают вероятность столкновения с другими шарами.</para
+></listitem>
+            <listitem
+><para
+>Вывод указателя мыши за пределы поля — изящный приём, чтобы выбраться из безвыходного положения. Пользуйтесь им с умом.</para
+></listitem>
+            <listitem
+><para
+>Не приостанавливайте игру без крайней необходимости.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>Обзор интерфейса</title>
+
+<sect1 id="menu">
+<title
+>Пункты меню</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Игра</guimenu
+> <guimenuitem
+>Закончить игру</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Завершает игру и возвращает к экрану приветствия.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+> <keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Пауза</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>Приостанавливает или возобновляет игру.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Показать лучшие результаты</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Показывает лучшие результаты для текущего уровня.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Игра</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Завершает текущую игру и закрывает &kollision;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Звуковое сопровождение</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>Включает или отключает звуковые эффекты.</action
+> По умолчанию отключено. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Увеличивать размер шаров</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Включает или отключает увеличенный размер шаров.</action
+> По умолчанию отключено.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Настройка</guimenu
+> <guisubmenu
+>Уровень сложности</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Позволяет выбрать уровень сложности игры: <guilabel
+>Лёгкий</guilabel
+>, <guilabel
+>Средний</guilabel
+> или <guilabel
+>Трудный</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Кроме того, в &kollision; есть стандартные для &kde; меню <guimenu
+>Настройка</guimenu
+> и <guimenu
+>Справка</guimenu
+>. Подробнее о них — в разделах <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Меню «Настройка»</ulink
+> и <ulink url="help:/fundamentals/menus.html#menus-help"
+>Меню «Справка»</ulink
+> документа «Основы &kde;». </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>Часто задаваемые вопросы</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Я хочу изменить внешний вид игры. Это возможно? </para
+></question>
+ <answer
+><para
+>Нет.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Можно ли играть с помощью клавиатуры? </para
+></question>
+ <answer
+><para
+>Нет. Играть в &kollision; можно только с помощью мыши.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Непонятно, что делать! Есть ли подсказки? </para
+></question>
+ <answer
+><para
+>В &kollision; нет подсказок.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Мне нужно выйти из игры, а партия ещё не окончена. Можно ли её сохранить?</para
+></question>
+  <answer
+><para
+>В &kollision; нельзя сохранять игры.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>Авторские права и лицензия</title>
+<para
+>&kollision; </para>
+<para
+>© Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+>, 2007–2008 </para>
+<para
+>© Dmitri Suzdalev <email
+>dimsuz@gmail.com</email
+>, 2007–2008 </para>
+<para
+>© Paolo Capriotti <email
+>p.capriotti@gmail.com</email
+>, 2008 (документация) </para>
+
+<para
+>Александр Яворский<email
+>kekcuha@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
