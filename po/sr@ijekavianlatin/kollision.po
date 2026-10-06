@@ -2,13 +2,14 @@
 # Slobodan Simic <slsimic@gmail.com>, 2009.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2009, 2010, 2016.
 # Dalibor Djuric <dalibor.djuric@mozilla-srbija.org>, 2010.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kollision\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:50+0000\n"
-"PO-Revision-Date: 2016-01-31 00:15+0100\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-05 01:57+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -24,18 +25,18 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Slobodan Simić"
+msgstr "Slobodan Simić,Nemanja Hiršl"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "slsimic@gmail.com"
+msgstr "slsimic@gmail.com,nemhirsl@gmail.com"
 
 #. i18n: ectx: label, entry (IncreaseBallSize), group (game_options)
 #: kollision.kcfg:9
 #, kde-format
 msgid "Whether automatically increasing ball size should be applied."
-msgstr "Da li primenjivati automatsko uvećavanje lopte."
+msgstr "Da li primjenjivati automatsko uvećavanje lopte."
 
 #. i18n: ectx: label, entry (EnableSounds), group (sounds)
 #: kollision.kcfg:15
@@ -57,7 +58,7 @@ msgstr "Kolizija"
 #: main.cpp:43
 #, kde-format
 msgid "Casual ball game"
-msgstr ""
+msgstr "Neobavezna igra sa lopticama"
 
 #: main.cpp:45
 #, kde-format
@@ -149,25 +150,22 @@ msgstr[3] ""
 "Kliknite za novu igru."
 
 #: mainwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "End game"
+#, kde-format
 msgctxt "@action"
 msgid "End Game"
 msgstr "Završi igru"
 
 #: mainwindow.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Increase Ball Size"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Increase Ball Size"
 msgstr "&Uvećavaj loptu"
 
 #: mainwindow.cpp:97
-#, fuzzy, kde-format
-#| msgid "&Play Sounds"
+#, kde-format
 msgctxt "@option:check"
 msgid "Play Sounds"
-msgstr "&Puštaj zvukove"
+msgstr "Puštaj zvukove"
 
 # >> @info:status
 #: mainwindow.cpp:138
@@ -229,6 +227,3 @@ msgstr "teško"
 #, kde-format
 msgid "&Animation smoothness:"
 msgstr "Glatkoća &animacije:"
-
-#~ msgid "KDE collision game"
-#~ msgstr "Igra sudaranja za KDE"
