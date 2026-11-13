@@ -1,0 +1,419 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Arabic "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kollision" lang="&language;">
+<bookinfo>
+        <title
+>دليل التصادم</title>
+<authorgroup>
+        <author
+><firstname
+>Paolo</firstname
+> <surname
+>Capriotti</surname
+> <affiliation
+> <address
+><email
+>p.capriotti@gmail.com</email
+></address>
+                </affiliation>
+        </author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-08-07</date>
+<releaseinfo
+>0.3 (ترس كيدي 21.08)</releaseinfo>
+<abstract>
+        <para
+>يصف هذا التوثيق لعبة التصادم الإصدارة 0.3</para>
+</abstract>
+
+<keywordset>
+        <keyword
+>كيدي</keyword>
+        <keyword
+>ألعاب كيدي</keyword>
+        <keyword
+>لعبة</keyword>
+        <keyword
+>التصادم</keyword>
+        <keyword
+>أركيد</keyword>
+        <keyword
+>لاعب واحد</keyword>
+</keywordset>
+</bookinfo>
+<chapter id="introduction"
+><title
+>مقدمة</title>
+        <note
+><title
+>نوع اللعبة:</title
+><para
+>أركيد</para
+></note>
+        <note
+><title
+>عدد اللاعبين الممكنين:</title
+><para
+>واحد</para
+></note>
+        <para
+>لعبة مراوغة الكرة بسيطة. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>كيف تلعب</title>
+        <note
+><title
+>الهدف:</title
+><para
+>اجعل الكرة الزرقاء تتحرك في الميدان دون لمس الكرات الحمراء.</para
+></note>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>لوحة لعبة التصادم</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+        <para
+>انقر على الميدان الفارغ لبدء لعبة: كرة زرقاء تحل فورًا محل مؤشر فأرتك، وعدد من الكرات الحمراء تبدأ بالظهور تدريجيًا في الميدان. </para>
+        <para
+>عندما تنتهي الكرات الحمراء من الظهور تدريجيًا، فإنها تتحرك بسرعة عشوائية في اتجاه عشوائي، وعليك أن تتفاداها على الفور بتحريك الكرة الزرقاء داخل الميدان بفأرتك. بعد بعض الوقت، ستظهر كرات حمراء أخرى، تظهر تدريجيًا كما في السابق ثم تبدأ بالتحرك. كن مستعدًا لتفاديهم أيضًا. </para>
+        <para
+>يمكنك اختيار مستوى صعوبة اللعبة على يمين شريط الحالة. كلما زاد مستوى الصعوبة، تحركت الكرات الحمراء بشكل أسرع، وظهرت كرات أكثر في ميدان اللعب. </para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>قواعد اللعبة واستراتيجياتها وتلميحاتها</title>
+        <para
+>قواعد اللعبة واستراتيجياتها وتلميحاتها</para>
+        <sect1 id="rules"
+><title
+>قواعد اللعبة</title>
+        <itemizedlist>
+            <listitem
+><para
+>تتحرك الكرات الحمراء بسرعة ثابتة في ميدان اللعب وترتد عن الجدران حتى تتصادم مع كرة أخرى، مما يؤدي إلى تغير سرعة واتجاه كلتا الكرتين.</para
+></listitem>
+            <listitem
+><para
+>يمكن تحريك الكرة الزرقاء بحرية داخل الميدان بواسطة الفأرة.</para
+></listitem>
+            <listitem
+><para
+>لا يمكن للكرة الزرقاء الخروج من الميدان. إذا حُرّك المؤشر للخارج، ستبقى الكرة على الحافة حتى يعود المؤشر.</para
+></listitem>
+            <listitem
+><para
+>تتناسب النتيجة طرديًا مع الوقت الذي استغرقته اللعبة.</para
+></listitem>
+            <listitem
+><para
+>يؤدي إلبات اللعبة إلى خصم عقوبة قدرها 5 ثوانٍ (تراكمية) من الوقت الإجمالي.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+        <sect1 id="strattips"
+><title
+>الاستراتيجيات والتلميحات</title>
+        <itemizedlist>
+            <listitem
+><para
+>حرك الكرة الزرقاء بلطف وببطء. فالأرجحة عبر الميدان ستجعل التصادم مع الكرات الأخرى أكثر احتمالًا.</para
+></listitem>
+            <listitem
+><para
+>يمكن استخدام تحريك المؤشر خارج الميدان كخدعة ذكية للخروج من المواقف الصعبة. استخدمها بحكمة.</para
+></listitem>
+            <listitem
+><para
+>لا تلبث اللعبة إلا عند الضرورة القصوى.</para
+></listitem>
+        </itemizedlist>
+        </sect1>
+</chapter>
+
+
+<chapter id="interface"
+><title
+>نظرة عامة على الواجهة</title>
+
+<sect1 id="menu">
+<title
+>عناصر القائمة</title>
+
+<variablelist>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أنهِ اللعبة</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>ينهي اللعبة ويعود إلى شاشة الترحيب.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="game-pause">
+<term>
+<menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>ألبث</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+><action
+>يلبث اللعبة أو يستأنفها.</action
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أظهر أعلى النتائج</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>سيعرض هذا أفضل النتائج للمستوى الحالي.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>لعبة</guimenu
+> <guimenuitem
+>أنهِ</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>سيؤدي اختيار هذا العنصر إلى إنهاء لعبتك الحالية والخروج من التصادم.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice
+><guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>شغل الأصوات</guimenuitem
+> </menuchoice>
+</term>
+<listitem>
+<para
+><action
+>يبدل ما إذا كان يجب تشغيل المؤثرات الصوتية.</action
+> الوضع المبدئي هو الإيقاف. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>إعدادات</guimenu
+> <guimenuitem
+>زد حجم الكرات</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>يبدل لجعل الكرات أكبر.</action
+> الوضع المبدئي هو الإيقاف.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>الإعدادات</guimenu
+><guisubmenu
+>الصعوبة</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>يسمح لك باختيار صعوبة اللعبة من بين <guilabel
+>سهل</guilabel
+>، أو <guilabel
+>متوسط</guilabel
+>، أو <guilabel
+>صعب</guilabel
+>.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>بالإضافة إلى ذلك، يحتوي التصادم على عناصر قوائم كيدي الشائعة <guimenu
+>إعدادات</guimenu
+> و<guimenu
+>مساعدة</guimenu
+>، لمزيد من المعلومات اقرأ الأقسام حول <ulink url="help:/fundamentals/menus.html#menus-settings"
+>قائمة الإعدادات</ulink
+> و<ulink url="help:/fundamentals/menus.html#menus-help"
+>قائمة المساعدة</ulink
+> في أساسيات كيدي. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="faq"
+><title
+>الأسئلة الشائعة</title>
+<qandaset>
+<qandaentry>
+ <question
+><para
+>أريد تغيير شكل اللعبة. هل يمكنني ذلك؟ </para
+></question>
+ <answer
+><para
+>لا.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>هل يمكنني استخدام لوحة المفاتيح للعب؟ </para
+></question>
+ <answer
+><para
+>لا. لا يمكن لعب التصادم إلا بالفأرة.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>لا أعرف ماذا أفعل هنا! هل هناك تلميحات؟ </para
+></question>
+ <answer
+><para
+>لا يحتوي التصادم على ميزة <quote
+>تلميحة</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>يجب أن أخرج من اللعبة الآن، لكنني لم أنتهِ بعد. هل يمكنني حفظ تقدمي؟</para
+></question>
+  <answer
+><para
+>لا يمكنك حفظ الألعاب في التصادم.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits"
+><title
+>الحقوق والترخيص</title>
+<para
+>التصادم </para>
+<para
+>حقوق النشر 2007-2008 باولو كابريوتي <email
+>p.capriotti@gmail.com</email
+> </para>
+<para
+>حقوق النشر 2007-2008 ديمتري سوزداليف <email
+>dimsuz@gmail.com</email
+> </para>
+<para
+>حقوق نشر التوثيق 2008 باولو كابريوتي <email
+>p.capriotti@gmail.com</email
+> </para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
