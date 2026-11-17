@@ -114,7 +114,7 @@ void MainWindow::gameOver(int time)
 
     QPointer<KGameHighScoreDialog> ksdialog = new KGameHighScoreDialog(KGameHighScoreDialog::Name, this);
     ksdialog->initFromDifficulty(KGameDifficulty::global(), /*setConfigGroup=*/ false);
-    ksdialog->setConfigGroup(qMakePair(
+    ksdialog->setConfigGroup(std::make_pair(
         m_lastUsedDifficulty->key(),
         m_lastUsedDifficulty->title()
     ));
