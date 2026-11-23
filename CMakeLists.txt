@@ -50,6 +50,10 @@ find_package(KDEGames6 6.0.0 REQUIRED)
 
 add_definitions(-DTRANSLATION_DOMAIN="kollision")
 
+if(ECM_VERSION VERSION_GREATER_EQUAL "6.33.0")
+    add_definitions(-DQT_LEAN_HEADERS=2)
+endif()
+
 ecm_set_disabled_deprecation_versions(
     QT 6.10.0
     KF 6.27.0
